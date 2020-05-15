@@ -35,7 +35,7 @@ longitude_north_in_rand = longitude_north/ 180 * np.pi
 longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
-#TODO test
+
 default_province_size = 24
 max_new_provinces_per_state = 10
 
