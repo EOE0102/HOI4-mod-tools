@@ -1,1 +1,1 @@
-# HOI4-mod-tools
+# Modding tools for game Heart of Iron 4 in python
