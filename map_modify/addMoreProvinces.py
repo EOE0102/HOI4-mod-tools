@@ -6,16 +6,14 @@ import os
 from PIL import Image
 #import pickle #save variable memory error bad
 #import joblib #save still variable memory error bad
-
+import json #find one
 from itertools import product
-from itertools import takewhile
-
+#from itertools import takewhile
 from time import time
 import math
 import random
 import re
 import numpy as np
-import json
 
 def miller_cylinder_forward_projection(theta_in_rand):
     longitude_in_what = 1.25 * np.log(np.tan(np.pi / 4 + 0.4 * theta_in_rand))
@@ -582,7 +580,7 @@ def step_get_seeds_in_every_area():
                 for item in range(0, amountOfProvinces):
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
-                startItem = 1 #TODO dont move POG
+                startItem = 0 #TODO move POG
                 coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
                 
             #all_cores_of_seed_list[count].append(coreOfNewSeed)
