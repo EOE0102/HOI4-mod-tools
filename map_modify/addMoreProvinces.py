@@ -6,7 +6,7 @@ import os
 from PIL import Image
 #import pickle #save variable memory error bad
 #import joblib #save still variable memory error bad
-import json #find one
+import json #finally find one
 from itertools import product
 #from itertools import takewhile
 from time import time
@@ -25,7 +25,6 @@ def miller_cylinder_inverse_projection(longitude_in_what):
 
 #im.save("pixel_grid.bmp")
 iterate_amount = 2
-iterate_path_length = 8
 #equatorialPosition = 1350
 longitude_north = 72
 longitude_south = 57
@@ -34,8 +33,8 @@ longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 16
-max_new_provinces_per_state = 8
+default_province_size = 64
+max_new_provinces_per_state = 2
 
 ## REBUILD ##
 
@@ -1031,7 +1030,15 @@ def remove_Comment(textInList):
     all_text_in_str_initialized = "".join(textInList)
     return all_text_in_str_initialized
 
-def write_definition_csv_file(exportFolderLocation, all_painting_area_dict_small):
+def is_this_province_coast(painging_area_RGB, painging_area_coast_type, allRGBInLst, allIsCoastTypeInLst):
+    if painging_area_coast_type == 'false':
+        return 'false'
+    else:
+        return 'true'
+
+    #return writeCoastType
+
+def write_definition_csv_file(exportFolderLocation, all_painting_area_dict_small, all_painting_area_dict):
     title = "Open definition file(definition.csv)"
     filetypes = {("Map definition file", ".csv")}
     all_text_str = open_file_return_str(title, filetypes)
@@ -1057,7 +1064,8 @@ def write_definition_csv_file(exportFolderLocation, all_painting_area_dict_small
             writeIndex = len(all_text_str)
             writeRGB = str(all_painting_area_dict_small[i][j][0]) + ';' + str(all_painting_area_dict_small[i][j][1]) + ';' + str(all_painting_area_dict_small[i][j][2])
             writeLandSeaLakeType = allLandSeaLakeTypeInLst[originalIndex]
-            writeCoastType = allIsCoastTypeInLst[originalIndex]
+            writeCoastType = is_this_province_coast(all_painting_area_dict_small[i][j], allIsCoastTypeInLst[originalIndex], allRGBInLst, allLandSeaLakeTypeInLst)
+            
             writeTerrain = allTerrainTypeInLst[originalIndex]
             writeContinent = allContinentTypeInLst[originalIndex]
             writeLine = str(writeIndex) + ";" + writeRGB + ';' + str(writeLandSeaLakeType) + ';' + str(writeCoastType) + ';' + str(writeTerrain) + ';' + str(writeContinent) + '\n'
@@ -1165,6 +1173,7 @@ def modify_files():
     print('Part 6')
 
     all_painting_area_dict_small = read_dict('all_painting_area_dict_small')
+    all_painting_area_dict = read_dict('all_painting_area_dict')
 
     exportFolderLocation = filedialog.askdirectory(title = "Select Export Folder Location")
     if not os.path.exists(exportFolderLocation + "/export/states"):
@@ -1173,7 +1182,7 @@ def modify_files():
         os.makedirs(exportFolderLocation + "/export/strategicregions")
 
 
-    newProvincesListFull = write_definition_csv_file(exportFolderLocation, all_painting_area_dict_small)
+    newProvincesListFull = write_definition_csv_file(exportFolderLocation, all_painting_area_dict_small, all_painting_area_dict)
     write_state_files(exportFolderLocation, newProvincesListFull, all_painting_area_dict_small)
     write_strategicregions_files(exportFolderLocation, newProvincesListFull, all_painting_area_dict_small)
 
