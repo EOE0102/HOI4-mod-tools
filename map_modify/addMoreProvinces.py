@@ -6,16 +6,14 @@ import os
 from PIL import Image
 #import pickle #save variable memory error bad
 #import joblib #save still variable memory error bad
-
+import json #find one
 from itertools import product
-from itertools import takewhile
-
+#from itertools import takewhile
 from time import time
 import math
 import random
 import re
 import numpy as np
-import json
 
 def miller_cylinder_forward_projection(theta_in_rand):
     longitude_in_what = 1.25 * np.log(np.tan(np.pi / 4 + 0.4 * theta_in_rand))
@@ -27,7 +25,7 @@ def miller_cylinder_inverse_projection(longitude_in_what):
 
 #im.save("pixel_grid.bmp")
 iterate_amount = 2
-iterate_path_length = 10
+iterate_path_length = 8
 #equatorialPosition = 1350
 longitude_north = 72
 longitude_south = 57
@@ -35,614 +33,13 @@ longitude_north_in_rand = longitude_north/ 180 * np.pi
 longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
-#TODO test
-default_province_size = 24
-max_new_provinces_per_state = 10
 
-#  OLD VERSION ##
-
-#  OLD VERSION ##
-
-def __getAbovePixelCo(_image_width, _image_height, _pixelWidthCo, _pixelHeightCo):
-    if _pixelHeightCo == 0:
-        pixelAboveWidthCo = _pixelWidthCo
-        pixelAboveHeightCo = 0
-    else:
-        pixelAboveWidthCo = _pixelWidthCo
-        pixelAboveHeightCo = _pixelHeightCo-1
-    return pixelAboveWidthCo, pixelAboveHeightCo
-
-def __getBelowPixelCo(_image_width, _image_height, _pixelWidthCo, _pixelHeightCo):
-    if _pixelHeightCo == _image_height-1:
-        pixelBelowWidthCo = _pixelWidthCo
-        pixelBelowHeightCo = _image_height-1
-    else:
-        pixelBelowWidthCo = _pixelWidthCo
-        pixelBelowHeightCo = _pixelHeightCo+1
-    return pixelBelowWidthCo, pixelBelowHeightCo
-
-def __getLeftPixelCo(_image_width, _image_height, _pixelWidthCo, _pixelHeightCo):
-    if _pixelWidthCo == 0:
-        pixelLeftWidthCo = _image_width-1
-        pixelLeftHeightCo = _pixelHeightCo
-    else:
-        pixelLeftWidthCo = _pixelWidthCo-1
-        pixelLeftHeightCo = _pixelHeightCo
-    return pixelLeftWidthCo, pixelLeftHeightCo
-
-def __getRightPixelCo(_image_width, _image_height, _pixelWidthCo, _pixelHeightCo):
-    if _pixelWidthCo == _image_width-1:
-        pixelRightWidthCo = 0
-        pixelRightHeightCo = _pixelHeightCo
-    else:
-        pixelRightWidthCo = _pixelWidthCo+1
-        pixelRightHeightCo = _pixelHeightCo
-    return pixelRightWidthCo, pixelRightHeightCo
-
-def __getRGBAreaPointOfGravity(pixels, pixel_RGB, image_width, image_height, image_widthCo, image_heightCo, rgb_area_p):
-    bolIsPixelAboveSameColor = True
-    bolIsPixelBelowSameColor = True
-    bolIsPixelLeftSameColor = True
-    bolIsPixelRightSameColor = True
-
-    pixelAboveWidthCo, pixelAboveHeightCo = __getAbovePixelCo(image_width, image_height, image_widthCo, image_heightCo)
-    pixelBelowWidthCo, pixelBelowHeightCo = __getBelowPixelCo(image_width, image_height, image_widthCo, image_heightCo)
-    pixelLeftWidthCo, pixelLeftHeightCo = __getLeftPixelCo(image_width, image_height, image_widthCo, image_heightCo)
-    pixelRightWidthCo, pixelRightHeightCo = __getRightPixelCo(image_width, image_height, image_widthCo, image_heightCo)
-
-    if (pixelAboveWidthCo, pixelAboveHeightCo) == (image_widthCo, image_heightCo):
-        bolIsPixelAboveSameColor = False
-    else:
-        if pixels[pixelAboveWidthCo, pixelAboveHeightCo] == pixel_RGB:
-            bolIsPixelAboveSameColor = True
-        else:
-            bolIsPixelAboveSameColor = False
-
-    if (pixelBelowWidthCo, pixelBelowHeightCo) == (image_widthCo, image_heightCo):
-        bolIsPixelBelowSameColor = False
-    else:
-        if pixels[pixelBelowWidthCo, pixelBelowHeightCo] == pixel_RGB:
-            bolIsPixelBelowSameColor = True
-        else:
-            bolIsPixelBelowSameColor = False
-    
-    if pixels[pixelLeftWidthCo, pixelLeftHeightCo] == pixel_RGB:
-        bolIsPixelLeftSameColor = True
-    else:
-        bolIsPixelLeftSameColor = False
-
-    if pixels[pixelRightWidthCo, pixelRightHeightCo] == pixel_RGB:
-        bolIsPixelRightSameColor = True
-    else:
-        bolIsPixelRightSameColor = False
-
-
-    pixels[image_widthCo, image_heightCo] = (0,0,0)
-    if not [image_widthCo, image_heightCo] in rgb_area_p:
-        rgb_area_p.append([image_widthCo, image_heightCo])
-
-    if not(bolIsPixelAboveSameColor or bolIsPixelBelowSameColor or bolIsPixelLeftSameColor or bolIsPixelRightSameColor):
-
-        return rgb_area_p, pixels
-    else:
-        if bolIsPixelAboveSameColor:
-            RGBAreaPointOfGravityRecursive, pixels = __getRGBAreaPointOfGravity(pixels, pixel_RGB, image_width, image_height, pixelAboveWidthCo, pixelAboveHeightCo, rgb_area_p)
-        if bolIsPixelBelowSameColor:
-            RGBAreaPointOfGravityRecursive, pixels = __getRGBAreaPointOfGravity(pixels, pixel_RGB, image_width, image_height, pixelBelowWidthCo, pixelBelowHeightCo, rgb_area_p)
-        if bolIsPixelLeftSameColor:
-            RGBAreaPointOfGravityRecursive, pixels = __getRGBAreaPointOfGravity(pixels, pixel_RGB, image_width, image_height, pixelLeftWidthCo, pixelLeftHeightCo, rgb_area_p)
-        if bolIsPixelRightSameColor:
-            RGBAreaPointOfGravityRecursive, pixels = __getRGBAreaPointOfGravity(pixels, pixel_RGB, image_width, image_height, pixelRightWidthCo, pixelRightHeightCo, rgb_area_p)
-    return rgb_area_p, pixels
-
-def __calculateDivideAmountOfProvinces(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, max_new_provinces_per_state):
-    # according to altitude
-    equatorPosition = round(longitude_north2D/(longitude_north2D + longitude_south2D) * image_height)
-    longitude2DHeight = rgb_area_main_POG[1]
-    longitudeInBall = (longitude_north2D + longitude_south2D)/image_height * longitude2DHeight - longitude_north2D
-    longitudeInBallInRand = miller_cylinder_inverse_projection(abs(longitudeInBall))
-
-    xMagnify = 1/(np.cos(longitudeInBallInRand))
-    #longitudeInBallInRand = longitudeInBallInRand/np.pi * 180
-    temp1 = abs(abs(miller_cylinder_forward_projection(abs(longitudeInBallInRand) + 0.05)) - abs(miller_cylinder_forward_projection(abs(longitudeInBallInRand) - 0.05)))
-    temp2 = miller_cylinder_forward_projection(0.05)*2
-    yMagnify = temp1/temp2 #area near equator, difference is not accurate
-    if yMagnify < 1: 
-        yMagnify = 1
-    areaMagnify = xMagnify * yMagnify
-
-    refileProvinceSize = default_province_size * areaMagnify
-    
-    amountProvince = int(round(RGBAreaFullSize/refileProvinceSize -0.5 ))
-    # don't do too harsh, divide province into 1 - 10 pieces
-    if amountProvince == 0:
-        amountProvince = 1
-    if amountProvince >= max_new_provinces_per_state:
-        amountProvince = max_new_provinces_per_state
-
-    return amountProvince
-
-def get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rgb_area_p):
-    #RGBAreaPartRestJointPointOfGravity[0] = RGBAreaPartRestJointPointOfGravity[0] -0.5
-    #RGBAreaPartRestJointPointOfGravity[1] = RGBAreaPartRestJointPointOfGravity[1] -0.5
-    distance = 100000
-    index = 0
-    for item in range(len(rgb_area_p)):
-        distanceTemp = calculate_P2P_distance(RGBAreaPartRestJointPointOfGravity, rgb_area_p[item])
-        if distanceTemp < distance:
-            distance = distanceTemp
-            index = item
-    nearestPointOfGravityOfSmallPart = rgb_area_p[index]
-    return nearestPointOfGravityOfSmallPart
-
-def __findMaxMinInBothWWidthAndHeight(rgb_area_p):
-    xMin = 999999
-    xMax = 0
-    yMin = 999999
-    yMax = 0
-    for item in rgb_area_p:
-        if item[0] < xMin:
-            xMin = item[0]
-        if item[0] > xMax:
-            xMax = item[0]
-        if item[1] < yMin:
-            yMin = item[1]
-        if item[1] > yMax:
-            yMax = item[1]
-
-        
-    return [xMin, xMax, yMin, yMax]
-
-def __calculateMoveLengthRange(RGBAreaWidthLength, RGBAreaHeightLength, iterate_path_length):
-    moveLengthInWidth = round(RGBAreaWidthLength/iterate_path_length)
-    moveLengthInHeight = round(RGBAreaHeightLength/iterate_path_length)
-    if RGBAreaWidthLength/iterate_path_length <5:
-        moveLengthInWidth = 5
-    if RGBAreaHeightLength/iterate_path_length <5:
-        moveLengthInHeight = 5
-
-    moveLengthRangeInBothDirection = [moveLengthInWidth, moveLengthInHeight]
-    return moveLengthRangeInBothDirection
-
-def __randomAXYMove(moveLengthRangeInBothDirection):
-    randomXMove = random.randint(-moveLengthRangeInBothDirection[0], moveLengthRangeInBothDirection[0])
-    randomYMove = random.randint(-moveLengthRangeInBothDirection[1], moveLengthRangeInBothDirection[1])
-    tempSum = moveLengthRangeInBothDirection[0] + moveLengthRangeInBothDirection[1] 
-    if ((abs(randomXMove) + abs(randomYMove)) > 1 * tempSum): #no corner
-        randomXMove, randomYMove = __randomAXYMove(moveLengthRangeInBothDirection)
-    return randomXMove, randomYMove
-
-def __coreOfSeedRandomMove(coreOfSeedLst, moveLengthRangeInBothDirection, rgb_area_p):
-    randomXMove, randomYMove = __randomAXYMove(moveLengthRangeInBothDirection)
-    coreOfNewSeedLst = [0,0]
-    coreOfNewSeedLst[0] = coreOfSeedLst[0] + randomXMove
-    coreOfNewSeedLst[1] = coreOfSeedLst[1] + randomYMove
-    if coreOfNewSeedLst in rgb_area_p:
-        return coreOfNewSeedLst
-    else:
-        coreOfNewSeedLst = __coreOfSeedRandomMove(coreOfSeedLst, moveLengthRangeInBothDirection, rgb_area_p)
-    return coreOfNewSeedLst
-
-def __calculateMutilPointsVar(coreOfNewSeed):
-    allCoreOfNewSeedVar = np.var(coreOfNewSeed)
-    return allCoreOfNewSeedVar
-
-def __calculateNewSeedDistance(RGBAreaWidthLength, RGBAreaHeightLength, iterate_path_length, coreOfSeed, item, rgb_area_p, coreOfNewSeed, allCoreOfNewSeedDistance):
-    moveLengthRangeInBothDirection = __calculateMoveLengthRange(RGBAreaWidthLength, RGBAreaHeightLength, iterate_path_length)
-    coreOfNewSeedPosition = __coreOfSeedRandomMove(coreOfSeed[item], moveLengthRangeInBothDirection, rgb_area_p)
-    coreOfNewSeed = coreOfSeed.copy()
-    coreOfNewSeed[item] = coreOfNewSeedPosition
-    allCoreOfNewSeedDistance = calculate_sum_p2p_distances(coreOfNewSeed)
-    #allCoreOfNewSeedDistance = __calculateMutilPointsVar(coreOfNewSeed)
-
-    if allCoreOfNewSeedDistance>= allCoreOfNewSeedDistance:
-        coreOfSeed = coreOfNewSeed.copy()
-        return allCoreOfNewSeedDistance, coreOfSeed, coreOfNewSeed
-    else:
-        allCoreOfNewSeedDistance, coreOfSeed, coreOfNewSeed = __calculateNewSeedDistance(RGBAreaWidthLength, RGBAreaHeightLength, iterate_path_length, coreOfSeed, item, rgb_area_p, coreOfNewSeed, allCoreOfNewSeedDistance)
-    return allCoreOfNewSeedDistance, coreOfSeed, coreOfNewSeed
-
-def __createCoreOfNewSeedRandomMove(coreOfSeed, item, moveLengthRangeInBothDirection, rgb_area_p):
-    coreOfNewSeed = coreOfSeed.copy()
-    coreOfNewSeedPosition = __coreOfSeedRandomMove(coreOfSeed[item], moveLengthRangeInBothDirection, rgb_area_p)
-    coreOfNewSeed[item] = coreOfNewSeedPosition
-    allCoreOfNewSeedDistance = calculate_sum_p2p_distances(coreOfNewSeed)
-    return coreOfNewSeed, allCoreOfNewSeedDistance
-
-def __getNewSeedAfterOneIteration(moveLengthRangeInBothDirection, coreOfSeed, numberOfCoreOfSeed, rgb_area_p, amountOfIteration):
-    
-    allCoreOfSeedDistance = calculate_sum_p2p_distances(coreOfSeed)
-    coreOfNewSeed, allCoreOfNewSeedDistance = __createCoreOfNewSeedRandomMove(coreOfSeed, numberOfCoreOfSeed, moveLengthRangeInBothDirection, rgb_area_p)
-    lastIterationCoreOfNewSeed = coreOfNewSeed.copy()
-
-    if allCoreOfNewSeedDistance >= allCoreOfSeedDistance:
-        return coreOfNewSeed, amountOfIteration
-    else:
-        if amountOfIteration < 20:
-            amountOfIteration  = amountOfIteration + 1
-            coreOfNewSeed, amountOfIteration = __getNewSeedAfterOneIteration(moveLengthRangeInBothDirection, coreOfSeed, numberOfCoreOfSeed, rgb_area_p, amountOfIteration)
-        else:
-            return lastIterationCoreOfNewSeed, amountOfIteration
-    return coreOfNewSeed, amountOfIteration
-
-
-def __getNewSeedAfterManyIteration(RGBAreaWidthLength, RGBAreaHeightLength, iterate_amount, iterate_path_length, startItem, coreOfSeed, rgb_area_p):
-    moveLengthRangeInBothDirection = __calculateMoveLengthRange(RGBAreaWidthLength, RGBAreaHeightLength, iterate_path_length)
-    for i in range(iterate_amount):
-        #allCoreOfNewSeedDistance = __calculateMutilPointsVar(coreOfSeed)
-        for numberOfCoreOfSeed in range(startItem, len(coreOfSeed)):
-            amountOfIteration = 0
-            coreOfNewSeed = __getNewSeedAfterOneIteration(moveLengthRangeInBothDirection, coreOfSeed, numberOfCoreOfSeed, rgb_area_p, amountOfIteration)
-            coreOfSeed = coreOfNewSeed.copy()
-    return coreOfNewSeed
-
-def __createNewColorMarker(newColorMaker, original_color, coreOfSeedWithColorDefinition):
-    lenOfNewColorMaker = len(newColorMaker)
-    newColorMaker.append([list(original_color), []])
-    for i in range(1, len(coreOfSeedWithColorDefinition)):
-        temp = coreOfSeedWithColorDefinition[i][0]
-        newColorMaker[lenOfNewColorMaker][1].append(temp)
-    return newColorMaker
-
-def __getPaintColorLocationGetPixelAllInPaintRangeAndArea(SeedPoint, PaintRange, rgb_area_p):
-    PaintRangeMax = PaintRange
-    PaintRangeMin = PaintRange - 1
-    newPaintPointList = []
-    for i in range(-PaintRange, PaintRange + 1):
-        for j in range(-PaintRange, PaintRange + 1):
-            newPaintPoint = SeedPoint.copy()
-            newPaintPoint[0] = newPaintPoint[0] + i
-            newPaintPoint[1] = newPaintPoint[1] + j
-            distance = calculate_P2P_distance(newPaintPoint, SeedPoint)
-            if distance > PaintRangeMin and distance <= PaintRangeMax:
-                if newPaintPoint in rgb_area_p:
-                    newPaintPointList.append(newPaintPoint)
-    return newPaintPointList
-
-def __getPaintColorLocationGetPixelAllInPaintRangeAndAreaXYHardBorder(SeedPoint, PaintRange, rgb_area_p):
-    newPaintPointList = []
-    for i in range(-PaintRange, PaintRange + 1):
-        for j in range(-PaintRange, PaintRange + 1):
-            newPaintPoint = SeedPoint.copy()
-            newPaintPoint[0] = newPaintPoint[0] + i
-            newPaintPoint[1] = newPaintPoint[1] + j
-            #distance
-            if i + j == PaintRange:
-                if newPaintPoint in rgb_area_p:
-                    newPaintPointList.append(newPaintPoint)
-    return newPaintPointList
-
-def __removeAllAlreadyPaintPoint(newPaintPointList, rgb_area_p, _isRGBAreaPointListPaintedList):
-    #newPaintPointList2 = newPaintPointList.copy()
-    newPaintPointList2 = []
-    for item in newPaintPointList:
-        index = rgb_area_p.index(item)
-        if _isRGBAreaPointListPaintedList[index] == -1:
-            newPaintPointList2.append(item)
-    return newPaintPointList2
-
-def __removeAllNotAdjustToPaintedPoint(newPaintPointList1, amountOfSeed, seedIndex, rgb_area_p, _isRGBAreaPointListPaintedList, image_width, image_height):
-    #newPaintPointList2 = newPaintPointList1.copy()
-    newPaintPointList2 = []
-    for i in range(len(newPaintPointList1)):
-        image_widthCo = newPaintPointList1[i][0]
-        image_heightCo = newPaintPointList1[i][1]
-
-        pixelAboveWidthCo, pixelAboveHeightCo = __getAbovePixelCo(image_width, image_height, image_widthCo, image_heightCo)
-        pixelBelowWidthCo, pixelBelowHeightCo = __getBelowPixelCo(image_width, image_height, image_widthCo, image_heightCo)
-        pixelLeftWidthCo, pixelLeftHeightCo = __getLeftPixelCo(image_width, image_height, image_widthCo, image_heightCo)
-        pixelRightWidthCo, pixelRightHeightCo = __getRightPixelCo(image_width, image_height, image_widthCo, image_heightCo)
-
-        pixelAbove = [pixelAboveWidthCo, pixelAboveHeightCo]
-        bolIsThisPointAdjustToAlreadyPaintedPointAbove = False
-        if pixelAbove in rgb_area_p:
-            index1 = rgb_area_p.index(pixelAbove)
-            if _isRGBAreaPointListPaintedList[index1] == seedIndex:
-                bolIsThisPointAdjustToAlreadyPaintedPointAbove = True
-
-        pixelBelow = [pixelBelowWidthCo, pixelBelowHeightCo]
-        bolIsThisPointAdjustToAlreadyPaintedPointBelow = False
-        if pixelBelow in rgb_area_p:
-            index1 = rgb_area_p.index(pixelBelow)
-            if _isRGBAreaPointListPaintedList[index1] == seedIndex:
-                bolIsThisPointAdjustToAlreadyPaintedPointBelow = True
-            
-
-        pixelLeft = [pixelLeftWidthCo, pixelLeftHeightCo]
-        bolIsThisPointAdjustToAlreadyPaintedPointLeft = False
-        if pixelLeft in rgb_area_p:
-            index1 = rgb_area_p.index(pixelLeft)
-            if _isRGBAreaPointListPaintedList[index1] == seedIndex:
-                bolIsThisPointAdjustToAlreadyPaintedPointLeft = True
-
-        pixelRight = [pixelRightWidthCo, pixelRightHeightCo]
-        bolIsThisPointAdjustToAlreadyPaintedPointRight = False
-        if pixelRight in rgb_area_p:
-            index1 = rgb_area_p.index(pixelRight)
-            if _isRGBAreaPointListPaintedList[index1] == seedIndex:
-                bolIsThisPointAdjustToAlreadyPaintedPointRight = True
-
-        if bolIsThisPointAdjustToAlreadyPaintedPointAbove or bolIsThisPointAdjustToAlreadyPaintedPointBelow or bolIsThisPointAdjustToAlreadyPaintedPointLeft or bolIsThisPointAdjustToAlreadyPaintedPointRight:
-            bolIsThisPointAdjustToAlreadyPaintedPoint = True
-        else:
-            bolIsThisPointAdjustToAlreadyPaintedPoint = False
-
-        if bolIsThisPointAdjustToAlreadyPaintedPoint:
-            newPaintPointList2.append(newPaintPointList1[i])
-    return newPaintPointList2
-
-def  __randomPickupAPixelToPaint(newPaintColor, newPaintPointList1, rgb_area_p, _isRGBAreaPointListPaintedList, iItemIndex, pixels):
-    randomChoose = random.randint(0,len(newPaintPointList1)-1)
-    index1 = rgb_area_p.index(newPaintPointList1[randomChoose])
-    _isRGBAreaPointListPaintedList[index1] = iItemIndex
-    x = newPaintPointList1[randomChoose][0]
-    y = newPaintPointList1[randomChoose][1]
-    R = newPaintColor[0]
-    G = newPaintColor[1]
-    B = newPaintColor[2]
-    pixels[x,y] = (R,G,B)
-
-    return _isRGBAreaPointListPaintedList, pixels, [x,y]
-
-def __getPaintColorLocation(coreOfSeedWithColorDefinition, rgb_area_p, pixels, original_color, image_width, image_height):
-    paintColorArea = coreOfSeedWithColorDefinition.copy()
-    
-    _isRGBAreaPointListPaintedList = []
-    for i in range(len(rgb_area_p)):
-        _isRGBAreaPointListPaintedList.append(-1)
-
-    listPaintColorUsingRangeList = []
-    for i in range(len(coreOfSeedWithColorDefinition)):
-        listPaintColorUsingRangeList.append([[0,0,0], 1, False]) #RGB, range, reachmax?
-        listPaintColorUsingRangeList[i][0] = coreOfSeedWithColorDefinition[i][0]
-
-
-    countSuccessPaintOnePixelInRGBArea = 0
-    bolDebugIsAllListPaintColorUsingRangeListTrue = False
-
-
-    #paint seed
-    for i in range(len(coreOfSeedWithColorDefinition)):
-        temp = rgb_area_p.index(coreOfSeedWithColorDefinition[i][1])
-        pixels[rgb_area_p[temp][0], rgb_area_p[temp][1]] = tuple(coreOfSeedWithColorDefinition[i][0])
-        _isRGBAreaPointListPaintedList[temp] = i
-        countSuccessPaintOnePixelInRGBArea = countSuccessPaintOnePixelInRGBArea + 1
-
-    #paint otherparts
-    while countSuccessPaintOnePixelInRGBArea < len(_isRGBAreaPointListPaintedList) and (not bolDebugIsAllListPaintColorUsingRangeListTrue):
-        bolDebugIsAllListPaintColorUsingRangeListTrue = True
-        for k in range(len(listPaintColorUsingRangeList)):
-            if listPaintColorUsingRangeList[k][2] == False:
-                bolDebugIsAllListPaintColorUsingRangeListTrue = False
-
-        for i in range(len(coreOfSeedWithColorDefinition)):
-            if listPaintColorUsingRangeList[i][2] == False: 
-                #not reach max range
-                SeedPoint = coreOfSeedWithColorDefinition[i][1]
-                newPaintColor = coreOfSeedWithColorDefinition[i][0]
-                PaintRange = listPaintColorUsingRangeList[i][1]
-                seedIndex = i
-                #_isRGBAreaPointListPaintedList
-                newPaintPointList1 = __getPaintColorLocationGetPixelAllInPaintRangeAndAreaXYHardBorder(SeedPoint, PaintRange, rgb_area_p)
-                newPaintPointList2 = __getPaintColorLocationGetPixelAllInPaintRangeAndAreaXYHardBorder(SeedPoint, PaintRange + 1, rgb_area_p)
-
-                newPaintPointList3 = __removeAllAlreadyPaintPoint(newPaintPointList1, rgb_area_p, _isRGBAreaPointListPaintedList)
-                newPaintPointList4 = __removeAllAlreadyPaintPoint(newPaintPointList2, rgb_area_p, _isRGBAreaPointListPaintedList)
-
-                amountOfSeed = len(coreOfSeedWithColorDefinition)
-                
-                newPaintPointList5 = __removeAllNotAdjustToPaintedPoint(newPaintPointList3, amountOfSeed, seedIndex, rgb_area_p, _isRGBAreaPointListPaintedList, image_width, image_height)
-                newPaintPointList6 = __removeAllNotAdjustToPaintedPoint(newPaintPointList4, amountOfSeed, seedIndex, rgb_area_p, _isRGBAreaPointListPaintedList, image_width, image_height)
-
-                if len(newPaintPointList5) == 0 and len(newPaintPointList6) == 0:
-                    listPaintColorUsingRangeList[i][2] = True #in range X and Range X+1 both pixel are filled, reach max range.
-                elif len(newPaintPointList5) == 0 and len(newPaintPointList6) > 0: #no aviliable pixel to paint
-                    listPaintColorUsingRangeList[i][1] = listPaintColorUsingRangeList[i][1] + 1
-                else:
-                    _isRGBAreaPointListPaintedList, pixels, paintPixel = __randomPickupAPixelToPaint(newPaintColor, newPaintPointList5, rgb_area_p, _isRGBAreaPointListPaintedList, i, pixels)
-                    countSuccessPaintOnePixelInRGBArea = countSuccessPaintOnePixelInRGBArea + 1
-                    paintColorArea[i].append(paintPixel)
-    paintColorArea[0][0] = list(original_color)
-    return pixels, paintColorArea
-
-def __truePaintColor(pixels, paintColorAreaFull):
-    for i in range(len(paintColorAreaFull)):
-        for j in range(len(paintColorAreaFull[i])):
-            R = paintColorAreaFull[i][j][0][0]
-            G = paintColorAreaFull[i][j][0][1]
-            B = paintColorAreaFull[i][j][0][2]
-            for k in range(1, len(paintColorAreaFull[i][j])):
-                x = paintColorAreaFull[i][j][k][0]
-                y = paintColorAreaFull[i][j][k][1]
-                pixels[x,y] = (R,G,B)
-    return pixels
-
-def getACopyOfPixels(pixels, image_width, image_height):
-    pixelsForEditor = []
-    for i in range(image_width): 
-        col = []
-        for j in range(image_height): 
-            col.append((0,0,0)) 
-        pixelsForEditor.append(col) 
-
-    for i in range(image_width):
-        for j in range(image_height):
-            pixelsForEditor[i][j] = pixels[i,j]
-    return pixelsForEditor
-
-def getBorderPixelsOfThisCoreOfSeed(colorOfCoreOfSeed, positionOfCoreOfSeedList, original_color, pixelsForEditor, image_width, image_height):
-    x = positionOfCoreOfSeedList[0]
-    y = positionOfCoreOfSeedList[1]
-
-
-    theStack = [ (x,y) ]
-    theInnerBorderPixelsOfThisCoreOfSeed = []
-    theBorderPixelsOfThisCoreOfSeed = []
-
-    rememberToTurnColorBack = []
-
-    while len(theStack) > 0:
-        x, y = theStack.pop()
-
-        if (x < 0) or (x >= image_width) or (y < 0) or (y >= image_height):
-            a = 1
-        else:
-            if (list(pixelsForEditor[x, y]) == list(colorOfCoreOfSeed)):
-                pixelsForEditor[x, y] = (255, 255, 255)
-                rememberToTurnColorBack.append([x,y])
-                theStack.append( (x + 1, y) )  # right
-                theStack.append( (x - 1, y) )  # left
-                theStack.append( (x, y + 1) )  # down
-                theStack.append( (x, y - 1) )  # up
-                
-                if y == 0:
-                    bolN = False
-                else:
-                    bolN = (list(pixelsForEditor[x, y - 1]) == list(original_color))
-                    if bolN:
-                        if not [x, y - 1] in theBorderPixelsOfThisCoreOfSeed:
-                            theBorderPixelsOfThisCoreOfSeed.append([x, y - 1])
-
-                if x == 0:
-                    bolW = False
-                else:
-                    bolW = (list(pixelsForEditor[x - 1, y]) == list(original_color))
-                    if bolW:
-                        if not [x - 1, y] in theBorderPixelsOfThisCoreOfSeed:
-                            theBorderPixelsOfThisCoreOfSeed.append([x - 1, y])
-
-                if x == image_width - 1:
-                    bolE = False #TODO maybe change in future
-                else:
-                    bolE = (list(pixelsForEditor[x + 1, y]) == list(original_color))
-                    if bolE:
-                        if not [x + 1, y] in theBorderPixelsOfThisCoreOfSeed:
-                            theBorderPixelsOfThisCoreOfSeed.append([x + 1, y])
-
-                if y == image_height - 1:
-                    bolS = False
-                else:
-                    bolS = (list(pixelsForEditor[x, y + 1]) == list(original_color))
-                    if bolS:
-                        if not [x , y + 1] in theBorderPixelsOfThisCoreOfSeed:
-                            theBorderPixelsOfThisCoreOfSeed.append([x , y + 1])
-
-    #x = positionOfCoreOfSeedList[0]
-    #y = positionOfCoreOfSeedList[1]
-    #theStack = [ (x,y) ]
-    #while len(theStack) > 0:
-    #    x, y = theStack.pop()
-    #    if (x < 0) or (x >= image_width) or (y < 0) or (y >= image_height):
-    #        arront = [255, 255, 255]
-    #    else: 
-    #        arront = pixelsForEditor[x, y]
-    #        
-    #    if arront != colorOfCoreOfSeed:
-    #        pixelsForEditor[x, y] = tuple(colorOfCoreOfSeed)
-    #        theStack.append( (x + 1, y) )  # right
-    #        theStack.append( (x - 1, y) )  # left
-    #        theStack.append( (x, y + 1) )  # down
-    #        theStack.append( (x, y - 1) )  # up
-
-
-    for i in range(len(rememberToTurnColorBack)):
-        x = rememberToTurnColorBack[i][0]
-        y = rememberToTurnColorBack[i][1]
-        pixelsForEditor[x, y] = tuple(colorOfCoreOfSeed)
-        
-    return theBorderPixelsOfThisCoreOfSeed, pixelsForEditor
-
-def getBorderPixel(borderPixelsOfThisCoreOfSeed, positionOfCoreOfSeed):
-    distanceBTPixelAndSeedList = []
-    for i in range(len(borderPixelsOfThisCoreOfSeed)):
-        distance = calculate_P2P_distance(borderPixelsOfThisCoreOfSeed[i], positionOfCoreOfSeed)
-        distanceBTPixelAndSeedList.append(distance)
-    minimalDistance = min(distanceBTPixelAndSeedList)
-    
-    minValuePostion = [i for i, x in enumerate(distanceBTPixelAndSeedList) if x == minimalDistance]
-    chooseRandomPosition = random.randint(0, len(minValuePostion) - 1)
-    minValuePostionPosition = minValuePostion[chooseRandomPosition]
-    #TODO
-    borderPixelOfThisCoreOfSeed = borderPixelsOfThisCoreOfSeed[minValuePostionPosition]
-    return borderPixelOfThisCoreOfSeed
-
-def paintBorderPixelOfThisCoreOfSeed(borderPixelOfThisCoreOfSeed, colorOfCoreOfSeed, pixels):   
-    x = borderPixelOfThisCoreOfSeed[0]
-    y = borderPixelOfThisCoreOfSeed[1]
-    R = colorOfCoreOfSeed[0]
-    G = colorOfCoreOfSeed[1]
-    B = colorOfCoreOfSeed[2]
-    pixels[x , y] = (R,G,B)
-    return pixels
-
-def __paintColorWithFloodFill(coreOfSeedWithColorDefinition, rgb_area_p, pixels, original_color, image_width, image_height):
-    #TODO
-    
-    bolIsAllCoreOfSeedAreaFilled = False
-    colorOfCoreOfSeedList = []
-    positionOfCoreOfSeedList = []
-    bolIsThisCoreOfSeedAreaFilledList = []
-    paintColorArea = coreOfSeedWithColorDefinition.copy()
-    #inistall paint core fo seed..
-    for i in range(len(coreOfSeedWithColorDefinition)):
-        colorOfCoreOfSeedList.append(coreOfSeedWithColorDefinition[i][0])
-        positionOfCoreOfSeedList.append(coreOfSeedWithColorDefinition[i][1])
-        bolIsThisCoreOfSeedAreaFilledList.append(False)
-        R = coreOfSeedWithColorDefinition[i][0][0]
-        G = coreOfSeedWithColorDefinition[i][0][1]
-        B = coreOfSeedWithColorDefinition[i][0][2]
-        x = coreOfSeedWithColorDefinition[i][1][0]
-        y = coreOfSeedWithColorDefinition[i][1][1]
-        pixels[x,y] = (R,G,B)
-
-    while not bolIsAllCoreOfSeedAreaFilled:
-        for i in range(len(coreOfSeedWithColorDefinition)):
-            if not bolIsThisCoreOfSeedAreaFilledList[i]:
-                #pixelsForModify = getACopyOfPixels(pixels, image_width, image_height)
-                borderPixelsOfThisCoreOfSeed, pixels = getBorderPixelsOfThisCoreOfSeed(colorOfCoreOfSeedList[i], positionOfCoreOfSeedList[i], original_color, pixels, image_width, image_height)
-                
-                if len(borderPixelsOfThisCoreOfSeed) == 0:
-                    bolIsThisCoreOfSeedAreaFilledList[i] = True
-                else:
-                    borderPixelOfThisCoreOfSeed = getBorderPixel(borderPixelsOfThisCoreOfSeed, positionOfCoreOfSeedList[i])
-                    paintColorArea[i].append(borderPixelOfThisCoreOfSeed)
-                    pixels = paintBorderPixelOfThisCoreOfSeed(borderPixelOfThisCoreOfSeed, colorOfCoreOfSeedList[i], pixels)
-
-        if sum(bolIsThisCoreOfSeedAreaFilledList) == len(bolIsThisCoreOfSeedAreaFilledList):
-            bolIsAllCoreOfSeedAreaFilled = True
-    paintColorArea[0][0] = list(original_color)
-    #return pixels, paintColorArea
-    return pixels, paintColorArea
-
-
-#old Function from last file
-
-
-## OLD MAIN ##
-
-## OLD MAIN ##
-
-def main2():
-    #rgb_area_p
-    ##painting!
-    #savePaintColorAreaAsFile(paintColorAreaFull)
-    # paint color according paintColorAreaFull
-    im = Image.open(root.filename)
-    pixels = im.load()
-    pixels = __truePaintColor(pixels, paintColorAreaFull)
-    im.save("NEWProvince.bmp")
-
-    a = 1
-    #all_text_in_lst, all_text_list
-    #allRGBInLst, allLandSeaLakeTypeInLst, allIsCoastTypeInLst, allTerrainTypeInLst, allContinentTypeInLst
-def test():
-    print('asdf')
-    return True
+default_province_size = 16
+max_new_provinces_per_state = 8
 
 ## REBUILD ##
 
 ## REBUILD ##
-
 class StandardBoxForInfo(tk.Tk):
 
     def __init__(self):
@@ -651,7 +48,7 @@ class StandardBoxForInfo(tk.Tk):
         tk.Tk.title(self, 'HOI4 create more Provinces tool')
         
         #butten 1
-        a0_0_label = ttk.Label(self, text = "STEP1: Generate all RGB including the color already used, and write into a txt file")
+        a0_0_label = ttk.Label(self, text = "STEP1: Generate all aviliable RGB, and write into a file")
         a0_0_label.grid(column = 0, row = 0)
         action = ttk.Button(self, text = "Click Me", command = step_save_all_color_into_file)
         action.grid(column = 0, row = 1)
@@ -857,6 +254,22 @@ def calculate_P2P_distance(Point1, Point2):
         distance = math.pow(distance,0.5)
     return distance
 
+def calculate_P2P_energy(Point1, Point2):
+    #x1 = Point1[0]
+    #x2 = Point2[0]
+    #y1 = Point1[1]
+    #y2 = Point2[1]
+
+    distance = math.pow((Point1[0]-Point2[0]),2) + math.pow((Point1[1]-Point2[1]),2)
+
+    if distance == 0:
+        return 10000000000 #float('inf') + float('inf') = inf
+    else:
+        energy = 1 / distance
+        return energy
+    
+
+
 def  calculate_sum_p2p_distances(coreOfNewSeed):
     allCoreOfSeedDistance = 0
     for i in range(len(coreOfNewSeed)):
@@ -869,6 +282,13 @@ def calculate_sum_p2p_distances_v2(coreOfNewSeed):
     for point1, point2 in product(coreOfNewSeed, coreOfNewSeed):
         sum_distances = sum_distances + calculate_P2P_distance(point1, point2) / 2
     return sum_distances
+
+def calculate_sum_p2p_energy(coreOfNewSeed):
+    sum_energy = 0
+    for point1, point2 in product(coreOfNewSeed, coreOfNewSeed):
+        sum_energy = sum_energy + calculate_P2P_energy(point1, point2) / 2
+    return sum_energy
+
 
 def get_real_POG(Point):
     x = Point[0] + 0.5
@@ -884,17 +304,6 @@ def get_nearest_POG(rgb_area_POG, rgb_area_p):
     rgb_area_nearest_POG = rgb_area_p[minPos]
     return rgb_area_nearest_POG
 
-def write_save_all_RGB_and_Area_dict(all_RGB_and_Area_dict):
-    ftypes = [('all_RGB_and_Area_dict', '.txt'),('All files', '*')]
-    path = filedialog.asksaveasfilename(filetypes = ftypes)
-    with open(path, 'w') as filehandle:
-        for i in range(len(all_new_seeds_dict['RGB'])):
-            original_color = str(all_new_seeds_dict['RGB'][i])
-            seeds_position = str(all_new_seeds_dict['Seeds Info'][i])
-            line_content = original_color + ';'+ seeds_position + '\n'
-            filehandle.write(line_content)
-        filehandle.close()
-
 def save_dict(some_variable, variable_str):
     ftypes = [('txt', '.txt'),('All files', '*')]
     path = filedialog.asksaveasfilename(title = ("save Variable " + str(variable_str)), filetypes = ftypes)
@@ -909,8 +318,6 @@ def read_dict(variable_str):
     with open(path) as f:
         some_variable = json.load(f)
     return some_variable
-
-
 
 def step_get_RGB_area_for_every_color():
     #read image
@@ -936,7 +343,6 @@ def step_get_RGB_area_for_every_color():
                     
                     _startPoint = (count_image_width, count_image_height)
                     rgb_area_p = []
-                    #rgb_area_p, pixels = __getRGBAreaPointOfGravity(pixels, pixel_old_RGB, image_width, image_height, count_image_width, count_image_height, rgb_area_p)
                     rgb_area_p, pixels = floodfill(pixels, pixel_old_RGB, (0,0,0), image_width, image_height, count_image_width, count_image_height)
 
                     rgb_area_POG = calculate_point_of_gravity(rgb_area_p)
@@ -955,7 +361,6 @@ def step_get_RGB_area_for_every_color():
                     _startPoint = (count_image_width, count_image_height)
                     rgb_area_p = []
                     rgb_area_p, pixels = floodfill(pixels, pixel_old_RGB, (0,0,0), image_width, image_height, count_image_width, count_image_height)
-                    #rgb_area_p, pixels = __getRGBAreaPointOfGravity(pixels, pixel_old_RGB, image_width, image_height, count_image_width, count_image_height, rgb_area_p)
                     rgb_area_POG = calculate_point_of_gravity(rgb_area_p)
                     rgb_area_nearest_POG = get_nearest_POG(rgb_area_POG, rgb_area_p)
                     rgb_area_info_list.append(_startPoint)
@@ -1001,19 +406,19 @@ def no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p):
     coreOfNewSeed = coreOfSeed.copy()
     for i in range(iterate_amount):
         for j in range(startItem, len(coreOfNewSeed)):
-            oldMutilSeedsDistance = calculate_sum_p2p_distances_v2(coreOfNewSeed)
+            #old_mutil_sum_energy = calculate_sum_p2p_energy(coreOfNewSeed)
             replacedNewCoreList = coreOfNewSeed.copy()
-            newMutilSeedsDistanceList = []
+            new_mutil_sum_energy_list = []
             for k in range(len(rgb_area_p)):
                 replacedNewCoreList[j] = rgb_area_p[k]
-                newDistance = calculate_sum_p2p_distances_v2(replacedNewCoreList)
-                newMutilSeedsDistanceList.append(newDistance)
-            maxDistance = max(newMutilSeedsDistanceList)
-
-            maxDistanceIndex = [UUK for UUK, x in enumerate(newMutilSeedsDistanceList) if x == maxDistance]
+                new_sum_energy = calculate_sum_p2p_energy(replacedNewCoreList)
+                new_mutil_sum_energy_list.append(new_sum_energy)
+            min_energy = min(new_mutil_sum_energy_list)
+            min_energy_index = [UUK for UUK, x in enumerate(new_mutil_sum_energy_list) if x == min_energy]
             
-            pickNumber = random.randint(0, len(maxDistanceIndex) - 1)
-            choosedMinDistanceIndex = maxDistanceIndex[pickNumber]
+            #pickNumber = random.randint(0, len(min_energy_index) - 1)
+            pickNumber = 0
+            choosedMinDistanceIndex = min_energy_index[pickNumber]
             randomPickedNewCore = rgb_area_p[choosedMinDistanceIndex]
             coreOfNewSeed[j] = randomPickedNewCore
 
@@ -1045,17 +450,45 @@ def calculate_joint_POG(all_RGB_and_Area_list, rgb_area_main_part_index):
 
     return joint_POG
 
-def write_all_new_seeds_dict_file(all_new_seeds_dict):
-    ftypes = [('all_new_seeds_dict', '.txt'),('All files', '*')]
-    path = filedialog.asksaveasfilename(filetypes = ftypes)
-    with open(path, 'w') as filehandle:
-        for i in range(len(all_new_seeds_dict['Original Color'])):
-            original_color = str(all_new_seeds_dict['Original Color'][i])
-            seeds_position = str(all_new_seeds_dict['Seeds Position'][i])
-            line_content = original_color + ';'+ seeds_position + '\n'
-            filehandle.write(line_content)
-        filehandle.close()
+def get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rgb_area_p):
+    #RGBAreaPartRestJointPointOfGravity[0] = RGBAreaPartRestJointPointOfGravity[0] -0.5
+    #RGBAreaPartRestJointPointOfGravity[1] = RGBAreaPartRestJointPointOfGravity[1] -0.5
+    distance = 100000
+    index = 0
+    for item in range(len(rgb_area_p)):
+        distanceTemp = calculate_P2P_distance(RGBAreaPartRestJointPointOfGravity, rgb_area_p[item])
+        if distanceTemp < distance:
+            distance = distanceTemp
+            index = item
+    nearestPointOfGravityOfSmallPart = rgb_area_p[index]
+    return nearestPointOfGravityOfSmallPart
 
+def calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, max_new_provinces_per_state):
+    # according to altitude
+    equatorPosition = round(longitude_north2D/(longitude_north2D + longitude_south2D) * image_height)
+    longitude2DHeight = rgb_area_main_POG[1]
+    longitudeInBall = (longitude_north2D + longitude_south2D)/image_height * longitude2DHeight - longitude_north2D
+    longitudeInBallInRand = miller_cylinder_inverse_projection(abs(longitudeInBall))
+
+    xMagnify = 1/(np.cos(longitudeInBallInRand))
+    #longitudeInBallInRand = longitudeInBallInRand/np.pi * 180
+    temp1 = abs(abs(miller_cylinder_forward_projection(abs(longitudeInBallInRand) + 0.05)) - abs(miller_cylinder_forward_projection(abs(longitudeInBallInRand) - 0.05)))
+    temp2 = miller_cylinder_forward_projection(0.05)*2
+    yMagnify = temp1/temp2 #area near equator, difference is not accurate
+    if yMagnify < 1: 
+        yMagnify = 1
+    areaMagnify = xMagnify * yMagnify
+
+    refileProvinceSize = default_province_size * areaMagnify
+    
+    amountProvince = int(round(RGBAreaFullSize/refileProvinceSize -0.5 ))
+    # don't do too harsh, divide province into 1 - 10 pieces
+    if amountProvince == 0:
+        amountProvince = 1
+    if amountProvince >= max_new_provinces_per_state:
+        amountProvince = max_new_provinces_per_state
+
+    return amountProvince
 
 def step_get_seeds_in_every_area():
     #all_RGB_and_Area_list
@@ -1092,7 +525,7 @@ def step_get_seeds_in_every_area():
     
     for iRGBList in range(len(all_RGB_list)):
         print("Part 3：get painting seeds location for every color : Color = " + str(iRGBList) + ' / ' + str(len(all_RGB_list)))
-
+        t = time()
         rgb_area_part_size = 0
         rgb_area_part_size_Max = 0
         rgb_area_main_part_index = 0
@@ -1107,7 +540,7 @@ def step_get_seeds_in_every_area():
                 rgb_area_main_POG = all_seed_info[iRGBList][iRGBContent][1]
                 rgb_area_main_POG_in_area = all_seed_info[iRGBList][iRGBContent][2]
                 rgb_area_part_size_MaxSize = all_seed_info[iRGBList][iRGBContent][3]
-            RGBAreaFullSize = RGBAreaFullSize + rgb_area_part_size
+            RGBAreaFullSize = max(RGBAreaFullSize , rgb_area_part_size) #TODO size
             rgb_area_main_RGB = all_RGB_list[iRGBList]
 
 
@@ -1118,7 +551,7 @@ def step_get_seeds_in_every_area():
         
 
         if bolIsProvinceLand:
-            amountOfProvinces = __calculateDivideAmountOfProvinces(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, max_new_provinces_per_state)
+            amountOfProvinces = calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, max_new_provinces_per_state)
         else:
             amountOfProvinces = 1
         
@@ -1127,7 +560,6 @@ def step_get_seeds_in_every_area():
             all_seeds_original_color_list.append(all_RGB_list[iRGBList])
             
             rgb_area_p = []
-            #rgb_area_p, empty = __getRGBAreaPointOfGravity(pixels, rgb_area_main_RGB, , rgb_area_main_start_point[0], rgb_area_main_start_point[1], rgb_area_p)
             rgb_area_p, pixels = floodfill(pixels, rgb_area_main_RGB, (0,0,0), image_width, image_height, rgb_area_main_start_point[0], rgb_area_main_start_point[1])
             #create seed
             coreOfSeed = []
@@ -1142,22 +574,19 @@ def step_get_seeds_in_every_area():
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
                 startItem = 1
-                #coreOfNewSeed = __getNewSeedAfterManyIteration(RGBAreaWidthLength, RGBAreaHeightLength, iterate_amount, iterate_path_length, startItem, coreOfSeed, rgb_area_p)
-                
                 coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
 
             else:
                 for item in range(0, amountOfProvinces):
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
-                startItem = 0
-                #coreOfNewSeed = __getNewSeedAfterManyIteration(RGBAreaWidthLength, RGBAreaHeightLength, iterate_amount, iterate_path_length, startItem, coreOfSeed, rgb_area_p)
+                startItem = 0 #TODO move POG
                 coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
                 
             #all_cores_of_seed_list[count].append(coreOfNewSeed)
             all_cores_of_seed_list.append(coreOfNewSeed)
             #count = count + 1
-    
+            print(time() - t)
 
     #all_seeds_original_color_list
     #all_cores_of_seed_list
@@ -1352,12 +781,14 @@ def get_seeds_painting_area_v2(all_used_RGB, all_used_RGB_info, seeds_position_l
     for i in range(len(seeds_position_list)):
         distance_points2seeds.append([])
         for j in range(len(painting_area_for_loop)):
-            p2s_distance = calculate_P2P_distance(painting_area_for_loop[j], seeds_position_list[i]) + random.uniform(-0.1,0.1)
+            #p2s_distance = calculate_P2P_distance(painting_area_for_loop[j], seeds_position_list[i]) + random.uniform(-0.1,0.1)
+            p2s_distance = calculate_P2P_distance(painting_area_for_loop[j], seeds_position_list[i])
             distance_points2seeds[i].append((painting_area_for_loop[j],p2s_distance))
 
     distance_group_point2seed = []
     for i in range(len(seeds_position_list)):
-        distance_group_point2seed.append(random.uniform(-0.1,0.1))
+        #distance_group_point2seed.append(random.uniform(-0.1,0.1))
+        distance_group_point2seed.append(0)
     distance_group_point2seed[0] = -1
 
     while sum(is_seeds_expand_end) < len(is_seeds_expand_end):
@@ -1479,7 +910,6 @@ def step_get_seeds_painting_area():
         seeds_color_list = seed_color_dict['Color']
 
         #OMG cost too much cpu time flood fill
-        #pixels, paintColorArea = __getPaintColorLocation(coreOfSeedWithColorDefinition, rgb_area_p, pixels, original_color, image_width, image_height)
         #original_color, painting_area_position, painting_area_color = get_seeds_painting_area(all_used_RGB, all_used_RGB_info, seeds_position_list, seeds_color_list)
         original_color, painting_area_position, painting_area_color = get_seeds_painting_area_v2(all_used_RGB, all_used_RGB_info, seeds_position_list, seeds_color_list)
 
