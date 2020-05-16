@@ -6,7 +6,7 @@ import os
 from PIL import Image
 #import pickle #save variable memory error bad
 #import joblib #save still variable memory error bad
-import json #find one
+import json #finally find one
 from itertools import product
 #from itertools import takewhile
 from time import time
@@ -25,7 +25,6 @@ def miller_cylinder_inverse_projection(longitude_in_what):
 
 #im.save("pixel_grid.bmp")
 iterate_amount = 2
-iterate_path_length = 8
 #equatorialPosition = 1350
 longitude_north = 72
 longitude_south = 57
@@ -34,8 +33,8 @@ longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 16
-max_new_provinces_per_state = 8
+default_province_size = 64
+max_new_provinces_per_state = 2
 
 ## REBUILD ##
 
@@ -1035,14 +1034,9 @@ def is_this_province_coast(painging_area_RGB, painging_area_coast_type, allRGBIn
     if painging_area_coast_type == 'false':
         return 'false'
     else:
+        return 'true'
 
-
-
-
-
-
-
-        return writeCoastType
+    #return writeCoastType
 
 def write_definition_csv_file(exportFolderLocation, all_painting_area_dict_small, all_painting_area_dict):
     title = "Open definition file(definition.csv)"
