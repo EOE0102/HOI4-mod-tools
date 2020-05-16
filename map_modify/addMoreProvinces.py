@@ -27,7 +27,7 @@ def miller_cylinder_inverse_projection(longitude_in_what):
 
 #im.save("pixel_grid.bmp")
 iterate_amount = 2
-iterate_path_length = 10
+iterate_path_length = 8
 #equatorialPosition = 1350
 longitude_north = 72
 longitude_south = 57
@@ -36,8 +36,8 @@ longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 24
-max_new_provinces_per_state = 10
+default_province_size = 16
+max_new_provinces_per_state = 8
 
 ## REBUILD ##
 
@@ -50,7 +50,7 @@ class StandardBoxForInfo(tk.Tk):
         tk.Tk.title(self, 'HOI4 create more Provinces tool')
         
         #butten 1
-        a0_0_label = ttk.Label(self, text = "STEP1: Generate all RGB including the color already used, and write into a txt file")
+        a0_0_label = ttk.Label(self, text = "STEP1: Generate all aviliable RGB, and write into a file")
         a0_0_label.grid(column = 0, row = 0)
         action = ttk.Button(self, text = "Click Me", command = step_save_all_color_into_file)
         action.grid(column = 0, row = 1)
@@ -256,6 +256,22 @@ def calculate_P2P_distance(Point1, Point2):
         distance = math.pow(distance,0.5)
     return distance
 
+def calculate_P2P_energy(Point1, Point2):
+    #x1 = Point1[0]
+    #x2 = Point2[0]
+    #y1 = Point1[1]
+    #y2 = Point2[1]
+
+    distance = math.pow((Point1[0]-Point2[0]),2) + math.pow((Point1[1]-Point2[1]),2)
+
+    if distance == 0:
+        return 10000000000 #float('inf') + float('inf') = inf
+    else:
+        energy = 1 / distance
+        return energy
+    
+
+
 def  calculate_sum_p2p_distances(coreOfNewSeed):
     allCoreOfSeedDistance = 0
     for i in range(len(coreOfNewSeed)):
@@ -268,6 +284,13 @@ def calculate_sum_p2p_distances_v2(coreOfNewSeed):
     for point1, point2 in product(coreOfNewSeed, coreOfNewSeed):
         sum_distances = sum_distances + calculate_P2P_distance(point1, point2) / 2
     return sum_distances
+
+def calculate_sum_p2p_energy(coreOfNewSeed):
+    sum_energy = 0
+    for point1, point2 in product(coreOfNewSeed, coreOfNewSeed):
+        sum_energy = sum_energy + calculate_P2P_energy(point1, point2) / 2
+    return sum_energy
+
 
 def get_real_POG(Point):
     x = Point[0] + 0.5
@@ -283,17 +306,6 @@ def get_nearest_POG(rgb_area_POG, rgb_area_p):
     rgb_area_nearest_POG = rgb_area_p[minPos]
     return rgb_area_nearest_POG
 
-def write_save_all_RGB_and_Area_dict(all_RGB_and_Area_dict):
-    ftypes = [('all_RGB_and_Area_dict', '.txt'),('All files', '*')]
-    path = filedialog.asksaveasfilename(filetypes = ftypes)
-    with open(path, 'w') as filehandle:
-        for i in range(len(all_new_seeds_dict['RGB'])):
-            original_color = str(all_new_seeds_dict['RGB'][i])
-            seeds_position = str(all_new_seeds_dict['Seeds Info'][i])
-            line_content = original_color + ';'+ seeds_position + '\n'
-            filehandle.write(line_content)
-        filehandle.close()
-
 def save_dict(some_variable, variable_str):
     ftypes = [('txt', '.txt'),('All files', '*')]
     path = filedialog.asksaveasfilename(title = ("save Variable " + str(variable_str)), filetypes = ftypes)
@@ -308,8 +320,6 @@ def read_dict(variable_str):
     with open(path) as f:
         some_variable = json.load(f)
     return some_variable
-
-
 
 def step_get_RGB_area_for_every_color():
     #read image
@@ -398,19 +408,19 @@ def no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p):
     coreOfNewSeed = coreOfSeed.copy()
     for i in range(iterate_amount):
         for j in range(startItem, len(coreOfNewSeed)):
-            oldMutilSeedsDistance = calculate_sum_p2p_distances_v2(coreOfNewSeed)
+            #old_mutil_sum_energy = calculate_sum_p2p_energy(coreOfNewSeed)
             replacedNewCoreList = coreOfNewSeed.copy()
-            newMutilSeedsDistanceList = []
+            new_mutil_sum_energy_list = []
             for k in range(len(rgb_area_p)):
                 replacedNewCoreList[j] = rgb_area_p[k]
-                newDistance = calculate_sum_p2p_distances_v2(replacedNewCoreList)
-                newMutilSeedsDistanceList.append(newDistance)
-            maxDistance = max(newMutilSeedsDistanceList)
-
-            maxDistanceIndex = [UUK for UUK, x in enumerate(newMutilSeedsDistanceList) if x == maxDistance]
+                new_sum_energy = calculate_sum_p2p_energy(replacedNewCoreList)
+                new_mutil_sum_energy_list.append(new_sum_energy)
+            min_energy = min(new_mutil_sum_energy_list)
+            min_energy_index = [UUK for UUK, x in enumerate(new_mutil_sum_energy_list) if x == min_energy]
             
-            pickNumber = random.randint(0, len(maxDistanceIndex) - 1)
-            choosedMinDistanceIndex = maxDistanceIndex[pickNumber]
+            #pickNumber = random.randint(0, len(min_energy_index) - 1)
+            pickNumber = 0
+            choosedMinDistanceIndex = min_energy_index[pickNumber]
             randomPickedNewCore = rgb_area_p[choosedMinDistanceIndex]
             coreOfNewSeed[j] = randomPickedNewCore
 
@@ -441,17 +451,6 @@ def calculate_joint_POG(all_RGB_and_Area_list, rgb_area_main_part_index):
     joint_POG = [jointX, jointY]
 
     return joint_POG
-
-def write_all_new_seeds_dict_file(all_new_seeds_dict):
-    ftypes = [('all_new_seeds_dict', '.txt'),('All files', '*')]
-    path = filedialog.asksaveasfilename(filetypes = ftypes)
-    with open(path, 'w') as filehandle:
-        for i in range(len(all_new_seeds_dict['Original Color'])):
-            original_color = str(all_new_seeds_dict['Original Color'][i])
-            seeds_position = str(all_new_seeds_dict['Seeds Position'][i])
-            line_content = original_color + ';'+ seeds_position + '\n'
-            filehandle.write(line_content)
-        filehandle.close()
 
 def get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rgb_area_p):
     #RGBAreaPartRestJointPointOfGravity[0] = RGBAreaPartRestJointPointOfGravity[0] -0.5
@@ -528,7 +527,7 @@ def step_get_seeds_in_every_area():
     
     for iRGBList in range(len(all_RGB_list)):
         print("Part 3：get painting seeds location for every color : Color = " + str(iRGBList) + ' / ' + str(len(all_RGB_list)))
-
+        t = time()
         rgb_area_part_size = 0
         rgb_area_part_size_Max = 0
         rgb_area_main_part_index = 0
@@ -543,7 +542,7 @@ def step_get_seeds_in_every_area():
                 rgb_area_main_POG = all_seed_info[iRGBList][iRGBContent][1]
                 rgb_area_main_POG_in_area = all_seed_info[iRGBList][iRGBContent][2]
                 rgb_area_part_size_MaxSize = all_seed_info[iRGBList][iRGBContent][3]
-            RGBAreaFullSize = RGBAreaFullSize + rgb_area_part_size
+            RGBAreaFullSize = max(RGBAreaFullSize , rgb_area_part_size) #TODO size
             rgb_area_main_RGB = all_RGB_list[iRGBList]
 
 
@@ -577,20 +576,19 @@ def step_get_seeds_in_every_area():
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
                 startItem = 1
-                
                 coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
 
             else:
                 for item in range(0, amountOfProvinces):
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
-                startItem = 0
+                startItem = 1 #TODO dont move POG
                 coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
                 
             #all_cores_of_seed_list[count].append(coreOfNewSeed)
             all_cores_of_seed_list.append(coreOfNewSeed)
             #count = count + 1
-    
+            print(time() - t)
 
     #all_seeds_original_color_list
     #all_cores_of_seed_list
@@ -785,12 +783,14 @@ def get_seeds_painting_area_v2(all_used_RGB, all_used_RGB_info, seeds_position_l
     for i in range(len(seeds_position_list)):
         distance_points2seeds.append([])
         for j in range(len(painting_area_for_loop)):
-            p2s_distance = calculate_P2P_distance(painting_area_for_loop[j], seeds_position_list[i]) + random.uniform(-0.1,0.1)
+            #p2s_distance = calculate_P2P_distance(painting_area_for_loop[j], seeds_position_list[i]) + random.uniform(-0.1,0.1)
+            p2s_distance = calculate_P2P_distance(painting_area_for_loop[j], seeds_position_list[i])
             distance_points2seeds[i].append((painting_area_for_loop[j],p2s_distance))
 
     distance_group_point2seed = []
     for i in range(len(seeds_position_list)):
-        distance_group_point2seed.append(random.uniform(-0.1,0.1))
+        #distance_group_point2seed.append(random.uniform(-0.1,0.1))
+        distance_group_point2seed.append(0)
     distance_group_point2seed[0] = -1
 
     while sum(is_seeds_expand_end) < len(is_seeds_expand_end):
