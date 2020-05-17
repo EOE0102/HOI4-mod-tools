@@ -33,8 +33,8 @@ longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 64
-max_new_provinces_per_state = 2
+default_province_size = 8 #pixel on equator
+max_new_provinces_per_state = 4
 
 ## REBUILD ##
 
@@ -320,7 +320,7 @@ def read_dict(variable_str):
 
 def step_get_RGB_area_for_every_color():
     #read image
-    full_filename = filedialog.askopenfilename(title = "Choose Province Map File (province.bmp)", filetypes={("HOI Map file", ".bmp")})
+    full_filename = filedialog.askopenfilename(title = "Choose Province Map File (provinces.bmp)", filetypes={("HOI Map file", ".bmp")})
     im = Image.open(full_filename)
     pixels = im.load()
     image_width, image_height = im.size
@@ -510,7 +510,7 @@ def step_get_seeds_in_every_area():
     #    step_save_all_color_into_file
 
     #read image
-    full_filename = filedialog.askopenfilename(title = "Choose Province Map File (province.bmp)", filetypes={("HOI Map file", ".bmp")})
+    full_filename = filedialog.askopenfilename(title = "Choose Province Map File (provinces.bmp)", filetypes={("HOI Map file", ".bmp")})
     im = Image.open(full_filename)
     pixels = im.load()
     image_width, image_height = im.size
@@ -965,7 +965,7 @@ def painting_pixels():
     all_painting_pixels_position = all_painting_area_dict['Painting area position']
     all_painting_pixels_color = all_painting_area_dict['Painting area color']
     #read image
-    full_filename = filedialog.askopenfilename(title = "Choose Province Map File (province.bmp)", filetypes={("HOI Map file", ".bmp")})
+    full_filename = filedialog.askopenfilename(title = "Choose Province Map File (provinces.bmp)", filetypes={("HOI Map file", ".bmp")})
     im = Image.open(full_filename)
     pixels = im.load()
     image_width, image_height = im.size
@@ -979,7 +979,7 @@ def painting_pixels():
 
 
 
-    save_file = filedialog.asksaveasfilename(title = "save province.bmp")
+    save_file = filedialog.asksaveasfilename(title = "save provinces.bmp")
     im.save(save_file)
     print('Part 5 finished')
 
