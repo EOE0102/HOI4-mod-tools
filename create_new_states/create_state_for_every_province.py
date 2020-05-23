@@ -42,8 +42,9 @@ def __folder_files_prepearation():
     root = Tkinter.Tk()
     _states_folder_location = filedialog.askdirectory(title = "Select State Folder Location")
     _supplyareas_folder_location = filedialog.askdirectory(title = "Select Supply Folder Location")
-    _export_folder_location = filedialog.askdirectory(title = "Select Export Folder Location")
     _states_definition_file_location = filedialog.askopenfilename(title = "Select State Definition file(definition.csv)", filetypes={("HOI Map file", ".csv"),("All files", "*.*")})
+    _export_folder_location = filedialog.askdirectory(title = "Select Export Folder Location")
+
     
     #prepare for export
     if not os.path.exists(_export_folder_location + "/states"):
@@ -478,13 +479,6 @@ def write_state_file(file_id, index, state_id,
     file_id.write("\t\t}\n")
     file_id.write("\t}\n")
     file_id.write("}")
-
-
-
-
-
-
-
 
 
 
