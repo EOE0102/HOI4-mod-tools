@@ -33,7 +33,7 @@ longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 8 #pixel on equator
+default_province_size = 16 #pixel on equator
 max_new_provinces_per_state = 4
 
 ## REBUILD ##
@@ -59,28 +59,34 @@ class StandardBoxForInfo(tk.Tk):
         action.grid(column = 0, row = 3)
 
         #butten 3
-        a0_2_label = ttk.Label(self, text = "STEP3: get seeds for every painting area")
+        a0_2_label = ttk.Label(self, text = "STEP2.5: get states info")
         a0_2_label.grid(column = 0, row = 4)
-        action = ttk.Button(self, text = "Click ME", command = step_get_seeds_in_every_area)
+        action = ttk.Button(self, text = "Click ME", command = step_get_states_info)
         action.grid(column = 0, row = 5)
 
         #butten 4
-        a0_2_label = ttk.Label(self, text = "STEP4: get seeds painting area")
+        a0_2_label = ttk.Label(self, text = "STEP3: get seeds for every painting area")
         a0_2_label.grid(column = 0, row = 6)
-        action = ttk.Button(self, text = "Click ME", command = step_get_seeds_painting_area)
+        action = ttk.Button(self, text = "Click ME", command = step_get_seeds_in_every_area)
         action.grid(column = 0, row = 7)
 
         #butten 5
-        a0_2_label = ttk.Label(self, text = "STEP5: painting pixels on map")
+        a0_2_label = ttk.Label(self, text = "STEP4: get seeds painting area")
         a0_2_label.grid(column = 0, row = 8)
-        action = ttk.Button(self, text = "Click ME", command = painting_pixels)
+        action = ttk.Button(self, text = "Click ME", command = step_get_seeds_painting_area)
         action.grid(column = 0, row = 9)
 
         #butten 6
-        a0_2_label = ttk.Label(self, text = "STEP6: modify files")
+        a0_2_label = ttk.Label(self, text = "STEP5: painting pixels on map")
         a0_2_label.grid(column = 0, row = 10)
-        action = ttk.Button(self, text = "Click ME", command = modify_files)
+        action = ttk.Button(self, text = "Click ME", command = painting_pixels)
         action.grid(column = 0, row = 11)
+
+        #butten 7
+        a0_2_label = ttk.Label(self, text = "STEP6: modify files")
+        a0_2_label.grid(column = 0, row = 12)
+        action = ttk.Button(self, text = "Click ME", command = modify_files)
+        action.grid(column = 0, row = 13)
 
 ## PART 1 ##
 
@@ -397,6 +403,154 @@ def step_get_RGB_area_for_every_color():
     print('Part 2 finished')
     #return all_RGB_and_Area_dict
 
+
+## PART 2.5 ##
+
+## PART 2.5 ##
+
+def str_initialize(_all_text_in_lst):
+    # remove comment
+    for i in range(len(_all_text_in_lst)):
+        if "#" in _all_text_in_lst[i]:
+            _all_text_in_lst[i] = _all_text_in_lst[i].split("#",1)[0]
+            _all_text_in_lst[i] = _all_text_in_lst[i] + "\n"
+    all_text_in_str_initialized = "".join(_all_text_in_lst)
+    return all_text_in_str_initialized
+
+def getbrace_only(text,level):
+    result=[]
+    stack=[]
+    i=0
+    while i<len(text) and text[i]=="{" and len(stack)<level:
+        i+=1
+        stack.append('{')
+    
+    while i<len(text):
+        if text[i]=='{':
+            stack.append('{')
+        if len(stack)==level: 
+            result.append(text[i])
+        if text[i]=='}':
+            stack.pop()
+        i+=1
+    return ''.join(result)
+
+def find_inhalt_in_bracket_fcn(all_text_in_str, find_str, start_mark, end_mark):
+    #all_text_in_str_initialized = all_text_in_str.replace("\t","")
+    #all_text_in_str_initialized = all_text_in_str_initialized.replace("\n","") 
+    find_text_position = [m.start() for m in re.finditer(find_str,all_text_in_str)]
+    open_bracket_position = [m.start() for m in re.finditer(start_mark,all_text_in_str)]
+    close_bracket_position = [m.start() for m in re.finditer(end_mark,all_text_in_str)]
+    find_text_info = []
+    for i in range(len(find_text_position)):
+        for j in reversed(open_bracket_position):
+            if j > find_text_position[i]:
+                temp1 = j
+                for k in reversed(close_bracket_position):
+                    if k > temp1:
+                        temp2 = k
+        find_text_info.append(all_text_in_str[temp1+1:temp2])
+    return find_text_info
+
+
+def read_state_info(all_text_in_lst):
+    all_text_in_str_initialized = str_initialize(all_text_in_lst)
+    #state basic info 1
+    text_in_level_1 = getbrace_only(all_text_in_str_initialized,1)
+    text_in_level_1_nospace = text_in_level_1.replace(" ","")
+    original_state_id = find_inhalt_in_bracket_fcn(text_in_level_1_nospace, "id", "=", "\n")
+    #original_state_name = find_inhalt_in_bracket_fcn(text_in_level_1_nospace, "name", "=", "\n")
+    #original_state_manpower = find_inhalt_in_bracket_fcn(text_in_level_1_nospace, "manpower", "=", "\n")
+    original_state_category = find_inhalt_in_bracket_fcn(text_in_level_1_nospace, "state_category", "=", "\n")
+    original_state_category[0] = original_state_category[0].replace("\"", "")
+    #original_buildings_max_level_factor = find_inhalt_in_bracket_fcn(text_in_level_1_nospace, "buildings_max_level_factor", "=", "\n")
+    original_impassable = find_inhalt_in_bracket_fcn(text_in_level_1_nospace, "impassable", "=", "\n")
+    
+
+    # resources & provinces ID & VPs
+    original_resources = find_inhalt_in_bracket_fcn(all_text_in_str_initialized, "resources", "{", "}")
+    original_provinces_ID = find_inhalt_in_bracket_fcn(all_text_in_str_initialized, "provinces", "{", "}")
+    original_provinces_ID = original_provinces_ID[0].replace("\n","")
+    original_provinces_ID = original_provinces_ID.replace("\t","")  
+    original_victory_points = find_inhalt_in_bracket_fcn(all_text_in_str_initialized, "victory_points", "{", "}")
+
+    text_in_level_2 = getbrace_only(all_text_in_str_initialized,2)
+    text_in_level_2_nospace = text_in_level_2.replace(" ","")
+    original_state_owner = find_inhalt_in_bracket_fcn(text_in_level_2_nospace, "owner", "=", "\n")
+    original_add_core_of_country_tag = find_inhalt_in_bracket_fcn(text_in_level_2_nospace, "add_core_of", "=", "\n")
+    #dont forget
+    #original_set_demilitarized_zone = find_inhalt_in_bracket_fcn(text_in_level_2_nospace, "set_demilitarized_zone", "=", "\n")
+
+    state_info_dict = {
+        'id': original_state_id,
+        'state_category': original_state_category,
+        'impassable': original_impassable,
+        'resources': original_resources,
+        'provinces': original_provinces_ID,
+        'victory_points': original_victory_points,
+        'owner': original_state_owner,
+        'add_core_of': original_add_core_of_country_tag
+    }
+    #provinces, impassable, state_category, victory_points, owner, add_core_of
+    return state_info_dict
+
+def sum_state_info_dict(states_info_dict, state_info_dict):
+    states_info_dict['id'].append(state_info_dict['id'])
+    states_info_dict['state_category'].append(state_info_dict['state_category'])
+    states_info_dict['impassable'].append(state_info_dict['impassable'])
+    states_info_dict['resources'].append(state_info_dict['resources'])
+    states_info_dict['provinces'].append(state_info_dict['provinces'])
+    states_info_dict['victory_points'].append(state_info_dict['victory_points'])
+    states_info_dict['owner'].append(state_info_dict['owner'])
+    states_info_dict['add_core_of'].append(state_info_dict['add_core_of'])
+
+    return states_info_dict
+
+def read_states_info():
+    states_folder_location = filedialog.askdirectory(title = "Select State Folder Location")
+    states_file_lst = []
+    for file in os.listdir(states_folder_location):
+        if file.endswith(".txt"):
+            states_file_lst.append(file)
+
+    #read every state in folder
+    states_info_dict = {
+        'id': [],
+        'state_category': [],
+        'impassable': [],
+        'resources': [],
+        'provinces': [],
+        'victory_points': [],
+        'owner': [],
+        'add_core_of': []
+    }
+    for base_state_file_name in states_file_lst:
+        #read original file
+        temp = states_folder_location + "/" + base_state_file_name
+        file_state_original = open(temp)
+        all_text_in_lst = file_state_original.readlines()
+        file_state_original.close()
+        state_info_dict = read_state_info(all_text_in_lst)
+        states_info_dict = sum_state_info_dict(states_info_dict, state_info_dict)
+
+    return states_info_dict
+
+def read_definition_info():
+    title = "Open definition file(definition.csv)"
+    filetypes = {("Map definition file", ".csv")}
+    all_text_str = open_file_return_str(title, filetypes)
+    all_text_list = split_str_into_list(all_text_str, ';')
+    definition_color_address = split_info_definition_csv(all_text_list)
+    return definition_color_address
+
+def step_get_states_info():
+    states_info_dict = read_states_info()
+    save_dict(states_info_dict, 'states_info_dict')
+    definition_info_dict = read_definition_info()
+    save_dict(definition_info_dict, 'definition_info_dict')
+
+    print('PART 2.5 finished')
+
 ## PART 3 ##
 
 ## PART 3 ##
@@ -489,6 +643,49 @@ def calculate_divide_province_amount(image_height, default_province_size, longit
 
     return amountProvince
 
+#TODO
+def correct_new_province_amount(max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict):
+
+    index_in_definition = definition_info_dict['RGB'].index(rgb_area_main_RGB)
+    state_info_continent = definition_info_dict['continent'][index_in_definition]
+    state_info_terrain = definition_info_dict['terrain'][index_in_definition]
+    state_info_coast = definition_info_dict['coast'][index_in_definition]
+    index_in_state_file = states_info_dict['provinces'].index((' ' + str(index_in_definition) + ' ') )
+    state_info_id = states_info_dict['id'][index_in_state_file]
+    state_info_state_category = states_info_dict['state_category'][index_in_state_file]
+    state_info_impassable = states_info_dict['impassable'][index_in_state_file]
+    state_info_resources = states_info_dict['resources'][index_in_state_file]
+    state_info_provinces = states_info_dict['provinces'][index_in_state_file]
+    state_info_victory_points = states_info_dict['victory_points'][index_in_state_file]
+    state_info_owner = states_info_dict['owner'][index_in_state_file]
+    state_info_add_core_of = states_info_dict['add_core_of'][index_in_state_file]
+
+    #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
+    terrain_okay_dict = {
+        'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
+        'new_province_amount': [2,2,4,2,6,3,3,2]
+    }
+    
+    [['forest',3], ['hills',3],  ['mountain',4], ['plains',2], ['urban',6]]
+    owner_okay_list = [['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1], 
+        ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['ALB',1], ['LIT',1], ['LAT',1], ['EST',1],
+        ['DEN',1], ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1], ['FIN',1],
+        ['SOV',1], ['ETH',5], ['RAJ',6], ['TIB',6]]
+
+    add_core_of_list = ['CHI', 'PRC', 'KOR', 'VIN', 'CAM', 'LAO', 'SIA', 'LIB', 'TUR', 'PER', 'PAK', 'AFG', 'LBA', 'EGY', 'PAL', 'ISR', 'SYR', 'JOR', 'IRQ']
+    new_province_amount = 1
+    if len(state_info_impassable) > 0:
+        return new_province_amount
+    elif [state_info_owner[0], state_info_continent] in owner_okay_list:
+        if state_info_terrain in terrain_okay_dict['terrain']:
+            new_province_amount = terrain_okay_dict['new_province_amount'][(terrain_okay_dict['terrain'].index(state_info_terrain))]
+    elif (str(state_info_add_core_of)[2:5] in add_core_of_list) or (str(state_info_add_core_of)[9:12] in add_core_of_list):
+        if state_info_terrain in terrain_okay_dict['terrain']:
+            new_province_amount = terrain_okay_dict['new_province_amount'][(terrain_okay_dict['terrain'].index(state_info_terrain))]
+
+    return new_province_amount
+
+
 def step_get_seeds_in_every_area():
     #all_RGB_and_Area_list
 
@@ -503,6 +700,9 @@ def step_get_seeds_in_every_area():
     all_text_str = open_file_return_str(title, filetypes)
     all_text_list = split_str_into_list(all_text_str, ';')
     definition_color_address = split_info_definition_csv(all_text_list)
+
+    states_info_dict = read_dict('states_info_dict')
+    definition_info_dict = read_dict('definition_info_dict')
 
     #ask do I have generated RGB file
     #bol_have_RGB_file = msgbox_prepare_aviliable_RGB_file()
@@ -539,7 +739,7 @@ def step_get_seeds_in_every_area():
                 rgb_area_main_POG = all_seed_info[iRGBList][iRGBContent][1]
                 rgb_area_main_POG_in_area = all_seed_info[iRGBList][iRGBContent][2]
                 rgb_area_part_size_MaxSize = all_seed_info[iRGBList][iRGBContent][3]
-            RGBAreaFullSize = max(RGBAreaFullSize , rgb_area_part_size) #TODO size
+            RGBAreaFullSize = max(RGBAreaFullSize , rgb_area_part_size)
             rgb_area_main_RGB = all_RGB_list[iRGBList]
 
 
@@ -550,11 +750,13 @@ def step_get_seeds_in_every_area():
         
 
         if bolIsProvinceLand:
-            amountOfProvinces = calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, max_new_provinces_per_state)
+            new_max_new_provinces_per_state = correct_new_province_amount(max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict)
+            new_province_amount = calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, new_max_new_provinces_per_state)
+
         else:
-            amountOfProvinces = 1
+            new_province_amount = 1
         
-        if amountOfProvinces > 1:
+        if new_province_amount > 1:
             #all_cores_of_seed_list.append([])
             all_seeds_original_color_list.append(all_RGB_list[iRGBList])
             
@@ -569,14 +771,14 @@ def step_get_seeds_in_every_area():
                 nearestPointOfGravityOfSmallPart = get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rgb_area_p)
                 coreOfSeed.append(nearestPointOfGravityOfSmallPart)
                 #smallPartWaitChangeAmount = RGBAreaFullSize - rgb_area_part_size_MaxSize
-                for item in range(1, amountOfProvinces):
+                for item in range(1, new_province_amount):
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
                 startItem = 1
                 coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
 
             else:
-                for item in range(0, amountOfProvinces):
+                for item in range(0, new_province_amount):
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
                 startItem = 0 #TODO move POG
@@ -616,7 +818,6 @@ def step_get_seeds_in_every_area():
 def create_seed_color_dict(original_color, coreOfSeed, all_aviliable_RGB, all_used_RGB, count_create_seed_color_dict):
     choosed_color = []
     choosed_color.append(original_color)
-    #TODO it takes more and more time
     for i in range(1, len(coreOfSeed)):
         for j in range(count_create_seed_color_dict, len(all_aviliable_RGB)):
             if not(all_aviliable_RGB[j] in all_used_RGB):
@@ -1187,7 +1388,6 @@ def modify_files():
     write_strategicregions_files(exportFolderLocation, newProvincesListFull, all_painting_area_dict_small)
 
     print('Part 6 finished')
-    #TODO
 
 def main():
     debug = False
