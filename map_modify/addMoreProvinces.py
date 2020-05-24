@@ -33,7 +33,7 @@ longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 16 #pixel on equator
+default_province_size = 12 #pixel on equator
 max_new_provinces_per_state = 4
 
 ## REBUILD ##
@@ -643,8 +643,8 @@ def calculate_divide_province_amount(image_height, default_province_size, longit
 
     return amountProvince
 
-#TODO
-def correct_new_province_amount(max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict):
+#TODO Define painting state conditions
+def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict):
 
     index_in_definition = definition_info_dict['RGB'].index(rgb_area_main_RGB)
     state_info_continent = definition_info_dict['continent'][index_in_definition]
@@ -663,27 +663,29 @@ def correct_new_province_amount(max_new_provinces_per_state, rgb_area_main_RGB, 
     #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
     terrain_okay_dict = {
         'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
-        'new_province_amount': [2,2,4,2,6,3,3,2]
+        'new_province_max_amount': [2,2,3,2,4,3,2,1]
     }
     
-    [['forest',3], ['hills',3],  ['mountain',4], ['plains',2], ['urban',6]]
     owner_okay_list = [['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1], 
-        ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['ALB',1], ['LIT',1], ['LAT',1], ['EST',1],
-        ['DEN',1], ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1], ['FIN',1],
-        ['SOV',1], ['ETH',5], ['RAJ',6], ['TIB',6]]
+        ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['LIT',1], ['LAT',1], ['EST',1],
+        ['DEN',1], ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1],
+        ['SOV',1], ['ETH',5]]
 
-    add_core_of_list = ['CHI', 'PRC', 'KOR', 'VIN', 'CAM', 'LAO', 'SIA', 'LIB', 'TUR', 'PER', 'PAK', 'AFG', 'LBA', 'EGY', 'PAL', 'ISR', 'SYR', 'JOR', 'IRQ']
-    new_province_amount = 1
+
+    add_core_of_list = ['LBA', 'CHI', 'PRC', 'KOR', 'LIB', 'EGY', 'PAL', 'ISR']
+    new_province_max_amount = 1
     if len(state_info_impassable) > 0:
-        return new_province_amount
+        return new_province_max_amount
+
     elif [state_info_owner[0], state_info_continent] in owner_okay_list:
         if state_info_terrain in terrain_okay_dict['terrain']:
-            new_province_amount = terrain_okay_dict['new_province_amount'][(terrain_okay_dict['terrain'].index(state_info_terrain))]
+            new_province_max_amount = terrain_okay_dict['new_province_max_amount'][(terrain_okay_dict['terrain'].index(state_info_terrain))]
+
     elif (str(state_info_add_core_of)[2:5] in add_core_of_list) or (str(state_info_add_core_of)[9:12] in add_core_of_list):
         if state_info_terrain in terrain_okay_dict['terrain']:
-            new_province_amount = terrain_okay_dict['new_province_amount'][(terrain_okay_dict['terrain'].index(state_info_terrain))]
-
-    return new_province_amount
+            new_province_max_amount = terrain_okay_dict['new_province_max_amount'][(terrain_okay_dict['terrain'].index(state_info_terrain))]
+    
+    return new_province_max_amount
 
 
 def step_get_seeds_in_every_area():
@@ -750,13 +752,13 @@ def step_get_seeds_in_every_area():
         
 
         if bolIsProvinceLand:
-            new_max_new_provinces_per_state = correct_new_province_amount(max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict)
-            new_province_amount = calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, new_max_new_provinces_per_state)
+            new_max_new_provinces_per_state = correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict)
+            new_province_max_amount = calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, new_max_new_provinces_per_state)
 
         else:
-            new_province_amount = 1
+            new_province_max_amount = 1
         
-        if new_province_amount > 1:
+        if new_province_max_amount > 1:
             #all_cores_of_seed_list.append([])
             all_seeds_original_color_list.append(all_RGB_list[iRGBList])
             
@@ -771,14 +773,14 @@ def step_get_seeds_in_every_area():
                 nearestPointOfGravityOfSmallPart = get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rgb_area_p)
                 coreOfSeed.append(nearestPointOfGravityOfSmallPart)
                 #smallPartWaitChangeAmount = RGBAreaFullSize - rgb_area_part_size_MaxSize
-                for item in range(1, new_province_amount):
+                for item in range(1, new_province_max_amount):
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
                 startItem = 1
                 coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
 
             else:
-                for item in range(0, new_province_amount):
+                for item in range(0, new_province_max_amount):
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
                 startItem = 0 #TODO move POG
