@@ -47,7 +47,7 @@ class StandardBoxForInfo(tk.Tk):
         tk.Tk.title(self, 'HOI4 create more Provinces tool')
         
         #butten 1
-        a0_0_label = ttk.Label(self, text = "STEP1: Generate all aviliable RGB, and write into a file")
+        a0_0_label = ttk.Label(self, text = "STEP1: Generate all available RGB, and write into a file")
         a0_0_label.grid(column = 0, row = 0)
         action = ttk.Button(self, text = "Click Me", command = step_save_all_color_into_file)
         action.grid(column = 0, row = 1)

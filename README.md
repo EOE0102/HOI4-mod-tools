@@ -13,6 +13,7 @@
 * Listary  (free version is enough)
 * Photoshop or windows paint(modify map file) 
 * Notepad++
+* FileLocator Pro
 
 ## 1.3 enable debug mode
 * first of first, set HOI4 add laucher option -debug, if you don't know, google it.
@@ -184,15 +185,39 @@ ATTENTION, you should check every folder under HOI4 install folder, because you 
 open the file with Notepad++, (View=> Show Symbol => Show All Characters), and you can see the first character is not **NULL**. Delete it.
 >do the same with \event folder
 
+# 4. test and fix
+**Check error.log.** \
+Do Capital 2.4 again, because we have just create plenty of states, all of them need 3D Models and so on.\
+**Game now is playable, play as Liberia and do some small fix** 
 
+## 4.1 fix Trying to set invalid state building "dockyard" 
+if you forget which file should be modified, look up new_state_reminder_.txt 
 
+And do Capital 4.2 again.
 
+## 4.2 fix has_dlc for new DLC
+some code like ... has_dlc ... are not added to the new state file, DIY please, not too many of them.
+Search has_dlc by using FileLocator.
+if you forget which file should be modified, look up new_state_reminder_.txt 
+>if = {\
+			limit = { has_dlc = "Battle for the Bosporus"}\
+			set_demilitarized_zone = yes\
+		}\
+		1936.11.9 = {\
+			set_demilitarized_zone = no\
+		}
 
+# 5. More provinces (option and hard) TODO debugging...
+run add_more_provinces.py follow the step...\
+you need a good place(SSD) to save temperate files\
+be patient...
 
+1. STEP1: Generate all available RGB, and write into a file
 
+2. STEP2: get the painting area for every color in map
 
-
-
+3. STEP2.5: get states info 
+>emmmmm, debugging...
 
 
 
