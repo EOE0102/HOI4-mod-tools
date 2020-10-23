@@ -12,6 +12,7 @@
 * Everything (A universal file search tool on windows, sometimes i forget where the created files are saved)
 * Listary  (free version is enough)
 * Photoshop or windows paint(modify map file) 
+* Notepad++
 
 ## 1.3 enable debug mode
 * first of first, set HOI4 add laucher option -debug, if you don't know, google it.
@@ -127,14 +128,61 @@ new files are saved under path
 TODO, not too serious
 
 
-# 3.
+# 3. Create new states (one province, one state)
+this time, we will do something big, creating new states for every province. \
+Those changes will impact many files, but I will teach you step by step.
 
+## 3.1 Create new definition files (/history/state and /map/supplyareas)
+- **Tools**: create_state_for_every_province.py
 
+1. Select State Folder Location 
+>[YOUR MOD]\history\states (if you have)\
+>OR\
+>[Where Steam installed]\steamapps\common\Hearts of Iron IV\history\states
 
+2. Select Supply Folder Location
+>[YOUR MOD]\map\supplyareas (if you have)\
+>OR\
+>[Where Steam installed]\steamapps\common\Hearts of Iron IV\map\supplyareas
 
+3. Select State Definition file(definition.csv)
+>**[YOUR MOD]**\map\definition.csv
+4. Select Export Folder Location
+>Whatever, better on SSD, because of 10K+ small files.
+5. Waiting for export, you can locate to your export folder
 
+6. Export files are:
+>**states folder**, with 10K+ definition files
+>**supplyareas**, with 300+ supply area definition files.
+>**new_state_reminder.txt**, recording the new state IDs
 
+7. cut and paste those to where they should be in your mod folder.
 
+## 3.2 Create new event files 
+we know that some events like annex or add_core are relative to map file.
+Hopefully I have covered all the events.
+
+- **Tools**: debug_states_in_events.py
+
+1. Select Event(or any relative files) Location
+ATTENTION, you should check every folder under HOI4 install folder, because you don't know which file modifies the map information. 
+- here are some Folder you should choose: 
+>\common\decisions\
+>\common\national_focus\
+>\common\on_actions\
+>\common\operations\ (because of new DLC)
+>\events
+
+2. Select Export Folder Location
+>better on a SSD
+
+3. Select new_state_reminder_ file(new_state_reminder_.txt)
+>new_state_reminder_.txt
+
+4. usually game crash during first testing, but don't worry, check error.log first.
+>... Error: "Unexpected token: ﻬ near line: 9" in file: "common/national_focus/germany.txt" near line: 9
+open the file with Notepad++, (View=> Show Symbol => Show All Characters), and you can see the first character is not **NULL**. Delete it.
+>do the same with \event folder
 
 
 
