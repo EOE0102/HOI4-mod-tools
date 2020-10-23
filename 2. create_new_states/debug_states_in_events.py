@@ -26,7 +26,7 @@ def str_initialize(all_text_in_lst):
 
 def __folder_files_prepearation():
     root = Tkinter.Tk()
-    import_file_folder_location = filedialog.askdirectory(title = "Select Event Location")
+    import_file_folder_location = filedialog.askdirectory(title = "Select Event(or any relative files) Location")
     export_folder_location = filedialog.askdirectory(title = "Select Export Folder Location")
     new_state_reminder_definition_file_location = filedialog.askopenfilename(title = "Select new_state_reminder_ file(new_state_reminder_.txt)", filetypes={("HOI Map file", ".txt"),("All files", "*.*")})
     return import_file_folder_location, export_folder_location, new_state_reminder_definition_file_location
