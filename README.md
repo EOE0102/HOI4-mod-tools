@@ -1,6 +1,6 @@
 # Modding tools for game Heart of Iron 4 in python
 
-
+Youtube Channal for Modder [The Iron Workshop](https://www.youtube.com/channel/UCYGO3GSISuiwAl4XchNvlTg)
 
 
 # 1. Preparation
@@ -113,7 +113,7 @@ This tool modifies the important definition files under /map folder
 >buildings.txt<br>
 >definition.csv<br>
 >unitstacks.txt<br>
->weatherpositions.txt (no need for modify)
+>weatherpositions.txt (no need for modification)
 
 
 in short:
@@ -153,25 +153,25 @@ Those changes will impact many files, but I will teach you step by step.
 5. Waiting for export, you can locate to your export folder
 
 6. Export files are:
->**states folder**, with 10K+ definition files
->**supplyareas**, with 300+ supply area definition files.
+>**states folder**, with 10K+ definition files\
+>**supplyareas**, with 300+ supply area definition files.\
 >**new_state_reminder.txt**, recording the new state IDs
 
 7. cut and paste those to where they should be in your mod folder.
 
 ## 3.2 Create new event files 
-we know that some events like annex or add_core are relative to map file.
+we know that some events like annex or add_core are relative to map file.\
 Hopefully I have covered all the events.
 
 - **Tools**: debug_states_in_events.py
 
-1. Select Event(or any relative files) Location
-ATTENTION, you should check every folder under HOI4 install folder, because you don't know which file modifies the map information. 
-- here are some Folder you should choose: 
+1. Select Event(or any relative files) Location\
+ATTENTION, you should check every folder under HOI4 installation folder, because you don't know which file modifies the map information. 
+- here are some Folder you should look: 
 >\common\decisions\
 >\common\national_focus\
 >\common\on_actions\
->\common\operations\ (because of new DLC)
+>\common\operations\ (because of new DLC)\
 >\events
 
 2. Select Export Folder Location
@@ -182,23 +182,25 @@ ATTENTION, you should check every folder under HOI4 install folder, because you 
 
 4. usually game crash during first testing, but don't worry, check error.log first.
 >... Error: "Unexpected token: ﻬ near line: 9" in file: "common/national_focus/germany.txt" near line: 9
+
 open the file with Notepad++, (View=> Show Symbol => Show All Characters), and you can see the first character is not **NULL**. Delete it.
 >do the same with \event folder
 
 # 4. test and fix
 **Check error.log.** \
-Do Capital 2.4 again, because we have just create plenty of states, all of them need 3D Models and so on.\
+Do Capital 2.4 again, because we have recently create plenty of states, all of them need 3D Models and so on.\
 **Game now is playable, play as Liberia and do some small fix** 
 
 ## 4.1 fix Trying to set invalid state building "dockyard" 
 if you forget which file should be modified, look up new_state_reminder_.txt 
 
-And do Capital 4.2 again.
+And do Capital 2.4 again.
 
 ## 4.2 fix has_dlc for new DLC
-some code like ... has_dlc ... are not added to the new state file, DIY please, not too many of them.
+some code like ... has_dlc ... are not added to the new state file, DIY please, there are not too many of them.
 Search has_dlc by using FileLocator.
-if you forget which file should be modified, look up new_state_reminder_.txt 
+if you forget which file should be modified, look up new_state_reminder_.txt\
+some codes are:
 >if = {\
 			limit = { has_dlc = "Battle for the Bosporus"}\
 			set_demilitarized_zone = yes\
@@ -206,6 +208,7 @@ if you forget which file should be modified, look up new_state_reminder_.txt
 		1936.11.9 = {\
 			set_demilitarized_zone = no\
 		}
+
 
 # 5. More provinces (option and hard) TODO debugging...
 run add_more_provinces.py follow the step...\
@@ -217,8 +220,9 @@ be patient...
 2. STEP2: get the painting area for every color in map
 
 3. STEP2.5: get states info 
->emmmmm, debugging...
+>emmmmm, TODO debugging... AGAIN...
 
 
 
-
+# 6. fix cost too many manpower on resistance.
+TODO
