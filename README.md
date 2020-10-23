@@ -1,12 +1,15 @@
 # Modding tools for game Heart of Iron 4 in python
 
+
+
+
 # 1. Preparation
 ## 1.1 Basic python coding knowledge
 * Basic Python knowledge. (how to run file, python PIP)
 * I'm using Visual Studio Code (A python writing/debugging tool, or anything you need to run python) 
 
 ## 1.2 recommend tools
-* Everything (A universal file search tool on windows, sometimes i forget where the creted files are saved)
+* Everything (A universal file search tool on windows, sometimes i forget where the created files are saved)
 * Listary  (free version is enough)
 * Photoshop or windows paint(modify map file) 
 
@@ -38,7 +41,7 @@ remote_file_id="1818951012"<br>
 **path**: the mod folder you or mod tools create. here is a trick, you can place the mod folder under other path just like I do.<br>
 **remote_file_id**: the mod id shown after steam url(https://steamcommunity.com/sharedfiles/filedetails/?id=1818951012 ). If you have upload a mod, you will get one.<br>
 
-and finally don't forget create a empty folder under the PATH.
+and finally don't forget to create a empty folder under the PATH.
 </p>
 Now you have .mod file and a empty folder for modding. You can choose your mod from HOI4 start panel, but nothing changed, since your mod file is empty. 
 
@@ -54,26 +57,27 @@ copy content under
 
 into your created mod folder. 
 
-Run you game with your mod again, and you can find the changes.
+Run you game with your mod again, and you can see the changes.
 
-# 2. Debug MAP and relative files.
+# 2. Debug MAP(provinces.bmp) and relative files.
 
-if you have set the debug mode, run HOI4 with only your test mod, choose any country you want to test, then that beaver in lower right shows the error penal. 
+if you have set the debug mode, run HOI4 only with your test mod, choose any country you want to play, then that beaver in lower right shows the error penal. 
 
 This log file is also saved under 
 * X:/[YOUR NAME]/Documents/Paradox Interative/Hearts of Iron IV/logs/error.log. 
 
 Remember this, you will check it frequently. 
+
+
+## 2.1 debug One-pixel province problem.
 </p>
 Let's look into this log file. <br>
-one of typical error infos is: 
+one of typical error infos is like: 
 
 >[12:00:56][pdxmapborders.cpp:189]: One-pixel province color found at 1757, 2289.
 
 One-pixel province, usually they are not harmful, but annoying. The original modder generates the map from GIS system, we will debug this.
 
-
-## 2.1 debug One-pixel province problem.
 One-pixel province, that mean there is a pixel surrounding by 8(or 5) other pixels, which have different colors. I don't want to check every situation, but choose to remove this one pixel, and paint it with random nearby color.
 
 - TOOLS: remove_one_pixel_province.py
@@ -88,7 +92,7 @@ you might noticed there is a new type of error pop up after debugging.
 
 the upper left pixel will be painted the same color which upper right has.
 
-- **Tools**: DIY or run **fix_pixel_crossing.py**
+- **Tools**: DIY or **fix_pixel_crossing.py**
 - **Import**: provinces.bmp error.log
 - **Export**: save your bmp file.
 
@@ -99,7 +103,7 @@ ignore it, no harm.
 HOI4 has provided a great debug tools. Enable debug mod and you can see the **"NUDGE!"** there.<br>
 This error sentence is about the building. Because we remove some pixels of a province, some buildings and 3D units are no more located in the right place, i.e over other province. It can cause CTD if we don't fix it. 
 
-And there is a hidden CTD, called "province is a coastal province, but not marked as 'coastal' in definition.csv file, so the ship can not dock there"
+And there is a hidden CTD, called "province is a coastal, but not marked as 'coastal' in the definition.csv file, so ships can not dock there. opps, CTD!"
 
 This tool modifies the important definition files under /map folder
 >airports.txt<br>
