@@ -209,20 +209,29 @@ some codes are:
 			set_demilitarized_zone = no\
 		}
 
+## 4.3 unplanned_offensive
+shit mountain
 
 # 5. More provinces (option and hard) TODO debugging...
 run add_more_provinces.py follow the step...\
 you need a good place(SSD) to save temperate files\
+the title of dialog box is the file na
 be patient...
 
 1. STEP1: Generate all available RGB, and write into a file
 
 2. STEP2: get the painting area for every color in map
+>(20 min+)
 
 3. STEP2.5: get states info 
->emmmmm, TODO debugging... AGAIN...
 
+4. get seeds for every painting area
 
+5. patinging pixels on map (30min+)
+
+6. modify files
+
+7. do 2.4 again.
 
 # 6. fix cost too many manpower on resistance.
 
@@ -230,3 +239,13 @@ be patient...
 [[HOI4 Modding] Creating/Editing Unit Templates](https://www.youtube.com/watch?v=T1sJ-JolwmI)\
 [[HOI4 Modding] Creating new events](https://www.youtube.com/watch?v=Z1r4_KZbrL4)\
 [Event at the beginning of the play session](https://www.reddit.com/r/hoi4modding/comments/5z5tc4/event_at_the_beginning_of_the_play_session/)
+
+# 7. More features
+## 7.1 More Desert 
+ impassable = yes
+
+## 7.2 impassable 
+ modify adjacencies.csv
+
+## 7.3 More Straits
+
