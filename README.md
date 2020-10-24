@@ -11,7 +11,7 @@ Youtube Channal for Modder [The Iron Workshop](https://www.youtube.com/channel/U
 ## 1.2 recommend tools
 * Everything (A universal file search tool on windows, sometimes i forget where the created files are saved)
 * Listary  (free version is enough)
-* Photoshop or windows paint(modify map file) 
+* Photoshop/ Paint.net(free)/ windows paint(modify map file) 
 * Notepad++
 * FileLocator Pro
 
@@ -225,4 +225,8 @@ be patient...
 
 
 # 6. fix cost too many manpower on resistance.
-TODO
+
+[[HOI4 Modding] Creating New Land Units](https://www.youtube.com/watch?v=mHuqrMeHbwI)\
+[[HOI4 Modding] Creating/Editing Unit Templates](https://www.youtube.com/watch?v=T1sJ-JolwmI)\
+[[HOI4 Modding] Creating new events](https://www.youtube.com/watch?v=Z1r4_KZbrL4)\
+[Event at the beginning of the play session](https://www.reddit.com/r/hoi4modding/comments/5z5tc4/event_at_the_beginning_of_the_play_session/)
