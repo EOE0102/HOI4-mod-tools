@@ -161,29 +161,35 @@ def add_item_before_kw(_new_import_file_str, _find_str, _start_mark, _end_mark, 
             
 
             temp1 = find_last_letter_before_kw(_kw_position[i], _state_id_position)
-            for temp2 in range(len(_state_id_position)):
-                if temp1 == _state_id_position[temp2]:
-                    _old_state_info = _new_import_file_str[temp1 : temp1 + len(_state_id[temp2])]
-            _old_state = re.findall(r"\d+", _old_state_info)[0]
+            if temp1 < 0: #no id not found
+                i = i + 1
+            else:
+                for temp2 in range(len(_state_id_position)):
+                    if temp1 == _state_id_position[temp2]:
+                        _old_state_info = _new_import_file_str[temp1 : temp1 + len(_state_id[temp2])]
+                _old_state = re.findall(r"\d+", _old_state_info)[0]
 
-            open_bracket_position_lst = [m.start() for m in re.finditer(_start_mark2, _new_import_file_str)]
-            close_bracket_position_lst = [m.start() for m in re.finditer(_end_mark2, _new_import_file_str)]
-            _first_open_bracket_position = find_first_enter_letter_after_kw(temp1, open_bracket_position_lst)
-            _last_close_bracket_position = find_first_bracket_after_kw(temp1, open_bracket_position_lst, close_bracket_position_lst)
+                open_bracket_position_lst = [m.start() for m in re.finditer(_start_mark2, _new_import_file_str)]
+                close_bracket_position_lst = [m.start() for m in re.finditer(_end_mark2, _new_import_file_str)]
+                _first_open_bracket_position = find_first_enter_letter_after_kw(temp1, open_bracket_position_lst)
+                _last_close_bracket_position = find_first_bracket_after_kw(temp1, open_bracket_position_lst, close_bracket_position_lst)
 
-            _inhalt_within_bracket = _new_import_file_str[_first_open_bracket_position: _last_close_bracket_position + 1]
+                _inhalt_within_bracket = _new_import_file_str[_first_open_bracket_position: _last_close_bracket_position + 1]
 
-            for j in _new_state_remider_lst:
-                if _old_state == j[0]:
-                    i = i + 1
-                    _found_new_states = j[1]
-                    _found_new_states_lst = _found_new_states.split()
-                    for k in _found_new_states_lst:
-                        _new_combined_state_str = _new_combined_state_str + " \n\t\t" + k + " = " +  _inhalt_within_bracket 
-                        i = i + 1	
-                
-            _new_import_file_str = _new_import_file_str[:_last_close_bracket_position+1] + _new_combined_state_str + _new_import_file_str[_last_close_bracket_position+1:]
-            _kw_position = [m.start() for m in re.finditer(r"\s" + _find_str + r"\s+" + _start_mark + r"\s+", _new_import_file_str)]
+                for j in _new_state_remider_lst:
+                    if _old_state == j[0]:
+                        i = i + 1
+                        _found_new_states = j[1]
+                        _found_new_states_lst = _found_new_states.split()
+                        for k in _found_new_states_lst:
+                            _new_combined_state_str = _new_combined_state_str + " \n\t\t" + k + " = " +  _inhalt_within_bracket 
+                            i = i + 1
+
+                    
+                _new_import_file_str = _new_import_file_str[:_last_close_bracket_position+1] + _new_combined_state_str + _new_import_file_str[_last_close_bracket_position+1:]
+                _kw_position = [m.start() for m in re.finditer(r"\s" + _find_str + r"\s+" + _start_mark + r"\s+", _new_import_file_str)]
+
+
     return _new_import_file_str
 
 
@@ -249,6 +255,10 @@ def main():
         find_str = "set_state_controller"
         new_import_file_str = add_item_after_kw(new_import_file_str, find_str, start_mark, end_mark, new_state_remider_lst)
 
+        find_str = "\tstate"
+        new_import_file_str = add_item_after_kw(new_import_file_str, find_str, start_mark, end_mark, new_state_remider_lst)
+
+
 
         start_mark = "="
         end_mark = r"\W"
@@ -260,9 +270,10 @@ def main():
         find_str = "set_demilitarized_zone"
         new_import_file_str = add_item_before_kw(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
 
-
-        #find_str = "add_core_of"
-        #new_import_file_str = add_item_before_kw(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
+        #TODO
+        #629 = { add_core_of = USA }
+        find_str = "add_core_of"
+        new_import_file_str = add_item_before_kw(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
 
         if f != new_import_file_str:
             write_file(export_folder_location, import_file_name, new_import_file_str)
