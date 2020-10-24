@@ -34,7 +34,7 @@ longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
 default_province_size = 24 #pixel on equator
-max_new_provinces_per_state = 4
+max_new_provinces_per_state = 5
 
 ## REBUILD ##
 
@@ -103,11 +103,11 @@ def list_all_RGB():
     for i in range(40):
         all_color_R.append((5*i))
 
-    for i in range(100):
-        all_color_G.append(2*i)
+    for i in range(50):
+        all_color_G.append(4*i)
 
     #for i in range(46):
-    for i in range(46):
+    for i in range(40):
         all_color_B.append(5*i)
 
     for i in all_color_R:
@@ -663,16 +663,16 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
     terrain_okay_dict = {
         'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
-        'new_province_max_amount': [3,3,4,3,5,3,2,2]
+        'new_province_max_amount': [3,3,4,2,5,3,2,2]
     }
-    #countrytag, continent
+    #countrytag, continent ['DEN',1]
     owner_okay_list = [['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1], 
         ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['LIT',1], ['LAT',1], ['EST',1],
-        ['DEN',1], ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1],
+        ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1],
         ['SOV',1], ['ETH',5]]
 
 
-    add_core_of_list = ['LBA', 'CHI', 'PRC', 'KOR', 'LIB', 'EGY', 'PAL', 'ISR']
+    add_core_of_list = ['LIB', 'CHI', 'PRC', 'KOR', 'LBA', 'EGY']
     new_province_max_amount = 1
     if len(state_info_impassable) > 0:
         return new_province_max_amount
