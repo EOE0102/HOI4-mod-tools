@@ -186,6 +186,9 @@ ATTENTION, you should check every folder under HOI4 installation folder, because
 open the file with Notepad++, (View=> Show Symbol => Show All Characters), and you can see the first character is not **NULL**. Delete it.
 >do the same with \event folder
 
+**KNOWN ISSUS turkey.txt add_core_of dead loop**
+
+
 # 4. test and fix
 **Check error.log.** \
 Do Capital 2.4 again, because we have recently create plenty of states, all of them need 3D Models and so on.\
@@ -212,7 +215,31 @@ some codes are:
 ## 4.3 unplanned_offensive
 shit mountain
 
-# 5. More provinces (option and hard) TODO debugging...
+## 4.4 check dockyard coastal_bunker naval_base 
+shit mountain
+
+
+# 5. Modify map more
+## 5.1 More Desert 
+> impassable = yes
+ * Chinese desert
+ * China-Mongolia border
+ * Amazon Forest
+ * Australia Desert
+ * SouthEast Asia Jungle
+ * north part of USSR
+ * north part of canada
+ * Sweden borden mountain
+ * Finland border mountain
+ * Caucasus mountain 
+
+## 5.2 impassable 
+ modify adjacencies.csv
+
+## 5.3 More Straits
+
+
+# 6. More provinces (option and hard) TODO debugging...
 run add_more_provinces.py follow the step...\
 you need a good place(SSD) to save temperate files\
 the title of dialog box is the file na
@@ -239,13 +266,3 @@ be patient...
 [[HOI4 Modding] Creating/Editing Unit Templates](https://www.youtube.com/watch?v=T1sJ-JolwmI)\
 [[HOI4 Modding] Creating new events](https://www.youtube.com/watch?v=Z1r4_KZbrL4)\
 [Event at the beginning of the play session](https://www.reddit.com/r/hoi4modding/comments/5z5tc4/event_at_the_beginning_of_the_play_session/)
-
-# 7. More features
-## 7.1 More Desert 
- impassable = yes
-
-## 7.2 impassable 
- modify adjacencies.csv
-
-## 7.3 More Straits
-
