@@ -17,25 +17,26 @@ manpower_provinces_buildings_weight = 1
 manpower_coast_weight = 1.5
 
 state_category_weight = [["unknown",-10],["ocean",-10],["lakes",-10],
-                    ["forest",-2],["hills",-2],["mountain",-3],
-                    ["plains",-1],["urban",0],["jungle",-3],
-                    ["marsh",-4],["desert",-4],
+                    ["forest",-1],["hills",-1],["mountain",-2],
+                    ["plains",0],["urban",0],["jungle",-2],
+                    ["marsh",-3],["desert",-3],
                     ["water_fjords",-10],["water_shallow_sea",-10],["water_deep_ocean",-10],
                     ["ice_sheet",-10]]
 state_category_type_lst  = ["rural","town","large_town","city","large_city","metropolis","megalopolis"]
 state_category_type_nochange_lst = ["enclave","small_island","tiny_island","wasteland","pastoral"]
-state_category_victory_points_weight = 10
+state_category_victory_points_weight = 5
 state_category_provinces_buildings_weight = 1
 
 state_infrastructure_weight = [["unknown",-10],["ocean",-10],["lakes",-10],
-                    ["forest",-2],["hills",-2],["mountain",-3],
-                    ["plains",-1],["urban",0],["jungle",-3],
-                    ["marsh",-4],["desert",-4],
+                    ["forest",-1],["hills",-1],["mountain",-2],
+                    ["plains",0],["urban",0],["jungle",-2],
+                    ["marsh",-3],["desert",-3],
                     ["water_fjords",-10],["water_shallow_sea",-10],["water_deep_ocean",-10],
                     ["ice_sheet",-10]]
-infrastructure_victory_points_weight = 10
+infrastructure_victory_points_weight = 5
 infrastructure_provinces_buildings_weight = 1
 
+victory_point_weight = 0 # goto change_victory_points
 
 
 def __folder_files_prepearation():
@@ -348,12 +349,14 @@ def change_infrastructure_level(original_infrastructure, original_provinces_defi
                 temp = j[1] - base_weight
                 modify_infrastructure_level_matrix.append([original_provinces_definition[i][0], temp])
 
-    #VP
+    #VP 
     for i in range(len(modify_victory_points)):
         if modify_victory_points[i][1] != "":
             temp = modify_victory_points[i][1].split()
             temp = float(temp[1])
-            temp2 = int(temp/state_category_victory_points_weight) + 1
+            temp2 = int(temp/infrastructure_victory_points_weight) + 1
+            if temp2 > 2:
+                temp2 = 2
             modify_infrastructure_level_matrix[i][1] = modify_infrastructure_level_matrix[i][1] + temp2
 
     #buildings
@@ -361,17 +364,20 @@ def change_infrastructure_level(original_infrastructure, original_provinces_defi
         if modify_provinces_buildings[i][1] != "":
             modify_infrastructure_level_matrix[i][1] = modify_infrastructure_level_matrix[i][1] + 1
 
+    # max +1
     for i in range(len(modify_infrastructure_level_matrix)):
         if modify_infrastructure_level_matrix[i][1] > 0:
-                modify_infrastructure_level_matrix[i][1] = 0
+                modify_infrastructure_level_matrix[i][1] = 1
 
-    #
     for i in range(len(modify_infrastructure_level_matrix)):
         temp4 = modify_infrastructure_level_matrix[i][1] + int(original_infrastructure[0])
+        if temp4 > 10:
+            temp4 = 10
         if temp4 < 1:
             temp4  = 1
-            if int(original_infrastructure[0]) == 0:
-                temp4  = 0
+        if int(original_infrastructure[0]) == 0:
+            temp4  = 0
+        
         _modify_infrastructure_level.append([modify_infrastructure_level_matrix[i][0], temp4])
         
     return _modify_infrastructure_level
@@ -390,10 +396,31 @@ def create_victory_points(modify_provinces_ID, original_victory_points):
             if temp != []:
                 j = j.replace(temp[0][:-1], "")
                 j = j.replace("#", "")
-                temp2 = str(int(float(j)))
+                victory_point = int(float(j))
+                changed_victory_point = change_victory_points(victory_point)
+
+                temp2 = str(changed_victory_point)
                 modify_victory_points[i][1] = str(modify_provinces_ID[i])+ " "+ temp2
 
     return modify_victory_points
+
+def change_victory_points(original_victory_points_of_province):
+    if original_victory_points_of_province <= 3:
+        changed_victory_point = original_victory_points_of_province * 5
+    elif 3 < original_victory_points_of_province <= 10:
+        changed_victory_point = (original_victory_points_of_province - 3) * 4 + 15
+    elif 10 < original_victory_points_of_province <= 20:
+        changed_victory_point = (original_victory_points_of_province - 10) * 3 + 40
+    elif 20 < original_victory_points_of_province <= 30:
+        changed_victory_point = (original_victory_points_of_province - 20) * 2 + 70
+    elif 30 < original_victory_points_of_province <= 40:
+        changed_victory_point = (original_victory_points_of_province - 30) * 2 + 90
+    elif 40 < original_victory_points_of_province:
+        changed_victory_point = (original_victory_points_of_province - 40) * 1 + 110
+
+    changed_victory_point = int(round(float(changed_victory_point)/5) * 5)
+
+    return changed_victory_point
 
 
 def create_original_provinces_buildings(modify_provinces_ID, original_province_buildings):
