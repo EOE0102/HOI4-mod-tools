@@ -442,14 +442,25 @@ def find_inhalt_in_bracket_fcn(all_text_in_str, find_str, start_mark, end_mark):
     open_bracket_position = [m.start() for m in re.finditer(start_mark,all_text_in_str)]
     close_bracket_position = [m.start() for m in re.finditer(end_mark,all_text_in_str)]
     find_text_info = []
+    #for i in range(len(find_text_position)):
+    #    for j in reversed(open_bracket_position):
+    #        if j > find_text_position[i]:
+    #            temp1 = j
+    #            for k in reversed(close_bracket_position):
+    #                if k > temp1:
+    #                    temp2 = k
+        
     for i in range(len(find_text_position)):
-        for j in reversed(open_bracket_position):
-            if j > find_text_position[i]:
-                temp1 = j
-                for k in reversed(close_bracket_position):
-                    if k > temp1:
-                        temp2 = k
+        j = 0
+        while find_text_position[i] > open_bracket_position[j]:
+            j = j + 1
+        temp1 = open_bracket_position[j]
+        k = 0
+        while temp1 > close_bracket_position[k]:
+            k = k + 1
+        temp2 = close_bracket_position[k]
         find_text_info.append(all_text_in_str[temp1+1:temp2])
+
     return find_text_info
 
 
@@ -577,6 +588,7 @@ def no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p):
 
     return coreOfNewSeed
 
+
 def is_province_land(original_color, voll_rgb_list, land_sea_lake_type):
     index = voll_rgb_list.index(list(original_color))
     landSeaLakeType = land_sea_lake_type[index]
@@ -584,6 +596,37 @@ def is_province_land(original_color, voll_rgb_list, land_sea_lake_type):
         return True
     else:
         return False
+
+def is_province_coast(original_color, voll_rgb_list, coast_type):
+    index = voll_rgb_list.index(list(original_color))
+    coastType = coast_type[index]
+    if coastType == 'true':
+        return True
+    else:
+        return False
+
+def get_coast_points_collection(_rgb_area_main_RGB, _seeds_painting_area, _pixels, _all_color_area_RGB, _all_color_area_land_sea_lake_type):
+    _coast_points_collection = []
+    for _check_pixel in _seeds_painting_area:
+        _bol_is_pixel_coast = False
+        x = _check_pixel[0]
+        y = _check_pixel[1]
+        north_pixel_color = list(_pixels[x, y+1])
+        south_pixel_color = list(_pixels[x, y-1])
+        west_pixel_color = list(_pixels[x-1, y])
+        east_pixel_color = list(_pixels[x+1, y])
+        _north_pixel_index = _all_color_area_RGB.index(north_pixel_color)
+        _south_pixel_index = _all_color_area_RGB.index(south_pixel_color)
+        _west_pixel_index = _all_color_area_RGB.index(west_pixel_color)
+        _east_pixel_index = _all_color_area_RGB.index(east_pixel_color)
+        _north_pixel_sea_type = _all_color_area_land_sea_lake_type[_north_pixel_index]
+        _south_pixel_sea_type = _all_color_area_land_sea_lake_type[_south_pixel_index]
+        _west_pixel_sea_type = _all_color_area_land_sea_lake_type[_west_pixel_index]
+        _east_pixel_sea_type = _all_color_area_land_sea_lake_type[_east_pixel_index]
+        if _north_pixel_sea_type == 'sea' or _south_pixel_sea_type == 'sea' or _west_pixel_sea_type == 'sea' or _east_pixel_sea_type == 'sea':
+            _coast_points_collection.append(_check_pixel)
+    return _coast_points_collection
+
 
 def calculate_joint_POG(all_RGB_and_Area_list, rgb_area_main_part_index):
     joint_POG = all_RGB_and_Area_list[rgb_area_main_part_index][2]
@@ -663,11 +706,11 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
     terrain_okay_dict = {
         'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
-        'new_province_max_amount': [3,3,4,2,5,3,2,2]
+        'new_province_max_amount': [3,3,3,3,4,3,2,2]
     }
     #countrytag, continent ['DEN',1]
-    owner_okay_list = [['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1], 
-        ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['LIT',1], ['LAT',1], ['EST',1],
+    owner_okay_list = [['POR',1], ['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1], 
+        ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['ALB',1], ['LIT',1], ['LAT',1], ['EST',1],
         ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1],
         ['SOV',1], ['ETH',5]]
 
@@ -749,12 +792,11 @@ def step_get_seeds_in_every_area():
         #definition_color_address
         original_color = all_RGB_list[iRGBList]
         bolIsProvinceLand = is_province_land(original_color, definition_color_address['RGB'], definition_color_address['land_sea_lake'])
-        
+        bolIsProvinceCoast = is_province_coast(original_color, definition_color_address['RGB'], definition_color_address['coast'])
 
         if bolIsProvinceLand:
             new_max_new_provinces_per_state = correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict)
             new_province_max_amount = calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, new_max_new_provinces_per_state)
-
         else:
             new_province_max_amount = 1
         
@@ -768,23 +810,46 @@ def step_get_seeds_in_every_area():
             coreOfSeed = []
             #bolFixTheFirstSeedPosition = False
             
-            if len(all_seed_info[iRGBList]) > 1: # >2 #area has one or more small parts 
-                RGBAreaPartRestJointPointOfGravity = calculate_joint_POG(all_seed_info[iRGBList], rgb_area_main_part_index)
-                nearestPointOfGravityOfSmallPart = get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rgb_area_p)
-                coreOfSeed.append(nearestPointOfGravityOfSmallPart)
-                #smallPartWaitChangeAmount = RGBAreaFullSize - rgb_area_part_size_MaxSize
-                for item in range(1, new_province_max_amount):
-                    coreOfSeed.append(rgb_area_main_POG_in_area)
-                coreOfNewSeed = []
-                startItem = 1
-                coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
+            if bolIsProvinceCoast:
+                coast_points_collection = get_coast_points_collection(rgb_area_main_RGB, all_seed_info[iRGBList][0][4], pixels, definition_color_address['RGB'], definition_color_address['land_sea_lake'])
+
+                if len(all_seed_info[iRGBList]) > 1: # >2 #area has one or more small parts 
+                    RGBAreaPartRestJointPointOfGravity = calculate_joint_POG(all_seed_info[iRGBList], rgb_area_main_part_index)
+                    nearestPointOfGravityOfSmallPart = get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, coast_points_collection)
+                    coreOfSeed.append(nearestPointOfGravityOfSmallPart)
+                    #smallPartWaitChangeAmount = RGBAreaFullSize - rgb_area_part_size_MaxSize
+                    for item in range(1, new_province_max_amount):
+                        coreOfSeed.append(rgb_area_main_POG_in_area)
+                    coreOfNewSeed = []
+                    startItem = 1
+                    coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
+
+                else:
+                    coreOfSeed.append(coast_points_collection[0]) #TODO
+                    for item in range(1, new_province_max_amount):
+                        coreOfSeed.append(rgb_area_main_POG_in_area)
+                        coreOfNewSeed = []
+                        startItem = 1 #TODO move POG
+                        coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
 
             else:
-                for item in range(0, new_province_max_amount):
-                    coreOfSeed.append(rgb_area_main_POG_in_area)
-                coreOfNewSeed = []
-                startItem = 0 #TODO move POG
-                coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
+                if len(all_seed_info[iRGBList]) > 1: # >2 #area has one or more small parts 
+                    RGBAreaPartRestJointPointOfGravity = calculate_joint_POG(all_seed_info[iRGBList], rgb_area_main_part_index)
+                    nearestPointOfGravityOfSmallPart = get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rgb_area_p)
+                    coreOfSeed.append(nearestPointOfGravityOfSmallPart)
+                    #smallPartWaitChangeAmount = RGBAreaFullSize - rgb_area_part_size_MaxSize
+                    for item in range(1, new_province_max_amount):
+                        coreOfSeed.append(rgb_area_main_POG_in_area)
+                    coreOfNewSeed = []
+                    startItem = 1
+                    coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
+
+                else:
+                    for item in range(0, new_province_max_amount):
+                        coreOfSeed.append(rgb_area_main_POG_in_area)
+                    coreOfNewSeed = []
+                    startItem = 0 #TODO move POG
+                    coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
                 
             #all_cores_of_seed_list[count].append(coreOfNewSeed)
             all_cores_of_seed_list.append(coreOfNewSeed)
@@ -1206,35 +1271,6 @@ def getbrace_only(text,level):
             stack.pop()
         i+=1
     return ''.join(result)
-
-def find_inhalt_in_bracket_fcn(all_text_in_str, find_str, start_mark, end_mark):
-    #all_text_in_str_initialized = all_text_in_str.replace("\t","")
-    #all_text_in_str_initialized = all_text_in_str_initialized.replace("\n","") 
-    find_text_position = [m.start() for m in re.finditer(find_str,all_text_in_str)]
-    open_bracket_position = [m.start() for m in re.finditer(start_mark,all_text_in_str)]
-    close_bracket_position = [m.start() for m in re.finditer(end_mark,all_text_in_str)]
-    find_text_info = []
-    #for i in range(len(find_text_position)):
-    #    for j in reversed(open_bracket_position):
-    ##        if j > find_text_position[i]:
-    #           temp1 = j
-    #           for k in reversed(close_bracket_position):
-    #               if k > temp1:
-    #                   temp2 = k
-    #   find_text_info.append(all_text_in_str[temp1+1:temp2])
-
-
-    for i in range(len(find_text_position)):
-        j = 0
-        while find_text_position[i] > open_bracket_position[j]:
-            j = j + 1
-        temp1 = open_bracket_position[j]
-        k = 0
-        while temp1 > close_bracket_position[k]:
-            k = k + 1
-        temp2 = close_bracket_position[k]
-        find_text_info.append(all_text_in_str[temp1+1:temp2])
-    return find_text_info
 
 def remove_Comment(textInList):
     # remove comment
