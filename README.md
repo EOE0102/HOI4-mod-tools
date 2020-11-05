@@ -219,8 +219,9 @@ shit mountain
 shit mountain
 
 
-# 5. Modify map more
+# 5. More Modification of map 
 ## 5.1 More Desert 
+modify state files
 > impassable = yes
  * Chinese desert
  * China-Mongolia border
@@ -229,38 +230,40 @@ shit mountain
  * SouthEast Asia Jungle
  * north part of USSR
  * north part of canada
+
+
+## 5.2 More impassable border
+ modify adjacencies.csv
  * Sweden borden mountain
  * Finland border mountain
  * Caucasus mountain 
-
-## 5.2 impassable 
- modify adjacencies.csv
+ * Kashmir (leh)
 
 ## 5.3 More Straits
+modify adjacencies.csv
 
-
-# 6. More provinces (option and hard) TODO debugging...
+# 6. More provinces (hard) TODO debugging...
 run add_more_provinces.py follow the step...\
 you need a good place(SSD) to save temperate files\
-the title of dialog box is the file na
 be patient...
 
 1. STEP1: Generate all available RGB, and write into a file
 
-2. STEP2: get the painting area for every color in map
->(20 min+)
+2. STEP2: get the painting area for every color in map\
+(20 min+)
 
 3. STEP2.5: get states info 
 
 4. get seeds for every painting area
 
-5. patinging pixels on map (30min+)
+5. patinging pixels on map \
+(30min+)
 
 6. modify files
 
-7. do 2.4 again.
+7. do 2.4 again
 
-# 6. fix cost too many manpower on resistance.
+# 7. fix cost too many manpower on resistance.
 
 [[HOI4 Modding] Creating New Land Units](https://www.youtube.com/watch?v=mHuqrMeHbwI)\
 [[HOI4 Modding] Creating/Editing Unit Templates](https://www.youtube.com/watch?v=T1sJ-JolwmI)\
