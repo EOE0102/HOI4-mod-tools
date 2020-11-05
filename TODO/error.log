@@ -1,0 +1,465 @@
+[19:39:25][dlc.cpp:1293]: Could not find item in store backend.
+[19:39:28][dlc.cpp:230]: Invalid supported_version in  file: mod/ugc_1629702438.mod line: 6
+[19:39:28][dlc.cpp:230]: Invalid supported_version in  file: mod/ugc_1630334745.mod line: 7
+[19:39:28][dlc.cpp:230]: Invalid supported_version in  file: mod/ugc_1632610803.mod line: 6
+[19:39:28][dlc.cpp:230]: Invalid supported_version in  file: mod/ugc_1976923067.mod line: 7
+[19:39:28][dlc.cpp:230]: Invalid supported_version in  file: mod/ugc_1993141805.mod line: 7
+[19:39:28][dlc.cpp:230]: Invalid supported_version in  file: mod/ugc_2034489245.mod line: 12
+[19:39:28][dlc.cpp:230]: Invalid supported_version in  file: mod/ugc_699302152.mod line: 8
+[19:39:29][dlc.cpp:1293]: Could not find item in store backend.
+[19:39:32][pdx_localize.cpp:1133]: Expected quotation mark (") at line 7 and column 17 in localisation/EOEA_adjacency_rules_l_english.yml.yml
+[19:39:33][pdx_localize.cpp:1133]: Expected quotation mark (") at line 7 and column 17 in localisation/EOEA_adjacency_rules_l_english.yml.yml
+[19:39:43][assetfactory_audio.cpp:506]: Could not find music file 'music/waltz_amur_waves.ogg' in  file: music/soldiersradio.asset line: 303
+[19:39:44][assetfactory_audio.cpp:506]: Could not find music file 'music/rua_deni_moj_milane_jabuko_sa_grane.ogg' in  file: music/soldiersradio.asset line: 1814
+[19:39:52][guitype.cpp:122]: unnamed gui type interface/countrytechtreeview.gui:3730
+[19:39:53][persistent.cpp:52]: Error: "Unexpected token: size, near line: 26" in file: "interface/mapicons_counter.gui" near line: 26
+[19:39:53][persistent.cpp:52]: Error: "Unexpected token: scale, near line: 66" in file: "interface/mapicons_counter.gui" near line: 66
+[19:40:02][texturehandler.cpp:155]: Texture Handler encountered missing texture file: gfx/HOI3UI/flag_circle_small_mask.tga
+[19:40:02][texturehandler.cpp:303]: Couldn't find texture file: gfx/HOI3UI/flag_circle_small_mask.tga.
+[19:40:02][texturehandler.cpp:155]: Texture Handler encountered missing texture file: gfx/HOI3UI/flag_circle_small_overlay.dds
+[19:40:02][texturehandler.cpp:303]: Couldn't find texture file: gfx/HOI3UI/flag_circle_small_overlay.dds.
+[19:40:13][gameitemdatabasehelper.h:111]: Error: "Unexpected token: , near line: 1
+" in file: "common/ideas/.DS_Store" near line: 1
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 43" in file: "common/ideas/add_director.txt" near line: 45
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 90" in file: "common/ideas/add_director.txt" near line: 92
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 134" in file: "common/ideas/add_director.txt" near line: 136
+[19:40:13][trigger.cpp:614]: Invalid trigger 'factor' in common/ideas/add_director.txt line : 165
+[19:40:13][trigger.cpp:474]: Error: "Unknown trigger-type: factor, near line: 165" in file: "common/ideas/add_director.txt" near line: 166
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 170" in file: "common/ideas/add_director.txt" near line: 174
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 214" in file: "common/ideas/add_director.txt" near line: 217
+[19:40:13][database_scoped_variables.h:61]: invalid database object for effect/trigger:  file: common/ideas/add_director.txt line: 242 communist. use var:var_name to explicitly use variables in effects/triggers
+[19:40:13][trigger.cpp:614]: Invalid trigger 'EAI_communist_focus' in common/ideas/add_director.txt line : 257
+[19:40:13][trigger.cpp:474]: Error: "Unknown trigger-type: EAI_communist_focus, near line: 257" in file: "common/ideas/add_director.txt" near line: 259
+[19:40:13][database_scoped_variables.h:61]: invalid database object for effect/trigger:  file: common/ideas/add_director.txt line: 293 fascist. use var:var_name to explicitly use variables in effects/triggers
+[19:40:13][trigger.cpp:614]: Invalid trigger 'EAI_fascist_focus' in common/ideas/add_director.txt line : 308
+[19:40:13][trigger.cpp:474]: Error: "Unknown trigger-type: EAI_fascist_focus, near line: 308" in file: "common/ideas/add_director.txt" near line: 310
+[19:40:13][trigger.cpp:614]: Invalid trigger 'EAI_democratic_focus' in common/ideas/add_director.txt line : 359
+[19:40:13][trigger.cpp:474]: Error: "Unknown trigger-type: EAI_democratic_focus, near line: 359" in file: "common/ideas/add_director.txt" near line: 360
+[19:40:13][trigger.cpp:614]: Invalid trigger 'EAI_democratic_focus' in common/ideas/add_director.txt line : 410
+[19:40:13][trigger.cpp:474]: Error: "Unknown trigger-type: EAI_democratic_focus, near line: 410" in file: "common/ideas/add_director.txt" near line: 411
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 100" in file: "common/ideas/add_effects_air_doc.txt" near line: 103
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 160" in file: "common/ideas/add_effects_air_doc.txt" near line: 163
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 211" in file: "common/ideas/add_effects_air_doc.txt" near line: 214
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 254" in file: "common/ideas/add_effects_air_doc.txt" near line: 256
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 288" in file: "common/ideas/add_effects_air_doc.txt" near line: 291
+[19:40:13][persistent.cpp:52]: Error: "Unknown modifier: army_armor_factor_defence_factor, near line: 80" in file: "common/ideas/add_effects_land_doc.txt" near line: 80
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 93" in file: "common/ideas/add_effects_land_doc.txt" near line: 97
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 150" in file: "common/ideas/add_effects_land_doc.txt" near line: 152
+[19:40:13][persistent.cpp:52]: Error: "Unknown modifier: army_armor_factor_attack_factor, near line: 180" in file: "common/ideas/add_effects_land_doc.txt" near line: 180
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 193" in file: "common/ideas/add_effects_land_doc.txt" near line: 197
+[19:40:13][persistent.cpp:52]: Error: "Unknown modifier: army_anti_tank_attack_factor, near line: 226" in file: "common/ideas/add_effects_land_doc.txt" near line: 226
+[19:40:13][persistent.cpp:52]: Error: "Unknown modifier: army_rocket_artillery_attack_factor, near line: 227" in file: "common/ideas/add_effects_land_doc.txt" near line: 227
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 241" in file: "common/ideas/add_effects_land_doc.txt" near line: 244
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 268" in file: "common/ideas/add_effects_land_doc.txt" near line: 271
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 95" in file: "common/ideas/add_effects_naval_doc.txt" near line: 97
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 136" in file: "common/ideas/add_effects_naval_doc.txt" near line: 139
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 176" in file: "common/ideas/add_effects_naval_doc.txt" near line: 179
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 228" in file: "common/ideas/add_effects_naval_doc.txt" near line: 230
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: attack, near line: 244" in file: "common/ideas/add_effects_naval_doc.txt" near line: 244
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 273" in file: "common/ideas/add_effects_naval_doc.txt" near line: 276
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 51" in file: "common/ideas/add_effects_pro.txt" near line: 54
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 100" in file: "common/ideas/add_effects_pro.txt" near line: 103
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 252" in file: "common/ideas/add_effects_pro.txt" near line: 256
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 287" in file: "common/ideas/add_effects_pro.txt" near line: 290
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 327" in file: "common/ideas/add_effects_pro.txt" near line: 330
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 371" in file: "common/ideas/add_effects_pro.txt" near line: 375
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 406" in file: "common/ideas/add_effects_pro.txt" near line: 409
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 455" in file: "common/ideas/add_effects_pro.txt" near line: 458
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 490" in file: "common/ideas/add_effects_pro.txt" near line: 493
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 553" in file: "common/ideas/add_effects_pro.txt" near line: 556
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 602" in file: "common/ideas/add_effects_pro.txt" near line: 606
+[19:40:13][persistent.cpp:52]: Error: "Unexpected token: ai_research_weights, near line: 645" in file: "common/ideas/add_effects_pro.txt" near line: 649
+[19:40:13][persistent.cpp:52]: Error: "Unknown modifier: production_speed_trench_factor, near line: 587" in file: "common/ideas/eu4_like_ages_ideas.txt" near line: 587
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 19" in file: "common/ideas/national_level_ideas.txt" near line: 19
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 40" in file: "common/ideas/national_level_ideas.txt" near line: 40
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 61" in file: "common/ideas/national_level_ideas.txt" near line: 61
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 82" in file: "common/ideas/national_level_ideas.txt" near line: 82
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 103" in file: "common/ideas/national_level_ideas.txt" near line: 103
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 125" in file: "common/ideas/national_level_ideas.txt" near line: 125
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 147" in file: "common/ideas/national_level_ideas.txt" near line: 147
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 169" in file: "common/ideas/national_level_ideas.txt" near line: 169
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 191" in file: "common/ideas/national_level_ideas.txt" near line: 191
+[19:40:14][persistent.cpp:52]: Error: "Unknown modifier: research_time_factor, near line: 213" in file: "common/ideas/national_level_ideas.txt" near line: 213
+[19:40:27][lexer.cpp:212]: Creation of dynamic token "1950_oil_processing" failed, keywords may not start with a digit or '-'.
+[19:40:27][lexer.cpp:212]: Creation of dynamic token "1960_oil_processing" failed, keywords may not start with a digit or '-'.
+[19:40:27][lexer.cpp:212]: Creation of dynamic token "1950_rubber_processing" failed, keywords may not start with a digit or '-'.
+[19:40:27][lexer.cpp:212]: Creation of dynamic token "1960_rubber_processing" failed, keywords may not start with a digit or '-'.
+[19:40:27][decision.cpp:4100]: Duplicate category. league_of_nations_category is a duplicate.
+[19:40:27][persistent.cpp:52]: Error: "Unknown category: : , near line: 1
+Unexpected token: ÿÿÿÿÿÿ, near line: 3" in file: "common/decisions/.DS_Store" near line: 3
+[19:40:27][persistent.cpp:52]: Error: "Unexpected token: , near line: 6" in file: "common/decisions/.DS_Store" near line: 6
+[19:40:27][persistent.cpp:52]: Error: "Unexpected token: , near line: 6" in file: "common/decisions/.DS_Store" near line: 6
+[19:40:27][persistent.cpp:52]: Error: "Unexpected token: {, near line: 6" in file: "common/decisions/.DS_Store" near line: 6
+[19:40:27][persistent.cpp:52]: Error: "Unexpected token: ,, near line: 6" in file: "common/decisions/.DS_Store" near line: 6
+[19:40:27][persistent.cpp:52]: Error: "Unknown category for :  It will be ignored: }, near line: 6
+Unexpected token: {, near line: 6" in file: "common/decisions/.DS_Store" near line: 6
+[19:40:27][persistent.cpp:52]: Error: "Unknown category for : %1 It will be ignored: }, near line: 6
+Unexpected token: , near line: 7" in file: "common/decisions/.DS_Store" near line: 7
+[19:40:27][persistent.cpp:52]: Error: "Unexpected token: , near line: 7" in file: "common/decisions/.DS_Store" near line: 7
+[19:40:27][persistent.cpp:52]: Error: "Unexpected token: , near line: 7" in file: "common/decisions/.DS_Store" near line: 7
+[19:40:27][persistent.cpp:52]: Error: "Unexpected token: , near line: 7" in file: "common/decisions/.DS_Store" near line: 7
+[19:40:27][persistent.cpp:52]: Error: "Unexpected token: , near line: 7" in file: "common/decisions/.DS_Store" near line: 7
+[19:40:27][gameitemdatabasehelper.h:111]: Error: "Unknown category for : ~˜ It will be ignored: , near line: 7
+" in file: "common/decisions/.DS_Store" near line: 7
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 29
+" in file: "common/decisions/TUR.txt" near line: 36
+[19:40:28][persistent.cpp:52]: Error: "Unknown modifier: enemy_partisan_effect, near line: 595" in file: "common/decisions/md_generic_decisions.txt" near line: 595
+[19:40:28][trigger.cpp:614]: Invalid trigger 'has_tag' in common/decisions/profiteering_decisions.txt line : 76
+[19:40:28][trigger.cpp:474]: Error: "Unknown trigger-type: has_tag, near line: 76" in file: "common/decisions/profiteering_decisions.txt" near line: 76
+[19:40:28][database_scoped_variables.h:61]: invalid database object for effect/trigger:  file: common/national_focus/finlandia.txt line: 1405 neutral. use var:var_name to explicitly use variables in effects/triggers
+[19:40:28][effect.cpp:383]: Invalid effect 'limit' in common/national_focus/finlandia.txt line : 2247
+[19:40:28][effect.cpp:284]: Error: "Unknown effect-type: limit, near line: 2247
+" in file: "common/national_focus/finlandia.txt" near line: 2253
+[19:40:28][effect.cpp:284]: Error: "Unknown technology category tactical_bombers: tactical_bombers, near line: 784
+" in file: "common/national_focus/generic.txt" near line: 786
+[19:40:28][effect.cpp:383]: Invalid effect 'ai_strategy' in common/national_focus/generic.txt line : 3354
+[19:40:28][effect.cpp:284]: Error: "Unknown effect-type: ai_strategy, near line: 3354
+" in file: "common/national_focus/generic.txt" near line: 3359
+[19:40:28][trigger.cpp:614]: Invalid trigger 'limit' in common/national_focus/generic.txt line : 7867
+[19:40:28][trigger.cpp:474]: Error: "Unknown trigger-type: limit, near line: 7867" in file: "common/national_focus/generic.txt" near line: 7871
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 128
+" in file: "common/national_focus/greece.txt" near line: 135
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 139
+Malformed token: trait_GRE_fascist_sympathizer, near line: 139
+" in file: "common/national_focus/greece.txt" near line: 146
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 150
+" in file: "common/national_focus/greece.txt" near line: 157
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 161
+Malformed token: trait_GRE_fascist_sympathizer, near line: 161
+" in file: "common/national_focus/greece.txt" near line: 168
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_marxist_acolyte, near line: 942
+" in file: "common/national_focus/greece.txt" near line: 949
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_marxist_acolyte, near line: 953
+" in file: "common/national_focus/greece.txt" near line: 960
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 2180
+Malformed token: trait_GRE_fascist_sympathizer, near line: 2180
+" in file: "common/national_focus/greece.txt" near line: 2187
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_fascist_sympathizer, near line: 2191
+" in file: "common/national_focus/greece.txt" near line: 2198
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 2202
+Malformed token: trait_GRE_fascist_sympathizer, near line: 2202
+" in file: "common/national_focus/greece.txt" near line: 2209
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_BUL_tsar_loyalist, near line: 224
+" in file: "history/countries/BUL - Bulgaria.txt" near line: 230
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_BUL_tsar_loyalist, near line: 260
+" in file: "history/countries/BUL - Bulgaria.txt" near line: 266
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_BUL_tsar_loyalist, near line: 320
+" in file: "history/countries/BUL - Bulgaria.txt" near line: 326
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_BUL_zveno_member, near line: 332
+" in file: "history/countries/BUL - Bulgaria.txt" near line: 338
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_stauch_monarchist, near line: 426
+" in file: "history/countries/GRE - Greece.txt" near line: 433
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_GRE_stauch_monarchist, near line: 438
+" in file: "history/countries/GRE - Greece.txt" near line: 445
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 519
+" in file: "history/countries/TUR - Turkey.txt" near line: 526
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 531
+" in file: "history/countries/TUR - Turkey.txt" near line: 538
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 543
+" in file: "history/countries/TUR - Turkey.txt" near line: 550
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 555
+" in file: "history/countries/TUR - Turkey.txt" near line: 562
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 603
+" in file: "history/countries/TUR - Turkey.txt" near line: 610
+[19:40:28][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 650
+" in file: "history/countries/TUR - Turkey.txt" near line: 657
+[19:40:29][pdx_audio.cpp:1360]: Could not find music named waltz_amur_waves
+[19:40:29][trigger.cpp:614]: Invalid trigger 'modifier' in music/1_radio_rome.txt line : 337
+[19:40:29][trigger.cpp:474]: Error: "Unknown trigger-type: modifier, near line: 337" in file: "music/1_radio_rome.txt" near line: 342
+[19:40:29][persistent.cpp:52]: Error: "Unexpected token: music, near line: 345" in file: "music/1_radio_rome.txt" near line: 352
+[19:40:29][persistent.cpp:52]: Error: "Unexpected token: music, near line: 354" in file: "music/1_radio_rome.txt" near line: 361
+[19:40:29][persistent.cpp:52]: Error: "Unexpected token: music, near line: 363" in file: "music/1_radio_rome.txt" near line: 370
+[19:40:29][persistent.cpp:52]: Error: "Unexpected token: music, near line: 372" in file: "music/1_radio_rome.txt" near line: 379
+[19:40:29][persistent.cpp:52]: Error: "Unexpected token: music, near line: 381" in file: "music/1_radio_rome.txt" near line: 393
+[19:40:29][persistent.cpp:52]: Error: "Unexpected token: music, near line: 395" in file: "music/1_radio_rome.txt" near line: 402
+[19:40:29][persistent.cpp:52]: Error: "Unexpected token: music, near line: 404" in file: "music/1_radio_rome.txt" near line: 417
+[19:40:29][persistent.cpp:52]: Error: "Unexpected token: music, near line: 419" in file: "music/1_radio_rome.txt" near line: 426
+[19:40:29][musicmanager.cpp:164]: Error no music_station defined for songs in [file] music/soldiersradio.txt [location]  file: music/soldiersradio.txt line: 10
+[19:40:29][insigniagraphicsdatabase.cpp:256]: Error: Wrong army icon definition
+ GFX_theatre_army_shield 337 - defined in army_icons.txt and 400 specified in GFX file
+[19:40:29][insigniagraphicsdatabase.cpp:274]: Error: Wrong army icon definition
+ GFX_theatre_army_shield_selected 337 - defined in army_icons.txt and 400 specified in GFX file
+[19:40:29][insigniagraphicsdatabase.cpp:256]: Error: Wrong army icon definition
+ GFX_theatre_army_group_shield 12 - defined in army_icons.txt and 200 specified in GFX file
+[19:40:29][insigniagraphicsdatabase.cpp:274]: Error: Wrong army icon definition
+ GFX_theatre_army_group_shield_selected 12 - defined in army_icons.txt and 200 specified in GFX file
+[19:40:30][effect.cpp:383]: Invalid effect 'AUH' in common/scripted_guis/eu4_like_ages_scripted_guis.txt line : 713
+[19:40:30][effect.cpp:284]: Error: "Unknown effect-type: AUH, near line: 713
+" in file: "common/scripted_guis/eu4_like_ages_scripted_guis.txt" near line: 723
+[19:40:30][idea.cpp:581]: Invalid trait for idea : northrop jet_light_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : martin jet_medium_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : republic jet_CAS_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : convair jet_heavy_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : mcdonnell jet_naval_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : gloster jet_light_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : dassault jet_light_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : fiat_aviazione jet_light_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : sukhoi jet_light_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : OKB21 jet_medium_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : lavochkin jet_CAS_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : myasishchev jet_heavy_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : beriev jet_naval_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : kurt_tank jet_light_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : arado jet_medium_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : henschel_aviation jet_CAS_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : horten jet_heavy_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : ewr jet_naval_aircraft_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : raytheon radar_concern
+[19:40:30][idea.cpp:581]: Invalid trait for idea : telefunken radar_concern
+[19:40:30][idea.cpp:581]: Invalid trait for idea : niip radar_concern
+[19:40:30][idea.cpp:581]: Invalid trait for idea : marietta missile_concern
+[19:40:30][idea.cpp:581]: Invalid trait for idea : ruhrstahl missile_concern
+[19:40:30][idea.cpp:581]: Invalid trait for idea : vympel missile_concern
+[19:40:30][idea.cpp:581]: Invalid trait for idea : uralvagonzavod mbt_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : gdls mbt_manufacturer
+[19:40:30][idea.cpp:581]: Invalid trait for idea : krauss_maffei mbt_manufacturer
+[19:40:30][idea.cpp:1312]: idea fi_air_theorist has no ledger assigned
+[19:40:30][idea.cpp:1312]: idea fi_artillery_expert_command has no ledger assigned
+[19:40:30][idea.cpp:1312]: idea fi_salvage_expert_command has no ledger assigned
+[19:40:30][effect.cpp:284]: Error: "Malformed token: trait_GRE_fascist_sympathizer, near line: 3065
+" in file: "events/BFTB_Greece.txt" near line: 3072
+[19:40:30][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 5762
+" in file: "events/BFTB_Greece.txt" near line: 5769
+[19:40:30][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 5773
+" in file: "events/BFTB_Greece.txt" near line: 5780
+[19:40:30][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 5784
+Malformed token: trait_GRE_fascist_sympathizer, near line: 5784
+" in file: "events/BFTB_Greece.txt" near line: 5791
+[19:40:30][effect.cpp:284]: Error: "Malformed token: trait_GRE_marxist_acolyte, near line: 5795
+" in file: "events/BFTB_Greece.txt" near line: 5802
+[19:40:30][effect.cpp:284]: Error: "Malformed token: trait_GRE_marxist_acolyte, near line: 5806
+" in file: "events/BFTB_Greece.txt" near line: 5813
+[19:40:30][effect.cpp:284]: Error: "Malformed token: trait_GRE_venezelist_loyalist, near line: 5817
+Malformed token: trait_GRE_fascist_sympathizer, near line: 5817
+" in file: "events/BFTB_Greece.txt" near line: 5824
+[19:40:30][id.cpp:99]: Failed to create id 1100017 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700001 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700002 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700003 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700004 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700005 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700006 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700007 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700008 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 5700009 50. Already exists in game. This might crash the game.
+[19:40:30][database_scoped_variables.h:61]: invalid database object for effect/trigger:  file: events/Finlandia.txt line: 2139 fascist. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][id.cpp:99]: Failed to create id 1000004 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 1200014 50. Already exists in game. This might crash the game.
+[19:40:30][id.cpp:99]: Failed to create id 1300236 50. Already exists in game. This might crash the game.
+[19:40:30][trigger.cpp:614]: Invalid trigger 'FROM:var_name' in events/demand_events.txt line : 76
+[19:40:30][trigger.cpp:474]: Error: "Unknown trigger-type: FROM:var_name, near line: 76" in file: "events/demand_events.txt" near line: 76
+[19:40:30][trigger.cpp:614]: Invalid trigger 'FROM:var_name' in events/demand_events.txt line : 170
+[19:40:30][trigger.cpp:474]: Error: "Unknown trigger-type: FROM:var_name, near line: 170" in file: "events/demand_events.txt" near line: 170
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: lar_decryption_bonus_tech. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: mountain_warfare. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: lar_decryption_bonus_tech. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: lar_decryption_bonus_tech. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: ww1_fortification2. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: ww1_light_tank. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: ww1_heavy_tank. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: early_tank. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: chemical_research2. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][database_scoped_variables.cpp:312]: invalid database object for effect/trigger: gas_mask2. use var:var_name to explicitly use variables in effects/triggers
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member common/decisions/BUL.txt:2301: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member common/decisions/BUL.txt:3348: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member common/decisions/BUL.txt:3353: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member common/decisions/BUL.txt:4009: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member common/decisions/BUL.txt:4017: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member common/decisions/BUL.txt:5165: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_tsar_loyalist common/national_focus/bulgaria.txt:2525: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_tsar_loyalist common/national_focus/bulgaria.txt:2532: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_tsar_loyalist common/national_focus/bulgaria.txt:4522: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_tsar_loyalist common/national_focus/bulgaria.txt:7295: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member history/countries/BUL - Bulgaria.txt:529: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_ff_sympathizer common/scripted_effects/BUL_scripted_effects.txt:1021: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_ff_sympathizer common/scripted_effects/BUL_scripted_effects.txt:1028: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_tsar_loyalist events/BFTB_Bulgaria.txt:516: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_ff_sympathizer events/BFTB_Bulgaria.txt:517: has_trait
+[19:40:30][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member events/BFTB_Bulgaria.txt:591: has_trait
+[19:40:30][db_ref_variable.h:90]: events/dyn_Rschadv.txt:21: has_idea: Invalid idea: usa_great_depression_3. If you wanted to reference a variable, you need to explicitly prefix it with var: or temp_var:.
+[19:40:30][effectimplementation.cpp:4815]: Invalid trait: trait_BUL_ff_sympathizer common/decisions/BUL.txt:5167: add_unit_leader_trait
+[19:40:30][effectimplementation.cpp:5145]: Invalid trait: trait_BUL_tsar_loyalist common/national_focus/bulgaria.txt:4525: remove_unit_leader_trait
+[19:40:30][effectimplementation.cpp:5145]: Invalid trait: trait_BUL_tsar_loyalist common/national_focus/bulgaria.txt:7298: remove_unit_leader_trait
+[19:40:30][effectimplementation.cpp:4815]: Invalid trait: trait_BUL_zveno_member events/BFTB_Bulgaria.txt:519: add_unit_leader_trait
+[19:40:30][effectimplementation.cpp:4815]: Invalid trait: trait_BUL_ff_sympathizer events/BFTB_Bulgaria.txt:2979: add_unit_leader_trait
+[19:40:30][effectimplementation.cpp:4815]: Invalid trait: trait_BUL_ff_sympathizer events/BFTB_Bulgaria.txt:2988: add_unit_leader_trait
+[19:40:30][effectimplementation.cpp:4815]: Invalid trait: trait_BUL_ff_sympathizer events/BFTB_Bulgaria.txt:2996: add_unit_leader_trait
+[19:40:39][effect.cpp:284]: Error: "Malformed token: trait_BUL_tsar_loyalist, near line: 224
+" in file: "history/countries/BUL - Bulgaria.txt" near line: 230
+[19:40:39][effect.cpp:284]: Error: "Malformed token: trait_BUL_tsar_loyalist, near line: 260
+" in file: "history/countries/BUL - Bulgaria.txt" near line: 266
+[19:40:39][effect.cpp:284]: Error: "Malformed token: trait_BUL_tsar_loyalist, near line: 320
+" in file: "history/countries/BUL - Bulgaria.txt" near line: 326
+[19:40:39][effect.cpp:284]: Error: "Malformed token: trait_BUL_zveno_member, near line: 332
+" in file: "history/countries/BUL - Bulgaria.txt" near line: 338
+[19:40:39][effect.cpp:284]: Error: "Malformed token: trait_GRE_stauch_monarchist, near line: 426
+" in file: "history/countries/GRE - Greece.txt" near line: 433
+[19:40:39][effect.cpp:284]: Error: "Malformed token: trait_GRE_stauch_monarchist, near line: 438
+" in file: "history/countries/GRE - Greece.txt" near line: 445
+[19:40:40][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 519
+" in file: "history/countries/TUR - Turkey.txt" near line: 526
+[19:40:40][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 531
+" in file: "history/countries/TUR - Turkey.txt" near line: 538
+[19:40:40][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 543
+" in file: "history/countries/TUR - Turkey.txt" near line: 550
+[19:40:40][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 555
+" in file: "history/countries/TUR - Turkey.txt" near line: 562
+[19:40:40][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 603
+" in file: "history/countries/TUR - Turkey.txt" near line: 610
+[19:40:40][effect.cpp:284]: Error: "Malformed token: trait_TUR_kemalist_champion, near line: 650
+" in file: "history/countries/TUR - Turkey.txt" near line: 657
+[19:40:40][triggerimplementation.cpp:4189]: Invalid trait: trait_BUL_zveno_member history/countries/BUL - Bulgaria.txt:529: has_trait
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: friend_in_need
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: time_is_on_our_side
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: canada_first
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: we_will_build_it_in_a_day
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: transport_tycoon
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: destroyer_of_worlds
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: wunderwaffen
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: united_netherlands
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: vive_la_france
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: master_of_war
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: mine_is_bigger_than_yours
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: no_country_for_old_men
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: poland_can_into_space
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: true_blitzkrieg
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: northern_light
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: nobody_expects
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_bell_tolls_for_us
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_revolution_triumphant
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: once_more_mate
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: forge_of_victory
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: sunset_invasion
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: duce_nukedem
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: operation_sealion
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: one_empire
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: party_like_its_1520
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: med_plutonium
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: montezumas_revenge
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: big_entente
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: new_world_order
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: vojtek_commander
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: brains
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: district_9
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: our_words_are_backed
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: crusader_kings
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: crusader_kings_2
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: rule_britannia
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: cut_the_strings
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: its_1812_all_over_again
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_weapons_of_the_third_emu_war
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: i_am_the_tong_master
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_empire_strikes_back
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_puppetmaster
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: freegypt
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: miklos_horthy_and_the_habsburg_prince
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: better_than_the_szent_istvan
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: death_or_dishonor_or_cake
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: neither_death_nor_dishonor
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_munich_disagreement
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: czechmate
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: huge_oslavia
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_balkan_powder_keg
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: en_svensk_tiger
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: lethal_straight
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: awake_and_angry
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: romance_of_the_three_kingdoms
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: sun_tzu_reborn
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_people_have_stood_up
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: made_in_china
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: tojo_shot_first
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: sunrise_invasion
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_dragon_swallowed_the_sun
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: hail_to_the_qing
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_good_the_bad_and_the_weird
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: battlecry
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: panda_monium
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: make_a_man_out_of_you
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: monarchy_is_back_in_fashion
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: our_other_place_in_the_sun
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: australia_hungary
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: my_ships_dont_lie
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: i_swear_im_not_a_byzantophile
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: team_america
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: history_repeated_itself
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: georgia_on_my_mind
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: to_arms_in_dixie
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: arsenal_of_democracy
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: underpaid_undersexed_and_under_eisenhower
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: last_for_a_thousand_years
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: britzkrieg
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: nothing_wrong_with_our_bloody_ships
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: william_wallis
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: crush_the_dream
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: treading_the_narrow_path
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: putting_the_raid_on_the_medway_to_shame
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: bevrijding
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: mi_casa_es_tu_casa
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: the_new_home_of_the_revolution
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: assuming_direct_control
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: vive_la_jeune_ecole
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: 30_minutes_of_hel
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: pride_and_extreme_prejudice
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: do_you_mined
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: portugal_bffs
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: portugal_macau_my_day
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: play_it_again
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: spies_trade
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: why_die_for_danzig
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: i_see_everything
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: shaken_not_stirred
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: listen_carefully
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: man_of_a_thousand_faces
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: turing_complete
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: one_king_two_crowns
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: we_will_rock_you
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: i_didnt_vote_for_you
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: our_chief_weapon_is_surprise
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: die_albion
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: second_times_charm
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: dont_die_for_your_country
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: warsaw_liberates_self
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: tour_de_france
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: you_will_never_kill_me_alive
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: finnish_him
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: lousy_achievement
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: istanbul_is_constantinople_again
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: peters_pride
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: this_is_madness
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: nobodys_business_but_the_turks
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: kurdish_achievement
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: greek_civility
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: hoofin_it
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: were_putting_the_band_back_together
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: draculas_revenge
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: prussia_of_the_balkans
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: balkan_problem_solved
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: bad_romeance
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: totally_not_cool_bromania
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: freedom_or_death
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: now_this_is_getting_childish
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: hardly_anything_sevres
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: one_nation_under_ataturk_indivisible
+[19:41:00][pdx_achievements_steam.cpp:277]: Invalid achievement: master_puppeteer
+[19:41:31][gui.cpp:861]: Undefined GUI_TYPE: _stations_entry - This will most likely crash the game
+[19:41:31][musicplayerview.cpp:62]: Missing music_station_entry GUI component containerWindowType with name: _stations_entry
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:40][scoppedvariable.cpp:933]: const seed for scope is not calculated. this effect will get same seeds for different scopes
+[19:41:43][graphics.cpp:1280]: No font with name center
+[19:41:43][graphics.cpp:1280]: No font with name center
+[19:44:01][navalmission.cpp:1947]: TaskForce in province id 911 that has no sea access
+[19:44:01][navalmission.cpp:1947]: TaskForce in province id 911 that has no sea access
+[19:44:01][navalmission.cpp:1947]: TaskForce in province id 911 that has no sea access
+[19:44:01][navalmission.cpp:1947]: TaskForce in province id 911 that has no sea access
+[19:44:01][navalmission.cpp:1947]: TaskForce in province id 911 that has no sea access
+[19:44:01][navalmission.cpp:1947]: TaskForce in province id 911 that has no sea access
+[19:44:01][navalmission.cpp:1947]: TaskForce in province id 911 that has no sea access
+[19:44:01][navalmission.cpp:1947]: TaskForce in province id 911 that has no sea access

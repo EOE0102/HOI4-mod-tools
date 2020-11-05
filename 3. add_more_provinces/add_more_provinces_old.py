@@ -33,7 +33,7 @@ longitude_south_in_rand = longitude_south/ 180 * np.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 24 #pixel on equator
+default_province_size = 16 #pixel on equator
 max_new_provinces_per_state = 5
 
 ## REBUILD ##
@@ -659,6 +659,20 @@ def get_nearest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rg
     nearestPointOfGravityOfSmallPart = rgb_area_p[index]
     return nearestPointOfGravityOfSmallPart
 
+def get_farest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, rgb_area_p):
+    #RGBAreaPartRestJointPointOfGravity[0] = RGBAreaPartRestJointPointOfGravity[0] -0.5
+    #RGBAreaPartRestJointPointOfGravity[1] = RGBAreaPartRestJointPointOfGravity[1] -0.5
+    distance = 0
+    index = 0
+    for item in range(len(rgb_area_p)):
+        distanceTemp = calculate_P2P_distance(RGBAreaPartRestJointPointOfGravity, rgb_area_p[item])
+        if distanceTemp > distance:
+            distance = distanceTemp
+            index = item
+    fasestPointOfGravityOfbigPart = rgb_area_p[index]
+    return fasestPointOfGravityOfbigPart
+
+
 def calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, max_new_provinces_per_state):
     # according to altitude
     equatorPosition = round(longitude_north2D/(longitude_north2D + longitude_south2D) * image_height)
@@ -706,7 +720,7 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
     terrain_okay_dict = {
         'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
-        'new_province_max_amount': [3,3,3,3,4,3,2,2]
+        'new_province_max_amount': [4,4,4,4,5,4,3,3]
     }
     #countrytag, continent ['DEN',1]
     owner_okay_list = [['POR',1], ['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1], 
@@ -811,7 +825,7 @@ def step_get_seeds_in_every_area():
             #bolFixTheFirstSeedPosition = False
             
             if bolIsProvinceCoast:
-                coast_points_collection = get_coast_points_collection(rgb_area_main_RGB, all_seed_info[iRGBList][0][4], pixels, definition_color_address['RGB'], definition_color_address['land_sea_lake'])
+                coast_points_collection = get_coast_points_collection(rgb_area_main_RGB, all_seed_info[iRGBList][rgb_area_main_part_index][4], pixels, definition_color_address['RGB'], definition_color_address['land_sea_lake'])
 
                 if len(all_seed_info[iRGBList]) > 1: # >2 #area has one or more small parts 
                     RGBAreaPartRestJointPointOfGravity = calculate_joint_POG(all_seed_info[iRGBList], rgb_area_main_part_index)
@@ -825,7 +839,8 @@ def step_get_seeds_in_every_area():
                     coreOfNewSeed = no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p)
 
                 else:
-                    coreOfSeed.append(coast_points_collection[0]) #TODO
+                    farestPointOfGravityOfBigPart = get_farest_POGOfSmallPartOnMainBlock(RGBAreaPartRestJointPointOfGravity, coast_points_collection)
+                    coreOfSeed.append(farestPointOfGravityOfBigPart) #TODO
                     for item in range(1, new_province_max_amount):
                         coreOfSeed.append(rgb_area_main_POG_in_area)
                         coreOfNewSeed = []
