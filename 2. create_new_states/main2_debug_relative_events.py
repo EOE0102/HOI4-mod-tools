@@ -4,7 +4,7 @@ import os
 import re
 import copy
 
-def remider_initialize(new_state_remider_original_lst):
+def reminder_initialize(new_state_remider_original_lst):
     new_state_remider_lst = []
     for i in new_state_remider_original_lst:
         temp = i.split(":")
@@ -27,7 +27,13 @@ def str_initialize(all_text_in_lst):
 def __folder_files_prepearation():
     root = Tkinter.Tk()
     import_file_folder_location = filedialog.askdirectory(title = "Select Event(or any relative files) Location")
-    export_folder_location = filedialog.askdirectory(title = "Select Export Folder Location")
+
+
+    #export_folder_location = filedialog.askdirectory(title = "Select Export Folder Location")
+    export_folder_location = os.getcwd() + "/export/"
+    if not os.path.exists(export_folder_location):
+        os.makedirs(export_folder_location)
+
     new_state_reminder_definition_file_location = filedialog.askopenfilename(title = "Select new_state_reminder_ file(new_state_reminder_.txt)", filetypes={("HOI Map file", ".txt"),("All files", "*.*")})
     return import_file_folder_location, export_folder_location, new_state_reminder_definition_file_location
 
@@ -70,12 +76,15 @@ def find_first_bracket_after_kw(_kw_position, _open_bracket_lst, _close_bracket_
 
     while a != 0:
         _next_open_bracket_position = find_first_enter_letter_after_kw(_next_bracket_position, _open_bracket_lst)
+        if _next_open_bracket_position < 0: #bug last open bracket
+            _next_open_bracket_position = 99999999
         _next_close_bracket_position = find_first_enter_letter_after_kw(_next_bracket_position, _close_bracket_lst)
         _next_bracket_position = min(_next_open_bracket_position, _next_close_bracket_position)
         
+
         if _next_close_bracket_position < _next_open_bracket_position: #good
             a = a - 1
-        else:   
+        else:
             a = a + 1
 
         if a == 0:
@@ -148,20 +157,21 @@ def add_item_before_kw(_new_import_file_str, _find_str, _start_mark, _end_mark, 
     _kw_position = [m.start() for m in re.finditer(r"\s" + _find_str + r"\s+" + _start_mark + r"\s+", _new_import_file_str)]
     i = 0
     if _kw_position != []:
+        #because I modify the file 
         while i < len(_kw_position):
-            _new_combined_state_str = ""
             _kw_position = [m.start() for m in re.finditer(r"\s" + _find_str + r"\s+" + _start_mark + r"\s+", _new_import_file_str)]
-            _kw = re.findall(r"\s+" + _find_str + r"\s+" + _start_mark + r"\s+", _new_import_file_str)
-            _space_position = [m.start() for m in re.finditer(r"\s" , _new_import_file_str)]
-            _end_state_position = find_first_enter_letter_after_kw(_kw_position[i] + len(_kw[i]), _space_position)
+            _new_combined_state_str = ""
+            #_kw = re.findall(r"\s+" + _find_str + r"\s+" + _start_mark + r"\s+", _new_import_file_str)
+            #_space_position = [m.start() for m in re.finditer(r"\s" , _new_import_file_str)]
+            #_end_state_position = find_first_enter_letter_after_kw(_kw_position[i] + len(_kw[i]), _space_position)
             #_info = _new_import_file_str[_kw_position[i] + len(_kw[i]) : _end_state_position] # yes /no /AUS ...
-
             _state_id_position = [m.start() for m in re.finditer(r"\s+\d+\s+" + _start_mark + r"\s+", _new_import_file_str)]
             _state_id = re.findall(r"\s+\d+\s+" + _start_mark + r"\s+", _new_import_file_str)
-            
-
             temp1 = find_last_letter_before_kw(_kw_position[i], _state_id_position)
+
             if temp1 < 0: #no id not found
+                i = i + 1
+            elif _kw_position[i] - temp1 > 10: # bug like this:537 = /r/r {add_core_of = FROM}
                 i = i + 1
             else:
                 for temp2 in range(len(_state_id_position)):
@@ -201,15 +211,12 @@ def write_file(_export_folder_location, _file_name, _file_str):
 
 def main():
     import_file_folder_location, export_folder_location, new_state_reminder_definition_file_location = __folder_files_prepearation()
-    if not os.path.exists(export_folder_location):
-        os.makedirs(export_folder_location)
     
-
     new_state_remider_file = open(new_state_reminder_definition_file_location, "r")
     new_state_remider_original_lst = new_state_remider_file.readlines()
     new_state_remider_file.close()
     
-    new_state_remider_lst = remider_initialize(new_state_remider_original_lst)
+    new_state_remider_lst = reminder_initialize(new_state_remider_original_lst)
     
 
     event_file_lst = []
@@ -270,15 +277,15 @@ def main():
         find_str = "set_demilitarized_zone"
         new_import_file_str = add_item_before_kw(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
 
-        #TODO
-        #629 = { add_core_of = USA }
         find_str = "add_core_of"
         new_import_file_str = add_item_before_kw(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
+
+        #TODO ai_strategy _economic
 
         if f != new_import_file_str:
             write_file(export_folder_location, import_file_name, new_import_file_str)
 
-        
+
 
 if __name__ == '__main__':
     main()

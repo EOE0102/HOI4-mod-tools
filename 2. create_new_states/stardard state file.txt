@@ -1,0 +1,56 @@
+state={
+	id=10
+	name="STATE_10"
+	manpower = 3089000
+	buildings_max_level_factor = 2
+	state_category = large_city
+	impassable = yes
+	local_supplies=7.0 
+
+	history={
+		owner = POL
+		victory_points = {
+			3544 25
+		}
+		victory_points = {
+			402 1
+		}
+		
+		buildings = {
+			infrastructure = 4
+			air_base
+			anti_air_building
+			radar_station
+			
+			arms_factory = 6
+			industrial_complex = 2
+			anti_air_building = 2
+			air_base = 5
+		}
+		add_core_of = POL
+	}
+
+	provinces={
+		402 467 524 3482 3544 6511 9400 11492 12562 
+	}
+
+
+}
+
+
+        original_infrastructure = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "infrastructure", "=", "\n")
+        original_air_base = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "air_base", "=", "\n")  
+        original_anti_air_building = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "anti_air_building", "=", "\n")  
+        original_radar_station = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "radar_station", "=", "\n")  
+
+        original_arms_factory = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "arms_factory", "=", "\n")
+        original_industrial_complex = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "industrial_complex", "=", "\n")
+        original_dockyard = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "dockyard", "=", "\n") 
+        original_synthetic_refinery = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "synthetic_refinery", "=", "\n") 
+        original_fuel_silo = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "fuel_silo", "=", "\n")  
+        original_rocket_site = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "rocket_site", "=", "\n")  
+        original_nuclear_reactor = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "nuclear_reactor", "=", "\n")  
+
+        original_naval_base = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "naval_base", "=", "\n")
+        original_bunker = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "\tbunker", "=", "\n")
+        original_coastal_bunker = find_inhalt_in_bracket_fcn(text_in_level_3_nospace, "coastal_bunker", "=", "\n")  
