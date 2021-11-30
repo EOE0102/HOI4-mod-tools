@@ -5,6 +5,7 @@ from _paramenter import *
 from core import *
 
 def get_remain_province_ID(original_victory_points, original_provinces_ID):
+    #the first province will ramain as the original state's province
     no_modify_provinces_ID = original_provinces_ID.split()
     no_modify_victory_points = []
 
@@ -34,6 +35,14 @@ def get_remain_province_ID(original_victory_points, original_provinces_ID):
         base_state_remain_province_ID = max_vp_id
     
     return base_state_remain_province_ID
+
+
+def change_state_id(base_state_remain_province_ID, original_provinces_ID):
+    temp2 = []
+    temp2 = original_provinces_ID.split()
+    temp2.remove(base_state_remain_province_ID)
+    temp2.insert(0, base_state_remain_province_ID)
+    return temp2
 
 
 def create_new_states_string(fileStart, amount_of_file):
@@ -151,9 +160,14 @@ def main():
         #state basic info 1
         base_state_file_ID = base_state_file_name.split("-")[0]
         modify_provinces_ID = change_state_id(base_state_remain_province_ID, original_provinces_ID) #state id state name
-        original_provinces_definition = get_original_provinces_definition(modify_provinces_ID,states_definition_file_location)
+        modify_provinces_ID_without_lake = remove_lake_from_provinces_ID(modify_provinces_ID, states_definition_file_location)
+        #original_provinces_definition = get_original_provinces_definition(modify_provinces_ID,states_definition_file_location)
+        #lake state
+        original_provinces_definition = get_original_provinces_definition_without_lake(modify_provinces_ID,states_definition_file_location)
+
+        #TODO
         modify_state_name = create_new_state_name(original_state_name, modify_provinces_ID)
-        
+
         # resources & provinces ID & VPs
         modify_victory_points = create_victory_points(modify_provinces_ID, original_victory_points)
         modify_provinces_buildings = create_original_provinces_buildings(modify_provinces_ID, original_province_buildings)
@@ -181,7 +195,7 @@ def main():
         numberOfFiles = len([name for name in os.listdir(export_supplyareas_folder_location) if os.path.isfile(name)]) #get number of files in /states
         number_of_state_file = len(os.listdir(export_states_folder_location))
         state_file_start = number_of_state_file + 1 #fileStart, txt file ID
-        amount_of_new_state_file = len(modify_provinces_ID)
+        amount_of_new_state_file = len(modify_provinces_ID_without_lake)
         new_states_file_ID_name = create_new_states_string(state_file_start, amount_of_new_state_file - 1)
         
 
@@ -205,7 +219,7 @@ def main():
 
             write_state_file(new_states_file, index, all_states_id_lst[index], 
                 modify_manpower, modify_state_category, original_buildings_max_level_factor, 
-                original_resources, modify_provinces_ID[index],
+                original_resources, modify_provinces_ID_without_lake[index],
                 modify_state_owner, modify_add_core_of_country_tag, modify_victory_points, modify_infrastructure_level, 
                 original_impassable, original_set_demilitarized_zone, modify_local_supplies,
                 original_air_base, original_anti_air_building, original_radar_station, 
