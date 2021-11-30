@@ -136,6 +136,61 @@ def get_original_provinces_definition(modify_provinces_ID,states_definition_file
     return new_item
 
 
+def get_original_provinces_definition_without_lake(modify_provinces_ID, states_definition_file_location):
+    definition_file = open(states_definition_file_location)
+    definition_file_lst_content = definition_file.readlines()
+    definition_file.close()
+    newlist = []
+    for i in modify_provinces_ID:
+        r = re.compile(i + ";" + ".*")
+        newlist.append(list(filter(r.match, definition_file_lst_content)))
+    new_item = []
+    for i in newlist:
+        item = i[0].split(";")
+        new_item.append([item[0], item[4], item[5], item[6], item[7]])
+
+    new_item_without_lake = []
+    for i in new_item:
+        land_type = i[1]
+        if land_type == 'lake':
+            new_item[0][0] = new_item[0][0] + ' ' + i[0]
+        else:
+            new_item_without_lake.append(i)
+
+    return new_item_without_lake
+
+
+def remove_lake_from_provinces_ID(modify_provinces_ID, states_definition_file_location):
+    definition_file = open(states_definition_file_location)
+    definition_file_lst_content = definition_file.readlines()
+    definition_file.close()
+    newlist = []
+    for i in modify_provinces_ID:
+        r = re.compile(i + ";" + ".*")
+        newlist.append(list(filter(r.match, definition_file_lst_content)))
+    new_item = []
+    for i in newlist:
+        item = i[0].split(";")
+        new_item.append([item[0], item[4], item[5], item[6], item[7]])
+
+    modify_provinces_ID_without_lake = []
+    for i in modify_provinces_ID:
+        for j in new_item:
+            if i == j[0]:
+                if j[1] == 'lake':
+                    if len(modify_provinces_ID_without_lake) == 0:
+                        modify_provinces_ID_without_lake.append(j[0])
+                    else:
+                        modify_provinces_ID_without_lake[0] = modify_provinces_ID_without_lake[0] + ' ' + j[0]
+
+                else:
+                    modify_provinces_ID_without_lake.append(i)
+    
+    return modify_provinces_ID_without_lake
+
+
+
+
 def create_new_state_name(original_state_name, modify_provinces_ID):
     modify_state_name = []
     for i in range(len(modify_provinces_ID)):
@@ -146,12 +201,6 @@ def create_new_state_name(original_state_name, modify_provinces_ID):
     return modify_state_name
 
 
-def change_state_id(base_state_remain_province_ID, original_provinces_ID):
-    temp2 = []
-    temp2 = original_provinces_ID.split()
-    temp2.remove(base_state_remain_province_ID)
-    temp2.insert(0, base_state_remain_province_ID)
-    return temp2
 
 
 def write_new_state_reminder_file(_export_folder, _base_state_file_ID, _new_states_file_ID_name):

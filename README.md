@@ -1,14 +1,17 @@
 # Modding tools for game Heart of Iron 4 in python
 
-Youtube Channal for Modder [The Iron Workshop](https://www.youtube.com/channel/UCYGO3GSISuiwAl4XchNvlTg)
+Youtube Channel for Modder [The Iron Workshop](https://www.youtube.com/channel/UCYGO3GSISuiwAl4XchNvlTg)
 
 
 # 1. Preparation
+
 ## 1.1 Basic python coding knowledge
+
 * Basic Python knowledge. (how to run file, python PIP)
 * I'm using Visual Studio Code (A python writing/debugging tool, or anything you need to run python) 
 
 ## 1.2 recommend tools
+
 * Everything (A universal file search tool on windows, sometimes i forget where the created files are saved)
 * Listary  (free version is enough)
 * Photoshop/ Paint.net(free)/ windows paint(modify map file) 
@@ -16,9 +19,11 @@ Youtube Channal for Modder [The Iron Workshop](https://www.youtube.com/channel/U
 * FileLocator Pro
 
 ## 1.3 enable debug mode
+
 * first of first, set HOI4 add laucher option -debug, if you don't know, google it.
 
 ## 1.4 Create your mod file.
+
 * create your mod file under X:/[YOUR NAME]/Documents/Paradox Interative/Hearts of Iron IV/mod by using HOI4 own mod tools(start panel => Mods => MOD TOOLS => Create a mod)
 * or do it yourself (see below)
 
@@ -72,6 +77,7 @@ Remember this, you will check it frequently.
 
 
 ## 2.1 debug One-pixel province problem.
+
 </p>
 Let's look into this log file. <br>
 one of typical error infos is like: 
@@ -89,19 +95,24 @@ One-pixel province, that mean there is a pixel surrounding by 8(or 5) other pixe
 do it 2 or 3 times and remove all One-pixel provinces. Or you can DIY(photoshop), since there are a few left after 3 tries. 
 
 ## 2.2 debug Map invalid X crossing
+
 you might noticed there is a new type of error pop up after debugging. 
 >[13:45:49][map.cpp:1747]: Map invalid X crossing. Please fix pixels at coords: 1660,2093
 
 the upper left pixel will be painted the same color which upper right has.
 
-- **Tools**: DIY or **fix_pixel_crossing.py**
-- **Import**: provinces.bmp error.log
-- **Export**: save your bmp file.
+* **Tools**: DIY or **fix_pixel_crossing.py**
+
+* **Import**: provinces.bmp error.log
+
+* **Export**: save your bmp file.
 
 ## 2.3 TOO LARGE BOX
+
 ignore it, no harm.
 
 ## 2.4 map building location is not over the land and so on.
+
 HOI4 has provided a great debug tools. Enable debug mod and you can see the **"NUDGE!"** there.<br>
 This error sentence is about the building. Because we remove some pixels of a province, some buildings and 3D units are no more located in the right place, i.e over other province. It can cause CTD if we don't fix it. 
 
@@ -126,6 +137,7 @@ new files are saved under path
 * [YOUR NAME]Documents\Paradox Interactive\Hearts of Iron IV\map
 
 ## 2.5 prov X stack Y Ship in port moving is too far away from center
+
 TODO, not too serious
 
 
@@ -134,25 +146,31 @@ this time, we will do something big, creating new states for every province. \
 Those changes will impact many files, but I will teach you step by step.
 
 ## 3.1 Create new definition files (/history/state and /map/supplyareas)
+
 - **Tools**: create_state_for_every_province.py
 
 1. Select State Folder Location 
+
 >[YOUR MOD]\history\states (if you have)\
 >OR\
 >[Where Steam installed]\steamapps\common\Hearts of Iron IV\history\states
 
 2. Select Supply Folder Location
+
 >[YOUR MOD]\map\supplyareas (if you have)\
 >OR\
 >[Where Steam installed]\steamapps\common\Hearts of Iron IV\map\supplyareas
 
 3. Select State Definition file(definition.csv)
 >**[YOUR MOD]**\map\definition.csv
+
 4. Select Export Folder Location
 >Whatever, better on SSD, because of 10K+ small files.
+
 5. Waiting for export, you can locate to your export folder
 
 6. Export files are:
+
 >**states folder**, with 10K+ definition files\
 >**supplyareas**, with 300+ supply area definition files.\
 >**new_state_reminder.txt**, recording the new state IDs
@@ -160,6 +178,7 @@ Those changes will impact many files, but I will teach you step by step.
 7. cut and paste those to where they should be in your mod folder.
 
 ## 3.2 Create new event files 
+
 we know that some events like annex or add_core are relative to map file.\
 Hopefully I have covered all the events.
 
