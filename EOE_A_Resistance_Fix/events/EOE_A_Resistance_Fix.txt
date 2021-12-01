@@ -1,0 +1,22 @@
+﻿###########################
+# EOE_A_Resistance_Fix Events
+###########################
+
+add_namespace = eoe_a_resistance_fix.welcome
+
+# welcome board
+country_event = {
+	id = eoe_a_resistance_fix.welcome.1
+	title = eoe_a_resistance_fix.welcome.1.t
+	desc = eoe_a_resistance_fix.welcome.1.d
+	picture = GFX_report_event_eoe_a_resistance_fix_welcome_board
+	
+	is_triggered_only = yes
+	
+	option = { # Thanks
+		name = eoe_a_resistance_fix.welcome.1.a
+		ai_chance = { factor = 100 }
+		load_oob = EOE_A_Resistance
+
+	}
+}
