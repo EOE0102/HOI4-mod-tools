@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FreeFileSync XmlType="GUI" XmlFormat="17">
+    <Compare>
+        <Variant>TimeAndSize</Variant>
+        <Symlinks>Exclude</Symlinks>
+        <IgnoreTimeShift/>
+    </Compare>
+    <Synchronize>
+        <Variant>Update</Variant>
+        <DetectMovedFiles>false</DetectMovedFiles>
+        <DeletionPolicy>RecycleBin</DeletionPolicy>
+        <VersioningFolder Style="Replace"/>
+    </Synchronize>
+    <Filter>
+        <Include>
+            <Item>*</Item>
+        </Include>
+        <Exclude>
+            <Item>\System Volume Information\</Item>
+            <Item>\$Recycle.Bin\</Item>
+            <Item>\RECYCLE?\</Item>
+            <Item>*\thumbs.db</Item>
+        </Exclude>
+        <TimeSpan Type="None">0</TimeSpan>
+        <SizeMin Unit="None">0</SizeMin>
+        <SizeMax Unit="None">0</SizeMax>
+    </Filter>
+    <FolderPairs>
+        <Pair>
+            <Left/>
+            <Right/>
+        </Pair>
+        <Pair>
+            <Left>D:\Users\EOE\SynologyDrive\GitHub\HOI4-mod-tools\EOE_B_Resource</Left>
+            <Right>D:\Users\EOE\Documents\Paradox Interactive\Hearts of Iron IV\mod\EOE_B_Resource</Right>
+        </Pair>
+        <Pair>
+            <Left>D:\Users\EOE\SynologyDrive\GitHub\HOI4-mod-tools\EOE_B_Division_Limiter</Left>
+            <Right>D:\Users\EOE\Documents\Paradox Interactive\Hearts of Iron IV\mod\EOE_B_Division_Limiter</Right>
+        </Pair>
+        <Pair>
+            <Left>D:\Users\EOE\SynologyDrive\GitHub\HOI4-mod-tools\EOE_A_Resistance</Left>
+            <Right>D:\Users\EOE\Documents\Paradox Interactive\Hearts of Iron IV\mod\EOE_A_Resistance</Right>
+        </Pair>
+    </FolderPairs>
+    <Errors Ignore="false" Retry="0" Delay="5"/>
+    <PostSyncCommand Condition="Completion"/>
+    <LogFolder/>
+    <EmailNotification Condition="Always"/>
+    <Gui>
+        <GridViewType>Action</GridViewType>
+    </Gui>
+</FreeFileSync>
