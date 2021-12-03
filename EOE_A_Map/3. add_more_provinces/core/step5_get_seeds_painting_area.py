@@ -1,5 +1,5 @@
 from core import read_files
-import step2_genetate_rgb_area
+from core import step2_genetate_rgb_area
 from time import time
 
 def step_get_seeds_painting_area():
@@ -36,7 +36,7 @@ def step_get_seeds_painting_area():
     count_create_seed_color_dict =  0
     for i in range(len(all_new_seeds_original_RGB)):
         t = time()
-        print("Part 4：get painting area for every seeds : Color = " + str(i) + ' / ' + str(len(all_new_seeds_original_RGB)))
+        print("Part 5：get painting area for every seeds : Color = " + str(i) + ' / ' + str(len(all_new_seeds_original_RGB)))
         
         seed_color_dict, all_used_RGB, count_create_seed_color_dict = create_seed_color_dict(all_new_seeds_original_RGB[i], all_new_seeds_position[i], all_aviliable_RGB, all_used_RGB, count_create_seed_color_dict)
 
@@ -231,5 +231,9 @@ def get_seeds_painting_area_v2(all_used_RGB, all_used_RGB_info, seeds_position_l
                     #    for j in range(len(new_list_for_sorted)):
                     #        seeds_stack_list[min_index].append(new_list_for_sorted[j][0])
 
+    for i in range(len(painting_area_is_painted)):
+        if painting_area_is_painted[i] == (0,0,0):
+            painting_area_is_painted[i] = original_color
 
+    return original_color, painting_area, painting_area_is_painted
 
