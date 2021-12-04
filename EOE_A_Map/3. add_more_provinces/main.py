@@ -55,6 +55,12 @@ class StandardBoxForInfo(tk.Tk):
         action = ttk.Button(self, text = "Click ME", command = modify_files)
         action.grid(column = 0, row = 13)
 
+        #butten 8
+        a0_2_label = ttk.Label(self, text = "STEP8: modify supplie line")
+        a0_2_label.grid(column = 0, row = 14)
+        action = ttk.Button(self, text = "Click ME", command = modify_supply_lines)
+        action.grid(column = 0, row = 15)
+
 
 def check_pixel_is_next_to_seed_area(seeds_color, check_pixel, painting_area, painting_area_is_painted):
     #painting_area = dict.fromkeys(painting_area,True) 

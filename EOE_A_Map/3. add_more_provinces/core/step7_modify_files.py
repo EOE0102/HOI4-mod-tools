@@ -82,21 +82,12 @@ def write_state_files(exportFolderLocation, newProvincesListFull, all_painting_a
         originalStateFileName = stateFileList[bbk]
         print('exporting states file: '+ str(bbk) + ' / ' + str(len(stateFileList)))
 
-
-        #debug
-        if str(bbk) == '124':
-            a = 1
-
-
         #read original file
         temp = stateFolderLocation + "/" + originalStateFileName
         stateFileLocationIndex = open(temp)
         allTextInList = stateFileLocationIndex.readlines()
         stateFileLocationIndex.close()
         allTextInSrtNoComment = remove_Comment(allTextInList)
-
-
-
 
         #get province index
         original_provinces_ID = find_inhalt_in_bracket_fcn(allTextInSrtNoComment, "provinces", "{", "}")

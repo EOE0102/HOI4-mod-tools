@@ -1,7 +1,8 @@
 from core import read_files
 from tkinter import filedialog
 from core import parameter
-import numpy #pip install numpy
+from itertools import product
+
 
 from time import time
 from PIL import Image #pip install Pillow
@@ -39,10 +40,7 @@ def step_get_seeds_in_every_area():
     image_width, image_height = im.size
 
     #area Size
-    paintColorAreaFull = []
-    paintColorArea = []
     all_cores_of_seed_list = []
-    count = 0
     all_seeds_original_color_list = []
     
     for iRGBList in range(len(all_RGB_list)):
@@ -53,8 +51,7 @@ def step_get_seeds_in_every_area():
             a = 1
 
 
-
-        print("Part 4：get painting seeds location for every color : Color = " + str(iRGBList) + ' / ' + str(len(all_RGB_list)))
+        print("Part 4：get painting seeds location for every color : Color = " + str(iRGBList + 1) + ' / ' + str(len(all_RGB_list)))
         t = time()
         rgb_area_part_size = 0
         rgb_area_part_size_Max = 0
@@ -81,8 +78,8 @@ def step_get_seeds_in_every_area():
         
 
         if bolIsProvinceLand:
-            new_max_new_provinces_per_state = parameter.correct_new_province_max_amount(parameter.max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict)
-            new_province_max_amount = calculate_divide_province_amount(image_height, parameter.default_province_size, parameter.longitude_north2D, parameter.longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, new_max_new_provinces_per_state)
+            new_max_new_provinces_per_state, new_state_info_terrain = parameter.correct_new_province_max_amount(parameter.max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict)
+            new_province_max_amount = parameter.calculate_divide_province_amount(image_height, parameter.default_province_size, parameter.longitude_north2D, parameter.longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, new_max_new_provinces_per_state, new_state_info_terrain)
 
         else:
             new_province_max_amount = 1
@@ -155,32 +152,7 @@ def is_province_land(original_color, voll_rgb_list, land_sea_lake_type):
     else:
         return False
 
-def calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, max_new_provinces_per_state):
-    # according to altitude
-    equatorPosition = round(longitude_north2D/(longitude_north2D + longitude_south2D) * image_height)
-    longitude2DHeight = rgb_area_main_POG[1]
-    longitudeInBall = (longitude_north2D + longitude_south2D)/image_height * longitude2DHeight - longitude_north2D
-    longitudeInBallInRand = parameter.miller_cylinder_inverse_projection(abs(longitudeInBall))
 
-    xMagnify = 1/(numpy.cos(longitudeInBallInRand))
-    #longitudeInBallInRand = longitudeInBallInRand/np.pi * 180
-    temp1 = abs(abs(parameter.miller_cylinder_forward_projection(abs(longitudeInBallInRand) + 0.05)) - abs(parameter.miller_cylinder_forward_projection(abs(longitudeInBallInRand) - 0.05)))
-    temp2 = parameter.miller_cylinder_forward_projection(0.05)*2
-    yMagnify = temp1/temp2 #area near equator, difference is not accurate
-    if yMagnify < 1: 
-        yMagnify = 1
-    areaMagnify = xMagnify * yMagnify
-
-    refileProvinceSize = default_province_size * areaMagnify
-    
-    amountProvince = int(round(RGBAreaFullSize/refileProvinceSize -0.5 ))
-    # don't do too harsh, divide province into 1 - 10 pieces
-    if amountProvince == 0:
-        amountProvince = 1
-    if amountProvince >= max_new_provinces_per_state:
-        amountProvince = max_new_provinces_per_state
-
-    return amountProvince
 
 def calculate_joint_POG(all_RGB_and_Area_list, rgb_area_main_part_index):
     joint_POG = all_RGB_and_Area_list[rgb_area_main_part_index][2]
@@ -223,7 +195,7 @@ def no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p):
             new_mutil_sum_energy_list = []
             for k in range(len(rgb_area_p)):
                 replacedNewCoreList[j] = rgb_area_p[k]
-                new_sum_energy = step2_genetate_rgb_area.calculate_sum_p2p_energy(replacedNewCoreList)
+                new_sum_energy = calculate_sum_p2p_energy(replacedNewCoreList)
                 new_mutil_sum_energy_list.append(new_sum_energy)
             min_energy = min(new_mutil_sum_energy_list)
             min_energy_index = [UUK for UUK, x in enumerate(new_mutil_sum_energy_list) if x == min_energy]
@@ -235,3 +207,10 @@ def no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p):
             coreOfNewSeed[j] = randomPickedNewCore
 
     return coreOfNewSeed
+
+
+def calculate_sum_p2p_energy(coreOfNewSeed):
+    sum_energy = 0
+    for point1, point2 in product(coreOfNewSeed, coreOfNewSeed):
+        sum_energy = sum_energy + step2_genetate_rgb_area.calculate_P2P_energy(point1, point2) / 2
+    return sum_energy

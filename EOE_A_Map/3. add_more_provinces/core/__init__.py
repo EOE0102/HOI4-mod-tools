@@ -9,7 +9,7 @@ from .step4_get_seeds_in_every_area import *
 from .step5_get_seeds_painting_area import *
 from .step6_painting_pixels import *
 from .step7_modify_files import *
-
+from .step8_modify_supply_lines import *
 
 
 

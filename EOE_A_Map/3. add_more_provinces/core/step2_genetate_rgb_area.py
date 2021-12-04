@@ -1,7 +1,6 @@
 import math
 from tkinter import filedialog
 from PIL import Image #pip install Pillow
-from itertools import product
 from core import read_files
 ## PART 2 ##
 
@@ -68,22 +67,8 @@ def step_get_RGB_area_for_every_color():
     }
 
     read_files.save_dict(all_RGB_and_Area_dict, 'all_RGB_and_Area_dict')
-    #get local folder location
-    #all_RGB_and_Area_list
-    #[[R,G,B],[  [(startX,startY),[POGX,POGY],[POGinareaX, POGinareaY],AmountOfPoints, [points area]],  [another part]]]
-    #used_RGB_list
-    #[(R,G,B), (R,G,B) ...]
-    #PYTHON_FILE_LOCATION = os.path.abspath('.')
-    #temp_folder_location = PYTHON_FILE_LOCATION + "\\" + 'temp'
-    #if not os.path.exists(temp_folder_location):
-    #    os.makedirs(temp_folder_location)
-    #full_file_name = temp_folder_location + "\\all_RGB_and_Area_dict.txt"
-    #joblib.dump(all_RGB_and_Area_dict, full_file_name)
-    #fp = open(full_file_name, 'wb'):
-    #pickle.dump(all_RGB_and_Area_dict, fp)
-    #fp.close()
+
     print('Part 2 finished')
-    #return all_RGB_and_Area_dict
 
 
 
@@ -120,6 +105,17 @@ def calculate_point_of_gravity(RGBAreaPointOfGravityList):
     avgY = avgY/len(RGBAreaPointOfGravityList) - 0.001 #2.5 >> 2
     return [avgX, avgY]
 
+def get_nearest_POG(rgb_area_POG, rgb_area_p):
+    distanceList = []
+    for item in rgb_area_p:
+        p2pDistance = calculate_P2P_distance(rgb_area_POG, get_real_POG(item))
+        distanceList.append(p2pDistance)
+    minPos = distanceList.index(min(distanceList))
+    rgb_area_nearest_POG = rgb_area_p[minPos]
+    return rgb_area_nearest_POG
+
+
+
 def calculate_P2P_distance(Point1, Point2):
     #Point1 = get_real_POG(Point1)
     
@@ -148,39 +144,9 @@ def calculate_P2P_energy(Point1, Point2):
         energy = 1 / distance
         return energy
     
-
-
-def  calculate_sum_p2p_distances(coreOfNewSeed):
-    allCoreOfSeedDistance = 0
-    for i in range(len(coreOfNewSeed)):
-        for j in range(i+1, len(coreOfNewSeed)):
-            allCoreOfSeedDistance = allCoreOfSeedDistance + calculate_P2P_distance(coreOfNewSeed[i], coreOfNewSeed[j])
-    return allCoreOfSeedDistance
-
-def calculate_sum_p2p_distances_v2(coreOfNewSeed):
-    sum_distances = 0
-    for point1, point2 in product(coreOfNewSeed, coreOfNewSeed):
-        sum_distances = sum_distances + calculate_P2P_distance(point1, point2) / 2
-    return sum_distances
-
-def calculate_sum_p2p_energy(coreOfNewSeed):
-    sum_energy = 0
-    for point1, point2 in product(coreOfNewSeed, coreOfNewSeed):
-        sum_energy = sum_energy + calculate_P2P_energy(point1, point2) / 2
-    return sum_energy
-
-
 def get_real_POG(Point):
     x = Point[0] + 0.5
     y = Point[1] + 0.5
     return [x,y]
 
-def get_nearest_POG(rgb_area_POG, rgb_area_p):
-    distanceList = []
-    for item in rgb_area_p:
-        p2pDistance = calculate_P2P_distance(rgb_area_POG, get_real_POG(item))
-        distanceList.append(p2pDistance)
-    minPos = distanceList.index(min(distanceList))
-    rgb_area_nearest_POG = rgb_area_p[minPos]
-    return rgb_area_nearest_POG
 

@@ -1,9 +1,12 @@
-
 from tkinter import filedialog
 from core import read_files
 
 
 ## PART 1 ##
+def step_save_all_color_into_file():
+    all_color = list_all_RGB()
+    save_color_into_file(all_color)
+    print('Part 1 finished')
 
 def list_all_RGB():
     #R range 0-10 42-52, 84-94, 126-136, 168-178 + 210-220
@@ -53,7 +56,3 @@ def save_color_into_file(all_color):
                 filehandle.write("%s;%s;%s\n" % (R,G,B))
     filehandle.close()
 
-def step_save_all_color_into_file():
-    all_color = list_all_RGB()
-    save_color_into_file(all_color)
-    print('Part 1 finished')

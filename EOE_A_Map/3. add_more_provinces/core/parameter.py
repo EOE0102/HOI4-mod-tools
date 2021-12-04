@@ -1,29 +1,29 @@
 
-import numpy as np #pip install numpy
-import re
+import numpy #pip install numpy
+
 
 
 def miller_cylinder_forward_projection(theta_in_rand):
-    longitude_in_what = 1.25 * np.log(np.tan(np.pi / 4 + 0.4 * theta_in_rand))
+    longitude_in_what = 1.25 * numpy.log(numpy.tan(numpy.pi / 4 + 0.4 * theta_in_rand))
     return longitude_in_what
 
 def miller_cylinder_inverse_projection(longitude_in_what):
-    theta_in_rand = 2.5 * (np.arctan(np.exp(0.8 * longitude_in_what)) - np.pi / 4)
+    theta_in_rand = 2.5 * (numpy.arctan(numpy.exp(0.8 * longitude_in_what)) - numpy.pi / 4)
     return theta_in_rand
+
 
 #im.save("pixel_grid.bmp")
 iterate_amount = 2
 #equatorialPosition = 1350
 longitude_north = 72
 longitude_south = 57
-longitude_north_in_rand = longitude_north/ 180 * np.pi
-longitude_south_in_rand = longitude_south/ 180 * np.pi
+longitude_north_in_rand = longitude_north/ 180 * numpy.pi
+longitude_south_in_rand = longitude_south/ 180 * numpy.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
 default_province_size = 20 #pixel on equator
-max_new_provinces_per_state = 5
-
+max_new_provinces_per_state = 6 #max 5 block because range(1, new_province_max_amount):
 
 
 #TODO Define painting state conditions
@@ -55,16 +55,29 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
         'new_province_max_amount': [3,3,3,2,4,3,2,2]
     }
     #countrytag, continent ['DEN',1]
-    owner_okay_list = [['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1], 
-        ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['LIT',1], ['LAT',1], ['EST',1],
-        ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1],
-        ['SOV',1], ['ETH',5]]
+
+#    continents = 
+#	europe
+#	north_america
+#	south_america
+#	australia
+#	africa
+#	asia
+#	middle_east
+
+    owner_okay_list = [['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1],  #west europa
+        ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['LIT',1], ['LAT',1], ['EST',1], #east europa
+        ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1], #Netherlands and uk
+        #['FIN',1], ['SWE',1], ['NOR',1], #north europa
+        ['TUR',1], ['TUR',7], #turkey in europa and middle east
+        ['SOV',1], ['SOV',7], #sov in europa and middle east
+        ['ETH',5]] 
 
 
-    add_core_of_list = ['LIB', 'CHI', 'PRC', 'KOR', 'LBA', 'EGY']
+    add_core_of_list = ['LIB', 'CHI', 'PRC', 'KOR', 'VIN', 'LAO', 'COL', 'SIA', 'LBA', 'EGY', 'PAL', 'ISR', 'JOR', 'SYR', 'IRQ']
     new_province_max_amount = 1
     if len(state_info_impassable) > 0:
-        return new_province_max_amount
+        return new_province_max_amount, state_info_terrain
 
     elif [state_info_owner[0], state_info_continent] in owner_okay_list:
         if state_info_terrain in terrain_okay_dict['terrain']:
@@ -74,4 +87,42 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
         if state_info_terrain in terrain_okay_dict['terrain']:
             new_province_max_amount = terrain_okay_dict['new_province_max_amount'][(terrain_okay_dict['terrain'].index(state_info_terrain))]
     
-    return new_province_max_amount
+    return new_province_max_amount,  state_info_terrain
+
+
+def calculate_divide_province_amount(image_height, default_province_size, longitude_north2D, longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, max_new_provinces_per_state, state_info_terrain):
+    # according to altitude
+    equatorPosition = round(longitude_north2D/(longitude_north2D + longitude_south2D) * image_height)
+    longitude2DHeight = rgb_area_main_POG[1]
+    longitudeInBall = (longitude_north2D + longitude_south2D)/image_height * longitude2DHeight - longitude_north2D
+    longitudeInBallInRand = miller_cylinder_inverse_projection(abs(longitudeInBall))
+
+    xMagnify = 1/(numpy.cos(longitudeInBallInRand))
+    #longitudeInBallInRand = longitudeInBallInRand/np.pi * 180
+    temp1 = abs(abs(miller_cylinder_forward_projection(abs(longitudeInBallInRand) + 0.05)) - abs(miller_cylinder_forward_projection(abs(longitudeInBallInRand) - 0.05)))
+    temp2 = miller_cylinder_forward_projection(0.05)*2
+    yMagnify = temp1/temp2 #area near equator, difference is not accurate
+    if yMagnify < 1: 
+        yMagnify = 1
+    areaMagnify = xMagnify * yMagnify
+
+    refileProvinceSize = default_province_size * areaMagnify
+        
+    amountProvince = int(round(RGBAreaFullSize/refileProvinceSize -0.5 ))
+    if state_info_terrain == 'urban':
+        amountProvince = amountProvince * 5
+        if amountProvince == 0:
+            amountProvince = 1
+        if amountProvince >= max_new_provinces_per_state:
+            amountProvince = max_new_provinces_per_state
+    else:
+        # don't do too harsh, divide province into 1 - 10 pieces
+        if amountProvince == 0:
+            amountProvince = 1
+        if amountProvince >= max_new_provinces_per_state:
+            amountProvince = max_new_provinces_per_state
+            
+
+    return amountProvince
+
+    
