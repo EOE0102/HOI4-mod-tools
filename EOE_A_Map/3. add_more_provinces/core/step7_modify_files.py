@@ -1,5 +1,5 @@
 
-from core import read_files
+from core import read_write_files
 import tkinter
 from tkinter import filedialog
 import os
@@ -8,8 +8,8 @@ import re
 def modify_files():
     print('Part 7')
 
-    all_painting_area_dict_small = read_files.read_dict('all_painting_area_dict_small')
-    all_painting_area_dict = read_files.read_dict('all_painting_area_dict')
+    all_painting_area_dict_small = read_write_files.read_dict('all_painting_area_dict_small')
+    all_painting_area_dict = read_write_files.read_dict('all_painting_area_dict')
 
     exportFolderLocation = filedialog.askdirectory(title = "Select Export Folder Location")
     if not os.path.exists(exportFolderLocation + "/export/states"):
@@ -28,9 +28,9 @@ def modify_files():
 def write_definition_csv_file(exportFolderLocation, all_painting_area_dict_small, all_painting_area_dict):
     title = "Open definition file(definition.csv)"
     filetypes = {("Map definition file", ".csv")}
-    all_text_str = read_files.open_file_return_str(title, filetypes)
-    all_text_list = read_files.split_str_into_list(all_text_str, ';')
-    definition_color_address = read_files.split_info_definition_csv(all_text_list)
+    all_text_str = read_write_files.open_file_return_str(title, filetypes)
+    all_text_list = read_write_files.split_str_into_list(all_text_str, ';')
+    definition_color_address = read_write_files.split_info_definition_csv(all_text_list)
 
     allRGBInLst = definition_color_address['RGB']
     allLandSeaLakeTypeInLst = definition_color_address['land_sea_lake']

@@ -2,7 +2,7 @@ from tkinter import filedialog
 from PIL import Image
 
 def get_crossing_position():
-    full_filename = filedialog.askopenfilename(title = "Choose error.log file", filetypes={("log file", ".log")})
+    full_filename = filedialog.askopenfilename(title = "Choose error.log file", filetypes={("log file", ".log .txt")})
     file_str_original = open(full_filename)
     all_text_str = file_str_original.readlines()
     file_str_original.close()

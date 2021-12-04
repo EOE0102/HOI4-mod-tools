@@ -30,12 +30,15 @@ def read_dict(variable_str):
 
     
 def split_info_definition_csv(all_text_list):
+    all_province_ID = []
     all_used_RGB = []
     all_land_sea_lake_type = []
     all_is_coast_type = []
     all_terrain_type = []
     all_continent_index = []
     for i in range(len(all_text_list)):
+        all_province_ID.append(int(all_text_list[i][0]))
+
         R = int(all_text_list[i][1])
         G = int(all_text_list[i][2])
         B = int(all_text_list[i][3])
@@ -54,6 +57,7 @@ def split_info_definition_csv(all_text_list):
         all_continent_index.append(Continent)
 
     return {
+        'province ID': all_province_ID,
         'RGB':all_used_RGB,
         'land_sea_lake':all_land_sea_lake_type,
         'coast':all_is_coast_type,

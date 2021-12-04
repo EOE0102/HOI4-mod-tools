@@ -1,7 +1,7 @@
 import math
 from tkinter import filedialog
 from PIL import Image #pip install Pillow
-from core import read_files
+from core import read_write_files
 ## PART 2 ##
 
 
@@ -66,9 +66,10 @@ def step_get_RGB_area_for_every_color():
         'Seeds Info':all_RGB_and_Area_list
     }
 
-    read_files.save_dict(all_RGB_and_Area_dict, 'all_RGB_and_Area_dict')
+    read_write_files.save_dict(all_RGB_and_Area_dict, 'all_RGB_and_Area_dict')
 
     print('Part 2 finished')
+
 
 
 

@@ -1,4 +1,4 @@
-from core import read_files
+from core import read_write_files
 from tkinter import filedialog
 from core import parameter
 from itertools import product
@@ -13,7 +13,7 @@ from core import step2_genetate_rgb_area
 def step_get_seeds_in_every_area():
     #all_RGB_and_Area_list
 
-    all_RGB_and_Area_dict = read_files.read_dict('all_RGB_and_Area_dict')
+    all_RGB_and_Area_dict = read_write_files.read_dict('all_RGB_and_Area_dict')
     all_RGB_list = all_RGB_and_Area_dict['RGB']
     all_seed_info = all_RGB_and_Area_dict['Seeds Info']
     #Open definition.csv#
@@ -21,12 +21,12 @@ def step_get_seeds_in_every_area():
     # index;R;G;B;land/sea/lake;coast?;terrain;continent
     title = "Open definition file(definition.csv)"
     filetypes = {("Map definition file", ".csv")}
-    all_text_str = read_files.open_file_return_str(title, filetypes)
-    all_text_list = read_files.split_str_into_list(all_text_str, ';')
-    definition_color_address = read_files.split_info_definition_csv(all_text_list)
+    all_text_str = read_write_files.open_file_return_str(title, filetypes)
+    all_text_list = read_write_files.split_str_into_list(all_text_str, ';')
+    definition_color_address = read_write_files.split_info_definition_csv(all_text_list)
 
-    states_info_dict = read_files.read_dict('states_info_dict')
-    definition_info_dict = read_files.read_dict('definition_info_dict')
+    states_info_dict = read_write_files.read_dict('states_info_dict')
+    definition_info_dict = read_write_files.read_dict('definition_info_dict')
 
     #ask do I have generated RGB file
     #bol_have_RGB_file = msgbox_prepare_aviliable_RGB_file()
@@ -126,7 +126,7 @@ def step_get_seeds_in_every_area():
     }
 
 
-    read_files.save_dict(all_new_seeds_dict, 'all_new_seeds_dict')
+    read_write_files.save_dict(all_new_seeds_dict, 'all_new_seeds_dict')
     #PYTHON_FILE_LOCATION = os.path.abspath('.')
     #temp_folder_location = PYTHON_FILE_LOCATION + "\\" + 'temp'
     #if not os.path.exists(temp_folder_location):

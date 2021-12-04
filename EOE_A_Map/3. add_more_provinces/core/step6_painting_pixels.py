@@ -1,11 +1,11 @@
-from core import read_files
+from core import read_write_files
 from tkinter import filedialog
 from PIL import Image #pip install Pillow
 
 
 def painting_pixels():
     print('Part 6')
-    all_painting_area_dict = read_files.read_dict('all_painting_area_dict')
+    all_painting_area_dict = read_write_files.read_dict('all_painting_area_dict')
     #PYTHON_FILE_LOCATION = os.path.abspath('.')
     #temp_folder_location = PYTHON_FILE_LOCATION + "\\" + 'temp'
     #full_file_name = temp_folder_location + "\\all_painting_area_dict.txt"

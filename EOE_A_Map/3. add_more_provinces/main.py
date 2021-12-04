@@ -62,6 +62,9 @@ class StandardBoxForInfo(tk.Tk):
         action.grid(column = 0, row = 15)
 
 
+
+
+
 def check_pixel_is_next_to_seed_area(seeds_color, check_pixel, painting_area, painting_area_is_painted):
     #painting_area = dict.fromkeys(painting_area,True) 
     check_pixel_x = check_pixel[0]

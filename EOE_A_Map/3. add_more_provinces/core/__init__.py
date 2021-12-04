@@ -1,6 +1,6 @@
 print('this is first_package')
 
-from .read_files import *
+from .read_write_files import *
 from .parameter import *
 from .step1_generate_all_available_rgb import *
 from .step2_genetate_rgb_area import *

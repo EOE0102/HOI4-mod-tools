@@ -1,5 +1,5 @@
 from tkinter import filedialog
-from core import read_files
+from core import read_write_files
 
 
 ## PART 1 ##
@@ -37,9 +37,9 @@ def list_all_RGB():
 def save_color_into_file(all_color):
     title = "Open definition file(definition.csv)"
     filetypes = {("Map definition file", ".csv")}
-    all_text_str = read_files.open_file_return_str(title, filetypes)
-    all_text_list = read_files.split_str_into_list(all_text_str, ';')
-    definition_color_address = read_files.split_info_definition_csv(all_text_list)
+    all_text_str = read_write_files.open_file_return_str(title, filetypes)
+    all_text_list = read_write_files.split_str_into_list(all_text_str, ';')
+    definition_color_address = read_write_files.split_info_definition_csv(all_text_list)
     used_RGB = definition_color_address['RGB']
 
 

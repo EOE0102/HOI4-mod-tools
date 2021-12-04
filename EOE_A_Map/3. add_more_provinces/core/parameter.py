@@ -52,7 +52,7 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
     terrain_okay_dict = {
         'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
-        'new_province_max_amount': [3,3,3,2,4,3,2,2]
+        'new_province_max_amount': [3,3,3,2,5,3,2,2]
     }
     #countrytag, continent ['DEN',1]
 
@@ -68,13 +68,13 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     owner_okay_list = [['SPR',1], ['FRA',1], ['ITA',1], ['GER',1], ['CZE',1], ['POL',1], ['AUS',1],  #west europa
         ['HUN',1], ['ROM',1], ['BUL',1], ['YUG',1], ['GRE',1], ['LIT',1], ['LAT',1], ['EST',1], #east europa
         ['BEL',1], ['HOL',1], ['LUX',1], ['ENG',1], #Netherlands and uk
-        #['FIN',1], ['SWE',1], ['NOR',1], #north europa
-        ['TUR',1], ['TUR',7], #turkey in europa and middle east
+        ['FIN',1], ['SWE',1], ['NOR',1], #north europa
+        ['TUR',1], ['TUR',7], ['PER',7], #turkey in europa and middle east
         ['SOV',1], ['SOV',7], #sov in europa and middle east
         ['ETH',5]] 
 
 
-    add_core_of_list = ['LIB', 'CHI', 'PRC', 'KOR', 'VIN', 'LAO', 'COL', 'SIA', 'LBA', 'EGY', 'PAL', 'ISR', 'JOR', 'SYR', 'IRQ']
+    add_core_of_list = ['LIB', 'SOM', 'CHI', 'PRC', 'KOR', 'VIN', 'LAO', 'CAM', 'SIA', 'BRM', 'LBA', 'EGY', 'PAL', 'ISR', 'JOR', 'SYR', 'IRQ']
     new_province_max_amount = 1
     if len(state_info_impassable) > 0:
         return new_province_max_amount, state_info_terrain
@@ -109,18 +109,17 @@ def calculate_divide_province_amount(image_height, default_province_size, longit
     refileProvinceSize = default_province_size * areaMagnify
         
     amountProvince = int(round(RGBAreaFullSize/refileProvinceSize -0.5 ))
-    if state_info_terrain == 'urban':
-        amountProvince = amountProvince * 5
-        if amountProvince == 0:
-            amountProvince = 1
-        if amountProvince >= max_new_provinces_per_state:
-            amountProvince = max_new_provinces_per_state
-    else:
+#    if state_info_terrain == 'urban':
+#        amountProvince = amountProvince * 10
+#        if amountProvince == 0:
+#            amountProvince = 1
+#        if amountProvince >= max_new_provinces_per_state:
+#            amountProvince = max_new_provinces_per_state
         # don't do too harsh, divide province into 1 - 10 pieces
-        if amountProvince == 0:
-            amountProvince = 1
-        if amountProvince >= max_new_provinces_per_state:
-            amountProvince = max_new_provinces_per_state
+    if amountProvince == 0:
+        amountProvince = 1
+    if amountProvince >= max_new_provinces_per_state:
+        amountProvince = max_new_provinces_per_state
             
 
     return amountProvince

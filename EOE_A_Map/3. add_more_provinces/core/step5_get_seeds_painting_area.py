@@ -1,4 +1,4 @@
-from core import read_files
+from core import read_write_files
 from core import step2_genetate_rgb_area
 from time import time
 
@@ -14,8 +14,8 @@ def step_get_seeds_painting_area():
     #full_file_name = temp_folder_location + "\\all_new_seeds_dict.txt"
     #with open(full_file_name, 'wb') as fp:
     #all_new_seeds_dict = joblib.load(full_file_name)
-    all_RGB_and_Area_dict = read_files.read_dict('all_RGB_and_Area_dict')
-    all_new_seeds_dict = read_files.read_dict('all_new_seeds_dict')
+    all_RGB_and_Area_dict = read_write_files.read_dict('all_RGB_and_Area_dict')
+    all_new_seeds_dict = read_write_files.read_dict('all_new_seeds_dict')
     
     all_used_RGB = all_RGB_and_Area_dict['RGB']
     all_used_RGB_info = all_RGB_and_Area_dict['Seeds Info']
@@ -25,8 +25,8 @@ def step_get_seeds_painting_area():
     #import avaliable RGB file
     title = "Open avaliable RGB file(all_RGB_list.txt)"
     filetypes = {("avaliable RGB file", ".txt")}
-    all_text_str = read_files.open_file_return_str(title, filetypes)
-    all_text_str = read_files.split_str_into_list(all_text_str, ';')
+    all_text_str = read_write_files.open_file_return_str(title, filetypes)
+    all_text_str = read_write_files.split_str_into_list(all_text_str, ';')
     all_aviliable_RGB = __splitRGBOutOfLst2(all_text_str)
 
     all_painting_area_position = []
@@ -75,8 +75,8 @@ def step_get_seeds_painting_area():
             temp.append(all_painting_area_new_color[i][j])
         all_painting_area_dict_small.append(temp)
 
-    read_files.save_dict(all_painting_area_dict, 'all_painting_area_dict')
-    read_files.save_dict(all_painting_area_dict_small, 'all_painting_area_dict_small')
+    read_write_files.save_dict(all_painting_area_dict, 'all_painting_area_dict')
+    read_write_files.save_dict(all_painting_area_dict_small, 'all_painting_area_dict_small')
     #PYTHON_FILE_LOCATION = os.path.abspath('.')
     #temp_folder_location = PYTHON_FILE_LOCATION + "\\" + 'temp'
     #if not os.path.exists(temp_folder_location):

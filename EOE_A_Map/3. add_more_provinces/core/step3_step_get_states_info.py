@@ -1,13 +1,13 @@
 import re
 import os
 from tkinter import filedialog
-from core import read_files
+from core import read_write_files
 
 def step_get_states_info():
     states_info_dict = read_states_info()
-    read_files.save_dict(states_info_dict, 'states_info_dict')
+    read_write_files.save_dict(states_info_dict, 'states_info_dict')
     definition_info_dict = read_definition_info()
-    read_files.save_dict(definition_info_dict, 'definition_info_dict')
+    read_write_files.save_dict(definition_info_dict, 'definition_info_dict')
 
     print('PART 3 finished')
 
@@ -145,7 +145,7 @@ def sum_state_info_dict(states_info_dict, state_info_dict):
 def read_definition_info():
     title = "Open definition file(definition.csv)"
     filetypes = {("Map definition file", ".csv")}
-    all_text_str = read_files.open_file_return_str(title, filetypes)
-    all_text_list = read_files.split_str_into_list(all_text_str, ';')
-    definition_color_address = read_files.split_info_definition_csv(all_text_list)
+    all_text_str = read_write_files.open_file_return_str(title, filetypes)
+    all_text_list = read_write_files.split_str_into_list(all_text_str, ';')
+    definition_color_address = read_write_files.split_info_definition_csv(all_text_list)
     return definition_color_address
