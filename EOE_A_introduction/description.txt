@@ -9,32 +9,28 @@ For some small countries or those who want to play after the year 1947, even if 
 Now these problems have been solved. Each state is about the same size, and more provinces have increased strategic selectivity.
 
 Compatible with HOI4 1.11.* version, full DLC compatible
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/1818951012] changelog[/url]
 checksum 7b59
-
 
 [h1]GitHub:[/h1]
 https://github.com/EOE0102/HOI4-mod-tools
 
 [h1]Major Features:[/h1]
-
 [strike][b]Accurate world map (function abolished):[/b][/strike]
 [list]
 [*]I don;t know how to use GIS to generate a map.Moreover, the new railway system fundamentally denies the possibility of player-made maps. New Map can only be made by stretching and zoom.
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118] no more aviliable[/url]
 [/list]
-
 [b]More state (1000%+ )[/b]
 [list]
 [*]A total of [b]10086 states (834 in the original version)[/b].
 [/list]
-
 [b]More Provinces (150%)[/b]
 [list]
 [*]Europe, the European part of the Soviet Union, Turkey and other Middle East regions, North Africa, the Horn of Africa, most parts of China, Southeast Asia
 [*]A total of 19374 provinces (13235 in the original version)
 [*]Double the number of provinces in the city (4-5 plots)
 [/list]
-
 [b]More map features[/b]
 [list]
 [*]Add some impassable areas
@@ -42,18 +38,14 @@ https://github.com/EOE0102/HOI4-mod-tools
 [*]Add more straits
 [*]Add more victory points
 [/list]
-
 [b]More Resource (Work in progress)[/b]
 [list]
 [*]Add the mining of natural resources from 1936 to 1970, currently lacks database support, under development
 [/list]
-
 [b]new Type Unit[/b]
 [list]
 [*]Add local police (less manpower need for suppression)
 [/list]
-
-
 
 [h1]FAQ:[/h1]
 -Q: It crashes when the game loads!
@@ -161,24 +153,20 @@ https://github.com/EOE0102/HOI4-mod-tools
 到后期由于省份数量限制，国家的工业能力也有极限，对于一些小国或者想玩到1949年之后的人，即使添加了科技模组，也缺少游戏性。
 现在这些问题都解决了，每个省份都差不多大小，没有面积歧视啦，而且更多的地块也增加了战略选择性。
 兼容HOI4 1.11.* 版本，全DLC兼容
-checksum 7b59
-
+checksum 
 
 [h1]GitHub:[/h1]
 https://github.com/EOE0102/HOI4-mod-tools
 
 [h1]主要功能:[/h1]
-
 [strike][b]准确世界地图（功能废除）:[/b][/strike]
 [list]
 [*]GIS不会用，而且新的铁路系统从根本上否定了自制地图的可能，只能靠拉伸地图来做新模组
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组（没了）[/url]
 [/list]
-
 [b]更多省份（state） (1000%+ )[/b]
 [list]
-[*]原版每个province都有一个state了, 
-    总共[b]10086 个 states (原版834个)[/b].
+[*]原版每个province都有一个state了, 总共[b]10086 个 states (原版834个)[/b].
 [/list]
 [b]更多地块（Provinces） (150%)[/b]
 [list]
@@ -186,7 +174,6 @@ https://github.com/EOE0102/HOI4-mod-tools
 [*]总共19374个地块（原版13235个）
 [*]城市有双倍份更多地块（4-5块）
 [/list]
-
 [b]更多地图功能[/b]
 [list]
 [*]增加部分不可通行区域
@@ -194,12 +181,10 @@ https://github.com/EOE0102/HOI4-mod-tools
 [*]增加更多海峡
 [*]增加更多胜利点
 [/list]
-
 [b]更多资源（开发中）[/b]
 [list]
 [*]增加从 1936 到 1970的自然资源开发，目前缺少数据库支持
 [/list]
-
 [b]新兵种[/b]
 [list]
 [*]增加 local police（更少人力，更大镇压值） 用以镇压游击队
