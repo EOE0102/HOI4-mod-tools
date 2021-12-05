@@ -56,7 +56,7 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     }
     #countrytag, continent ['DEN',1]
 
-#    continents = 
+#   continents = 
 #	europe
 #	north_america
 #	south_america
@@ -121,7 +121,6 @@ def calculate_divide_province_amount(image_height, default_province_size, longit
     if amountProvince >= max_new_provinces_per_state:
         amountProvince = max_new_provinces_per_state
             
-
     return amountProvince
 
     

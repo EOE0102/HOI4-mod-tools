@@ -1,0 +1,11 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = {
+				add_ideas = {
+					EOE_supply_range_modify
+				}
+			}
+		}
+	}
+}
