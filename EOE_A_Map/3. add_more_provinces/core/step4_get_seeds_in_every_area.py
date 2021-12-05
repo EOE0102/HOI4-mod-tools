@@ -52,7 +52,7 @@ def step_get_seeds_in_every_area():
 
 
         print("Part 4：get painting seeds location for every color : Color = " + str(iRGBList + 1) + ' / ' + str(len(all_RGB_list)))
-        t = time()
+        #t = time()
         rgb_area_part_size = 0
         rgb_area_part_size_Max = 0
         rgb_area_main_part_index = 0
@@ -75,7 +75,8 @@ def step_get_seeds_in_every_area():
         #definition_color_address
         original_color = all_RGB_list[iRGBList]
         bolIsProvinceLand = is_province_land(original_color, definition_color_address['RGB'], definition_color_address['land_sea_lake'])
-        
+        bolIsProvinceCoast = is_province_coast(original_color, definition_color_address['RGB'], definition_color_address['coast'])
+
 
         if bolIsProvinceLand:
             new_max_new_provinces_per_state, new_state_info_terrain = parameter.correct_new_province_max_amount(parameter.max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict)
@@ -103,19 +104,31 @@ def step_get_seeds_in_every_area():
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
                 startItem = 1
-                coreOfNewSeed = no_iteration_get_seed(parameter.iterate_amount, startItem, coreOfSeed, rgb_area_p)
+                if bolIsProvinceCoast: 
+                    coreOfNewSeed = no_iteration_get_seed(parameter.iterate_amount, startItem, coreOfSeed, rgb_area_p)
+                else:
+                    coreOfNewSeed = no_iteration_get_seed(parameter.iterate_amount, startItem, coreOfSeed, rgb_area_p)
 
             else:
                 for item in range(0, new_province_max_amount):
                     coreOfSeed.append(rgb_area_main_POG_in_area)
                 coreOfNewSeed = []
                 startItem = 0 #TODO move POG
-                coreOfNewSeed = no_iteration_get_seed(parameter.iterate_amount, startItem, coreOfSeed, rgb_area_p)
+                if bolIsProvinceCoast: 
+                    startItem = 1
+                    border_pixels = find_border_pixels(rgb_area_p)
+                    coast_pixels = find_coast_pixels(border_pixels, pixels, definition_color_address)
+                    coast_pixels.sort()
+                    coast_seed = coast_pixels[round(len(coast_pixels)/2)]
+                    coreOfSeed[0] = coast_seed
+                    coreOfNewSeed = no_iteration_get_seed(parameter.iterate_amount, startItem, coreOfSeed, rgb_area_p)
+                else:
+                    coreOfNewSeed = no_iteration_get_seed(parameter.iterate_amount, startItem, coreOfSeed, rgb_area_p)
                 
             #all_cores_of_seed_list[count].append(coreOfNewSeed)
             all_cores_of_seed_list.append(coreOfNewSeed)
             #count = count + 1
-            print(time() - t)
+            #print(time() - t)
 
     #all_seeds_original_color_list
     #all_cores_of_seed_list
@@ -142,7 +155,41 @@ def step_get_seeds_in_every_area():
 
 
 
-## PART 4 ##
+def find_border_pixels(rgb_area_p):
+    border_pixels = []
+    for item in rgb_area_p:
+        x = item[0]
+        y = item[1]
+        point_up = [x, y-1]
+        point_right = [x+1, y]
+        point_down = [x, y+1]
+        point_left = [x-1, y]
+
+        if (point_up not in rgb_area_p) or (point_right not in rgb_area_p) or (point_down not in rgb_area_p) or (point_left not in rgb_area_p):
+            border_pixels.append(item)
+
+    return border_pixels
+
+
+def find_coast_pixels(border_pixels, pixels, definition_color_address):
+    coast_pixels = []
+    
+    for item in border_pixels:
+        x = item[0]
+        y = item[1]
+        if x != 0 and x!= 5632 and y != 0 and y != 2048:
+            point_up_RGB = list(pixels[x, y-1])
+            point_right_RGB = list(pixels[x+1, y])
+            point_down_RGB = list(pixels[x, y+1])
+            point_left_RGB = list(pixels[x-1, y])
+            if definition_color_address['land_sea_lake'][definition_color_address['RGB'].index(point_up_RGB)] == 'sea'\
+                or definition_color_address['land_sea_lake'][definition_color_address['RGB'].index(point_right_RGB)] == 'sea'\
+                or definition_color_address['land_sea_lake'][definition_color_address['RGB'].index(point_down_RGB)] == 'sea'\
+                or definition_color_address['land_sea_lake'][definition_color_address['RGB'].index(point_left_RGB)] == 'sea':
+                coast_pixels.append(item)
+    
+    return coast_pixels
+
 
 def is_province_land(original_color, voll_rgb_list, land_sea_lake_type):
     index = voll_rgb_list.index(list(original_color))
@@ -152,6 +199,14 @@ def is_province_land(original_color, voll_rgb_list, land_sea_lake_type):
     else:
         return False
 
+
+def is_province_coast(original_color, voll_rgb_list, coast_type):
+    index = voll_rgb_list.index(list(original_color))
+    CoastType = coast_type[index]
+    if CoastType == 'true':
+        return True
+    else:
+        return False
 
 
 def calculate_joint_POG(all_RGB_and_Area_list, rgb_area_main_part_index):
@@ -205,6 +260,31 @@ def no_iteration_get_seed(iterate_amount, startItem, coreOfSeed, rgb_area_p):
             choosedMinDistanceIndex = min_energy_index[pickNumber]
             randomPickedNewCore = rgb_area_p[choosedMinDistanceIndex]
             coreOfNewSeed[j] = randomPickedNewCore
+
+    return coreOfNewSeed
+
+def no_iteration_get_seed_coast(iterate_amount, startItem, coreOfSeed, rgb_area_p):
+
+
+    coreOfNewSeed = coreOfSeed.copy()
+    for i in range(iterate_amount):
+        for j in range(startItem, len(coreOfNewSeed)):
+            #old_mutil_sum_energy = calculate_sum_p2p_energy(coreOfNewSeed)
+            replacedNewCoreList = coreOfNewSeed.copy()
+            new_mutil_sum_energy_list = []
+            for k in range(len(rgb_area_p)):
+                replacedNewCoreList[j] = rgb_area_p[k]
+                new_sum_energy = calculate_sum_p2p_energy(replacedNewCoreList)
+                new_mutil_sum_energy_list.append(new_sum_energy)
+            min_energy = min(new_mutil_sum_energy_list)
+            min_energy_index = [UUK for UUK, x in enumerate(new_mutil_sum_energy_list) if x == min_energy]
+            
+            #pickNumber = random.randint(0, len(min_energy_index) - 1)
+            pickNumber = 0
+            choosedMinDistanceIndex = min_energy_index[pickNumber]
+            randomPickedNewCore = rgb_area_p[choosedMinDistanceIndex]
+            coreOfNewSeed[j] = randomPickedNewCore
+
 
     return coreOfNewSeed
 

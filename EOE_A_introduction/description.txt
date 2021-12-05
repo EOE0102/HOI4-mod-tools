@@ -1,0 +1,277 @@
+[b]More States and More Provinces (1.11.* Compatbible).[/b]
+
+
+checksum  for 1.11.4
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/1818951012]changelog[/url]
+
+
+[h1]Main Features[/h1]
+[b]Accurate World map[/b]
+[list]
+[*]All features and adjustments of this map, please check this great mod => [url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]Standard World Map Mod[/url]
+[*]more straits.
+[*]more impassible mountains and areas
+[*]more Victory points and province names
+
+[/list]
+[b]More States (1250%)[/b]
+[list]
+[*]Every province in vanilla now has its own state, 
+    i.e. [b]10086 states[/b] in total (Vanilla 806).
+[*]Modify events/decisions/national_focus... files to fit the adjustments of states
+[/list]
+
+[b]More Provinces (190%)[/b]
+[list]
+Most EU countries and major parts of china now have more provinces for land battles.
+[*][b]19175 provinces[/b] in total (Vanilla 10086)
+[*]East Europa: Portugal, Spain, France, Italy(EU part), Germany, Czechoslovakia, Poland, Austria
+[*]West Europa: Hungary, Romania, Bulgaria, Yugoslavia, Greece
+[*]Soviet: Lithuania, Latvia, Estonia, USSR(Europa part)
+[*]East Asia: China(claimed), Korea
+[/list]
+
+
+
+[h1]Recommended mods[/h1]
+[b]Beautifucation and useful tools[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2665267027]Map Modes+[/url]
+
+
+
+
+
+[h2]Too many states! It is recommended to play map mod with [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2020566688]More Spies Mod[/url] and  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]No AI Spam - General[/url]
+and here is the recommended compatible mods list:
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
+
+this is the way I play HOI4, mix all mods together, then you have a total different HOI4.[/h2]
+
+and you can find more compatible mods here:
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2267184153]EOE's 100% compatible mods collection (Gameplay)[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273116080]EOE's 100% compatible mods collection (Beautifucation and more)[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273727147]EOE's not 100% compatible mods collection (Gameplay)[/url]
+
+[h1]GitHub[/h1]
+https://github.com/EOE0102/HOI4-mod-tools
+
+
+[b]Special Features[/b]
+[list]
+[*]New type Garrison, cost less manpower for suppression. Because every state needs one troop for suppression, vanilla troop will never be enough.
+[/list]
+
+[h1]FAQs[/h1]
+  - Q: It crashed when loading!
+  - A: Clear all cashes under folder X:\Users\[YOURNAME]\Documents\Paradox Interactive\Hearts of Iron IV, then reinstall HOI4. 
+
+  - Q: It lags when peace conference pops up!
+  - A: the calculation resource is heavily influenced by the amount of states. 
+	Recommand: install HOI on SSD, better CPU (important), bigger memory (mine is 32G), faster memory(mine is 2666MHZ)
+	
+  - Q: More Provinces for XX country?
+  - A: Yes and No. HOI4 has a limit(between 19K and 22K) of displaying provinces. Game will CRASH TO DESKTOP when too many provinces are displayed.
+
+[h1]Special Thanks[/h1]
+[list]
+[*]月見里シーフォティス樣’s [url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]Standard World Map Mod[/url]
+[/list]
+
+[h1]NEXT UPDATE[/h1]
+[list]
+[*]Make my mod more compatible friendly, i.e. don't touch FocusTree, use EVENT for map changes, therefore you can use more customize FocusTree mods.
+[*]Submod B: Resource mod for Vanilla and this map mod, should be compatible-friendly. 
+[*]Tools: create new countries by clicking map (VUE program)
+[/list]
+
+[h1]TODO[/h1]
+[list]
+[*]Modify Names for states (names does not affect gameplay)
+[*]New country and events in submod B (no detailed plan, waiting for The New Order: Last Days of Europe)
+[*]New stories and scripts in submod C (no detailed plan)
+[/list]
+
+
+
+
+
+[b]10倍省份 + 双倍地块，燃烧你的CPU（笑[/b]
+兼容HOI4 1.11.* 版本，全DLC兼容
+checksum 7b59
+
+
+[h1]GitHub:[/h1]
+https://github.com/EOE0102/HOI4-mod-tools
+
+[h1]主要功能功能:[/h1]
+
+[strike][b]准确世界地图（功能废除）:[/b][/strike]
+[list]
+[*]GIS不会用，而且新的铁路系统从根本上否定了自制地图的可能，只能靠拉伸地图来做新模组
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组（没了）[/url]
+[/list]
+
+[b]更多省份（state） (1000%+ )[/b]
+[list]
+[*]原版每个province都有一个state了, 
+    总共[b]10086 个 states (原版834个)[/b].
+[*]调整 events/decisions/national_focus/on_actions 文件以适应上面的变更
+[/list]
+
+
+[b]更多地图功能[/b]
+[list]
+[*]增加部分不可通行区域
+[*]增加海峡
+[/list]
+
+[b]更多地块（Provinces） (190%)[/b]
+[list]
+[*]欧洲大部，苏联欧洲部分，中国大部增加地块Provinces 
+[*]总共19175个地块（原版10086个）
+[/list]
+
+[h1]FAQ:[/h1]
+ - Q: 游戏加载的时候就崩了！
+ - A：HOI4的问题，换个大内存和好点的CPU吧，国产的光威内存上市了。
+
+ - Q: 和谈的时候卡！
+ - A：删除在如下文件夹下的全部缓存 X:\Users\[YOURNAME]\Documents\Paradox Interactive\Hearts of Iron IV, 之后重装游戏。大部分情况都可以修复。
+
+ - Q: Province 再多点？
+ - A：还是HOI4的问题，初步测试Province在两万左右就会崩程序，现在是极限了。
+
+[h1]特别感谢:[/h1]
+[list]
+[*]月見里シーフォティス樣の[url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组[/url]
+[/list]
+
+[h1]下次更新[/h1]
+[list]
+[*]资源mod：不动原版文件，兼容全部mod类型
+[*]点点框框地图就可以生成新国家的VUE程序
+[/list]
+[h1]TODO:[/h1]
+[list]
+[*]给 states 加名字 (没名字不影响游戏)
+[*]新国家和事件在下一个 B 模组
+[*]新故事线和剧本在下一个 C 模组
+[/list]
+
+
+
+
+[h1]推荐模组，我已经测试过了，全部订阅无冲突[/h1]
+[b]美化-地图[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1993141805]Map Modes+[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1993141805]钢四材质更新 HOI4 - Texture Overhaul - Citylights[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2665267027]钢四材质更新 HOI4 - Texture Overhaul - Water[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1976923067]钢四材质更新 HOI4 - Texture Overhaul - Borders[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1629702438]钢四材质更新 HOI4 - Texture Overhaul - Terrain[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2260704403]钢三部队样式 hoi3 counter[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2193382134]钢三地图样式 HOI3 style map[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2193382134]军事地图样式 Military Topographic Map[/url]
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=704963980]战略视图调整 Strategic View Adjustments[/url]
+
+[b]美化-音乐[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1637452557]音乐 Soldiers' Radio[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2606998283]德味语音 New German Voices[/url]
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1340422660]历史之演讲 Decisions: Speeches Audio[/url]
+
+[b]美化-图标和报表[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1331463070]北约图标基础 MPU Division Icons - NATO like counters[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1727102189]北约图标 MPU Unit Icons[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2668048070]修正图标 Modifier Icons[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915965716]军区图标 Sensible Theatre Icons[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2663623848]彩色图标 Coloured Buttons Updated[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2642352801]历史国旗 Dragon's Flag Rework[/url]
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2659156021]Aigle2'的统计报表 Aigle2's Stats Graphs[/url]
+
+
+[b]小功能组件（good coding，不修改原文件的好模组，可以一直用下去）[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2204846772]独特的战争名称 Unique War Names[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2598551568]国际军火贸易 International Arms Market (1.11.1 Compatbible)[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2267614353]搬迁首都 Move your capital Updated Mod 1.11.2[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=846066944]玩家主导的谈判 Player-Led Peace Conferences[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1346517890]贸易禁运 Trade Embargo Mod 1.10[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2034489245]动态科研槽数量（工业数量相关）Dynamic Research Slots[/url]
+
+[b]小功能组件-军队[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]限制AI部队规模（请无视长时间不更新，这个还可以用） No AI Spam - General[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=761634749]部队等级扩展 !More Unit Levels - Extended Range[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2545036868]军官学校 School for leaders[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2664891964]解雇Leader Dismiss Leaders[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2171383182]合并傀儡舰队 Integrate Puppet Fleets[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1358588249]宗主国傀儡相互之间传送舰队 Transfer Ships (Between Players and Puppets)[/url]
+
+
+[b]大型组件-厉害的模组不会修改游戏原文件[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2635594130]钢四超级事件 Hearts of Iron 4 Superevents[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1327950527]决议加强 Decisions & Formables Plus[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2175242864]政治宣传加强 Propaganda Campaigns[/url]
+
+[b]大型组件-修改了游戏原文件，P社已更新这些模组就会废一部分[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=823161119]延长科技线到1960年代 Add Technologies[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2667285007]12个支援营位置 12 Support Companies 1.11 Compat[/url]
+
+
+
+
+
+[b]Modder常用[/b]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2450989939]万能工具箱 Tool Pack Updated |No Step Back|[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1941325398]加成GUI ModifierGUI[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2289163423]自动截图 Timelapse counter[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2217515723]弹钢琴 Playable Piano For HOI4[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2183728110]俄罗斯方块 Falling Blocks[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1376861586]打牌（不知道叫什么） World War Hold 'em[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1348086328]井字棋 Tic-Tac-Toe[/url]
+
+
+
+
+
+
+
+
+
+
+[h2]省份太多！强烈建议使用这个模组增加间谍数量 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2020566688]More Spies Mod[/url]，限制AI造兵数量
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]No AI Spam - General[/url]。
+测试过的，推荐的，我在用的兼容模组列表
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
+更多的兼容模组在这里可以找到
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2267184153]EOE's 100% compatible mods collection (Gameplay)[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273116080]EOE's 100% compatible mods collection (Beautifucation and more)[/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273727147]EOE's not 100% compatible mods collection (Gameplay)[/url]
+
+
+
+
+
+[h2]All listed mods work fine under 1.10.*[/h2]
+Recommend compatible mods for EOE project.
+You can easily click "subscribe to all" and play all of them together without worrying about GTD
+
+Here are 3 great TechTree mods, I recommend Extended Tech Tree 1960 for its variety , but you can choose any of them:
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1778255798]Extended Tech Tree 1960)[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=823161119]Add Technologies)[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1970546626]Ultimate Tech Tree)[/url]
+[/list]
+
+I find 2 NationFocus mods which are compatible with EOE project (almost playable). Some NationFocus mods have even modified the map, why???:
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1607661347]China Focus Rework[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1391211016]Finlandia Focus Tree[/url]
+[/list]
+
+[h2]My other collections, you can find some more compatible mods here:[/h2]
+[list]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273727147]EOE's not 100% compatible mods collection (Gameplay)[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2267184153]EOE's 100% compatible mods collection (Gameplay)[/url]
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273116080]EOE's 100% compatible mods collection (Beautifucation and more)[/url]
+[/list]
