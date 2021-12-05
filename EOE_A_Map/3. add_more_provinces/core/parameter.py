@@ -52,7 +52,7 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
     terrain_okay_dict = {
         'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
-        'new_province_max_amount': [3,3,3,2,5,3,2,2]
+        'new_province_max_amount': [3,3,3,2,4,3,2,2]
     }
     #countrytag, continent ['DEN',1]
 
@@ -109,12 +109,12 @@ def calculate_divide_province_amount(image_height, default_province_size, longit
     refileProvinceSize = default_province_size * areaMagnify
         
     amountProvince = int(round(RGBAreaFullSize/refileProvinceSize -0.5 ))
-#    if state_info_terrain == 'urban':
-#        amountProvince = amountProvince * 10
-#        if amountProvince == 0:
-#            amountProvince = 1
-#        if amountProvince >= max_new_provinces_per_state:
-#            amountProvince = max_new_provinces_per_state
+    if state_info_terrain == 'urban':
+        amountProvince = amountProvince * 10
+        if amountProvince == 0:
+            amountProvince = 1
+        if amountProvince >= max_new_provinces_per_state:
+            amountProvince = max_new_provinces_per_state
         # don't do too harsh, divide province into 1 - 10 pieces
     if amountProvince == 0:
         amountProvince = 1

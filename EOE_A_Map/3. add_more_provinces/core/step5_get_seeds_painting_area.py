@@ -35,7 +35,7 @@ def step_get_seeds_painting_area():
     all_painting_area_new_color = []
     count_create_seed_color_dict =  0
     for i in range(len(all_new_seeds_original_RGB)):
-        t = time()
+        #t = time()
         print("Part 5：get painting area for every seeds : Color = " + str(i) + ' / ' + str(len(all_new_seeds_original_RGB)))
         
         seed_color_dict, all_used_RGB, count_create_seed_color_dict = create_seed_color_dict(all_new_seeds_original_RGB[i], all_new_seeds_position[i], all_aviliable_RGB, all_used_RGB, count_create_seed_color_dict)
@@ -54,7 +54,7 @@ def step_get_seeds_painting_area():
         temp.remove((0,0,0))
         all_painting_area_new_color.append(temp)
 
-        print(time() - t)
+        #print(time() - t)
 
     all_painting_area_dict = {
         'Painting area original color': all_painting_area_original_color,

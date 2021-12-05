@@ -47,7 +47,7 @@ def read_supply_lines():
     read_write_files.save_dict(connected_provinces, 'connected_provinces')
 
 
-def find_connect_railway_between_two_points(start_point, end_point, connected_provinces):
+def find_connect_railway_between_two_points_v1(start_point, end_point, connected_provinces):
     
     connected_provinces_start_province = []
     connected_provinces_end_province = []
@@ -56,9 +56,6 @@ def find_connect_railway_between_two_points(start_point, end_point, connected_pr
         connected_provinces_end_province.append(value[1])
 
     start_point_location = [i for i, x in enumerate(connected_provinces_start_province) if x == int(start_point)]
-    end_point_location = [i for i, x in enumerate(connected_provinces_end_province) if x == int(end_point)]
-
-
 
     for item in start_point_location:
         mid_point1 = connected_provinces_end_province[item]
@@ -112,7 +109,6 @@ def find_connect_railway_between_two_points(start_point, end_point, connected_pr
 
 
 def find_connect_railway_between_two_points_v2(start_point_province_ID, end_point_province_ID, definition_color_address, all_RGB_list, all_seed_info, pixels):
-
     start_point_province_RGB = definition_color_address['RGB'][int(start_point_province_ID)]
     temp = all_RGB_list.index(start_point_province_RGB)
     start_point_POG = all_seed_info[temp][0][2]
@@ -120,40 +116,45 @@ def find_connect_railway_between_two_points_v2(start_point_province_ID, end_poin
     temp = all_RGB_list.index(end_point_province_RGB)
     end_point_POG = all_seed_info[temp][0][2]
 
-    pass_points = []
-    for x_10 in range(10*(start_point_POG[0]), 10*(end_point_POG[0])):
+    passing_points = []
+    x_rate = 10
+    step_x = 1
+    if start_point_POG[0] > end_point_POG[0]:
+        step_x = -1
+    else:
+        step_x = 1
+    step_y = 1
+    if start_point_POG[1] > end_point_POG[1]:
+        step_y = -1
+    else:
+        step_y = 1
+    for x_10 in range(x_rate*(start_point_POG[0]), x_rate*(end_point_POG[0]), step_x):
         if start_point_POG[0] == end_point_POG[0]:
-            for j in (start_point_POG[1] + 1, end_point_POG[2]):
-                pass_points.append(start_point_POG[0], j)
+            for j in (start_point_POG[1], end_point_POG[1], step_y):
+                passing_points.append(start_point_POG[0], j)
         else:
-            y = round(start_point_POG[1] + (end_point_POG[1] - start_point_POG[1])/(end_point_POG[0] - start_point_POG[0]) * (x_10/10 - start_point_POG[0]))
+            y = round(start_point_POG[1] + (end_point_POG[1] - start_point_POG[1])/(end_point_POG[0] - start_point_POG[0]) * (x_10/x_rate - start_point_POG[0]))
             x = round(x_10/10)
-            pass_points.append([x, y])
+            passing_points.append([x, y])
 
-    pass_points2 = []
-    for item in pass_points:
-        if item not in pass_points2:
-            pass_points2.append(item)
+    passing_points_no_duplicate = []
+    for item in passing_points:
+        if item not in passing_points_no_duplicate:
+            passing_points_no_duplicate.append(item)
 
-    temp = []
-    for item in pass_points2:
+    passing_point_province_ID_list = []
+    for item in passing_points_no_duplicate:
         passing_point_RGB = pixels[item[0], item[1]]
         passing_point_province_ID = definition_color_address['RGB'].index(list(passing_point_RGB))
         if passing_point_province_ID != int(start_point_province_ID) and passing_point_province_ID != int(end_point_province_ID):
-            temp.append(str(passing_point_province_ID))
-    
-    passing_point_province_ID_list = []
-    for item in temp:
-        if item not in passing_point_province_ID_list:
-            passing_point_province_ID_list.append(item)
+            passing_point_province_ID_list.append(str(passing_point_province_ID))
 
-    passing_point_province_ID_string = ''
+    passing_point_province_ID_list_no_duplicate = []
     for item in passing_point_province_ID_list:
-        passing_point_province_ID_string = passing_point_province_ID_string + item + ' '
-    passing_point_province_ID_string = str(start_point_province_ID) + ' ' + passing_point_province_ID_string
-    passing_point_province_ID_string = passing_point_province_ID_string [:-1]
+        if item not in passing_point_province_ID_list_no_duplicate:
+            passing_point_province_ID_list_no_duplicate.append(item)
 
-    return passing_point_province_ID_string
+    return passing_point_province_ID_list_no_duplicate
 
 def modify_supply_lines():
     title = "Open railways file(railways.txt)"
@@ -180,28 +181,74 @@ def modify_supply_lines():
     all_seed_info = all_RGB_and_Area_dict['Seeds Info']
 
 
-
-
-
     for i in range(len(railways_list)):
         print('Calculate ' + str(i) + ' of ' + str(len(railways_list)))
         railways_points_len = len(railways_list[i])
         railways_points_level = railways_list[i][0]
         railways_points_amount = railways_list[i][1]
+        real_end_point_province_ID = railways_list[i][railways_points_len - 2]
+
         for j in range(2, railways_points_len - 2): #(2,6) = 2 3 4 5
             start_point_province_ID = railways_list[i][j]
             end_point_province_ID = railways_list[i][j+1]
 
-            new_railway = find_connect_railway_between_two_points_v2(start_point_province_ID, end_point_province_ID, definition_color_address, all_RGB_list, all_seed_info, pixels)
+            #debug
+            if start_point_province_ID == '3522':
+                a = 1
 
+            passing_point_province_ID_list = find_connect_railway_between_two_points_v2(start_point_province_ID, end_point_province_ID, definition_color_address, all_RGB_list, all_seed_info, pixels)
 
-            #new_railway = find_connect_railway_between_two_points(start_point, end_point, connected_provinces)
+            new_railway = str(start_point_province_ID) + ' '
+            for item in passing_point_province_ID_list:
+                if item == []:
+                    new_railway = new_railway + str(item) + ' '
+                else:
+                    check_passing_point_province_ID_list = find_connect_railway_between_two_points_v2(item, real_end_point_province_ID, definition_color_address, all_RGB_list, all_seed_info, pixels)
+                    if check_passing_point_province_ID_list == []:
+                        new_railway = new_railway = new_railway + str(item) + ' ' + str(real_end_point_province_ID)+ ' '
+                    else:
+                        new_railway = new_railway + str(item) + ' '
 
             railways_list[i][j] = new_railway
-            new_railway_string = ' '.join(str(v) for v in railways_list[i])
-            #new_railway_string = ' '.join(railways_list[i])
-            new_railway_string = new_railway_string.split(' ')
-            railways_list[i][1] = len(new_railway_string) - 3
+        #remove space at end
+        for j in range(len(railways_list[i])):
+            if railways_list[i][j][-1] == ' ':
+                railways_list[i][j] = railways_list[i][j][:-1]
+
+        new_railway_string = ' '.join(str(v) for v in railways_list[i])
+        #new_railway_string = ' '.join(railways_list[i])
+        new_railway_sorted_list = []
+        new_railway_full_list = new_railway_string.split(' ')
+        new_railway_sorted_list.append(new_railway_full_list[0])
+        new_railway_sorted_list.append(new_railway_full_list[1])
+        railway_count = 0
+        no_more = 0
+        for j in range(2, len(new_railway_full_list)):
+            if no_more == 0:
+                if new_railway_full_list[j] != end_point_province_ID:
+                    new_railway_sorted_list.append(new_railway_full_list[j])
+                    railway_count = railway_count + 1
+                else:
+                    no_more = 1
+                    new_railway_sorted_list.append(end_point_province_ID)
+                    railway_count = railway_count + 1
+
+        new_railway_sorted_list2 = []
+        new_railway_sorted_list2.append(new_railway_sorted_list[0])
+        new_railway_sorted_list2.append(new_railway_sorted_list[1])
+        for j in range(2, len(new_railway_sorted_list)):
+            if definition_color_address['land_sea_lake'][int(new_railway_sorted_list[j])] == 'land':
+                new_railway_sorted_list2.append(new_railway_sorted_list[j])
+            else:
+                railway_count = railway_count - 1
+            
+        railways_list[i] = new_railway_sorted_list2
+
+
+        railways_list[i][1] = str(railway_count)
+        if railways_list[i][-1] != '\n':
+            railways_list[i].append('\n')
+
 
 
     new_railways_string = ''
