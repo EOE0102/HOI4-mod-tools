@@ -1,16 +1,11 @@
-
 [b]More States and More Provinces [/b]
 This mod focuses on adding more states and more provinces to fully tap the limits of HOI4.
-The vanilla HOI4's map is too simple, the gameplay is good, but the realism is not enough. 
-Different states have different sizes, and there are not enough provinces, which can;t carry out complex maneuver, and the strategic aspects are also blocked.
-In the later stage, due to the limitation of the number of provinces, the country's industrial capacity also had its limits. 
-For some small countries or those who want to play after the year 1947, even if the technology module like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=823161119]Add Technologies[/url]
- is subscribed, it's still boring.
-Now these problems have been solved. Each state is about the same size, and more provinces have increased strategic selectivity.
+The vanilla HOI4's map is too simple, gameplay is good, but realism is not enough. 
+Different states have different sizes, and there are not enough provinces, which can't carry out complex maneuver, and the strategic aspects are also blocked. Besides in the later stage, due to the limitation of provinces' amount, the country's industrial capacity also had its limits. For some small countries or those who want to play after the year 1947, even if the technology module like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=823161119]Add Technologies[/url] is subscribed, the game is still boring.
+Now these problems have been solved. Each state is about the same size, and more provinces for your strategic selectivity.
 
-Compatible with HOI4 1.11.* version, full DLC compatible
+Compatible with HOI4 1.11.* version, support all DLC
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/1818951012] changelog[/url]
-checksum 7b59
 
 [h1]GitHub:[/h1]
 https://github.com/EOE0102/HOI4-mod-tools
@@ -23,18 +18,18 @@ https://github.com/EOE0102/HOI4-mod-tools
 [/list]
 [b]More state (1000%+ )[/b]
 [list]
-[*]A total of [b]10086 states (834 in the original version)[/b].
+[*]A total of [b]9978 states (834 in the original version)[/b].
 [/list]
 [b]More Provinces (150%)[/b]
 [list]
 [*]Europe, the European part of the Soviet Union, Turkey and other Middle East regions, North Africa, the Horn of Africa, most parts of China, Southeast Asia
 [*]A total of 19374 provinces (13235 in the original version)
-[*]Double the number of provinces in the city (4-5 plots)
+[*]Double the number of provinces for urban (4 provinces per urban state)
 [/list]
 [b]More map features[/b]
 [list]
-[*]Add some impassable areas
-[*]Add some impassable mountains (Northwest China)
+[*]Add more impassable areas
+[*]Add more impassable mountains (Northwest China)
 [*]Add more straits
 [*]Add more victory points
 [/list]
@@ -48,20 +43,28 @@ https://github.com/EOE0102/HOI4-mod-tools
 [/list]
 
 [h1]FAQ:[/h1]
--Q: It crashes when the game loads!
-  -A: HOI4 game problems, you need larger memory and a better CPU.
-     Delete all caches in the following folder X:\Users\[YOURNAME]\Documents\Paradox Interactive\Hearts of Iron IV, and then reinstall the game. Most cases can be repaired.
+[b]-Q: It crashes when the game loads![/b]
+  -A: Delete all caches(everything) in the following folder X:\Users\[YOURNAME]\Documents\Paradox Interactive\Hearts of Iron IV, and then reinstall the game. Most CTD can be repaired.
 
-  -Q: I got stuck in the peace talk!
+[b]-Q: It lags when peace talking is popping up![/b]
   -A: More states need more computation. Be patient...
 
-  -Q: Lagging in the later stage!
-  -A: Since there is no restriction on the construction of IC, and there are many empty slots, the US and other major country will be 1000 in the later game, please use this module to limit the number of troops
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2319014735]【Recommend】Downsize LandForce[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【Recommend】Downsize AirForce[/url]
+[b]-Q: Lagging in the later stage![/b]
+  -A: Since there is no restriction on the construction of IC, and there are many empty slots, the US and other major country will usually have 1000+ IC in the later game, please use those mods to limit the number of troops
+  those two
+  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2319014735]【Recommend】Downsize LandForce[/url]
+  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【Recommend】Downsize AirForce[/url]
+  or this one
+  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]No AI Spam - General[/url]
 
-  -Q: More land?
+[b]-Q: More land?[/b]
   -A: System limitation. HOI4 will crash to desktop when amount of provinces reach around 22,000.
+
+[h1]More mods[/h1]
+  I recommend those for a much more fun gameplay.  
+[url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
+
+
 
 [h1]Recommended mods, I have tested it, all subscriptions have no conflicts[/h1]
 [b]Beautification- Map[/b]
@@ -137,11 +140,6 @@ https://github.com/EOE0102/HOI4-mod-tools
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1376861586]World War Hold 'em[/url]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1348086328]Tic-Tac-Toe[/url]
 
-[b]More mods list[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2267184153]EOE's 100% compatible mods collection (Gameplay)[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273116080]EOE's 100% compatible mods collection (Beautifucation and more)[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273727147]EOE's not 100% compatible mods collection (Gameplay)[/url]
-
 
 
 
@@ -166,7 +164,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 [/list]
 [b]更多省份（state） (1000%+ )[/b]
 [list]
-[*]原版每个province都有一个state了, 总共[b]10086 个 states (原版834个)[/b].
+[*]原版每个province都有一个state了, 总共[b]9978 个 states (原版834个)[/b].
 [/list]
 [b]更多地块（Provinces） (150%)[/b]
 [list]
@@ -193,7 +191,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 [h1]FAQ:[/h1]
  - Q: 游戏加载的时候就崩了！
  - A：HOI4的问题，换个大内存和好点的CPU吧，国产的光威内存上市了。
-    删除在如下文件夹下的全部缓存 X:\Users\[YOURNAME]\Documents\Paradox Interactive\Hearts of Iron IV, 之后重装游戏。大部分情况都可以修复。
+    【重要】：删除在如下文件夹下的全部缓存（指所有文件） X:\Users\[YOURNAME]\Documents\Paradox Interactive\Hearts of Iron IV, 之后重装游戏。大部分情况都可以修复。
 
  - Q: 和谈的时候卡！
  - A：本模组特色就是卡！更多地块当然计算量更大。
@@ -206,6 +204,9 @@ https://github.com/EOE0102/HOI4-mod-tools
  - Q: 地块再多点？
  - A：系统限制，初步测试Province在两万二会崩程序，现在是极限了。
 
+[h1]更多兼容模组[/h1]
+  下面链接里的模组，均互相兼容，订阅并游玩可以获得更好的体验
+  [url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
 
 
 
