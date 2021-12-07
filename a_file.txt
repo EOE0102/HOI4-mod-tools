@@ -1,0 +1,24 @@
+ STATE_1000:0 "Asipovichy"
+
+ STATE_1000:0 "Changbai"
+
+ STATE_1000:0 "Kuttainen"
+
+ STATE_1000:0 "Leinesfjord"
+
+ STATE_1000:0 "Leiria"
+
+ STATE_1000:0 "Loukhi"
+
+ STATE_1000:0 "Valday"
+
+ STATE_1001:0 "Aveiro"
+
+ STATE_1001:0 "Danilov"
+
+ STATE_1001:0 "M¨¹nchen"
+
+ STATE_1001:0 "Santar¨¦m"
+
+ STATE_1001:0 "Shun'ga"
+

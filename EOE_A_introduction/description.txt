@@ -1,3 +1,5 @@
+EOE's Map Mod[1.11] | More States(1200%) More Provinces(150%)
+
 [b]More States and More Provinces [/b]
 This mod focuses on adding more states and more provinces to fully tap the limits of HOI4.
 The vanilla HOI4's map is too simple, gameplay is good, but realism is not enough. 
@@ -13,8 +15,8 @@ https://github.com/EOE0102/HOI4-mod-tools
 [h1]Major Features:[/h1]
 [strike][b]Accurate world map (function abolished):[/b][/strike]
 [list]
-[*]I don;t know how to use GIS to generate a map.Moreover, the new railway system fundamentally denies the possibility of player-made maps. New Map can only be made by stretching and zoom.
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118] no more aviliable[/url]
+[*]You can not generate a standard world map from GIP without touching the topology of provinces. If you check the railways.txt under /map folder, you can see the railways are generated line by line, each line define a railway: [level of railway] [amount of connected province] and [province ID]s. If Province_A and Province_B are not connected, the railway will not be generated. Of course you can create a railway manually on your own handmade map, but a STANDARD WORLD MAP MADE FROM GIS is almost impossible(or cost a lot of time to debug).
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118] no more available[/url]
 [/list]
 [b]More state (1000%+ )[/b]
 [list]
@@ -145,7 +147,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 
 
 
-
+EOE 世界地图[1.11] 更多省份(1200%)/更多地块(150%)
 [b]10倍省份 + 双倍地块，燃烧你的CPU（笑[/b]
 本模组注重于添加更多省份，更多地块，完全挖掘HOI4的极限。原版钢四的地图太简单，游戏性不错但是拟真程度下降，不同的省份（state）居然有不同的大小，而且地块（Province）也少，无法进行复杂的机动，战略方面也被地块数量限制。
 到后期由于省份数量限制，国家的工业能力也有极限，对于一些小国或者想玩到1949年之后的人，即使添加了科技模组，也缺少游戏性。
@@ -159,7 +161,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 [h1]主要功能:[/h1]
 [strike][b]准确世界地图（功能废除）:[/b][/strike]
 [list]
-[*]GIS不会用，而且新的铁路系统从根本上否定了自制地图的可能，只能靠拉伸地图来做新模组
+[*]GIS不会用，而且新的铁路系统从根本上否定了标准世界地图的可能，只能靠拉伸地图来做新模组
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组（没了）[/url]
 [/list]
 [b]更多省份（state） (1000%+ )[/b]
