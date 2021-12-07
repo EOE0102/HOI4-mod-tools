@@ -21,6 +21,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 [b]More state (1000%+ )[/b]
 [list]
 [*]A total of [b]9978 states (834 in the original version)[/b].
+[*]And they all have names
 [/list]
 [b]More Provinces (150%)[/b]
 [list]
@@ -67,7 +68,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 [url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
 
 [h1]Special Thanks[/h1]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] for providing names.
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] for providing State names.
 
 
 
@@ -170,6 +171,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 [b]更多省份（state） (1000%+ )[/b]
 [list]
 [*]原版每个province都有一个state了, 总共[b]9978 个 states (原版834个)[/b].
+[*]而且都有名字
 [/list]
 [b]更多地块（Provinces） (150%)[/b]
 [list]
