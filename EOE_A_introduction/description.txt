@@ -55,10 +55,8 @@ https://github.com/EOE0102/HOI4-mod-tools
 [b]-Q: Lagging in the later stage![/b]
   -A: Since there is no restriction on the construction of IC, and there are many empty slots, the US and other major country will usually have 1000+ IC in the later game, please use those mods to limit the number of troops
   those two
-  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2319014735]【Recommend】Downsize LandForce[/url]
+  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]【Recommend】No AI Spam - General[/url]
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【Recommend】Downsize AirForce[/url]
-  or this one
-  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]No AI Spam - General[/url]
 
 [b]-Q: More land?[/b]
   -A: System limitation. HOI4 will crash to desktop when amount of provinces reach around 22,000.
@@ -205,7 +203,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 
  - Q: 后期的时候卡！
  - A：由于地块没有限制建造空位，后期美国IC会上1000，请使用这个模组限制军队数量
-  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2319014735]【推荐】Downsize LandForce[/url]
+  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]【推荐】No AI Spam - General[/url]
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【推荐】Downsize AirForce[/url]
 
  - Q: 地块再多点？
