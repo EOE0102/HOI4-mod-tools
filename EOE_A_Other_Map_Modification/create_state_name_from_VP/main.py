@@ -39,7 +39,7 @@ def main():
                     new_state_file.append(' STATE_'+ found_state_ID + ':0 "' + province_name + '"\n') 
 
 
-
+#not/r/n is /r
     new_state_file.sort()
     path = filedialog.askopenfilename(title = ("save language file"))
     textfile = open(path, 'w' ,encoding='utf-8')

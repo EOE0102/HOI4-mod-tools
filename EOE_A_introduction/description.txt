@@ -66,6 +66,9 @@ https://github.com/EOE0102/HOI4-mod-tools
   I recommend those for a much more fun gameplay.  
 [url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
 
+[h1]Special Thanks[/h1]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] for providing names.
+
 
 
 [h1]Recommended mods, I have tested it, all subscriptions have no conflicts[/h1]
@@ -210,7 +213,8 @@ https://github.com/EOE0102/HOI4-mod-tools
   下面链接里的模组，均互相兼容，订阅并游玩可以获得更好的体验
   [url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
 
-
+[h1]特别感谢[/h1]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] 提供名称。
 
 
 
