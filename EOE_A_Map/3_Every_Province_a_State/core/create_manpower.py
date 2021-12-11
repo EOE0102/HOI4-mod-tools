@@ -24,8 +24,10 @@ def change_manpower(original_state_manpower, original_provinces_definition, manp
             temp = float(temp[1])
             if temp > max_victory_point_weight:
                 temp = max_victory_point_weight
+                for j in range(len(modify_manpower_matrix)):
+                    if modify_victory_points[i][0] in modify_manpower_matrix[j][0]:#TODO: 123 in 1234? maybe happend
+                        modify_manpower_matrix[j][1] = modify_manpower_matrix[j][1] * (1 + temp*manpower_victory_points_weight)
 
-            modify_manpower_matrix[i][1] = modify_manpower_matrix[i][1] * (1 + temp*manpower_victory_points_weight)
 
     #add manpower according to buildings
     for i in range(len(modify_provinces_buildings)):

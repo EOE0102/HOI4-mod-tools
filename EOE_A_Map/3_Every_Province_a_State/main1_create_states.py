@@ -54,8 +54,12 @@ def create_new_states_string(fileStart, amount_of_file):
     return new_states_file_ID_name
 
 
+def get_a_clear_VP(original_victory_points):
 
+    for item in original_victory_points:
+        a = 1
 
+    return original_victory_points
 
 def main():
     export_folder_location, states_definition_file_location= copy_original_files_to_export_folder()
@@ -155,6 +159,8 @@ def main():
             temp = text_in_str_historypart_buildingpart[index[0]:index[1]]
             original_province_buildings.append([i ,temp])
 
+
+        original_victory_points = get_a_clear_VP(original_victory_points)
         base_state_remain_province_ID = get_remain_province_ID(original_victory_points, original_provinces_ID)
         #MODIFY
         #state basic info 1
@@ -171,6 +177,13 @@ def main():
         # resources & provinces ID & VPs
         modify_victory_points = create_victory_points(modify_provinces_ID, original_victory_points)
         modify_provinces_buildings = create_original_provinces_buildings(modify_provinces_ID, original_province_buildings)
+
+
+        #debug
+        if original_provinces_definition[0][0]  == '3379 3217':
+            a = 1
+
+
 
         modify_manpower = change_manpower(original_state_manpower, original_provinces_definition, manpower_weight, manpower_coast_weight,
             modify_victory_points, manpower_victory_points_weight, max_victory_point_weight,modify_provinces_buildings, manpower_provinces_buildings_weight)

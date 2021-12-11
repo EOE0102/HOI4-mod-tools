@@ -13,7 +13,7 @@ Compatible with HOI4 1.11.* version, support all DLC
 https://github.com/EOE0102/HOI4-mod-tools
 
 [h1]Major Features:[/h1]
-[strike][b]Accurate world map (function abolished):[/b][/strike]
+[b]Accurate world map (Work in progress)[/b]
 [list]
 [*]You can not generate a standard world map from GIP without touching the topology of provinces. If you check the railways.txt under /map folder, you can see the railways are generated line by line, each line define a railway: [level of railway] [amount of connected province] and [province ID]s. If Province_A and Province_B are not connected, the railway will not be generated. Of course you can create a railway manually on your own handmade map, but a STANDARD WORLD MAP MADE FROM GIS is almost impossible(or cost a lot of time to debug).
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118] no more available[/url]
@@ -36,14 +36,20 @@ https://github.com/EOE0102/HOI4-mod-tools
 [*]Add more straits
 [*]Add more victory points
 [/list]
+[b]New Unit[/b]
+[list]
+[*]Add local police (less manpower need for suppression)
+[/list]
 [b]More Resource (Work in progress)[/b]
 [list]
 [*]Add the mining of natural resources from 1936 to 1970, currently lacks database support, under development
 [/list]
-[b]new Type Unit[/b]
+[b]More releasable country(Work in progress, coding)[/b]
 [list]
-[*]Add local police (less manpower need for suppression)
+[*]How many releasable countries  do you want?
+[*]YES
 [/list]
+
 
 [h1]FAQ:[/h1]
 [b]-Q: It crashes when the game loads![/b]
@@ -58,7 +64,7 @@ https://github.com/EOE0102/HOI4-mod-tools
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]【Recommend】No AI Spam - General[/url]
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【Recommend】Downsize AirForce[/url]
 
-[b]-Q: More land?[/b]
+[b]-Q: More Provinces?[/b]
   -A: System limitation. HOI4 will crash to desktop when amount of provinces reach around 22,000.
 
 [h1]More mods[/h1]
@@ -161,7 +167,7 @@ checksum
 https://github.com/EOE0102/HOI4-mod-tools
 
 [h1]主要功能:[/h1]
-[strike][b]准确世界地图（功能废除）:[/b][/strike]
+[b]准确世界地图（开发中）[/b]
 [list]
 [*]GIS不会用，而且新的铁路系统从根本上否定了标准世界地图的可能，只能靠拉伸地图来做新模组
 [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组（没了）[/url]

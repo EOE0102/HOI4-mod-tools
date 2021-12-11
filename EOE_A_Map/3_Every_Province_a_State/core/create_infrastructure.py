@@ -24,7 +24,12 @@ def change_infrastructure_level(original_infrastructure, original_provinces_defi
             temp2 = int(temp/infrastructure_victory_points_weight) + 0.51
             if temp2 > 1:
                 temp2 = 1
-            modify_infrastructure_level_matrix[i][1] = modify_infrastructure_level_matrix[i][1] + temp2
+
+                for j in range(len(modify_infrastructure_level_matrix)):
+                    if modify_victory_points[i][0] in modify_infrastructure_level_matrix[j][0]:#TODO: 123 in 1234? maybe happend
+                        modify_infrastructure_level_matrix[j][1] = modify_infrastructure_level_matrix[j][1] + temp2
+
+
 
     #buildings
     for i in range(len(modify_provinces_buildings)):

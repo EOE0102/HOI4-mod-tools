@@ -17,7 +17,13 @@ def change_local_supplies(original_local_supplies, original_provinces_definition
         if modify_victory_points[i][1] != "":
             temp = modify_victory_points[i][1].split()
             temp = float(temp[1]) * local_supplies_victory_points_weight
-            modify_local_supplies_matrix[i][1] = modify_local_supplies_matrix[i][1] + temp
+
+            
+            for j in range(len(modify_local_supplies_matrix)):
+                if modify_victory_points[i][0] in modify_local_supplies_matrix[j][0]:#TODO: 123 in 1234? maybe happend
+                    modify_local_supplies_matrix[j][1] = modify_local_supplies_matrix[j][1] + temp
+
+
 
     #buildings
     for i in range(len(modify_provinces_buildings)):

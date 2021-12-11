@@ -25,18 +25,18 @@ def change_victory_points(original_victory_points_of_province):
 
     changed_victory_point = original_victory_points_of_province
 
-    if original_victory_points_of_province <= 3:
-        changed_victory_point = original_victory_points_of_province * 5
-    elif 3 < original_victory_points_of_province <= 10:
-        changed_victory_point = (original_victory_points_of_province - 3) * 4 + 15
-    elif 10 < original_victory_points_of_province <= 20:
-        changed_victory_point = (original_victory_points_of_province - 10) * 3 + 40
-    elif 20 < original_victory_points_of_province <= 30:
-        changed_victory_point = (original_victory_points_of_province - 20) * 2 + 70
-    elif 30 < original_victory_points_of_province <= 40:
-        changed_victory_point = (original_victory_points_of_province - 30) * 2 + 90
-    elif 40 < original_victory_points_of_province:
-        changed_victory_point = (original_victory_points_of_province - 40) * 1 + 110
-    changed_victory_point = int(round(float(changed_victory_point)/5) * 5)
+#    if original_victory_points_of_province <= 3:
+#        changed_victory_point = original_victory_points_of_province * 5
+#    elif 3 < original_victory_points_of_province <= 10:
+#        changed_victory_point = (original_victory_points_of_province - 3) * 4 + 15
+#    elif 10 < original_victory_points_of_province <= 20:
+#        changed_victory_point = (original_victory_points_of_province - 10) * 3 + 40
+#    elif 20 < original_victory_points_of_province <= 30:
+#        changed_victory_point = (original_victory_points_of_province - 20) * 2 + 70
+#    elif 30 < original_victory_points_of_province <= 40:
+#        changed_victory_point = (original_victory_points_of_province - 30) * 2 + 90
+#    elif 40 < original_victory_points_of_province:
+#        changed_victory_point = (original_victory_points_of_province - 40) * 1 + 110
+#    changed_victory_point = int(round(float(changed_victory_point)/5) * 5)
 
     return changed_victory_point

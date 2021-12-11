@@ -22,7 +22,12 @@ def change_state_category(original_state_category, original_provinces_definition
             temp = modify_victory_points[i][1].split()
             temp = float(temp[1])
             temp2 = int(temp/state_category_victory_points_weight) + 1
-            modify_state_category_matrix[i][1] = modify_state_category_matrix[i][1] + temp2
+
+            for j in range(len(modify_state_category_matrix)):
+                if modify_victory_points[i][0] in modify_state_category_matrix[j][0]:#TODO: 123 in 1234? maybe happend
+                    modify_state_category_matrix[j][1] = modify_state_category_matrix[j][1] + temp2
+
+           
 
     #building
     for i in range(len(modify_provinces_buildings)):
