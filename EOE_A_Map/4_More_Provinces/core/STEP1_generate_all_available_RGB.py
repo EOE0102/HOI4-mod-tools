@@ -16,15 +16,15 @@ def list_all_RGB():
     all_color_G = []
     all_color_B = []
     all_color = []
-    for i in range(40):
-        all_color_R.append((5*i))
+    for i in range(20):
+        all_color_R.append((10*i))
 
-    for i in range(50):
-        all_color_G.append(4*i)
+    for i in range(25):
+        all_color_G.append(8*i)
 
     #for i in range(46):
-    for i in range(40):
-        all_color_B.append(5*i)
+    for i in range(20):
+        all_color_B.append(10*i)
 
     for i in all_color_R:
         for j in all_color_G:
