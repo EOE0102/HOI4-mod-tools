@@ -13,7 +13,7 @@ using paint.net, save as 24 bit BMP
 | Common Errors | Fix |
 | :- | :- |
 | `Province 8944 has TOO LARGE BOX. Perhaps pixels are spread around the world in provinces.bmp` | No harm |
-| `Map invalid X crossing. Please fix pixels at coords: [X],[Y]` | **fix_pixel_crossing.py**  |
+| `Map invalid X crossing. Please fix pixels at coords: [X],[Y]` | **fix_pixel_crossing.py** |
 | `Bitmap and province definition disagree on whether or not province [X] is coastal. Bitmap adjacency result will be prefered` | NEDGE! -> Database => Coastal **first click show color, otherwise nedge will CTD, no idea why** |
 | `Error in map/adjacencies.csv: Adj between 1399 and 1515 is not adjacent with THROUGH = 220` | No harm, manual |
 | `One-pixel province color found at [X],[Y]` | No harm yet **remove_one_pixel_province.py** |
@@ -68,8 +68,10 @@ run: 3_Every_Province_a_State/main2_debug_relative_events.py
 | :- | :- |
 | `CTD when loading events` | windows UTF-8 error. open nation_focus files with notepad++, delete the first letter 锘 |
 | `add_core_of = GER`, reported by user | Germany.txt error |
+| Trying to set invalid state building "dockyard" to state #59. | manually |
+| `Spain Civil war, too many unit created` | DELETE create_unit event `Anarchist Militia` |
 
-### **modify impassable area and more**
+### **Modify impassable area and more**
 
 impassable = yes in history/state file
 
@@ -77,6 +79,40 @@ adjacencies.csv
 
 adjacency_rules.txt
 
+Caspian Sea/ volkhov
+
+
+### **Add name for all new states**
+
+https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526
+
+| Common Errors | Fix |
+| :- | :- |
+| `nothing changed` | change line code is \n  |
+| `nothing changed` | Encode in UTF8-BOM  |
+| `The game has loc key collisions. Check logs/text.log for more details` | Check logs/text.log  |
+
+>4_More_Provinces/main.py => STEP3 
+
 ## **STEP 3: More Province**
 
+>EOE_A_Other_Map_Modification/main.py
+
+| Common Errors | Fix |
+| :- | :- |
+| `STEP1: create available RGB` | max color 255*255*255 - 10K vanilla color |
+| `STEP2: get painting area` | NO |
+| `STEP3: get states info` | read definition.txt |
+| `STEP4: get painting seeds` | you can modify core/parameter.py |
+| `STEP5: get painting area for every seeds` | core: floodfill |
+| `STEP6: painting` | NO |
+| `STEP7: modify states and strategicregions files` | strategicregions file is in vanilla game folder |
+| `Province 17640 has only 7 pixels around (x=3312,y=868). Should have at least 8` | MANUALLY |
+| `Map invalid X crossing. Please fix pixels at coords` | **fix_pixel_crossing.py** |
+| `One-pixel province color found` | **remove_one_pixel_province.py** |
+| `STEP8` | Supply note |
+| Modify states | add bunkers for Maginot line |
+
+
+STEP1 to STEP 8 
 

@@ -171,7 +171,8 @@ def add_item_before_kw(_new_import_file_str, _find_str, _start_mark, _end_mark, 
 
             if temp1 < 0: #no id not found
                 i = i + 1
-            elif _kw_position[i] - temp1 > 10: # bug like this:537 = /r/r {add_core_of = FROM}
+            elif _kw_position[i] - temp1 > 20: # bug like this:537 = /r/r {add_core_of = FROM} 
+		                #153 = {if = {limit = { is_owned_by = AUS }add_core_of = GER}}
                 i = i + 1
             else:
                 for temp2 in range(len(_state_id_position)):

@@ -48,6 +48,10 @@ https://github.com/EOE0102/HOI4-mod-tools
 [list]
 [*]How many releasable countries  do you want?
 [*]YES
+[list]
+[*]What kind of computer should I need?
+[*]My PC: i5-8400+32G（dual channel 2666MHZ） + SSD + NVIDIA-1060-6G and my Laptop R7-5800H + 16G + NVIDIA-3070, all can run this mod without lagging.
+
 [/list]
 
 
@@ -65,7 +69,7 @@ https://github.com/EOE0102/HOI4-mod-tools
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【Recommend】Downsize AirForce[/url]
 
 [b]-Q: More Provinces?[/b]
-  -A: System limitation. HOI4 will crash to desktop when amount of provinces reach around 22,000.
+  -A: System limitation. HOI4 will crash to desktop when amount of provinces reach around 20,000.
 
 [h1]More mods[/h1]
   I recommend those for a much more fun gameplay.  
@@ -73,6 +77,24 @@ https://github.com/EOE0102/HOI4-mod-tools
 
 [h1]Special Thanks[/h1]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] for providing State names.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -213,7 +235,7 @@ https://github.com/EOE0102/HOI4-mod-tools
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【推荐】Downsize AirForce[/url]
 
  - Q: 地块再多点？
- - A：系统限制，初步测试Province在两万二会崩程序，现在是极限了。
+ - A：系统限制，初步测试Province在两万会崩程序，现在是极限了。
 
 [h1]更多兼容模组[/h1]
   下面链接里的模组，均互相兼容，订阅并游玩可以获得更好的体验
@@ -221,6 +243,15 @@ https://github.com/EOE0102/HOI4-mod-tools
 
 [h1]特别感谢[/h1]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] 提供名称。
+
+
+
+
+
+
+
+
+
 
 
 

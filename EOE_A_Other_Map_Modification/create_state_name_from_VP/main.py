@@ -25,6 +25,7 @@ def main():
         victory_points_info_line = [victory_points_info_line.rstrip() for victory_points_info_line in f]
 
     new_state_file = []
+    new_state_file.append('l_english:\n')
     RE_VP = re.compile('VICTORY_POINTS_([0-9]+)')
 
     for item in victory_points_info_line:
@@ -46,14 +47,6 @@ def main():
     for element in new_state_file:
         textfile.write(element)
     textfile.close()
-
-
-
-
-
-
-
-
 
 
 

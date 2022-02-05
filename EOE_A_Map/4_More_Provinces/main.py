@@ -56,15 +56,15 @@ class StandardBoxForInfo(tk.Tk):
         action.grid(column = 0, row = 13)
 
         #butten 8
-        a0_2_label = ttk.Label(self, text = "STEP8-1: modify supplie line, i.e. do step2 again")
+        a0_2_label = ttk.Label(self, text = "STEP8-1: calculate topology between provinces")
         a0_2_label.grid(column = 0, row = 14)
-        action = ttk.Button(self, text = "Click ME", command = step_get_RGB_area_for_every_color)
+        action = ttk.Button(self, text = "Click ME", command = calculate_topology_between_provinces)
         action.grid(column = 0, row = 15)
 
         #butten 9
         a0_2_label = ttk.Label(self, text = "STEP8-2: modify supplie line")
         a0_2_label.grid(column = 0, row = 16)
-        action = ttk.Button(self, text = "Click ME", command = modify_supply_lines)
+        action = ttk.Button(self, text = "Click ME", command = modify_supply_lines_V2)
         action.grid(column = 0, row = 17)
 
 

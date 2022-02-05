@@ -22,7 +22,7 @@ longitude_south_in_rand = longitude_south/ 180 * numpy.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 25 #pixel on equator
+default_province_size = 20 #pixel on equator
 max_new_provinces_per_state = 6 #max 5 block because range(1, new_province_max_amount):
 
 
@@ -52,7 +52,7 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
     terrain_okay_dict = {
         'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
-        'new_province_max_amount': [3,3,4,2,4,3,4,2]
+        'new_province_max_amount': [3,3,4,2,4,3,3,2]
     }
     #countrytag, continent ['DEN',1]
 
@@ -73,7 +73,7 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
         ['FIN',1], ['SWE',1], ['NOR',1], ['DEN',1],#north europa
         ['TUR',1], ['TUR',7], ['PER',7], #turkey in europa and middle east
         ['SOV',1], ['SOV',7], #sov in europa and middle east
-        ['ETH',5]] 
+        ['ETH',5]] #Africa
 
 
     add_core_of_list = ['LIB', #test country
