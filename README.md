@@ -98,6 +98,8 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526
 
 >EOE_A_Other_Map_Modification/main.py
 
+STEP1 to STEP 8 
+
 | Common Errors | Fix |
 | :- | :- |
 | `STEP1: create available RGB` | max color 255*255*255 - 10K vanilla color |
@@ -110,9 +112,7 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526
 | `Province 17640 has only 7 pixels around (x=3312,y=868). Should have at least 8` | MANUALLY |
 | `Map invalid X crossing. Please fix pixels at coords` | **fix_pixel_crossing.py** |
 | `One-pixel province color found` | **remove_one_pixel_province.py** |
-| `STEP8` | Supply note |
+| `STEP8: create supply note` | 8-1 takes 90min, 8-2 takes 90min |
+| `Railway level > NDefines::NSupply::MAX_RAILWAY_LEVEL (province 9371, neighbor index 5, level 6)` | fix all TODO create by 8-2 |
 | Modify states | add bunkers for Maginot line |
-
-
-STEP1 to STEP 8 
 

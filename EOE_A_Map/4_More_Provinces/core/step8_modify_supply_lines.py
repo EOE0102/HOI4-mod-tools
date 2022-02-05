@@ -267,9 +267,10 @@ def modify_supply_lines_V2():
         new_connect_provinces = []
         new_connect_provinces.append(railways_list[i][2])
 
-        new_connect_provinces_list = []
+        
 
         for j in range(2, railways_points_len - 2): #(2,6) = 2 3 4 5
+            new_connect_provinces_list = []
             start_point_province_ID = int(railways_list[i][j])
             end_point_province_ID = int(railways_list[i][j+1])
             connected_province = [start_point_province_ID, end_point_province_ID]
