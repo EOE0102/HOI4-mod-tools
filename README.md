@@ -69,7 +69,7 @@ run: 3_Every_Province_a_State/main2_debug_relative_events.py
 | `CTD when loading events` | windows UTF-8 error. open nation_focus files with notepad++, delete the first letter 锘 |
 | `add_core_of = GER`, reported by user | Germany.txt error |
 | Trying to set invalid state building "dockyard" to state #59. | manually |
-| `Spain Civil war, too many unit created` | DELETE create_unit event `Anarchist Militia` |
+| `Spain Civil war, too many unit created` | DELETE create_unit event `Anarchist Militia` , every_owned_state |
 
 ### **Modify impassable area and more**
 
@@ -112,7 +112,35 @@ STEP1 to STEP 8
 | `Province 17640 has only 7 pixels around (x=3312,y=868). Should have at least 8` | MANUALLY |
 | `Map invalid X crossing. Please fix pixels at coords` | **fix_pixel_crossing.py** |
 | `One-pixel province color found` | **remove_one_pixel_province.py** |
+| `adjacencies.csv`| adjacencies.csv |
+| `VP` | add new VP in 1-France.txt |
 | `STEP8: create supply note` | 8-1 takes 90min, 8-2 takes 90min |
 | `Railway level > NDefines::NSupply::MAX_RAILWAY_LEVEL (province 9371, neighbor index 5, level 6)` | fix all TODO create by 8-2 |
 | Modify states | add bunkers for Maginot line |
 
+## **STEP4: More Features**
+
+### **Increase Supply Range**
+
+The supply range is +60%.
+
+### **Add Resistance type**
+
+Because the strength of Resistance is based on amount of states. Therefore we need a new type army to reduce the the cose fo manpower.
+
+### **More Resource**
+
+| Common Errors | Fix |
+| :- | :- |
+| `Duplicate decision. develop_524_oil_deposits is a duplicate.` | BETA |
+
+### **State Buildings Slot limiter**
+
+BETA
+
+### **More releasable countries**
+
+BETA
+| Common Errors | Fix |
+| :- | :- |
+| `FLAG` | 32bit ,no compress |

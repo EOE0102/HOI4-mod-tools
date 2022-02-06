@@ -13,47 +13,41 @@ Compatible with HOI4 1.11.* version, support all DLC
 https://github.com/EOE0102/HOI4-mod-tools
 
 [h1]Major Features:[/h1]
-[b]Accurate world map (Work in progress)[/b]
+[b]Accurate world map[/b]
 [list]
-[*]You can not generate a standard world map from GIP without touching the topology of provinces. If you check the railways.txt under /map folder, you can see the railways are generated line by line, each line define a railway: [level of railway] [amount of connected province] and [province ID]s. If Province_A and Province_B are not connected, the railway will not be generated. Of course you can create a railway manually on your own handmade map, but a STANDARD WORLD MAP MADE FROM GIS is almost impossible(or cost a lot of time to debug).
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118] no more available[/url]
+[*]Please check this mod for more map details:
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118] Standard World Map Mod[/url]
 [/list]
-[b]More state (1000%+ )[/b]
+[b]More states (1000%+ )[/b]
 [list]
-[*]A total of [b]9978 states (834 in the original version)[/b].
+[*]A total of [b]9977 states (834 before)[/b].
 [*]And they all have names
 [/list]
 [b]More Provinces (150%)[/b]
 [list]
 [*]Europe, the European part of the Soviet Union, Turkey and other Middle East regions, North Africa, the Horn of Africa, most parts of China, Southeast Asia
-[*]A total of 19374 provinces (13235 in the original version)
+[*]A total of 18839 provinces (13235 before)
 [*]Double the number of provinces for urban (4 provinces per urban state)
 [/list]
 [b]More map features[/b]
 [list]
 [*]Add more impassable areas
 [*]Add more impassable mountains (Northwest China)
-[*]Add more straits
+[*]Add more straits, passable caspian sea
 [*]Add more victory points
 [/list]
 [b]New Unit[/b]
 [list]
 [*]Add local police (less manpower need for suppression)
 [/list]
-[b]More Resource (Work in progress)[/b]
+[b]More Resource (BETA)[/b]
 [list]
 [*]Add the mining of natural resources from 1936 to 1970, currently lacks database support, under development
 [/list]
-[b]More releasable country(Work in progress, coding)[/b]
+[b]More releasable countries (BETA)[/b]
 [list]
-[*]How many releasable countries  do you want?
-[*]YES
-[list]
-[*]What kind of computer should I need?
-[*]My PC: i5-8400+32G（dual channel 2666MHZ） + SSD + NVIDIA-1060-6G and my Laptop R7-5800H + 16G + NVIDIA-3070, all can run this mod without lagging.
-
+[*]Only states in USA
 [/list]
-
 
 [h1]FAQ:[/h1]
 [b]-Q: It crashes when the game loads![/b]
@@ -63,6 +57,7 @@ https://github.com/EOE0102/HOI4-mod-tools
   -A: More states need more computation. Be patient...
 
 [b]-Q: Lagging in the later stage![/b]
+  -A: My computer: i5-8400 + 32G 2666MHZ + 1060-6G | Laptop: 5800H + 16G + 3070. Both can run the mods, and it lags after year 1946.
   -A: Since there is no restriction on the construction of IC, and there are many empty slots, the US and other major country will usually have 1000+ IC in the later game, please use those mods to limit the number of troops
   those two
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]【Recommend】No AI Spam - General[/url]
@@ -76,6 +71,7 @@ https://github.com/EOE0102/HOI4-mod-tools
 [url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
 
 [h1]Special Thanks[/h1]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]Standard World Map Mod[/url] for map。
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] for providing State names.
 
 
@@ -183,7 +179,7 @@ EOE 世界地图[1.11] 更多省份(1200%)/更多地块(150%)
 到后期由于省份数量限制，国家的工业能力也有极限，对于一些小国或者想玩到1949年之后的人，即使添加了科技模组，也缺少游戏性。
 现在这些问题都解决了，每个省份都差不多大小，没有面积歧视啦，而且更多的地块也增加了战略选择性。
 兼容HOI4 1.11.* 版本，全DLC兼容
-checksum 
+[url=https://steamcommunity.com/sharedfiles/filedetails/changelog/1818951012] changelog[/url] 
 
 [h1]GitHub:[/h1]
 https://github.com/EOE0102/HOI4-mod-tools
@@ -191,34 +187,38 @@ https://github.com/EOE0102/HOI4-mod-tools
 [h1]主要功能:[/h1]
 [b]准确世界地图（开发中）[/b]
 [list]
-[*]GIS不会用，而且新的铁路系统从根本上否定了标准世界地图的可能，只能靠拉伸地图来做新模组
-[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组（没了）[/url]
+[*]请查看以下模组，了解地图详细信息：
+[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组[/url]
 [/list]
 [b]更多省份（state） (1000%+ )[/b]
 [list]
-[*]原版每个province都有一个state了, 总共[b]9978 个 states (原版834个)[/b].
+[*]原版每个province都有一个state了, 总共[b]9977个 states (原版834个)[/b].
 [*]而且都有名字
 [/list]
 [b]更多地块（Provinces） (150%)[/b]
 [list]
 [*]欧洲，苏联欧洲部分，土耳其及其他中东地区，北非，非洲之角，中国大部，东南亚
-[*]总共19374个地块（原版13235个）
-[*]城市有双倍份更多地块（4-5块）
+[*]总共18839个地块（原版13235个）
+[*]城市有双倍份更多地块（4块）
 [/list]
 [b]更多地图功能[/b]
 [list]
 [*]增加部分不可通行区域
 [*]增加部分不可山脉（中国西北）
-[*]增加更多海峡
+[*]增加更多海峡，里海可通行
 [*]增加更多胜利点
+[/list]
+[b]新兵种[/b]
+[list]
+[*]增加 local police（更少人力，更大镇压值） 用以镇压游击队
 [/list]
 [b]更多资源（开发中）[/b]
 [list]
 [*]增加从 1936 到 1970的自然资源开发，目前缺少数据库支持
 [/list]
-[b]新兵种[/b]
+[b]更多可成立国家（开发中）[/b]
 [list]
-[*]增加 local police（更少人力，更大镇压值） 用以镇压游击队
+[*]美国各州测试中
 [/list]
 
 [h1]FAQ:[/h1]
@@ -230,6 +230,7 @@ https://github.com/EOE0102/HOI4-mod-tools
  - A：本模组特色就是卡！更多地块当然计算量更大。
 
  - Q: 后期的时候卡！
+ - A: 我的电脑：i5-8400 + 32G +1060-6G 笔记本：5800H + 16G + 3070。1946年之后有点小卡。
  - A：由于地块没有限制建造空位，后期美国IC会上1000，请使用这个模组限制军队数量
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]【推荐】No AI Spam - General[/url]
   [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【推荐】Downsize AirForce[/url]
@@ -242,6 +243,7 @@ https://github.com/EOE0102/HOI4-mod-tools
   [url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
 
 [h1]特别感谢[/h1]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组[/url] 提供地图。
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] 提供名称。
 
 
