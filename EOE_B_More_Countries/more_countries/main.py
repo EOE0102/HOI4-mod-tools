@@ -24,6 +24,15 @@ def read_definition_info():
     definition_color_address = read_write_files.split_info_definition_csv(all_text_list)
     return definition_color_address
 
+def most_frequent(List):
+    counter = 0
+    num = List[0]
+    for i in List:
+        curr_frequency = List.count(i)
+        if(curr_frequency> counter):
+            counter = curr_frequency
+            num = i
+    return num
 
 
 
@@ -37,7 +46,7 @@ def main():
     used_RGB = definition_color_address['RGB']
 
 
-
+    #create province_to_states_list projection
     province_to_states_list = []
     for i_state, item_state in enumerate(states_info_dict['id']):
         provinces_ids = states_info_dict['provinces'][i_state]
@@ -86,6 +95,7 @@ def main():
     common_country_tags = []
     localisation_list = []
     event_add_core_of = []
+    new_country_color_list = []
     for excel_vanilla_id, excel_vanilla_item in enumerate(xl_file['Vanilla']):
         if excel_vanilla_item != "YES":
             new_country_tag = xl_file['TAG'][excel_vanilla_id]
@@ -102,14 +112,29 @@ def main():
                     #else:
                     country_flag_image = Image.open(full_filename)
                     resized_image = country_flag_image.resize((82, 52))
+
+                    color_list = []
+                    for i in range(82):
+                        for j in range(52):
+                            color_list.append(country_flag_image.load()[i,j])
+                    most_common_color = most_frequent(color_list)
+                    
                     # Error loading flag for country E01 : Ideology democratic : Path gfx/flags/ : Warning slow to read format - Consider using 32D instead of 24bpp
                     resized_image.convert("RGBA").save(export_folder_location + '/gfx/flags/' + new_country_tag + '.tga') 
                     resized_image = country_flag_image.resize((41, 26))
                     resized_image.convert("RGBA").save(export_folder_location + '/gfx/flags/medium/' + new_country_tag + '.tga') 
                     resized_image = country_flag_image.resize((10, 7))
                     resized_image.convert("RGBA").save(export_folder_location + '/gfx/flags/small/' + new_country_tag + '.tga') 
-                    
                     # #common\countries\color.txt
+                    new_country_color_list.append(new_country_tag + ' = {\n')
+                    new_country_color_list.append('\tcolor = rgb { ' + str(most_common_color[0]) + ' ' + str(most_common_color[1]) + ' ' + str(most_common_color[2]) + ' }\n')
+                    new_country_color_list.append('\tcolor_ui = rgb { ' + str(most_common_color[0]) + ' ' + str(most_common_color[1]) + ' ' + str(most_common_color[2]) + ' }\n')
+                    new_country_color_list.append('}\n')
+
+                else:
+                    #not exist
+                    a = 1
+                    
 
 
 
@@ -204,8 +229,11 @@ def main():
 
                     #event add_core_of
                     event_add_core_of.append('##' +  str(xl_file['TAG'][excel_vanilla_id]) + ' - ' + str(xl_file['country'][excel_vanilla_id]) + '\n')
+                    for i, new_state_id in enumerate(found_capital_state_list):
+                        event_add_core_of.append('\t\t' + str(new_state_id) + ' = { add_core_of = ' + str(xl_file['TAG'][excel_vanilla_id])  + ' }\n')
                     for i, new_state_id in enumerate(found_province_state_list):
                         event_add_core_of.append('\t\t' + str(new_state_id) + ' = { add_core_of = ' + str(xl_file['TAG'][excel_vanilla_id])  + ' }\n')
+
 
 
     #country_tags/export_countries
@@ -227,6 +255,10 @@ def main():
     textfile.close()
 
     #common\countries\colors.txt
+    textfile = open(export_folder_location + "/common/countries/new_colors.txt", "w")
+    for element in new_country_color_list:
+        textfile.write(element)
+    textfile.close()
 
 
     a = 1
