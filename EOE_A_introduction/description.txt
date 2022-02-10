@@ -1,7 +1,7 @@
 EOE's Map Mod[1.11] | More States(1200%) More Provinces(150%)
 
 [b]More States and More Provinces [/b]
-This mod focuses on adding more states and more provinces to fully tap the limits of HOI4.
+This mod focuses on adding more states and more provinces to fully reach the limits of HOI4.
 The vanilla HOI4's map is too simple, gameplay is good, but realism is not enough. 
 Different states have different sizes, and there are not enough provinces, which can't carry out complex maneuver, and the strategic aspects are also blocked. Besides in the later stage, due to the limitation of provinces' amount, the country's industrial capacity also had its limits. For some small countries or those who want to play after the year 1947, even if the technology module like [url=https://steamcommunity.com/sharedfiles/filedetails/?id=823161119]Add Technologies[/url] is subscribed, the game is still boring.
 Now these problems have been solved. Each state is about the same size, and more provinces for your strategic selectivity.
@@ -60,8 +60,8 @@ https://github.com/EOE0102/HOI4-mod-tools
   -A: My computer: i5-8400 + 32G 2666MHZ + 1060-6G | Laptop: 5800H + 16G + 3070. Both can run the mods, and it lags after year 1946.
   -A: Since there is no restriction on the construction of IC, and there are many empty slots, the US and other major country will usually have 1000+ IC in the later game, please use those mods to limit the number of troops
   those two
-  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]【Recommend】No AI Spam - General[/url]
-  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【Recommend】Downsize AirForce[/url]
+  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915367290]No AI Spam - General[/url]
+  [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]Downsize AirForce[/url]
 
 [b]-Q: More Provinces?[/b]
   -A: System limitation. HOI4 will crash to desktop when amount of provinces reach around 20,000.
