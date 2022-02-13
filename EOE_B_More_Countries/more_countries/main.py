@@ -1,9 +1,7 @@
-import enum
 from tkinter import filedialog
 import tkinter as Tkinter
 from core import read_write_files
 import os
-import re
 import pandas as pd
 
 
@@ -202,7 +200,9 @@ def main():
                                         if item[1] not in found_province_state_list:
                                             found_province_state_list.append(item[1])
 
-
+                    if len(found_capital_state_list) == 0:
+                        #bad map
+                        found_capital_state_list.append('1')
                     history_countries_file_inhalt.append('capital = '+ str(found_capital_state_list[0]) +'\n')
                     history_countries_file_inhalt.append('oob = "USA_states_1936"\n')
                     history_countries_file_inhalt.append('set_technology = {\n')
