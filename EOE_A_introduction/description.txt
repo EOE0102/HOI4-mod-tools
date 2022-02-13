@@ -1,4 +1,4 @@
-EOE's Map Mod[1.11] | More States(1200%) More Provinces(150%)
+EOE's Map Mod[1.11] | More States(1000%) More Provinces(150%) More Releasable Nations(150+)
 
 [b]More States and More Provinces [/b]
 This mod focuses on adding more states and more provinces to fully reach the limits of HOI4.
@@ -40,14 +40,15 @@ https://github.com/EOE0102/HOI4-mod-tools
 [list]
 [*]Add local police (less manpower need for suppression)
 [/list]
+[b]More releasable countries (BETA)[/b]
+[list]
+[*]This releasable states submod adds 150+ releasable nation to USA(all states), Russia(most subjects), Germany(all Bundesländer), Italy(all Regioni), France(all Région).
+[/list]
 [b]More Resource (BETA)[/b]
 [list]
 [*]Add the mining of natural resources from 1936 to 1970, currently lacks database support, under development
 [/list]
-[b]More releasable countries (BETA)[/b]
-[list]
-[*]Only states in USA
-[/list]
+
 
 [h1]FAQ:[/h1]
 [b]-Q: It crashes when the game loads![/b]
@@ -173,7 +174,8 @@ https://github.com/EOE0102/HOI4-mod-tools
 
 
 
-EOE 世界地图[1.11] 更多省份(1200%)/更多地块(150%)
+EOE 世界地图[1.11] 更多省份(1000%)/更多地块(150%)/更多国家(150+)
+
 [b]10倍省份 + 双倍地块，燃烧你的CPU（笑[/b]
 本模组注重于添加更多省份，更多地块，完全挖掘HOI4的极限。原版钢四的地图太简单，游戏性不错但是拟真程度下降，不同的省份（state）居然有不同的大小，而且地块（Province）也少，无法进行复杂的机动，战略方面也被地块数量限制。
 到后期由于省份数量限制，国家的工业能力也有极限，对于一些小国或者想玩到1949年之后的人，即使添加了科技模组，也缺少游戏性。
@@ -212,14 +214,15 @@ https://github.com/EOE0102/HOI4-mod-tools
 [list]
 [*]增加 local police（更少人力，更大镇压值） 用以镇压游击队
 [/list]
+[b]更多可成立国家（开发中）[/b]
+[list]
+[*]增加了可成立国家，大约150个，美国各州，俄罗斯联邦，德国联邦州，法国大区，意大利大区
+[/list]
 [b]更多资源（开发中）[/b]
 [list]
 [*]增加从 1936 到 1970的自然资源开发，目前缺少数据库支持
 [/list]
-[b]更多可成立国家（开发中）[/b]
-[list]
-[*]美国各州测试中
-[/list]
+
 
 [h1]FAQ:[/h1]
  - Q: 游戏加载的时候就崩了！
