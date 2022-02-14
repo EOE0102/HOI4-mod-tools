@@ -1,3 +1,5 @@
+Standard World Map[1.11] | More States/Provinces/Releasable Nations
+
 EOE's Map Mod[1.11] | More States(1000%) More Provinces(150%) More Releasable Nations(150+)
 
 [b]More States and More Provinces [/b]
@@ -9,8 +11,10 @@ Now these problems have been solved. Each state is about the same size, and more
 Compatible with HOI4 1.11.* version, support all DLC
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/1818951012] changelog[/url]
 
-[h1]GitHub:[/h1]
-https://github.com/EOE0102/HOI4-mod-tools
+[h1]More compatible mods[/h1]
+Due to how the mod works, the other great mods (like Black ice) are not compatible with it, and some nation focus mods are unfortunately not compatible either (because some nation focus has codes like add_core_of)
+But I do find some great mods, those are compatible with this map mod, enjoy:
+[url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
 
 [h1]Major Features:[/h1]
 [b]Accurate world map[/b]
@@ -67,107 +71,14 @@ https://github.com/EOE0102/HOI4-mod-tools
 [b]-Q: More Provinces?[/b]
   -A: System limitation. HOI4 will crash to desktop when amount of provinces reach around 20,000.
 
-[h1]More mods[/h1]
-  I recommend those for a much more fun gameplay.  
-[url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
-
 [h1]Special Thanks[/h1]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]Standard World Map Mod[/url] for map。
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] for providing State names.
 
+[h1]GitHub:[/h1]
+https://github.com/EOE0102/HOI4-mod-tools
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-[h1]Recommended mods, I have tested it, all subscriptions have no conflicts[/h1]
-[b]Beautification- Map[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1993141805]Map Modes+[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1993141805]HOI4 - Texture Overhaul - Citylights[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2665267027]HOI4 - Texture Overhaul - Water[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1976923067]HOI4 - Texture Overhaul - Borders[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1629702438]HOI4 - Texture Overhaul - Terrain[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2260704403]hoi3 counter[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2193382134]HOI3 style map[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2193382134]Military Topographic Map[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=704963980]Strategic View Adjustments[/url]
-
-[b]Beautification - Music and Sound[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1637452557]Soldiers' Radio[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2606998283]New German Voices[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1340422660]Decisions: Speeches Audio[/url]
-
-[b]Beautification - Icons and Plots[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1331463070]MPU Division Icons - NATO like counters[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1727102189]MPU Unit Icons[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2668048070]Modifier Icons[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915965716]Sensible Theatre Icons[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2663623848]Coloured Buttons Updated[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2642352801]Dragon's Flag Rework[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2659156021]Aigle2's Stats Graphs[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2017272267]Realistic & Immersive Intelligence Agency Emblems - Uncensored Edition[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1229084232]Colored Events[/url]
-
-
-[b]Small feature component (good coding，don't touch the vanilla game files)[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1760964609]EU4 Style Ideas[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1942591589]EU4 Style Ages[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1691656478]Economy and Military Decisions[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2204846772]Unique War Names[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2598551568]International Arms Market (1.11.1 Compatbible)[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2267614353]Move your capital Updated Mod 1.11.2[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=846066944]Player-Led Peace Conferences[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1346517890]Trade Embargo Mod 1.10[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2034489245]Dynamic Research Slots[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2013056623]World News[/url]
-
-
-[b]Small feature component - Army  (good coding mod)[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2319014735]【Recommend】Downsize LandForce[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【Recommend】Downsize AirForce[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2008308819]【Recommend】Improved Spy Slots & Upgrades[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=761634749]!More Unit Levels - Extended Range[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2545036868]School for leaders[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2664891964]Leader Dismiss Leaders[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2171383182]Integrate Puppet Fleets[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1358588249]ransfer Ships (Between Players and Puppets)[/url]
-
-[b]Big component - Event (good coding mod)[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1425386497]League of Nations[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2635594130]Hearts of Iron 4 Superevents[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1327950527]Decisions & Formables Plus[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2175242864]Propaganda Campaigns[/url]
-
-[b]Big component (NOT good coding mod)[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=823161119]【Recommend】Add Technologies[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2667285007]12 Support Companies 1.11 Compat[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2086122027]Expanded Continuous Focuses[/url]
-
-
-[b]For Modder[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1367081844]State Transfer Tool[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2450989939]Tool Pack Updated |No Step Back|[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1941325398]ModifierGUI[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2289163423]Timelapse counter[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2217515723]Playable Piano For HOI4[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2183728110]Falling Blocks[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1376861586]World War Hold 'em[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1348086328]Tic-Tac-Toe[/url]
 
 
 
@@ -183,8 +94,9 @@ EOE 世界地图[1.11] 更多省份(1000%)/更多地块(150%)/更多国家(150+)
 兼容HOI4 1.11.* 版本，全DLC兼容
 [url=https://steamcommunity.com/sharedfiles/filedetails/changelog/1818951012] changelog[/url] 
 
-[h1]GitHub:[/h1]
-https://github.com/EOE0102/HOI4-mod-tools
+[h1]兼容模组[/h1]
+  下面链接里的模组，均互相兼容，订阅并游玩可以获得更好的体验，我就是这么玩的，爽。
+  [url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
 
 [h1]主要功能:[/h1]
 [b]准确世界地图（开发中）[/b]
@@ -241,104 +153,17 @@ https://github.com/EOE0102/HOI4-mod-tools
  - Q: 地块再多点？
  - A：系统限制，初步测试Province在两万会崩程序，现在是极限了。
 
-[h1]更多兼容模组[/h1]
-  下面链接里的模组，均互相兼容，订阅并游玩可以获得更好的体验
-  [url=https://steamcommunity.com/workshop/filedetails/?id=1820834137]EOE's recommended compatible mods collection[/url]
-
 [h1]特别感谢[/h1]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=804347118]标准世界地图模组[/url] 提供地图。
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526]Every Province a Victory Point[/url] 提供名称。
 
+[h1]GitHub:[/h1]
+https://github.com/EOE0102/HOI4-mod-tools
 
 
 
 
 
-
-
-
-
-
-
-[h1]推荐模组，我已经测试过了，全部订阅无冲突[/h1]
-[b]美化-地图[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1993141805]Map Modes+[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1993141805]钢四材质更新 HOI4 - Texture Overhaul - Citylights[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2665267027]钢四材质更新 HOI4 - Texture Overhaul - Water[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1976923067]钢四材质更新 HOI4 - Texture Overhaul - Borders[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1629702438]钢四材质更新 HOI4 - Texture Overhaul - Terrain[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2260704403]钢三部队样式 hoi3 counter[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2193382134]钢三地图样式 HOI3 style map[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2193382134]军事地图样式 Military Topographic Map[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=704963980]战略视图调整 Strategic View Adjustments[/url]
-
-[b]美化-音乐[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1637452557]音乐 Soldiers' Radio[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2606998283]德味语音 New German Voices[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1340422660]历史之演讲 Decisions: Speeches Audio[/url]
-
-[b]美化-图标和报表[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1331463070]北约图标基础 MPU Division Icons - NATO like counters[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1727102189]北约图标 MPU Unit Icons[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2668048070]修正图标 Modifier Icons[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1915965716]军区图标 Sensible Theatre Icons[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2663623848]彩色图标 Coloured Buttons Updated[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2642352801]历史国旗 Dragon's Flag Rework[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2659156021]Aigle2'的统计报表 Aigle2's Stats Graphs[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2017272267]Realistic & Immersive Intelligence Agency Emblems - Uncensored Edition[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1229084232]Colored Events[/url]
-
-
-
-[b]小功能组件（good coding，不修改原文件的好模组，可以一直用下去）[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1760964609]EU4 Style Ideas[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1942591589]EU4 Style Ages[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1691656478]Economy and Military Decisions[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2204846772]独特的战争名称 Unique War Names[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2598551568]国际军火贸易 International Arms Market (1.11.1 Compatbible)[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2267614353]搬迁首都 Move your capital Updated Mod 1.11.2[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=846066944]玩家主导的谈判 Player-Led Peace Conferences[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1346517890]贸易禁运 Trade Embargo Mod 1.10[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2034489245]动态科研槽数量（工业数量相关）Dynamic Research Slots[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2013056623]World News[/url]
-
-[b]小功能组件-军队[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2319014735]【推荐】Downsize LandForce[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2318957791]【推荐】Downsize AirForce[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2008308819]【推荐】更多间谍　Improved Spy Slots & Upgrades[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=761634749]部队等级扩展 !More Unit Levels - Extended Range[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2545036868]军官学校 School for leaders[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2664891964]解雇Leader Dismiss Leaders[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2171383182]合并傀儡舰队 Integrate Puppet Fleets[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1358588249]宗主国傀儡相互之间传送舰队 Transfer Ships (Between Players and Puppets)[/url]
-
-
-
-[b]大型组件-厉害的模组不会修改游戏原文件[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1425386497]League of Nations[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2635594130]钢四超级事件 Hearts of Iron 4 Superevents[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1327950527]决议加强 Decisions & Formables Plus[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2175242864]政治宣传加强 Propaganda Campaigns[/url]
-
-[b]大型组件-修改了游戏原文件，P社已更新这些模组就会废一部分[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=823161119]【推荐】延长科技线到1960年代 Add Technologies[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2667285007]12个支援营位置 12 Support Companies 1.11 Compat[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2086122027]Expanded Continuous Focuses[/url]
-
-[b]Modder常用[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1367081844]State Transfer Tool[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2450989939]万能工具箱 Tool Pack Updated |No Step Back|[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1941325398]加成GUI ModifierGUI[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2289163423]自动截图 Timelapse counter[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2217515723]弹钢琴 Playable Piano For HOI4[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2183728110]俄罗斯方块 Falling Blocks[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1376861586]打牌（不知道叫什么） World War Hold 'em[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=1348086328]井字棋 Tic-Tac-Toe[/url]
-
-[b]更多的兼容模组在这里可以找到[/b]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2267184153]EOE's 100% compatible mods collection (Gameplay)[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273116080]EOE's 100% compatible mods collection (Beautifucation and more)[/url]
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2273727147]EOE's not 100% compatible mods collection (Gameplay)[/url]
 
 
 
