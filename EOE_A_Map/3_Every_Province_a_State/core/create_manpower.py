@@ -29,10 +29,21 @@ def change_manpower(original_state_manpower, original_provinces_definition, manp
                         modify_manpower_matrix[j][1] = modify_manpower_matrix[j][1] * (1 + temp*manpower_victory_points_weight)
 
 
+    # and lakes always located in the 0 position.
     #add manpower according to buildings
     for i in range(len(modify_provinces_buildings)):
-        if modify_provinces_buildings[i][1] != "":
-            modify_manpower_matrix[i][1] = modify_manpower_matrix[i][1] * (1 + 1*manpower_provinces_buildings_weight)
+        if i == 0:
+            if modify_provinces_buildings[0][1] != "":
+                modify_manpower_matrix[0][1] = modify_manpower_matrix[0][1] * (1 + 1*manpower_provinces_buildings_weight)
+        else:
+            temp_id1 = modify_provinces_buildings[i][0]
+            for j in range(len(modify_manpower_matrix)):
+                temp_id2 = modify_manpower_matrix[j][0]
+                if temp_id1 == temp_id2:
+                    if modify_provinces_buildings[i][1] != "":
+                        modify_manpower_matrix[j][1] = modify_manpower_matrix[j][1] * (1 + 1*manpower_provinces_buildings_weight)
+
+                
 
     #cal. base weight
     for i in modify_manpower_matrix:

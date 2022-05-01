@@ -1,4 +1,0 @@
-eoe_b_state_building_limiter = {
-	icon = GFX_modifiers_sabotaged_resource
-	local_building_slots_factor = -10
-}

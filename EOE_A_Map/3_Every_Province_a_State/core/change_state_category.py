@@ -30,9 +30,19 @@ def change_state_category(original_state_category, original_provinces_definition
            
 
     #building
+
     for i in range(len(modify_provinces_buildings)):
-        if modify_provinces_buildings[i][1] != "":
-            modify_state_category_matrix[i][1] = modify_state_category_matrix[i][1] + 1
+        if i == 0:
+            if modify_provinces_buildings[0][1] != "":
+                modify_state_category_matrix[0][1] = modify_state_category_matrix[0][1] + 1
+        else:
+            temp_id1 = modify_provinces_buildings[i][0]
+            for j in range(len(modify_state_category_matrix)):
+                temp_id2 = modify_state_category_matrix[j][0]
+                if temp_id1 == temp_id2:
+                    if modify_provinces_buildings[i][1] != "":
+                        modify_state_category_matrix[j][1] = modify_state_category_matrix[j][1] + 1
+
 
     #
     for i in range(len(modify_state_category_matrix)):

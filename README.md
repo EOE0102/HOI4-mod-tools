@@ -4,7 +4,7 @@ Youtube Channel for Modder [The Iron Workshop](https://www.youtube.com/channel/U
 
 ## STEP 1: Create a new map
 
-use this mod as basic: https://steamcommunity.com/sharedfiles/filedetails/?id=804347118
+use this mod as basic: <https://steamcommunity.com/sharedfiles/filedetails/?id=804347118>
 
 ### **Fix provinces.bmp**
 
@@ -18,8 +18,17 @@ using paint.net, save as 24 bit BMP
 | `Error in map/adjacencies.csv: Adj between 1399 and 1515 is not adjacent with THROUGH = 220` | No harm, manual |
 | `One-pixel province color found at [X],[Y]` | No harm yet **remove_one_pixel_province.py** |
 | `port building has invalid sea zone for province 12920` | No harm yet |
-| `prov 7855 stack 19 Ship in port is too far away from center (dist 160 55 prov -1)` | TODO | 
+| `prov 7855 stack 19 Ship in port is too far away from center (dist 160 55 prov -1)` | TODO |
 | `Province 5918 has no pixels in provinces` | might happened after editing, manual |
+| `map/buildings.txt port building has invalid sea zone for province 11070` | Cause NEDGE CTD: might happened after editing, manual:140;naval_base;2997.00;9.60;1966.00;-1.17;2455 end with Province ID 2455 not 0, Found this bug on Sri Lanka|
+
+### **Fix heightmap.bmp**
+
+im_heightmap2.convert('L')
+
+### **world_normal.bmp**
+
+Normal maps can be created with Nvidia's texture tools from the heightmap.bmp, or by using Filter > 3D > Generate Normal Map in Photoshop CC. If you are using GIMP, download the Normal Map Plugin. Load the heightmap, change the image type to RGB and add the bump map filter by using Filter > Map > Normal. Remember to inverse the Y axis.
 
 ### **Fix supply line (TODO)**
 
@@ -27,11 +36,15 @@ launch the game, some railway are not well connected, modify railways.txt or pro
 >Task: how to generate the map from GIS without changing the topology of provinces?
 
 temp fix: use this mod, it modifies the railway.txt manually
-: https://steamcommunity.com/sharedfiles/filedetails/?id=2718546428 
+: <https://steamcommunity.com/sharedfiles/filedetails/?id=2718546428>
 
 >Solution: redraw the province.bmp
 
-## **STEP 2: Every province a state**
+## **STEP 2: More map features**
+
+### **Create sailable caspian sea**
+
+## **STEP 3: Every province a state**
 
 ### **Modify /State files**
 
@@ -41,9 +54,10 @@ GOOD CODING
 
 ### **RUN Debug Tool**
 
->"Validate all State" DON'T WORK.
+>"Validate all State" DON'T WORK.(8h+ not responding)
 
-> Nudge => Buildings => Find Error(F) => Validate In State(V), if error, open building.txt add code manually => leave Nudge, enter Nedge to refresh map.
+> Nudge => Buildings => Find Error(F) => Validate In State(V), if error, open building.txt add code manually (F**K debug 500+) => leave Nudge, enter Nedge to refresh map.
+> 6430;(the most south state of )
 
 THEN
 
@@ -59,7 +73,6 @@ THEN
 | `Trying to move navy to land province with no port: 6332 (Ostseeflotte)` | :- |
 | `6 -  Vlaanderen has too many buildings : -2` | :- |
 
-
 ### **Modify /events /common files**
 
 run: 3_Every_Province_a_State/main2_debug_relative_events.py
@@ -67,7 +80,7 @@ run: 3_Every_Province_a_State/main2_debug_relative_events.py
 | Common Errors | Fix |
 | :- | :- |
 | `CTD when loading events` | windows UTF-8 error. open nation_focus files with notepad++, delete the first letter 锘 |
-| `add_core_of = GER`, reported by user | Germany.txt error |
+| `4 = { if = { limit ={...} add_core_of = GER}}`, reported by user | event\Germany.txt error |
 | Trying to set invalid state building "dockyard" to state #59. | manually |
 | `Spain Civil war, too many unit created` | DELETE create_unit event `Anarchist Militia` , every_owned_state |
 
@@ -81,10 +94,9 @@ adjacency_rules.txt
 
 Caspian Sea/ volkhov
 
-
 ### **Add name for all new states**
 
-https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526
+<https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526>
 
 | Common Errors | Fix |
 | :- | :- |
@@ -92,13 +104,13 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=2352204526
 | `nothing changed` | Encode in UTF8-BOM  |
 | `The game has loc key collisions. Check logs/text.log for more details` | Check logs/text.log  |
 
->4_More_Provinces/main.py => STEP3 
+>4_More_Provinces/main.py => STEP3
 
-## **STEP 3: More Province**
+## **STEP 4: More Province**
 
 >EOE_A_Other_Map_Modification/main.py
 
-STEP1 to STEP 8 
+STEP1 to STEP 8
 
 | Common Errors | Fix |
 | :- | :- |
@@ -118,7 +130,7 @@ STEP1 to STEP 8
 | `Railway level > NDefines::NSupply::MAX_RAILWAY_LEVEL (province 9371, neighbor index 5, level 6)` | fix all TODO create by 8-2 |
 | Modify states | add bunkers for Maginot line |
 
-## **STEP4: More Features**
+## **STEP 5: More Features**
 
 ### **Increase Supply Range**
 

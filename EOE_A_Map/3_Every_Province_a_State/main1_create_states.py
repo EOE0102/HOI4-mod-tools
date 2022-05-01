@@ -180,7 +180,7 @@ def main():
 
 
         #debug
-        if original_provinces_definition[0][0]  == '3379 3217':
+        if original_provinces_definition[0][0]  == '11159 2356 13194 13198':
             a = 1
 
 

@@ -204,8 +204,89 @@ def add_item_before_kw(_new_import_file_str, _find_str, _start_mark, _end_mark, 
     return _new_import_file_str
 
 
+
+
+def add_item_before_kw_V2(_new_import_file_str, _find_str, _start_mark, _end_mark, _start_mark2, _end_mark2, _new_state_remider_lst):
+    _kw_position = [m.start() for m in re.finditer(r"\s" + _find_str + r"\s+" + _start_mark + r"\s+", _new_import_file_str)]
+    all_possible_province_position_with_bracket =  [m.start() for m in re.finditer(r"\s" + r"\d+" + r"\s+" + "=" + r"\s+" + "{", _new_import_file_str)]
+    all_possible_province_position =  [m.start() for m in re.finditer(r"\d+", _new_import_file_str)]
+    all_equal_position =  [m.start() for m in re.finditer("=", _new_import_file_str)]
+
+    all_left_bracket_position =  [m.start() for m in re.finditer("{", _new_import_file_str)]
+    all_right_bracket_position =  [m.start() for m in re.finditer("}", _new_import_file_str)]
+    all_bracket_position = []
+    all_bracket_position.extend(all_left_bracket_position)
+    all_bracket_position.extend(all_right_bracket_position)
+    all_bracket_position.sort()
+    all_bracket_position_plus_minus = []
+    for element in all_bracket_position:
+        if element in all_left_bracket_position: 
+            all_bracket_position_plus_minus.append(1)
+        else: #element in all_right_bracket_position
+            all_bracket_position_plus_minus.append(-1)
+
+
+    insert_position_text_list = []
+    for possible_province_position in all_possible_province_position_with_bracket:
+        first_left_bracket_position_index = next(x[0] for x in enumerate(all_bracket_position) if x[1] > possible_province_position)
+        nearest_province_position_index = next(x[0] for x in enumerate(all_possible_province_position) if x[1] > possible_province_position)
+        nearest_equal_position_index = next(x[0] for x in enumerate(all_equal_position) if x[1] > possible_province_position)
+
+        nearest_province_position = all_possible_province_position[nearest_province_position_index]
+        nearest_equal_position = all_equal_position[nearest_equal_position_index]
+        nearest_province = str(int(_new_import_file_str[nearest_province_position:nearest_equal_position]))
+
+
+        first_left_bracket_position = all_bracket_position[first_left_bracket_position_index]
+        #next is {
+        next_bracket_position_index = first_left_bracket_position_index
+        bracket_balance = 1
+        while bracket_balance != 0:
+            next_bracket_position_index = next_bracket_position_index + 1
+            bracket_balance = bracket_balance + all_bracket_position_plus_minus[next_bracket_position_index]
+        
+        last_right_bracket_position = all_bracket_position[next_bracket_position_index]
+        inhalt_between_bracket = _new_import_file_str[first_left_bracket_position:last_right_bracket_position+1]
+
+        if _find_str in inhalt_between_bracket:
+
+            for item in _new_state_remider_lst:
+                if nearest_province == item[0]:
+                    if item[1] != '':
+                        _found_new_states = item[1]
+                        _found_new_states_lst = _found_new_states.split()
+                        _new_insert_text_str = ''
+                        for k in _found_new_states_lst:
+                            _new_insert_text_str = _new_insert_text_str + " \n\t\t" + k + " = " + inhalt_between_bracket
+                        _new_insert_text_str = _new_insert_text_str + '\n'
+                        insert_position_text_list.append([last_right_bracket_position + 1, _new_insert_text_str])
+
+    a = 1
+    text_start_position = 0
+    new_text_string = ''
+    if len(insert_position_text_list) != 0:
+        for item in insert_position_text_list:
+            insert_position = item[0]
+            insert_text = item[1]
+            new_text_string = new_text_string + _new_import_file_str[text_start_position:insert_position] + insert_text
+            text_start_position = insert_position + 1
+        new_text_string = new_text_string + _new_import_file_str[insert_position_text_list[-1][0]+1:]
+        return new_text_string
+    else:
+        return _new_import_file_str
+
+    
+
+
+
+
+
+
+
+
+
 def write_file(_export_folder_location, _file_name, _file_str):
-    f = open(_export_folder_location + "/" + _file_name, "w+")
+    f = open(_export_folder_location + "/" + _file_name, "w+", encoding='gb18030', errors='ignore')
     f.write(_file_str)
     f.close()
 
@@ -273,13 +354,13 @@ def main():
         start_mark2 = "{"
         end_mark2 = "}"
         find_str = "is_demilitarized_zone"
-        new_import_file_str = add_item_before_kw(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
+        new_import_file_str = add_item_before_kw_V2(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
 
         find_str = "set_demilitarized_zone"
-        new_import_file_str = add_item_before_kw(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
+        new_import_file_str = add_item_before_kw_V2(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
 
         find_str = "add_core_of"
-        new_import_file_str = add_item_before_kw(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
+        new_import_file_str = add_item_before_kw_V2(new_import_file_str, find_str, start_mark, end_mark , start_mark2, end_mark2, new_state_remider_lst)
 
         #TODO ai_strategy _economic
 

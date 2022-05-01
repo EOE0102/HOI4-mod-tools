@@ -1,9 +1,0 @@
-on_actions = {
-	on_startup = {
-		effect = {
-			every_country = { 
-				country_event = eoe_a_resistance_fix.welcome.1
-			}
-		}
-	}
-}

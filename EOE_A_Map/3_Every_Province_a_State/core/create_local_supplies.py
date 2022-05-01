@@ -27,8 +27,17 @@ def change_local_supplies(original_local_supplies, original_provinces_definition
 
     #buildings
     for i in range(len(modify_provinces_buildings)):
-        if modify_provinces_buildings[i][1] != "":
-            modify_local_supplies_matrix[i][1] = modify_local_supplies_matrix[i][1] + local_supplies_buildings_weight
+        if i == 0:
+            if modify_provinces_buildings[0][1] != "":
+                modify_local_supplies_matrix[0][1] = modify_local_supplies_matrix[0][1] + local_supplies_buildings_weight
+        else:
+            temp_id1 = modify_provinces_buildings[i][0]
+            for j in range(len(modify_local_supplies_matrix)):
+                temp_id2 = modify_local_supplies_matrix[j][0]
+                if temp_id1 == temp_id2:
+                    if modify_provinces_buildings[i][1] != "":
+                        modify_local_supplies_matrix[j][1] = modify_local_supplies_matrix[j][1] + local_supplies_buildings_weight
+
 
     # divide
     for i in range(len(modify_local_supplies_matrix)):

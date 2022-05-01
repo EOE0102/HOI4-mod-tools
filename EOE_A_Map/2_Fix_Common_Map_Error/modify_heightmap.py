@@ -25,6 +25,7 @@ def modify_heightmap():
     a = 1
     image_width, image_height = im_map.size
     pixel_sea_level_color = pixels_heightmap[0, 0]
+    pixel_lowest_land = pixels_heightmap[1580, 800]
     for pixel_y in range(1, image_height - 1):
         print('Modify line ' + str(pixel_y) + ' / ' + str(image_height))
         for pixel_x in range(1, image_width - 1):
@@ -38,13 +39,14 @@ def modify_heightmap():
             elif pixel_map_land_sea_lake_type == 'lake' and pixel_heightmap_color != pixel_sea_level_color:
                 pixels_heightmap[pixel_x, pixel_y] = pixel_sea_level_color
             elif pixel_map_land_sea_lake_type == 'land' and pixel_heightmap_color == pixel_sea_level_color:
+                a = 1
                 pixel_left = pixels_heightmap[pixel_x - 1, pixel_y]
                 pixel_right = pixels_heightmap[pixel_x + 1, pixel_y]
                 pixel_up = pixels_heightmap[pixel_x, pixel_y - 1]
                 pixel_down = pixels_heightmap[pixel_x, pixel_y + 1]
                 pixel_height_average = int((pixel_left + pixel_right + pixel_up + pixel_down)/4)
-                #if pixel_height_average == pixel_sea_level_color:
-                #    pixel_height_average = pixel_sea_level_color + 1
+                if pixel_height_average < pixel_lowest_land:
+                    pixel_height_average = pixel_lowest_land
                 pixels_heightmap[pixel_x, pixel_y] = pixel_height_average
 
     im_heightmap3 = im_heightmap2.convert('L')

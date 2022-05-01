@@ -33,8 +33,16 @@ def change_infrastructure_level(original_infrastructure, original_provinces_defi
 
     #buildings
     for i in range(len(modify_provinces_buildings)):
-        if modify_provinces_buildings[i][1] != "":
-            modify_infrastructure_level_matrix[i][1] = modify_infrastructure_level_matrix[i][1] + 0.51
+        if i == 0:
+            if modify_provinces_buildings[0][1] != "":
+                modify_infrastructure_level_matrix[0][1] = modify_infrastructure_level_matrix[0][1] + 0.51
+        else:
+            temp_id1 = modify_provinces_buildings[i][0]
+            for j in range(len(modify_infrastructure_level_matrix)):
+                temp_id2 = modify_infrastructure_level_matrix[j][0]
+                if temp_id1 == temp_id2:
+                    if modify_provinces_buildings[i][1] != "":
+                        modify_infrastructure_level_matrix[j][1] = modify_infrastructure_level_matrix[j][1] + 0.51
 
     # max +1
     for i in range(len(modify_infrastructure_level_matrix)):
