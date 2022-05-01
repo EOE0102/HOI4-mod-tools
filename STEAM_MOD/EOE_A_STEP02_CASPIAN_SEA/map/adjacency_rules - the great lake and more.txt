@@ -1,0 +1,255 @@
+
+#USSR - NEVA
+adjacency_rule = {
+	name = "NEVA"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = yes
+	}
+	
+	required_provinces = { 3151 149 6174 79 11068}
+		
+	icon = 3151
+	offset = { 5 0 -5 }
+}
+
+
+
+#CANADA - Saint Lawerence River
+adjacency_rule = 
+{
+	name = "SAINT_LAWERENCE_RIVER"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 12149 7291 9601 4345 4270 6625 3605 7433 10320 4417 7345 3602 598 6778 }
+	
+	icon = 4345
+	offset = { 10 0 0 }
+}
+
+#CANADA - Niagara River - Welland Canal
+adjacency_rule = 
+{
+	name = "NIAGARA_RIVER"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 749 11654 }
+	
+	icon = 749
+	offset = { 5 0 0 }
+}
+
+
+#USA - Detroit River
+adjacency_rule = 
+{
+	name = "DETROIT_RIVER"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 6710 9667 }
+	
+	icon = 6710
+	offset = { 10 0 0 }
+}
+
+
+#USA - St Clair River
+adjacency_rule = 
+{
+	name = "ST_CLAIR_RIVER"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 9724 9711 }
+	
+	icon = 9724
+	offset = { 5 0 0 }
+}
+
+
+#USA - St Marys River
+adjacency_rule = 
+{
+	name = "ST_MARYS_RIVER"
+
+	contested =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	enemy =
+	{
+		army = no
+		navy = no
+		submarine = no
+		trade = no
+	}
+	friend =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	neutral =
+	{
+		army = yes
+		navy = yes
+		submarine = yes
+		trade = yes
+	}
+	
+	required_provinces = { 5205 12582 }
+	
+	icon = 5205
+	offset = { 10 0 0 }
+}
+
+
+
+843;8282;sea;3529;-1;-1;-1;-1;VOLGA_DON_SHIP_CANAL;EOE new strait
+
+1434;2332;sea;3151;-1;-1;-1;-1;NEVA;EOE new strait
+2434;13157;sea;4345;-1;-1;-1;-1;SAINT_LAWERENCE_RIVER;EOE new strait
+13157;13154;sea;11654;-1;-1;-1;-1;NIAGARA_RIVER;EOE new strait
+13154;13156;sea;6710;-1;-1;-1;-1;DETROIT_RIVER;EOE new strait
+13156;13199;sea;9724;-1;-1;-1;-1;ST_CLAIR_RIVER;EOE new strait
+13155;13159;sea;5205;-1;-1;-1;-1;ST_MARYS_RIVER;EOE new strait

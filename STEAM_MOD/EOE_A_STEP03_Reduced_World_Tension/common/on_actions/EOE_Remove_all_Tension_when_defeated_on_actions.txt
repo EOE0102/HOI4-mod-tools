@@ -1,0 +1,15 @@
+on_actions = {
+	on_peaceconference_ended = {
+		effect = {
+			FROM = {
+				#ROOT is the winner, FROM is the loser. 
+				set_temp_variable = { EOE_before_tension = 0 }
+				subtract_from_temp_variable = { EOE_before_tension = has_added_tension_amount }
+				add_named_threat = {
+					threat = EOE_before_tension
+					name = eoe_remove_all_tension_after_lost_a_war
+				}
+			}
+		}
+	}
+}

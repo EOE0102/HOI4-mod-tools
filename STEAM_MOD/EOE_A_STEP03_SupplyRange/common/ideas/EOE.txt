@@ -1,0 +1,19 @@
+ideas = {
+	country= {
+		EOE_supply_range_modify = {
+			name = EOE_supply_range_modify
+
+			picture = SOV_the_road_of_life
+			
+			removal_cost = -1
+			
+			allowed = {
+				always = no # Added via event
+			}
+
+			modifier = {
+				supply_node_range = 0.6
+			}
+		}
+	}
+}

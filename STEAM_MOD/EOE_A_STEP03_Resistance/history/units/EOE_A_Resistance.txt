@@ -1,0 +1,8 @@
+﻿division_template = {
+	name = "Local Police"
+	regiments = {
+		EOE_A_garrison = { x = 0 y = 0 }
+		EOE_A_garrison = { x = 1 y = 0 }
+
+	}
+}

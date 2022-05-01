@@ -1,0 +1,12 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = { 
+				limit = {
+					is_ai = no
+				}
+				country_event = eoe_a_more_countries.1
+			}
+		}
+	}
+}

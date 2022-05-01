@@ -1,0 +1,23 @@
+[16:20:31][map.cpp:1759]: Province 821 has TOO LARGE BOX. Perhaps pixels are spread around the world in provinces.bmp
+[16:20:31][map.cpp:1759]: Province 8944 has TOO LARGE BOX. Perhaps pixels are spread around the world in provinces.bmp
+[16:20:33][map.cpp:1205]: Error in map/adjacencies.csv: Adj between 4094 and 7212 is not adjacent with THROUGH = 8791
+[16:20:33][map.cpp:1205]: Error in map/adjacencies.csv: Adj between 10124 and 1123 is not adjacent with THROUGH = 8499
+[16:20:33][map.cpp:1205]: Error in map/adjacencies.csv: Adj between 1123 and 7115 is not adjacent with THROUGH = 8318
+[16:20:33][map.cpp:1205]: Error in map/adjacencies.csv: Adj between 1135 and 13090 is not adjacent with THROUGH = 6471
+[16:20:33][map.cpp:1205]: Error in map/adjacencies.csv: Adj between 10048 and 7195 is not adjacent with THROUGH = 8384
+[16:20:33][map.cpp:1205]: Error in map/adjacencies.csv: Adj between 7195 and 4180 is not adjacent with THROUGH = 8410
+[16:20:33][map.cpp:1205]: Error in map/adjacencies.csv: Adj between 12148 and 10188 is not adjacent with THROUGH = 8660
+[16:20:40][mapbuildings.cpp:581]: map/buildings.txt port building has invalid sea zone for province 8227
+[16:20:40][mapbuildings.cpp:581]: map/buildings.txt port building has invalid sea zone for province 12701
+[16:20:40][mapbuildings.cpp:581]: map/buildings.txt port building has invalid sea zone for province 4784
+[16:20:40][provincegraphics.cpp:2219]: prov 7855 stack 19 Ship in port is too far away from center (dist 160 55 prov -1)
+[16:20:40][provincegraphics.cpp:2219]: prov 7855 stack 20 Ship in port moving is too far away from center (dist 161 55 prov -1)
+[16:20:40][provincegraphics.cpp:2219]: prov 8944 stack 9 Attacking is too far away from center (dist 144 0 prov -1)
+[16:20:40][provincegraphics.cpp:2219]: prov 8944 stack 10 Defending is too far away from center (dist 144 0 prov -1)
+[16:20:40][provincegraphics.cpp:2219]: prov 8944 stack 38 Victory point is too far away from center (dist 144 0 prov -1)
+[16:20:40][provincegraphics.cpp:2219]: prov 10636 stack 19 Ship in port is too far away from center (dist 108 4 prov -1)
+[16:20:40][provincegraphics.cpp:2219]: prov 10636 stack 20 Ship in port moving is too far away from center (dist 109 4 prov -1)
+[16:20:40][provincegraphics.cpp:2219]: prov 13063 stack 3 Moving 2 is too far away from center (dist 2800 5 prov 5264)
+[16:20:40][provincegraphics.cpp:2219]: prov 13063 stack 24 Moving 2 RG is too far away from center (dist 2800 5 prov 5264)
+[16:20:40][provincegraphics.cpp:2219]: prov 13066 stack 19 Ship in port is too far away from center (dist 162 74 prov -1)
+[16:20:40][provincegraphics.cpp:2219]: prov 13066 stack 20 Ship in port moving is too far away from center (dist 163 74 prov -1)
