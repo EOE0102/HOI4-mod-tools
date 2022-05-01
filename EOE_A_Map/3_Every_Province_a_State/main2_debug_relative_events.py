@@ -341,6 +341,12 @@ def main():
         find_str = "transfer_state"
         new_import_file_str = add_item_after_kw(new_import_file_str, find_str, start_mark, end_mark, new_state_remider_lst)
 
+        #find_str = "owns_state"
+        #new_import_file_str = add_item_after_kw(new_import_file_str, find_str, start_mark, end_mark, new_state_remider_lst)
+
+        #find_str = "controls_state"
+        #new_import_file_str = add_item_after_kw(new_import_file_str, find_str, start_mark, end_mark, new_state_remider_lst)
+
         find_str = "set_state_controller"
         new_import_file_str = add_item_after_kw(new_import_file_str, find_str, start_mark, end_mark, new_state_remider_lst)
 

@@ -44,6 +44,8 @@ temp fix: use this mod, it modifies the railway.txt manually
 
 ### **Create sailable caspian sea**
 
+Caspian Sea/ volkhov
+
 ## **STEP 3: Every province a state**
 
 ### **Modify /State files**
@@ -82,7 +84,7 @@ run: 3_Every_Province_a_State/main2_debug_relative_events.py
 | `CTD when loading events` | windows UTF-8 error. open nation_focus files with notepad++, delete the first letter 锘 |
 | `4 = { if = { limit ={...} add_core_of = GER}}`, reported by user | event\Germany.txt error |
 | Trying to set invalid state building "dockyard" to state #59. | manually |
-| `Spain Civil war, too many unit created` | DELETE create_unit event `Anarchist Militia` , every_owned_state |
+| `Spain Civil war, too many unit created` | DELETE create_unit event/LAR_Spain.txt `Guarnición Republicana` `Guarnición Nacionalista` , every_owned_state |
 
 ### **Modify impassable area and more**
 
@@ -91,8 +93,6 @@ impassable = yes in history/state file
 adjacencies.csv
 
 adjacency_rules.txt
-
-Caspian Sea/ volkhov
 
 ### **Add name for all new states**
 
