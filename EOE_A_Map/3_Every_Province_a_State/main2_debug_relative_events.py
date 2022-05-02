@@ -317,6 +317,8 @@ def main():
         f = copy.deepcopy(new_import_file_str)
 
         # states = {}
+        #TODO: states = { 166 169 170 171 172 174 176 177 178 290 297 699 788 789 791 }
+
         find_str = "states"
         start_mark = "{"
         end_mark = "}"
