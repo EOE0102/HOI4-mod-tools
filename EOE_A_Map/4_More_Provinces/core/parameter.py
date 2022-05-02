@@ -22,7 +22,7 @@ longitude_south_in_rand = longitude_south/ 180 * numpy.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 20 #pixel on equator
+default_province_size = 16 #pixel on equator #20=> 18847 16=>20359
 max_new_provinces_per_state = 6 #max 5 block because range(1, new_province_max_amount):
 
 
@@ -78,6 +78,8 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
 
     add_core_of_list = ['LIB', #test country
     'ERI', 'DJI', 'SOM', #horn of africa
+    'SUD', 'UGA', 'KEN', 'TZN', 'MZB', 'MLW', 'MAD',#east africa
+    #'ZAM', 'BOT', 'SAF', 'ANG', 'COG', 'RCG', 'GAB', 'CMR', 'GHA','IVO','GNA', 'MLI', 'NGA','ELS','CHA','VOL',#middle Africa
     'CHI', 'PRC', #china
     'KOR', #japan?
     'VIN', 'LAO', 'CAM', 'SIA', 'BRM', #south east asia
@@ -119,11 +121,7 @@ def calculate_divide_province_amount(image_height, default_province_size, longit
         
     amountProvince = int(round(RGBAreaFullSize/refileProvinceSize -0.5 ))
     if state_info_terrain == 'urban':
-        amountProvince = amountProvince * 10
-        if amountProvince == 0:
-            amountProvince = 1
-        if amountProvince >= max_new_provinces_per_state:
-            amountProvince = max_new_provinces_per_state
+        amountProvince = max_new_provinces_per_state
         # don't do too harsh, divide province into 1 - 10 pieces
     if amountProvince == 0:
         amountProvince = 1

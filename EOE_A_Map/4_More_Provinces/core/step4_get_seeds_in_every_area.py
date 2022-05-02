@@ -79,6 +79,8 @@ def step_get_seeds_in_every_area():
 
 
         if bolIsProvinceLand:
+            if rgb_area_main_RGB == [86,99,46]:#Berlin
+                a = 1 
             new_max_new_provinces_per_state, new_state_info_terrain = parameter.correct_new_province_max_amount(parameter.max_new_provinces_per_state, rgb_area_main_RGB, definition_info_dict, states_info_dict)
             new_province_max_amount = parameter.calculate_divide_province_amount(image_height, parameter.default_province_size, parameter.longitude_north2D, parameter.longitude_south2D, rgb_area_main_POG, RGBAreaFullSize, new_max_new_provinces_per_state, new_state_info_terrain)
 
