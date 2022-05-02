@@ -1,0 +1,528 @@
+﻿add_namespace = rsch
+
+#Динамические исследования
+country_event = {
+	id = rsch.1
+	title = rsch.1.t
+	desc = rsch.1.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_1 }
+		num_of_factories > 50
+		has_country_flag = dynamic_research_start
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.1.a
+		add_research_slot = 1
+		set_country_flag = research_slot_1
+	}
+}
+
+country_event = {
+	id = rsch.2
+	title = rsch.2.t
+	desc = rsch.2.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_2 }
+		num_of_factories > 100
+		has_country_flag = dynamic_research_start
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.2.a
+		add_research_slot = 1
+		set_country_flag = research_slot_2
+	}
+}
+
+country_event = {
+	id = rsch.3
+	title = rsch.3.t
+	desc = rsch.3.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_3 }
+		num_of_factories > 150
+		has_country_flag = dynamic_research_start
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.3.a
+		add_research_slot = 1
+		set_country_flag = research_slot_3
+	}
+}
+###############################################################
+country_event = {
+	id = rsch.4
+	title = rsch.4.t
+	desc = rsch.4.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_4 }
+		num_of_factories > 200
+		has_country_flag = dynamic_research_start
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.4.a
+		add_research_slot = 1
+		set_country_flag = research_slot_4
+	}
+}
+
+country_event = {
+	id = rsch.5
+	title = rsch.5.t
+	desc = rsch.5.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_5 }
+		num_of_factories > 250
+		has_country_flag = dynamic_research_start
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.5.a
+		add_research_slot = 1
+		set_country_flag = research_slot_5
+	}
+}
+
+country_event = {
+	id = rsch.6
+	title = rsch.6.t
+	desc = rsch.6.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_6 }
+		num_of_factories > 300
+		has_country_flag = dynamic_research_start
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.6.a
+		add_research_slot = 1
+		set_country_flag = research_slot_6
+	}
+}
+
+country_event = {
+	id = rsch.7
+	title = rsch.7.t
+	desc = rsch.7.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_7 }
+		num_of_factories > 400
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.7.a
+		add_research_slot = 1
+		set_country_flag = research_slot_7
+	}
+}
+
+country_event = {
+	id = rsch.8
+	title = rsch.8.t
+	desc = rsch.8.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_8 }
+		num_of_factories > 500
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.8.a
+		add_research_slot = 1
+		set_country_flag = research_slot_8
+	}
+}
+
+country_event = {
+	id = rsch.9
+	title = rsch.9.t
+	desc = rsch.9.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_9 }
+		num_of_factories > 600
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.9.a
+		add_research_slot = 1
+		set_country_flag = research_slot_9
+	}
+}
+
+country_event = {
+	id = rsch.10
+	title = rsch.10.t
+	desc = rsch.10.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_10 }
+		num_of_factories > 800
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.10.a
+		add_research_slot = 1
+		set_country_flag = research_slot_10
+	}
+}
+
+country_event = {
+	id = rsch.11
+	title = rsch.11.t
+	desc = rsch.11.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_11 }
+		num_of_factories > 1000
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.11.a
+		add_research_slot = 1
+		set_country_flag = research_slot_11
+	}
+}
+
+country_event = {
+	id = rsch.12
+	title = rsch.12.t
+	desc = rsch.12.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_12 }
+		num_of_factories > 1200
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.12.a
+		add_research_slot = 1
+		set_country_flag = research_slot_12
+	}
+}
+
+country_event = {
+	id = rsch.13
+	title = rsch.13.t
+	desc = rsch.13.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_13 }
+		num_of_factories > 1400
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.13.a
+		add_research_slot = 1
+		set_country_flag = research_slot_13
+	}
+}
+
+country_event = {
+	id = rsch.14
+	title = rsch.14.t
+	desc = rsch.14.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_14 }
+		num_of_factories > 1600
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.14.a
+		add_research_slot = 1
+		set_country_flag = research_slot_14
+	}
+}
+
+country_event = {
+	id = rsch.15
+	title = rsch.15.t
+	desc = rsch.15.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_15 }
+		num_of_factories > 2000
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.15.a
+		add_research_slot = 1
+		set_country_flag = research_slot_15
+	}
+}
+
+country_event = {
+	id = rsch.16
+	title = rsch.16.t
+	desc = rsch.16.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_16 }
+		num_of_factories > 2500
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.16.a
+		add_research_slot = 1
+		set_country_flag = research_slot_16
+	}
+}
+
+country_event = {
+	id = rsch.17
+	title = rsch.17.t
+	desc = rsch.17.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_17 }
+		num_of_factories > 3000
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.17.a
+		add_research_slot = 1
+		set_country_flag = research_slot_17
+	}
+}
+
+country_event = {
+	id = rsch.18
+	title = rsch.18.t
+	desc = rsch.18.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_18 }
+		num_of_factories > 3500
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.18.a
+		add_research_slot = 1
+		set_country_flag = research_slot_18
+	}
+}
+
+country_event = {
+	id = rsch.19
+	title = rsch.19.t
+	desc = rsch.19.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_19 }
+		num_of_factories > 4000
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.19.a
+		add_research_slot = 1
+		set_country_flag = research_slot_19
+	}
+}
+
+country_event = {
+	id = rsch.20
+	title = rsch.20.t
+	desc = rsch.20.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = research_slot_20 }
+		num_of_factories > 5000
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.20.a
+		add_research_slot = 1
+		set_country_flag = research_slot_20
+	}
+}

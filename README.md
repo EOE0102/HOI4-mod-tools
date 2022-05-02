@@ -127,7 +127,7 @@ STEP1 to STEP 8
 | `adjacencies.csv`| adjacencies.csv |
 | `VP` | add new VP in 1-France.txt |
 | `STEP8: create supply note` | 8-1 takes 90min, 8-2 takes 90min |
-| `Railway level > NDefines::NSupply::MAX_RAILWAY_LEVEL (province 9371, neighbor index 5, level 6)` | fix all TODO create by 8-2 |
+| `Railway level > NDefines::NSupply::MAX_RAILWAY_LEVEL (province 9371, neighbor index 5, level 6)`  | fix all TODO create by 8-2, seemed railway node also has a max limit, max province should less than 19K |
 | Modify states | add bunkers for Maginot line |
 
 ## **STEP 5: More Features**

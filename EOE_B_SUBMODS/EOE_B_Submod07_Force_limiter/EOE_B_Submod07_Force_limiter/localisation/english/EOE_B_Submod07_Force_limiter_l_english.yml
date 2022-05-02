@@ -1,0 +1,6 @@
+﻿l_english:
+ EOE_B_Force_limiter.1.t:0 "EOE's sub mod - Dynamic Force Limiter"
+ EOE_B_Force_limiter.1.d:0 "This sub mod is focusing on limit the max pop.amount/size of land force(for your baked potato). And max amount is not fixed, but is calculated in a dynamic way. Rules are like: \n1. more factories AI has, more force AI can build. \n  2. Manpower/Tech/Government/Major Power influence the limit... \n Type 1: min 0.25 - 3.0 million Army Population\n Type 2: 15 - 480 Army Divisions"
+ EOE_B_Force_limiter.1.a:0 "Type 1: Army population Limiter"
+ EOE_B_Force_limiter.1.b:0 "Type 2: Army division Limiter"
+ EOE_B_Force_limiter.1.c:0 "No limit (Recommend)"

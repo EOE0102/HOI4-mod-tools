@@ -1,0 +1,5 @@
+﻿l_braz_por:
+ EOE_B_Building_Speed_limiter.1.t:0 "EOE's sub mod - Building Speed Limiter"
+ EOE_B_Building_Speed_limiter.1.d:0 "This sub mod is focusing on limit the building speed, Therefore USA/GER/ENG will have about 400IC in 1946 rather than 600 and more"
+ EOE_B_Building_Speed_limiter.1.a:0 "Dynamic limiter ON"
+ EOE_B_Building_Speed_limiter.1.b:0 "OFF"

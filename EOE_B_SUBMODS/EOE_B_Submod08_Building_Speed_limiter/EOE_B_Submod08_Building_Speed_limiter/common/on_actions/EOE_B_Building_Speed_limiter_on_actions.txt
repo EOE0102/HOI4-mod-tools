@@ -1,0 +1,427 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = { 
+				limit = {
+					is_ai = no
+				}
+				country_event = EOE_B_Building_Speed_limiter.1
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+on_actions = { 
+	on_weekly = {
+		effect = {
+			remove_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+			remove_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+			remove_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+			remove_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			remove_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			remove_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			remove_ideas = EOE_B_Building_Speed_limiter_ALL_1000000
+			
+			
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 1
+					num_of_available_civilian_factories < 100
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_1000000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 99
+					num_of_available_civilian_factories < 110
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 109
+					num_of_available_civilian_factories < 120
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 119
+					num_of_available_civilian_factories < 130
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 129
+					num_of_available_civilian_factories < 140
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 139
+					num_of_available_civilian_factories < 150
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 149
+					num_of_available_civilian_factories < 160
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 159
+					num_of_available_civilian_factories < 170
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 169
+					num_of_available_civilian_factories < 180
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 179
+					num_of_available_civilian_factories < 190
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 189
+					num_of_available_civilian_factories < 200
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 199
+					num_of_available_civilian_factories < 210
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 209
+					num_of_available_civilian_factories < 220
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 219
+					num_of_available_civilian_factories < 230
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 229
+					num_of_available_civilian_factories < 240
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 239
+					num_of_available_civilian_factories < 250
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 249
+					num_of_available_civilian_factories < 260
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 259
+					num_of_available_civilian_factories < 270
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 269
+					num_of_available_civilian_factories < 280
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 279
+					num_of_available_civilian_factories < 290
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 289
+					num_of_available_civilian_factories < 300
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 299
+					num_of_available_civilian_factories < 310
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 309
+					num_of_available_civilian_factories < 320
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 319
+					num_of_available_civilian_factories < 330
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 329
+					num_of_available_civilian_factories < 340
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 339
+					num_of_available_civilian_factories < 350
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 349
+					num_of_available_civilian_factories < 360
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 359
+					num_of_available_civilian_factories < 370
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 369
+					num_of_available_civilian_factories < 380
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 379
+					num_of_available_civilian_factories < 390
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 389
+					num_of_available_civilian_factories < 400
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 399
+					num_of_available_civilian_factories < 410
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0010000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 409
+					num_of_available_civilian_factories < 410
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 409
+					num_of_available_civilian_factories < 420
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 419
+					num_of_available_civilian_factories < 430
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 429
+					num_of_available_civilian_factories < 440
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 439
+					num_of_available_civilian_factories < 450
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 449
+					num_of_available_civilian_factories < 460
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 459
+					num_of_available_civilian_factories < 470
+
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 469
+					num_of_available_civilian_factories < 480
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000001
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000010
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0000100
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+			if = {
+				limit = {
+					has_global_flag = eoe_b_building_speed_limiter_enable
+					num_of_available_civilian_factories > 479
+				}
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0001000
+				add_ideas = EOE_B_Building_Speed_limiter_ALL_0100000
+			}
+
+		}
+	
+	
+	}
+}

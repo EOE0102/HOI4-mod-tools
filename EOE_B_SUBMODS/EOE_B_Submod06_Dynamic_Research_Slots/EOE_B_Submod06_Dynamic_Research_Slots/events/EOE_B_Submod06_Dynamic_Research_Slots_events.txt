@@ -1,0 +1,464 @@
+﻿###########################
+# EOE_B_Dynamic_Research_Slots Events
+###########################
+
+add_namespace = EOE_B_Dynamic_Research_Slots.welcome
+
+# welcome board
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.welcome.1
+	title = EOE_B_Dynamic_Research_Slots.welcome.1.t
+	desc = EOE_B_Dynamic_Research_Slots.welcome.1.d
+	picture = GFX_report_event_eoe_b_resource_welcome_board
+	
+	is_triggered_only = yes
+	
+	option = { # dynamic research slot 1
+		name = EOE_B_Dynamic_Research_Slots.welcome.1.a
+		#ai_chance = { factor = 100 }
+		set_research_slots = 1
+		set_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		
+	}
+#	option = { # dynamic research slot 2
+#		name = EOE_B_Dynamic_Research_Slots.welcome.1.b
+#		#ai_chance = { factor = 0 }
+#		set_research_slots = 1
+#		set_global_flag = EOE_B_Dynamic_Research_Slots_enable_2
+#		
+#	}
+
+	option = { # NO need
+		name = EOE_B_Dynamic_Research_Slots.welcome.1.b
+		#ai_chance = { factor = 0 }
+		
+	}
+}
+
+########################################
+
+add_namespace = EOE_B_Dynamic_Research_Slots.gain
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.gain.1
+	title = EOE_B_Dynamic_Research_Slots.gain.1.t
+	desc = EOE_B_Dynamic_Research_Slots.gain.1.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		NOT = { has_country_flag = research_slot_1 }
+		num_of_factories > 10
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.gain.1.a
+		add_research_slot = 1
+		set_country_flag = research_slot_1
+	}
+}
+
+
+########################################
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.gain.2
+	title = EOE_B_Dynamic_Research_Slots.gain.2.t
+	desc = EOE_B_Dynamic_Research_Slots.gain.2.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		NOT = { has_country_flag = research_slot_2 }
+		num_of_factories > 20
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.gain.2.a
+		add_research_slot = 1
+		set_country_flag = research_slot_2
+	}
+}
+
+
+########################################
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.gain.3
+	title = EOE_B_Dynamic_Research_Slots.gain.3.t
+	desc = EOE_B_Dynamic_Research_Slots.gain.3.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		NOT = { has_country_flag = research_slot_3 }
+		num_of_factories > 40
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.gain.3.a
+		add_research_slot = 1
+		set_country_flag = research_slot_3
+	}
+}
+
+########################################
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.gain.4
+	title = EOE_B_Dynamic_Research_Slots.gain.4.t
+	desc = EOE_B_Dynamic_Research_Slots.gain.4.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		NOT = { has_country_flag = research_slot_4 }
+		num_of_factories > 100
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.gain.4.a
+		add_research_slot = 1
+		set_country_flag = research_slot_4
+	}
+}
+
+
+########################################
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.gain.5
+	title = EOE_B_Dynamic_Research_Slots.gain.5.t
+	desc = EOE_B_Dynamic_Research_Slots.gain.5.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		NOT = { has_country_flag = research_slot_5 }
+		num_of_factories > 200
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.gain.5.a
+		add_research_slot = 1
+		set_country_flag = research_slot_5
+	}
+}
+
+########################################
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.gain.6
+	title = EOE_B_Dynamic_Research_Slots.gain.6.t
+	desc = EOE_B_Dynamic_Research_Slots.gain.6.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		NOT = { has_country_flag = research_slot_6 }
+		num_of_factories > 400
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.gain.6.a
+		add_research_slot = 1
+		set_country_flag = research_slot_6
+	}
+}
+
+
+########################################
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.gain.7
+	title = EOE_B_Dynamic_Research_Slots.gain.7.t
+	desc = EOE_B_Dynamic_Research_Slots.gain.7.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		NOT = { has_country_flag = research_slot_7 }
+		num_of_factories > 1000
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.gain.7.a
+		add_research_slot = 1
+		set_country_flag = research_slot_7
+	}
+}
+
+
+########################################
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.gain.8
+	title = EOE_B_Dynamic_Research_Slots.gain.8.t
+	desc = EOE_B_Dynamic_Research_Slots.gain.8.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		NOT = { has_country_flag = research_slot_8 }
+		num_of_factories > 2000
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.gain.8.a
+		add_research_slot = 1
+		set_country_flag = research_slot_8
+	}
+}
+
+##########################
+add_namespace = EOE_B_Dynamic_Research_Slots.lose
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.lose.1
+	title = EOE_B_Dynamic_Research_Slots.lose.1.t
+	desc = EOE_B_Dynamic_Research_Slots.lose.1.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		has_country_flag = research_slot_1
+		num_of_factories < 5
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.lose.1.a
+		add_research_slot = -1
+		clr_country_flag = research_slot_1
+	}
+}
+
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.lose.2
+	title = EOE_B_Dynamic_Research_Slots.lose.2.t
+	desc = EOE_B_Dynamic_Research_Slots.lose.2.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		has_country_flag = research_slot_2
+		num_of_factories < 15
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.lose.2.a
+		add_research_slot = -1
+		clr_country_flag = research_slot_2
+	}
+}
+
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.lose.3
+	title = EOE_B_Dynamic_Research_Slots.lose.3.t
+	desc = EOE_B_Dynamic_Research_Slots.lose.3.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		has_country_flag = research_slot_3
+		num_of_factories < 30
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.lose.3.a
+		add_research_slot = -1
+		clr_country_flag = research_slot_3
+	}
+}
+
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.lose.4
+	title = EOE_B_Dynamic_Research_Slots.lose.4.t
+	desc = EOE_B_Dynamic_Research_Slots.lose.4.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		has_country_flag = research_slot_4
+		num_of_factories < 90
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.lose.4.a
+		add_research_slot = -1
+		clr_country_flag = research_slot_4
+	}
+}
+
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.lose.5
+	title = EOE_B_Dynamic_Research_Slots.lose.5.t
+	desc = EOE_B_Dynamic_Research_Slots.lose.5.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		has_country_flag = research_slot_5
+		num_of_factories < 180
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.lose.5.a
+		add_research_slot = -1
+		clr_country_flag = research_slot_5
+	}
+}
+
+
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.lose.6
+	title = EOE_B_Dynamic_Research_Slots.lose.6.t
+	desc = EOE_B_Dynamic_Research_Slots.lose.6.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		has_country_flag = research_slot_6
+		num_of_factories < 360
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.lose.6.a
+		add_research_slot = -1
+		clr_country_flag = research_slot_6
+	}
+}
+
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.lose.7
+	title = EOE_B_Dynamic_Research_Slots.lose.7.t
+	desc = EOE_B_Dynamic_Research_Slots.lose.7.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		has_country_flag = research_slot_7
+		num_of_factories < 900
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.lose.7.a
+		add_research_slot = -1
+		clr_country_flag = research_slot_7
+	}
+}
+
+
+country_event = {
+	id = EOE_B_Dynamic_Research_Slots.lose.8
+	title = EOE_B_Dynamic_Research_Slots.lose.8.t
+	desc = EOE_B_Dynamic_Research_Slots.lose.8.d
+	picture = GFX_dyn
+	is_triggered_only = no
+	fire_only_once = no
+	
+	trigger = {
+		has_global_flag = EOE_B_Dynamic_Research_Slots_enable_1
+		has_country_flag = research_slot_8
+		num_of_factories < 1800
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	option = {
+		name = EOE_B_Dynamic_Research_Slots.lose.8.a
+		add_research_slot = -1
+		clr_country_flag = research_slot_8
+	}
+}
+

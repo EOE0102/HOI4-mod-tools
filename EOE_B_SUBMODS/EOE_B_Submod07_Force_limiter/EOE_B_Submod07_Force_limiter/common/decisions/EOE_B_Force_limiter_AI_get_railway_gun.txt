@@ -1,0 +1,60 @@
+EOE_B_Force_limiter_AI_railway_gun_limiter = {
+
+	AI_railway_gun_from_Mars_1940 = {
+		visible = {
+			is_ai = yes
+			NOT = { has_country_flag = AI_railway_gun_from_Mars_1940 }
+			has_tech = railway_gun
+		}
+		available = {
+			date > 1940.1.1
+		}
+		complete_effect = { 
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+			}
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+			}
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+			}
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+			}
+			hidden_effect = {
+				set_country_flag = AI_railway_gun_from_Mars_1940
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+
+	AI_railway_gun_from_Mars_1944 = {
+		visible = {
+			is_ai = yes
+			NOT = { has_country_flag = AI_railway_gun_from_Mars_1944 }
+			has_tech = railway_gun
+		}
+		available = {
+			date > 1944.1.1
+		}
+		complete_effect = { 
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+			}
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+			}
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+			}
+			create_railway_gun = {
+				equipment = railway_gun_equipment_1
+			}
+			hidden_effect = {
+				set_country_flag = AI_railway_gun_from_Mars_1944
+			}
+		}
+		ai_will_do = { factor = 100 }
+	}
+}

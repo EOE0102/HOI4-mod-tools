@@ -1,0 +1,96 @@
+﻿add_namespace = rschad
+
+#Динамические исследования улучшенная версия
+country_event = {
+	id = rschad.1
+	title = rsch.1.t
+	desc = rsch.1.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = dynamic_research_advanced_1 }
+		num_of_factories > 10
+		has_country_flag = dynamic_research_start
+		NOT = {
+			has_idea = great_depression
+			has_idea = great_depression_2
+			has_idea = usa_great_depression_3
+			has_idea = great_depression_3
+		}
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.1.a
+		add_research_slot = 1
+		set_country_flag = dynamic_research_advanced_1
+	}
+}
+
+country_event = {
+	id = rschad.2
+	title = rsch.1.t
+	desc = rsch.1.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = dynamic_research_advanced_2 }
+		num_of_factories > 20
+		has_country_flag = dynamic_research_start
+		NOT = {
+			has_idea = great_depression
+			has_idea = great_depression_2
+		}
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.1.a
+		add_research_slot = 1
+		set_country_flag = dynamic_research_advanced_2
+	}
+}
+
+country_event = {
+	id = rschad.3
+	title = rsch.1.t
+	desc = rsch.1.d
+	picture = GFX_dynrsch
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = dynamic_research_advanced_3 }
+		num_of_factories > 30
+		has_country_flag = dynamic_research_start
+		NOT = {
+			has_idea = great_depression
+		}
+	}
+	
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rsch.1.a
+		add_research_slot = 1
+		set_country_flag = dynamic_research_advanced_3
+	}
+}

@@ -1,0 +1,83 @@
+﻿add_namespace = rschremad
+
+#Динамические исследования улучшенная версия
+country_event = {
+	id = rschremad.1
+	title = rschrem.1.t
+	desc = rschrem.1.d
+	picture = GFX_dynrschrem
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		has_country_flag = dynamic_research_advanced_1
+		num_of_factories < 5
+		
+	}
+
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rschrem.1.a
+		add_research_slot = -1
+		clr_country_flag = dynamic_research_advanced_1
+	}
+}
+
+country_event = {
+	id = rschremad.2
+	title = rschrem.1.t
+	desc = rschrem.1.d
+	picture = GFX_dynrschrem
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		has_country_flag = dynamic_research_advanced_2
+		num_of_factories < 15
+		
+	}
+
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rschrem.1.a
+		add_research_slot = -1
+		clr_country_flag = dynamic_research_advanced_2
+	}
+}
+
+country_event = {
+	id = rschremad.3
+	title = rschrem.1.t
+	desc = rschrem.1.d
+	picture = GFX_dynrschrem
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		has_country_flag = dynamic_research_advanced_3
+		num_of_factories < 30
+		
+	}
+
+	mean_time_to_happen = {
+		hours = 1
+	}
+	
+	option = {
+		name = rschrem.1.a
+		add_research_slot = -1
+		clr_country_flag = dynamic_research_advanced_3
+	}
+}

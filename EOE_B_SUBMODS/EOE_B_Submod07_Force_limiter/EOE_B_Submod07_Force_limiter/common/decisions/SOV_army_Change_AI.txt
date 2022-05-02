@@ -1,0 +1,111 @@
+prestigious_projects = {
+	# 傻逼P社让苏联不研究39年步枪，导致41年苏德开战，苏联步兵战斗力远低于德国，你做你🐎的平衡呢？#
+	# 这里让AI苏联在1940年解锁39年步枪#
+	unlock_SOV_improved_infantry = {
+		icon = generic_infantry
+		available = {
+			date > 1940.1.1
+			NOT = {
+				has_tech = improved_infantry_weapons
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		visible = {
+			tag = SOV
+			is_ai = yes
+		}
+		complete_effect = {
+			set_technology = {
+				improved_infantry_weapons = 1
+			}
+		}
+	}
+	#这个决议是避免苏联保留太多垃圾师
+	SOV_change_army = {
+		icon = generic_tank
+		available = {
+			original_tag = SOV
+		}
+		ai_will_do = {
+			factor = 1
+		}
+
+		visible = {
+			original_tag = SOV
+			date < 1936.2.1
+			is_ai = yes
+
+			# 黑冰的苏联装甲标识，用来判断有没有使用黑冰mod
+			NOT = { has_country_flag = SOV_armor }
+		}
+
+		fire_only_once = yes
+
+		complete_effect = {
+			delete_units = {
+				division_template = "Kavaleriyskaya Diviziya"
+				disband = yes
+			}
+			delete_units = {
+				division_template = "NKVD Pogranichnaya Diviziya"
+				disband = yes
+			}
+			delete_units = {
+				division_template = "Strelkovaya Diviziya"
+				disband = yes
+			}
+			#delete_units = {
+			#	division_template = "Gornostrelkovaya Diviziya"
+			#	disband = yes
+			#}
+			delete_units = {
+				division_template = "Motostrelkovaya Diviziya"
+				disband = yes
+			}
+			#delete_units = {
+			#	division_template = "Mekhanizirovaniy Korpus"
+			#	disband = yes
+			#}
+			SOV = {
+				division_template = {
+					name = "Strelkovaya Diviziya"
+					division_names_group = SOV_INF_01
+					is_locked = no
+					regiments = {
+						infantry = { x = 0 y = 0 }
+						infantry = { x = 0 y = 1 }
+						infantry = { x = 0 y = 2 }
+						infantry = { x = 1 y = 0 }
+						infantry = { x = 1 y = 1 }
+						infantry = { x = 1 y = 2 }
+						infantry = { x = 2 y = 0 }
+						infantry = { x = 2 y = 1 }
+						infantry = { x = 2 y = 2 }
+						infantry = { x = 2 y = 3 }
+					}
+					support = {
+						recon = { x = 0 y = 0 }
+						engineer = { x = 0 y = 1 }
+						artillery = { x = 0 y = 2 }
+					}
+				}
+			}
+			219 = {
+				create_unit = {
+					division = "division_template = \"Strelkovaya Diviziya\" start_experience_factor = 0.5"
+					owner = SOV
+					count = 60
+				}
+			}
+			SOV = {
+				add_equipment_to_stockpile = {
+					type = infantry_equipment
+					amount = -60000
+				}
+			}
+			
+		}
+	}
+}

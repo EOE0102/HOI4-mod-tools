@@ -1,0 +1,14 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			every_country = { 
+				limit = {
+					is_ai = no
+				}
+				country_event = EOE_B_Dynamic_Research_Slots.welcome.1
+			}
+		}
+	}
+}
+
+

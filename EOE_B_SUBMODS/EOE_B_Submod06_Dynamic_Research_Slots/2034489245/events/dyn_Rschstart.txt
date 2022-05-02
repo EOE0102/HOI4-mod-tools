@@ -1,0 +1,25 @@
+﻿add_namespace = rschstart
+
+#СТАРТ
+country_event = {
+	id = rschstart.1
+	title = rschstart.1.t
+	desc = rschstart.1.d
+	picture = GFX_dynrschstart
+	
+	is_triggered_only = no
+	
+	fire_only_once = no
+	
+	trigger = {
+		NOT = { has_country_flag = dynamic_research_start }
+	}
+
+	timeout_days = 0
+	
+	option = {
+		name = rschstart.1.a
+		set_research_slots = 0
+		set_country_flag = dynamic_research_start
+	}
+}

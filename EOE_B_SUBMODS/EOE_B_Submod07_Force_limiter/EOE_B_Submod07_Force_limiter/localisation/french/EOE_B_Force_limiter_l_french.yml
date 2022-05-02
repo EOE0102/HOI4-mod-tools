@@ -1,0 +1,6 @@
+﻿l_french:
+ EOE_B_Force_limiter.1.t:0 "EOE's sub mod - Dynamic Force Limiter"
+ EOE_B_Force_limiter.1.d:0 "This sub mod is focusing on limit the max amount of land force(for your baked potato). And max amount is not fixed, but is calculated in a dynamic way. Rules are like: \n  1. more factories AI has, more force AI can build. \n  2. Manpower/Tech/Government/Major Power influence the limit... \n Type 1: min.20-max.960, avg.450 for Germany, 650 for Soviet \n Type 2: min.15-max.480, avg.300 for Germany, 450 for Soviet )"
+ EOE_B_Force_limiter.1.a:0 "Type 1 Recommend"
+ EOE_B_Force_limiter.1.b:0 "Type 2 "
+ EOE_B_Force_limiter.1.c:0 "No limit."

@@ -1,0 +1,116 @@
+ideas = {
+
+	hidden_ideas = {
+	#infrastructure
+	#arms_factory
+	#industrial_complex
+	#air_base
+	#supply_node
+	#rail_way
+	#naval_base
+	#bunker
+	#coastal_bunker
+	#dockyard
+	#anti_air_building
+	#synthetic_refinery
+	#fuel_silo
+	#radar_station
+	#rocket_site
+	#nuclear_reactor
+	
+		EOE_B_Building_Speed_limiter_IC_0000001 = {
+			modifier = {
+				production_speed_industrial_complex_factor = -0.02
+				production_speed_arms_factory_factor = -0.02
+			}
+		}
+		
+		EOE_B_Building_Speed_limiter_IC_0000010 = {
+			modifier = {
+				production_speed_industrial_complex_factor = -0.04
+				production_speed_arms_factory_factor = -0.04
+
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_IC_0000100 = {
+			modifier = {
+				production_speed_industrial_complex_factor = -0.08
+				production_speed_arms_factory_factor = -0.08
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_IC_0001000 = {
+			modifier = {
+				production_speed_industrial_complex_factor = -0.16
+				production_speed_arms_factory_factor = -0.16
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_IC_0010000 = {
+			modifier = {
+				production_speed_industrial_complex_factor = -0.32
+				production_speed_arms_factory_factor = -0.32
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_IC_0100000 = {
+			modifier = {
+				production_speed_industrial_complex_factor = -0.64
+				production_speed_arms_factory_factor = -0.64
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_IC_1000000 = {
+			modifier = {
+				production_speed_industrial_complex_factor = 2.0
+				production_speed_arms_factory_factor = 2.0
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_ALL_0000001 = {
+			modifier = {
+				production_speed_buildings_factor = -0.01
+			}
+		}
+		
+		EOE_B_Building_Speed_limiter_ALL_0000010 = {
+			modifier = {
+				production_speed_buildings_factor = -0.02
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_ALL_0000100 = {
+			modifier = {
+				production_speed_buildings_factor = -0.04
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_ALL_0001000 = {
+			modifier = {
+				production_speed_buildings_factor = -0.10
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_ALL_0010000 = {
+			modifier = {
+				production_speed_buildings_factor = -0.20
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_ALL_0100000 = {
+			modifier = {
+				production_speed_buildings_factor = -0.40
+			}
+		}
+
+		EOE_B_Building_Speed_limiter_ALL_1000000 = {
+			modifier = {
+				production_speed_buildings_factor = 0.80
+			}
+		}
+
+	
+	}
+	
+}

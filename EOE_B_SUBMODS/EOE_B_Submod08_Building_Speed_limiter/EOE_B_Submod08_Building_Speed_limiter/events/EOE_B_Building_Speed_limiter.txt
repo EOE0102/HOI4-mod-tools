@@ -1,0 +1,30 @@
+﻿###########################
+# EOE_B_Building_Speed_limiter Events
+###########################
+
+add_namespace = EOE_B_Building_Speed_limiter
+
+# welcome board
+country_event = {
+	id = EOE_B_Building_Speed_limiter.1
+	title = EOE_B_Building_Speed_limiter.1.t
+	desc = EOE_B_Building_Speed_limiter.1.d
+	picture = GFX_report_event_eoe_b_resource_welcome_board
+	
+	is_triggered_only = yes
+	
+	option = { # dynamic limiter 1
+		name = EOE_B_Building_Speed_limiter.1.a
+		ai_chance = { factor = 100 }
+		
+		set_global_flag = eoe_b_building_speed_limiter_enable
+		
+	}
+	option = { # NO need
+		name = EOE_B_Building_Speed_limiter.1.b
+		ai_chance = { factor = 0 }
+		
+	}
+
+	
+}

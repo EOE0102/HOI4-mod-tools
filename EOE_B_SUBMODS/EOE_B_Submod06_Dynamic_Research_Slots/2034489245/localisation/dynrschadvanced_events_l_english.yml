@@ -1,0 +1,4 @@
+﻿l_english:
+ rschstart.1.t:0 "Hello(Sorry for my bad english)"
+ rschstart.1.d:0 "Hello, this is an improved version of it, where initially each country will have 0 research cells, but the more factories the country will have, the more research cells will be. Ten factories - one cell, and so on on the increase in the number of factories, five thousand factories - the limit after which the cells will not be given, the total number of cells will reach twenty(excluding cells by focus)."
+ rschstart.1.a:0 "Ok"

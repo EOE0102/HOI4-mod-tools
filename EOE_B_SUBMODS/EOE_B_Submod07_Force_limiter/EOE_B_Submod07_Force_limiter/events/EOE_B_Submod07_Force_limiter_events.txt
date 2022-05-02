@@ -1,0 +1,39 @@
+﻿###########################
+# EOE_B_Force_limiter Events
+###########################
+
+add_namespace = EOE_B_Force_limiter
+
+# welcome board
+country_event = {
+	id = EOE_B_Force_limiter.1
+	title = EOE_B_Force_limiter.1.t
+	desc = EOE_B_Force_limiter.1.d
+	picture = GFX_report_event_eoe_b_resource_welcome_board
+	
+	is_triggered_only = yes
+	option = { # dynamic limiter 1
+		name = EOE_B_Force_limiter.1.a
+		#ai_chance = { factor = 100 }
+		
+		set_global_flag = EOE_B_Force_limiter_enable_1
+		
+	}
+	
+	option = { # dynamic limiter 2
+		name = EOE_B_Force_limiter.1.b
+		#ai_chance = { factor = 0 }
+		
+		set_global_flag = EOE_B_Force_limiter_enable_2
+		
+	}
+	option = { # dynamic limiter 3
+		name = EOE_B_Force_limiter.1.c
+		#ai_chance = { factor = 0 }
+		
+		
+	}
+
+
+	
+}
