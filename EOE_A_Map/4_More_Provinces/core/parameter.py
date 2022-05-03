@@ -22,7 +22,7 @@ longitude_south_in_rand = longitude_south/ 180 * numpy.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 20 #pixel on equator #20=> 18847 16=>20359 don't use 16 too harsh
+default_province_size = 20 #pixel on equator #20=> 18847 16=>20359 don't use 16 too harsh #and railway toomany ,most 861 line
 max_new_provinces_per_state = 5 #max 5 block because range(1, new_province_max_amount):
 
 
@@ -50,9 +50,21 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
     state_info_add_core_of = states_info_dict['add_core_of'][index_in_state_file]
 
     #terrain unknown ocean lakes forest hills mountain plains urban jungle marsh desert water_fjords water_shallow_sea water_deep_ocean
+    #movement_cost:combat_width:combat_support_width
+    #plains:1.0:90:45
+    #desert:1.05:90:45
+    #urban:1.2:96:32
+    #forest:1.5:84:42
+    #jungle:1.5:84:42
+    #hills:1.5:80:40
+    #marsh:2.0:78:26
+    #mountain:2.0:75:25
+
     terrain_okay_dict = {
-        'terrain': ['forest', 'hills', 'mountain', 'plains', 'urban', 'jungle', 'marsh', 'desert'],
-        'new_province_max_amount': [3,3,4,2,4,3,3,2]
+        'terrain': ['plains', 'desert', 'urban', 'forest', 'jungle', 'hills', 'marsh', 'mountain'],
+        'new_province_max_amount': [2,2,4,3,3,3,3,4]
+
+
     }
     #countrytag, continent ['DEN',1]
 

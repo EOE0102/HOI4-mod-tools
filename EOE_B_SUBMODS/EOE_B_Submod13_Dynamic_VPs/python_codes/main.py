@@ -15,11 +15,14 @@ def main():
     used_terrain = definition_color_address['terrain']
     
     write_inhalt = []
+
+
+    
     for check_state_id in states_info_dict['id']:
         index = states_info_dict['id'].index(check_state_id)
         countain_provinces = states_info_dict['provinces'][index]
 
-        if states_info_dict['victory_points'][index][0] != '':
+        if states_info_dict['victory_points'][index] != []:
             a = 1
             chosen_VP_province = states_info_dict['victory_points'][index][0].split(' ')[0]
 
@@ -62,11 +65,6 @@ def main():
 
         #create file inhalt
 
-        write_inhalt.append('##########################################')
-        write_inhalt.append('#EOE_B_Dynamic_VPs_' + check_state_id[0])
-        write_inhalt.append('##########################################')
-        write_inhalt.append('#cant use EOE_B_Dynamic_VPs_1.arms_factory should use EOE_B_Dynamic_VPs.1')
-        write_inhalt.append('#cant use EOE_B_Dynamic_VPs_1.arms_factory should use EOE_B_Dynamic_VPs.1')
         # 1:infrastructure
         # 2:arms_factory
         # 3:industrial_complex
@@ -84,14 +82,18 @@ def main():
         # 15:rocket_site
         # 16:nuclear_reactor
 
-
-        write_inhalt.append('add_namespace = EOE_B_Dynamic_VPs_' + check_state_id[0])
+        write_inhalt.append('##########################################')
+        write_inhalt.append('#EOE_B_Dynamic_VPs')
+        write_inhalt.append('##########################################')
+        write_inhalt.append('#cant use EOE_B_Dynamic_VPs.1.arms_factory should use EOE_B_Dynamic_VPs.1')        
+        write_inhalt.append('add_namespace = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4))
         write_inhalt.append('\t')
+        #[12:10:41][namespacemanager.h:210]: Reverse id lookup: id -2141883649 = EOE_B_Dynamic_VPs.999991_0205
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0201')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0201.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0201.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.10')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.10.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.10.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@arms_factory > 0 }}')
@@ -105,9 +107,9 @@ def main():
         write_inhalt.append('}')
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0205')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0205.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0205.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.11')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.11.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.11.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@arms_factory > 4 }}')
@@ -121,9 +123,9 @@ def main():
         write_inhalt.append('}')
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0210')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0210.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0210.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.12')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.12.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.12.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@arms_factory > 9 }}')
@@ -138,9 +140,9 @@ def main():
 
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0301')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0301.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0301.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.20')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.20.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.20.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@industrial_complex > 0 }}')
@@ -154,9 +156,9 @@ def main():
         write_inhalt.append('}')
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0305')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0305.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0305.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.21')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.21.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.21.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@industrial_complex > 4 }}')
@@ -170,9 +172,9 @@ def main():
         write_inhalt.append('}')
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0310')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0310.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0310.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.22')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.22.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.22.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@industrial_complex > 9 }}')
@@ -187,9 +189,9 @@ def main():
 
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0401')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0401.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0401.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.30')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.30.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.30.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@air_base > 0 }}')
@@ -203,9 +205,9 @@ def main():
         write_inhalt.append('}')
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0405')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0405.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0405.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.31')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.31.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.31.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@air_base > 4 }}')
@@ -218,13 +220,14 @@ def main():
         write_inhalt.append('\t}')
         write_inhalt.append('}')
 
+
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0410')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0410.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0410.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.32')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.32.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.32.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
-        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@air_base > 9 }}')
+        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@air_base > 0 }}')
         write_inhalt.append('\t}')
         write_inhalt.append('\toption = {')
         write_inhalt.append('\t\tadd_victory_points = {')
@@ -236,73 +239,9 @@ def main():
 
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0501')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0501.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0501.desc')
-        write_inhalt.append('\tfire_only_once = yes')
-        write_inhalt.append('\ttrigger = {')
-        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@supply_node > 0 }}')
-        write_inhalt.append('\t}')
-        write_inhalt.append('\toption = {')
-        write_inhalt.append('\t\tadd_victory_points = {')
-        write_inhalt.append('\t\t\tprovince = ' + chosen_VP_province)
-        write_inhalt.append('\t\t\tvalue = 5')
-        write_inhalt.append('\t\t}')
-        write_inhalt.append('\t}')
-        write_inhalt.append('}')
-
-        write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0701')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0701.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0701.desc')
-        write_inhalt.append('\tfire_only_once = yes')
-        write_inhalt.append('\ttrigger = {')
-        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@naval_base > 0 }}')
-        write_inhalt.append('\t}')
-        write_inhalt.append('\toption = {')
-        write_inhalt.append('\t\tadd_victory_points = {')
-        write_inhalt.append('\t\t\tprovince = ' + chosen_VP_province)
-        write_inhalt.append('\t\t\tvalue = 1')
-        write_inhalt.append('\t\t}')
-        write_inhalt.append('\t}')
-        write_inhalt.append('}')
-
-        write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0705')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0705.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0705.desc')
-        write_inhalt.append('\tfire_only_once = yes')
-        write_inhalt.append('\ttrigger = {')
-        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@naval_base > 4 }}')
-        write_inhalt.append('\t}')
-        write_inhalt.append('\toption = {')
-        write_inhalt.append('\t\tadd_victory_points = {')
-        write_inhalt.append('\t\t\tprovince = ' + chosen_VP_province)
-        write_inhalt.append('\t\t\tvalue = 2')
-        write_inhalt.append('\t\t}')
-        write_inhalt.append('\t}')
-        write_inhalt.append('}')
-
-        write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0710')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0710.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.0710.desc')
-        write_inhalt.append('\tfire_only_once = yes')
-        write_inhalt.append('\ttrigger = {')
-        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@naval_base > 9 }}')
-        write_inhalt.append('\t}')
-        write_inhalt.append('\toption = {')
-        write_inhalt.append('\t\tadd_victory_points = {')
-        write_inhalt.append('\t\t\tprovince = ' + chosen_VP_province)
-        write_inhalt.append('\t\t\tvalue = 2')
-        write_inhalt.append('\t\t}')
-        write_inhalt.append('\t}')
-        write_inhalt.append('}')
-
-        write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1001')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1001.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1001.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.40')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.40.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.40.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@dockyard > 0 }}')
@@ -316,9 +255,9 @@ def main():
         write_inhalt.append('}')
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1005')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1005.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1005.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.41')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.41.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.41.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@dockyard > 4 }}')
@@ -332,9 +271,9 @@ def main():
         write_inhalt.append('}')
 
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1010')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1010.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1010.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.42')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.42.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.42.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
         write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@dockyard > 9 }}')
@@ -347,13 +286,14 @@ def main():
         write_inhalt.append('\t}')
         write_inhalt.append('}')
 
+
         write_inhalt.append('country_event = {')
-        write_inhalt.append('\tid = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1601')
-        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1601.title')
-        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs_' + check_state_id[0] + '.1601.desc')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.50')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.50.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.50.desc')
         write_inhalt.append('\tfire_only_once = yes')
         write_inhalt.append('\ttrigger = {')
-        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@nuclear_reactor > 9 }}')
+        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@rocket_site > 0 }}')
         write_inhalt.append('\t}')
         write_inhalt.append('\toption = {')
         write_inhalt.append('\t\tadd_victory_points = {')
@@ -364,9 +304,21 @@ def main():
         write_inhalt.append('}')
 
 
-
-
-
+        write_inhalt.append('country_event = {')
+        write_inhalt.append('\tid = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.60')
+        write_inhalt.append('\ttitle = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.60.title')
+        write_inhalt.append('\tdesc = EOE_B_Dynamic_VPs.' + check_state_id[0].zfill(4) + '.60.desc')
+        write_inhalt.append('\tfire_only_once = yes')
+        write_inhalt.append('\ttrigger = {')
+        write_inhalt.append('\t\t' + check_state_id[0] + ' = { check_variable = { building_level@nuclear_reactor > 0 }}')
+        write_inhalt.append('\t}')
+        write_inhalt.append('\toption = {')
+        write_inhalt.append('\t\tadd_victory_points = {')
+        write_inhalt.append('\t\t\tprovince = ' + chosen_VP_province)
+        write_inhalt.append('\t\t\tvalue = 20')
+        write_inhalt.append('\t\t}')
+        write_inhalt.append('\t}')
+        write_inhalt.append('}')
 
 
 
