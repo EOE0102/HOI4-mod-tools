@@ -22,8 +22,8 @@ longitude_south_in_rand = longitude_south/ 180 * numpy.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 16 #pixel on equator #20=> 18847 16=>20359
-max_new_provinces_per_state = 6 #max 5 block because range(1, new_province_max_amount):
+default_province_size = 20 #pixel on equator #20=> 18847 16=>20359 don't use 16 too harsh
+max_new_provinces_per_state = 5 #max 5 block because range(1, new_province_max_amount):
 
 
 #TODO Define painting state conditions
