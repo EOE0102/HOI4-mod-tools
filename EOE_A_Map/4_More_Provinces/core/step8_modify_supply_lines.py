@@ -204,6 +204,8 @@ def calculate_topology_between_provinces():
 
 
     read_write_files.save_dict(province_topology, 'province_topology')
+    print('Part 8-1 finished')
+
 
 
 def railway_recursion(temp_list, recursion_depth, route, one_railways_list, province_topology, start_point_province_ID, end_point_province_ID):

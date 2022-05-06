@@ -1,6 +1,14 @@
 
 import numpy #pip install numpy
 
+#pixel on equator # 25=>17847, 20=> 18847 crash, 16=>20359 don't use 16 too harsh #and railway toomany ,most 861 line
+#click validate all states ONLY ONE TIME, click more times cause CTD?
+#TESTING methrod: AUTORUN as Liberia to year 1949
+#NEW TESTING, URBAN separate setting
+#2022.05.05 13XXX, default size == 9999, no validate this province, DO crossing pixel fix, urban == 5 CTD  
+#2022.05.05 16522, default size == 30, no validate this province, no crossing pixel fix, urban == 1 passed  
+#2022.05.06 16522, default size == 30, no validate this province, DO crossing pixel fix, urban == 1 passed  
+#2022.05.06 17362, default size == 25, no validate this province, DO crossing pixel fix, urban == 1 TESTING 
 
 
 def miller_cylinder_forward_projection(theta_in_rand):
@@ -22,8 +30,10 @@ longitude_south_in_rand = longitude_south/ 180 * numpy.pi
 longitude_north2D = miller_cylinder_forward_projection(longitude_north_in_rand)
 longitude_south2D = miller_cylinder_forward_projection(longitude_south_in_rand)
 
-default_province_size = 20 #pixel on equator #20=> 18847 16=>20359 don't use 16 too harsh #and railway toomany ,most 861 line
-max_new_provinces_per_state = 5 #max 5 block because range(1, new_province_max_amount):
+default_province_size = 25 
+
+
+max_new_provinces_per_state = 4 #max 5 block because range(1, new_province_max_amount):
 
 
 #TODO Define painting state conditions
@@ -62,8 +72,8 @@ def correct_new_province_max_amount(max_new_provinces_per_state, rgb_area_main_R
 
     terrain_okay_dict = {
         'terrain': ['plains', 'desert', 'urban', 'forest', 'jungle', 'hills', 'marsh', 'mountain'],
-        'new_province_max_amount': [2,2,4,3,3,3,3,4]
-
+        'new_province_max_amount': [2,2,max_new_provinces_per_state,3,3,3,3,4]
+        #'new_province_max_amount': [2,1,max_new_provinces_per_state,1,1,1,1,1]
 
     }
     #countrytag, continent ['DEN',1]
@@ -127,15 +137,17 @@ def calculate_divide_province_amount(image_height, default_province_size, longit
     yMagnify = temp1/temp2 #area near equator, difference is not accurate
     if yMagnify < 1: 
         yMagnify = 1
+    #areaMagnify = xMagnify * yMagnify #TODO
     areaMagnify = xMagnify * yMagnify
 
     refileProvinceSize = default_province_size * areaMagnify
         
     amountProvince = int(round(RGBAreaFullSize/refileProvinceSize -0.5 ))
     if state_info_terrain == 'urban':
-        amountProvince = max_new_provinces_per_state
+        amountProvince = int(round(RGBAreaFullSize/9999 -0.5 )) #TODO
+
         # don't do too harsh, divide province into 1 - 10 pieces
-    if amountProvince == 0:
+    if amountProvince <= 0:
         amountProvince = 1
     if amountProvince >= max_new_provinces_per_state:
         amountProvince = max_new_provinces_per_state

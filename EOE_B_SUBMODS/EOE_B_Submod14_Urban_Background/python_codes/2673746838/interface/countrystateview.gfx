@@ -1,0 +1,4868 @@
+spriteTypes = {
+
+	progressbartype = {
+		name = "GFX_nuke_progress"
+		color = { 0.0 0.5 0.0 }
+		colortwo = { 1.0 0.0 0.0 }
+		textureFile1 = "gfx\\interface\\nuke_progress.dds"
+		textureFile2 = "gfx\\interface\\nuke_progress_bg.dds"
+		size = { x = 38 y = 6 }
+		effectFile = "gfx/FX/progress.lua"
+		horizontal = yes
+	}
+
+	frameAnimatedSpriteType = {
+		name = "GFX_nuke_progress_frame"
+		texturefile = "gfx/interface/nuke_progress_frame.dds"
+		noOfFrames = 2
+		animation_rate_fps = 2
+		looping = yes
+		play_on_show = yes
+		pause_on_loop = 0.0
+		alwaystransparent = yes
+		effectFile = "gfx/FX/buttonstate_blendframes.lua"
+	}
+
+	SpriteType = {
+		name = "GFX_cancel_conversion_button"
+		textureFile = "gfx/interface/cancel_conversion_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_victorypoint_stateview_bg"
+		textureFile = "gfx/interface/victorypoint_stateview_bg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_stateview_resistance_button"
+		textureFile = "gfx/interface/stateview_resistance_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_resistance_icon"
+		textureFile = "gfx/interface/resistance_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_population_icon"
+		textureFile = "gfx/interface/population_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_province_header"
+		textureFile = "gfx/interface/province_header.dds"
+	}
+
+	spriteType = {
+		name = "GFX_modifiers_weather_icons"
+		textureFile = "gfx/interface/modifiers_weather_icons.dds"
+		noOfFrames = 7
+	}
+	
+	spriteType = {
+		name = "GFX_modifiers_terrain_icons"
+		textureFile = "gfx/interface/modifiers_terrain_icons.dds"
+		noOfFrames = 3
+	}
+	
+	spriteType = {
+		name = "GFX_modifiers_mud_icon"
+		textureFile = "gfx/interface/modifiers_mud_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_modifiers_snow_icons"
+		textureFile = "gfx/interface/modifiers_snow_icons.dds"
+		noOfFrames = 2
+	}
+
+	spriteType = {
+		name = "GFX_modifiers_flooded_icon"
+		textureFile = "gfx/interface/modifiers_flooded_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_modifiers_unplanned_offensive_icon"
+		textureFile = "gfx/interface/modifiers_unplanned_offensive_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_impassable_icon"
+		textureFile = "gfx/interface/modifiers_impassable_icon.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_temperature_icons"
+		textureFile = "gfx/interface/temperature_icons.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_convert_industrial_cap_right"
+		textureFile = "gfx/interface/convert_industrial_cap_right.dds"
+	}
+
+	spriteType = {
+		name = "GFX_convert_industrial_cap_left"
+		textureFile = "gfx/interface/convert_industrial_cap_left.dds"
+	}
+
+	spriteType = {
+		name = "GFX_boost_building_button"
+		textureFile = "gfx/interface/boost_building_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_small_box1"
+		textureFile = "gfx/interface/small_box1.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_stateview_bg"
+		textureFile = "gfx/interface/stateview/stateview_bg.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_stateview_resource_transp_bg"
+		textureFile = "gfx/interface/stateview_resource_transp_bg.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_building_entry_stateview"
+		textureFile = "gfx/interface/stateview/building_entry_stateview.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+		
+	spriteType = {
+		name = "GFX_building_standing_entry_stateview"
+		textureFile = "gfx/interface/stateview/building_standing_entry_stateview.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_core_owner_placeholder_bg"
+		textureFile = "gfx/interface/core_owner_placeholder.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_resources_placeholder_bg"
+		textureFile = "gfx/interface/resources_placeholder.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+	
+	spriteType = {
+		name = "GFX_state_resistance"
+		textureFile = "gfx/interface/create_faction_button.dds"
+		effectFile = "gfx/FX/buttonstate_nodowneffect.lua"
+	}
+
+	spriteType = {
+		name = "GFX_buildings_strip"
+		textureFile = "gfx/interface/buildings/building_icon_strip.dds"
+		noOfFrames = 16
+	}
+	
+	spriteType = {
+		name = "GFX_buildings_railway_gun"
+		textureFile = "gfx/interface/buildings/building_railway_gun.dds"
+	}
+
+	spriteType = {
+		name = "GFX_build_slot_bg"
+		textureFile = "gfx/interface/buildings/build_slot_bg.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_no_building"
+		textureFile = "gfx/interface/buildings/building_no_building.dds"
+		noOfFrames = 2
+	}
+	
+	spriteType = {
+		name = "GFX_building_intel_icon"
+		textureFile = "gfx/interface/buildings/building_intel_icon.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_building_status_overlay"
+		textureFile = "gfx/interface/buildings/building_status_overlay.dds"
+		noOfFrames = 3
+	}
+	
+	spriteType = {
+		name = "GFX_building_level_bar"
+		textureFile = "gfx/interface/building_level_bar.dds"
+		noOfFrames = 4
+	}
+
+	spriteType = {
+		name = "GFX_occupation_policy"
+		textureFile = "gfx/interface/occupation_policy.dds"
+		noOfFrames = 4
+	}
+	spriteType = {
+		name = "GFX_occupation_policy_selected"
+		textureFile = "gfx/interface/occupation_policy_selected.dds"
+		noOfFrames = 4
+	}
+
+
+	# TERRAIN		
+	spriteType = {
+		name = "GFX_terrain_default"
+		textureFile = "gfx/interface/terrains/terrain_placeholder.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest"
+		textureFile = "gfx/interface/terrains/terrain_forest.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills"
+		textureFile = "gfx/interface/terrains/terrain_hills.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain"
+		textureFile = "gfx/interface/terrains/terrain_mountain.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains"
+		textureFile = "gfx/interface/terrains/terrain_plains.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban"
+		textureFile = "gfx/interface/terrains/terrain_urban.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle"
+		textureFile = "gfx/interface/terrains/terrain_jungle.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_marsh"
+		textureFile = "gfx/interface/terrains/terrain_marsh.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert"
+		textureFile = "gfx/interface/terrains/terrain_desert.dds"
+	}
+	
+	# TERRAIN WINTER
+	
+	spriteType = {
+		name = "GFX_terrain_forest_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_winter"
+		textureFile = "gfx/interface/terrains/terrain_jungle_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_marsh_winter"
+		textureFile = "gfx/interface/terrains/terrain_marsh_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_winter.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_required_rule"
+		textureFile = "gfx/interface/strait_canal_icon.dds"
+	}
+	
+	
+	### Water Terrain
+	
+	# Water
+	spriteType = {
+		name = "GFX_terrain_water_day"
+		textureFile = "gfx/interface/terrains/terrain_water_day.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_day_rain"
+		textureFile = "gfx/interface/terrains/terrain_water_day_rain.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_day_storm"
+		textureFile = "gfx/interface/terrains/terrain_water_day_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_day_snow"
+		textureFile = "gfx/interface/terrains/terrain_water_day_snow.dds"
+	}
+		
+	spriteType = {
+		name = "GFX_terrain_water_day_snow_storm"
+		textureFile = "gfx/interface/terrains/terrain_water_day_snow_storm.dds"
+	}
+		
+	spriteType = {
+		name = "GFX_terrain_water_night"
+		textureFile = "gfx/interface/terrains/terrain_water_night.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_night_rain"
+		textureFile = "gfx/interface/terrains/terrain_water_night_rain.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_night_storm"
+		textureFile = "gfx/interface/terrains/terrain_water_night_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_night_snow"
+		textureFile = "gfx/interface/terrains/terrain_water_night_snow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_night_snow_storm"
+		textureFile = "gfx/interface/terrains/terrain_water_night_snow_storm.dds"
+	}
+	
+	
+	# Deep Ocean
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_night_rain"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_night_rain.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_night_storm"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_night_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_night_snow_storm"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_night_snow_storm.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_night_snow"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_night_snow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_day"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_day.dds"
+	}
+		
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_day_rain"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_day_rain.dds"
+	}
+		
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_day_storm"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_day_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_day_snow"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_day_snow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_day_snow_storm"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_day_snow_storm.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_deep_ocean_night"
+		textureFile = "gfx/interface/terrains/terrain_deep_ocean_night.dds"
+	}
+	
+	# Shallow Sea
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_night_storm"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_night_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_night_rain"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_night_rain.dds"	
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_night_snow"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_night_snow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_night_snow_storm"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_night_snow_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_day"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_day.dds"
+	}
+		
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_day"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_day.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_day_rain"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_day_rain.dds"
+	}
+		
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_day_storm"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_day_storm.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_day_snow"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_day_snow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_day_snow_storm"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_day_snow_storm.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_night"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_night.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_shallow_sea_rain"
+		textureFile = "gfx/interface/terrains/terrain_shallow_sea_rain.dds"
+	}
+
+	# Archipelago	
+	spriteType = {
+		name = "GFX_terrain_water_fjords_day"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_day.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_fjords_day_rain"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_day_rain.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_water_fjords_day_storm"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_day_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_fjords_day_snow"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_day_snow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_fjords_day_snow_storm"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_day_snow_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_fjords_night"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_night.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_fjords_night_rain"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_night_rain.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_fjords_night_storm"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_night_storm.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_fjords_night_snow"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_night_snow.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_terrain_water_fjords_night_snow_storm"
+		textureFile = "gfx/interface/terrains/terrain_archipelago_night_snow_storm.dds"
+	}
+	
+	
+	###
+	
+	progressbartype = {
+		name = "GFX_damage_bar"
+		color = { 1.0 1.0 1.0 }
+		colortwo = { 1.0 1.0 1.0 }
+		textureFile1 = "gfx/interface/building_damage_bar.dds"
+		textureFile2 = "gfx/interface/building_damage_bar_bg.dds"
+		size = { x = 38 y = 5 }
+		effectFile = "gfx/FX/progress_startend.lua"
+	}
+
+	spriteType = {
+		name = "GFX_nuke_button"
+		textureFile = "gfx/interface/stateview_nuke_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_modifiers_sabotaged_resource"
+		textureFile = "gfx/interface/occupation/sabotaged_resource.dds"
+	}
+	
+	### STATE MODIFIERS ###
+	
+	spriteType = {
+		name = "GFX_modifiers_tur_kemalist_loyalties"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_kemalist_loyalties.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_kemalist_unrest"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_kemalist_unrest.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_kurdish_agitation"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_kurdish_agitation.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_kurdish_fatigue"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_kurdish_fatigue.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_kurdish_rebellion"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_kurdish_rebellion.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_kurdish_separatism"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_kurdish_separatism.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_traditionalist_insurgency"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_traditionalist_insurgency.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_traditionalist_placated"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_traditionalist_placated.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_traditionalist_sedition"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_traditionalist_sedition.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_traditionalist_unrest"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_traditionalist_unrest.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_tur_pan_turkic_propaganda"
+		textureFile = "gfx/interface/state_modifiers/modifiers_tur_pan_turkic_propaganda.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_conscription_exemptions_granted"
+		textureFile = "gfx/interface/state_modifiers/modifiers_conscription_exemptions_granted.dds"
+	}	
+	spriteType = {
+		name = "GFX_modifiers_bul_macedonian_revolutionaries"
+		textureFile = "gfx/interface/state_modifiers/modifiers_bul_macedonian_revolutionaries.dds"
+	}	
+	spriteType = {
+		name = "GFX_modifiers_bul_arranged_bulgarian_occupation"
+		textureFile = "gfx/interface/state_modifiers/modifiers_bul_arranged_bulgarian_occupation.dds"
+	}		
+	spriteType = {
+		name = "GFX_modifiers_bul_arranged_territorial_expansion"
+		textureFile = "gfx/interface/state_modifiers/modifiers_bul_arranged_territorial_expansion.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_SOV_invaders_must_die"
+		textureFile = "gfx/interface/state_modifiers/modifiers_SOV_invaders_must_die.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_increased_metal_production"
+		textureFile = "gfx/interface/state_modifiers/modifiers_increased_metal_production.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_SOV_armored_battery"
+		textureFile = "gfx/interface/state_modifiers/modifiers_SOV_armored_battery.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_SOV_defend_moscow"
+		textureFile = "gfx/interface/state_modifiers/modifiers_SOV_defend_moscow.dds"
+	}
+	spriteType = {
+		name = "GFX_unplanned_offensive"
+		textureFile = "gfx/interface/modifiers_unplanned_offensive_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_generic_bunker_build_speed"
+		textureFile = "gfx/interface/state_modifiers/modifiers_generic_bunker_build_speed.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_generic_military_plans"
+		textureFile = "gfx/interface/state_modifiers/modifiers_generic_military_plans.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_SOV_civilian_labor_in_defense"
+		textureFile = "gfx/interface/state_modifiers/modifiers_SOV_civilian_labor_in_defense.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_SOV_factory_worker_militias"
+		textureFile = "gfx/interface/state_modifiers/modifiers_SOV_factory_worker_militias.dds"
+	}
+	spriteType = {
+		name = "GFX_modifiers_SOV_capital_of_the_tsars"
+		textureFile = "gfx/interface/state_modifiers/modifiers_SOV_capital_of_the_tsars.dds"
+	}
+
+#######################################################################################
+
+	# TERRAIN WINTER
+
+	spriteType = {
+		name = "GFX_terrain_urban_berlin"
+		textureFile = "gfx/interface/terrains/terrain_urban_berlin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_berlin_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_berlin_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_desert_arco_dei_fileni"
+		textureFile = "gfx/interface/terrains/terrain_desert_arco_dei_fileni.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_arco_dei_fileni_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_arco_dei_fileni_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_Jerusalem"
+		textureFile = "gfx/interface/terrains/terrain_desert_Jerusalem.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_Jerusalem_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_Jerusalem_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_hsinking"
+		textureFile = "gfx/interface/terrains/terrain_forest_hsinking.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_hsinking_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_hsinking_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_rastenburg"
+		textureFile = "gfx/interface/terrains/terrain_forest_rastenburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_rastenburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_rastenburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_schorfheide"
+		textureFile = "gfx/interface/terrains/terrain_forest_schorfheide.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_schorfheide_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_schorfheide_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_berchtesgaden"
+		textureFile = "gfx/interface/terrains/terrain_mountain_berchtesgaden.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_berchtesgaden_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_berchtesgaden_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_monte_cassino"
+		textureFile = "gfx/interface/terrains/terrain_mountain_monte_cassino.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_monte_cassino_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_monte_cassino_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_dover"
+		textureFile = "gfx/interface/terrains/terrain_plains_dover.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_dover_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_dover_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_giza"
+		textureFile = "gfx/interface/terrains/terrain_plains_giza.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_giza_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_giza_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_iwo_jima"
+		textureFile = "gfx/interface/terrains/terrain_plains_iwo_jima.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_iwo_jima_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_iwo_jima_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_naha"
+		textureFile = "gfx/interface/terrains/terrain_plains_naha.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_naha_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_naha_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_chuuk"
+		textureFile = "gfx/interface/terrains/terrain_plains_chuuk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_chuuk_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_chuuk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_pearl_harbor"
+		textureFile = "gfx/interface/terrains/terrain_plains_pearl_harbor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_pearl_harbor_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_pearl_harbor_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_malta"
+		textureFile = "gfx/interface/terrains/terrain_plains_malta.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_malta_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_malta_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_gibraltar"
+		textureFile = "gfx/interface/terrains/terrain_hills_gibraltar.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_gibraltar_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_gibraltar_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_athens"
+		textureFile = "gfx/interface/terrains/terrain_urban_athens.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_athens_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_athens_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_baku"
+		textureFile = "gfx/interface/terrains/terrain_urban_baku.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_baku_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_baku_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_beiping"
+		textureFile = "gfx/interface/terrains/terrain_urban_beiping.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_beiping_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_beiping_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_boston"
+		textureFile = "gfx/interface/terrains/terrain_urban_boston.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_boston_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_boston_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_chicago"
+		textureFile = "gfx/interface/terrains/terrain_urban_chicago.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_chicago_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_chicago_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_danzig"
+		textureFile = "gfx/interface/terrains/terrain_urban_danzig.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_danzig_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_danzig_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_dresden"
+		textureFile = "gfx/interface/terrains/terrain_urban_dresden.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_dresden_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_dresden_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_leningrad"
+		textureFile = "gfx/interface/terrains/terrain_urban_leningrad.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_leningrad_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_leningrad_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_london"
+		textureFile = "gfx/interface/terrains/terrain_urban_london.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_london_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_london_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_los_angeles"
+		textureFile = "gfx/interface/terrains/terrain_urban_los_angeles.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_los_angeles_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_los_angeles_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_manila"
+		textureFile = "gfx/interface/terrains/terrain_urban_manila.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_manila_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_manila_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_moscow"
+		textureFile = "gfx/interface/terrains/terrain_urban_moscow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_moscow_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_moscow_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_new_york"
+		textureFile = "gfx/interface/terrains/terrain_urban_new_york.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_new_york_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_new_york_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_berlin"
+		textureFile = "gfx/interface/terrains/terrain_urban_berlin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_berlin_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_berlin_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_osaka"
+		textureFile = "gfx/interface/terrains/terrain_urban_osaka.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_osaka_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_osaka_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_paris"
+		textureFile = "gfx/interface/terrains/terrain_urban_paris.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_paris_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_paris_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_praha"
+		textureFile = "gfx/interface/terrains/terrain_urban_praha.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_praha_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_praha_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_rome"
+		textureFile = "gfx/interface/terrains/terrain_urban_rome.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_rome_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_rome_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_sevastopol"
+		textureFile = "gfx/interface/terrains/terrain_urban_sevastopol.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_sevastopol_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_sevastopol_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_shanghai"
+		textureFile = "gfx/interface/terrains/terrain_urban_shanghai.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_shanghai_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_shanghai_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_stalingrad"
+		textureFile = "gfx/interface/terrains/terrain_urban_stalingrad.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_stalingrad_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_stalingrad_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_sydney"
+		textureFile = "gfx/interface/terrains/terrain_urban_sydney.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_sydney_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_sydney_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_tokyo"
+		textureFile = "gfx/interface/terrains/terrain_urban_tokyo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_tokyo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_tokyo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_vienna"
+		textureFile = "gfx/interface/terrains/terrain_urban_vienna.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_vienna_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_vienna_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_washington"
+		textureFile = "gfx/interface/terrains/terrain_urban_washington.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_washington_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_washington_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_bangkok"
+		textureFile = "gfx/interface/terrains/terrain_urban_bangkok.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_bangkok_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_bangkok_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_dairen"
+		textureFile = "gfx/interface/terrains/terrain_urban_dairen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_dairen_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_dairen_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_hiroshima"
+		textureFile = "gfx/interface/terrains/terrain_urban_hiroshima.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_hiroshima_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_hiroshima_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_hongkong"
+		textureFile = "gfx/interface/terrains/terrain_urban_hongkong.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_hongkong_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_hongkong_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kyoto"
+		textureFile = "gfx/interface/terrains/terrain_urban_kyoto.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kyoto_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_kyoto_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_nanjing"
+		textureFile = "gfx/interface/terrains/terrain_urban_nanjing.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_nanjing_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_nanjing_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_singapore"
+		textureFile = "gfx/interface/terrains/terrain_urban_singapore.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_singapore_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_singapore_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_breslau"
+		textureFile = "gfx/interface/terrains/terrain_urban_breslau.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_breslau_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_breslau_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_cairo"
+		textureFile = "gfx/interface/terrains/terrain_urban_cairo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_cairo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_cairo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_leipzig"
+		textureFile = "gfx/interface/terrains/terrain_urban_leipzig.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_leipzig_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_leipzig_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_mumbai"
+		textureFile = "gfx/interface/terrains/terrain_urban_mumbai.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_mumbai_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_mumbai_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_munich"
+		textureFile = "gfx/interface/terrains/terrain_urban_munich.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_munich_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_munich_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_nagoya"
+		textureFile = "gfx/interface/terrains/terrain_urban_nagoya.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_nagoya_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_nagoya_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_nurnberg"
+		textureFile = "gfx/interface/terrains/terrain_urban_nurnberg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_nurnberg_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_nurnberg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_stettin"
+		textureFile = "gfx/interface/terrains/terrain_urban_stettin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_stettin_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_stettin_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_guadalcanal"
+		textureFile = "gfx/interface/terrains/terrain_jungle_guadalcanal.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_guadalcanal_winter"
+		textureFile = "gfx/interface/terrains/terrain_jungle_guadalcanal_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_rabaul"
+		textureFile = "gfx/interface/terrains/terrain_jungle_rabaul.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_rabaul_winter"
+		textureFile = "gfx/interface/terrains/terrain_jungle_rabaul_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_marsh_wilhelmshaven"
+		textureFile = "gfx/interface/terrains/terrain_marsh_wilhelmshaven.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_marsh_wilhelmshaven_winter"
+		textureFile = "gfx/interface/terrains/terrain_marsh_wilhelmshaven_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_midway"
+		textureFile = "gfx/interface/terrains/terrain_plains_midway.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_midway_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_midway_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_venice"
+		textureFile = "gfx/interface/terrains/terrain_plains_venice.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_venice_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_venice_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_dortmund"
+		textureFile = "gfx/interface/terrains/terrain_urban_dortmund.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_dortmund_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_dortmund_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_essen"
+		textureFile = "gfx/interface/terrains/terrain_urban_essen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_essen_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_essen_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_frankfurt"
+		textureFile = "gfx/interface/terrains/terrain_urban_frankfurt.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_frankfurt_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_frankfurt_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_hamburg"
+		textureFile = "gfx/interface/terrains/terrain_urban_hamburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_hamburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_hamburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kiel"
+		textureFile = "gfx/interface/terrains/terrain_urban_kiel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kiel_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_kiel_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_koln"
+		textureFile = "gfx/interface/terrains/terrain_urban_koln.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_koln_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_koln_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_milano"
+		textureFile = "gfx/interface/terrains/terrain_urban_milano.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_milano_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_milano_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_taranto"
+		textureFile = "gfx/interface/terrains/terrain_urban_taranto.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_taranto_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_taranto_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_tripoli"
+		textureFile = "gfx/interface/terrains/terrain_urban_tripoli.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_tripoli_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_tripoli_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_tunis"
+		textureFile = "gfx/interface/terrains/terrain_urban_tunis.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_tunis_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_tunis_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_antwerpen"
+		textureFile = "gfx/interface/terrains/terrain_plains_antwerpen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_antwerpen_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_antwerpen_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_murmansk"
+		textureFile = "gfx/interface/terrains/terrain_plains_murmansk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_murmansk_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_murmansk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_baotou"
+		textureFile = "gfx/interface/terrains/terrain_desert_baotou.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_baotou_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_baotou_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_darwin"
+		textureFile = "gfx/interface/terrains/terrain_forest_darwin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_darwin_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_darwin_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_narva"
+		textureFile = "gfx/interface/terrains/terrain_forest_narva.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_narva_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_narva_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_sarajevo"
+		textureFile = "gfx/interface/terrains/terrain_hills_sarajevo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_sarajevo_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_sarajevo_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_amsterdam"
+		textureFile = "gfx/interface/terrains/terrain_urban_amsterdam.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_amsterdam_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_amsterdam_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_brussels"
+		textureFile = "gfx/interface/terrains/terrain_urban_brussels.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_brussels_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_brussels_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_bukarest"
+		textureFile = "gfx/interface/terrains/terrain_urban_bukarest.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_bukarest_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_bukarest_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_guangdong"
+		textureFile = "gfx/interface/terrains/terrain_urban_guangdong.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_guangdong_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_guangdong_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_helsinki"
+		textureFile = "gfx/interface/terrains/terrain_urban_helsinki.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_helsinki_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_helsinki_winter.dds"
+	}
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Istanbul"
+		textureFile = "gfx/interface/terrains/terrain_urban_Istanbul.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Istanbul_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Istanbul_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kharkov"
+		textureFile = "gfx/interface/terrains/terrain_urban_kharkov.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kharkov_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_kharkov_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kiev"
+		textureFile = "gfx/interface/terrains/terrain_urban_kiev.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kiev_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_kiev_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_konigsberg"
+		textureFile = "gfx/interface/terrains/terrain_urban_konigsberg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_konigsberg_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_konigsberg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_krakow"
+		textureFile = "gfx/interface/terrains/terrain_urban_krakow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_krakow_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_krakow_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_liverpool"
+		textureFile = "gfx/interface/terrains/terrain_urban_liverpool.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_liverpool_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_liverpool_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_minsk"
+		textureFile = "gfx/interface/terrains/terrain_urban_minsk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_minsk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_minsk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_mukden"
+		textureFile = "gfx/interface/terrains/terrain_urban_mukden.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_mukden_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_mukden_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_riga"
+		textureFile = "gfx/interface/terrains/terrain_urban_riga.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_riga_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_riga_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Rostov"
+		textureFile = "gfx/interface/terrains/terrain_urban_Rostov.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Rostov_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Rostov_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_rotterdam"
+		textureFile = "gfx/interface/terrains/terrain_urban_rotterdam.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_rotterdam_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_rotterdam_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_san_francisco"
+		textureFile = "gfx/interface/terrains/terrain_urban_san_francisco.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_san_francisco_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_san_francisco_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_smolensk"
+		textureFile = "gfx/interface/terrains/terrain_urban_smolensk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_smolensk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_smolensk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_tallinn"
+		textureFile = "gfx/interface/terrains/terrain_urban_tallinn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_tallinn_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_tallinn_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tianjin"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tianjin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tianjin_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tianjin_winter.dds"
+	}
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tsingtao"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tsingtao.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tsingtao_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tsingtao_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Vitebsk"
+		textureFile = "gfx/interface/terrains/terrain_urban_Vitebsk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Vitebsk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Vitebsk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Warszawa"
+		textureFile = "gfx/interface/terrains/terrain_urban_Warszawa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Warszawa_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Warszawa_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_orel"
+		textureFile = "gfx/interface/terrains/terrain_urban_orel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_orel_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_orel_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_amiens"
+		textureFile = "gfx/interface/terrains/terrain_plains_amiens.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_amiens_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_amiens_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_ploiesti"
+		textureFile = "gfx/interface/terrains/terrain_plains_ploiesti.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_ploiesti_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_ploiesti_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_rouen"
+		textureFile = "gfx/interface/terrains/terrain_plains_rouen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_rouen_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_rouen_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_taipei"
+		textureFile = "gfx/interface/terrains/terrain_plains_taipei.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_taipei_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_taipei_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_mountain_capetown"
+		textureFile = "gfx/interface/terrains/terrain_mountain_capetown.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_capetown_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_capetown_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_narvik"
+		textureFile = "gfx/interface/terrains/terrain_mountain_narvik.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_narvik_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_narvik_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_hills_mont_st_michel"
+		textureFile = "gfx/interface/terrains/terrain_hills_mont_st_michel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mont_st_michel_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_mont_st_michel_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_sapporo"
+		textureFile = "gfx/interface/terrains/terrain_hills_sapporo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_sapporo_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_sapporo_winter.dds"
+	}
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_bordeaux"
+		textureFile = "gfx/interface/terrains/terrain_urban_bordeaux.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_bordeaux_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_bordeaux_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_budapest"
+		textureFile = "gfx/interface/terrains/terrain_urban_budapest.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_budapest_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_budapest_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_buenos_aires"
+		textureFile = "gfx/interface/terrains/terrain_urban_buenos_aires.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_buenos_aires_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_buenos_aires_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_harbin"
+		textureFile = "gfx/interface/terrains/terrain_urban_harbin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_harbin_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_harbin_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_jinan"
+		textureFile = "gfx/interface/terrains/terrain_urban_jinan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_jinan_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_jinan_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_lyon"
+		textureFile = "gfx/interface/terrains/terrain_urban_lyon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_lyon_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_lyon_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_madrid"
+		textureFile = "gfx/interface/terrains/terrain_urban_madrid.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_madrid_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_madrid_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_magdeburg"
+		textureFile = "gfx/interface/terrains/terrain_urban_magdeburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_magdeburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_magdeburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_marseille"
+		textureFile = "gfx/interface/terrains/terrain_urban_marseille.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_marseille_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_marseille_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_nice"
+		textureFile = "gfx/interface/terrains/terrain_urban_nice.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_nice_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_nice_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_oslo"
+		textureFile = "gfx/interface/terrains/terrain_urban_oslo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_oslo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_oslo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_rio_dejaneiro"
+		textureFile = "gfx/interface/terrains/terrain_urban_rio_dejaneiro.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_rio_dejaneiro_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_rio_dejaneiro_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_strasburg"
+		textureFile = "gfx/interface/terrains/terrain_urban_strasburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_strasburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_strasburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_copenhagen"
+		textureFile = "gfx/interface/terrains/terrain_urban_copenhagen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_copenhagen_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_copenhagen_winter.dds"
+	}
+
+
+
+	spriteType = {
+		name = "GFX_terrain_mountain_gran_sasso"
+		textureFile = "gfx/interface/terrains/terrain_mountain_gran_sasso.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_gran_sasso_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_gran_sasso_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_nagasaki"
+		textureFile = "gfx/interface/terrains/terrain_plains_nagasaki.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_nagasaki_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_nagasaki_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_quebec"
+		textureFile = "gfx/interface/terrains/terrain_plains_quebec.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_quebec_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_quebec_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_desert_potala_palace"
+		textureFile = "gfx/interface/terrains/terrain_desert_potala_palace.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_potala_palace_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_potala_palace_winter.dds"
+	}
+
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_alexadria"
+		textureFile = "gfx/interface/terrains/terrain_urban_alexadria.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_alexadria_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_alexadria_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kolkata"
+		textureFile = "gfx/interface/terrains/terrain_urban_kolkata.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kolkata_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_kolkata_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_melbourne"
+		textureFile = "gfx/interface/terrains/terrain_urban_melbourne.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_melbourne_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_melbourne_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_newdelhi"
+		textureFile = "gfx/interface/terrains/terrain_urban_newdelhi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_newdelhi_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_newdelhi_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Rangoon"
+		textureFile = "gfx/interface/terrains/terrain_urban_Rangoon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Rangoon_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Rangoon_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_yawata"
+		textureFile = "gfx/interface/terrains/terrain_urban_yawata.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_yawata_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_yawata_winter.dds"
+	}
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_bratislava"
+		textureFile = "gfx/interface/terrains/terrain_plains_bratislava.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_bratislava_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_bratislava_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Columbus"
+		textureFile = "gfx/interface/terrains/terrain_plains_Columbus.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Columbus_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Columbus_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_scapaflow"
+		textureFile = "gfx/interface/terrains/terrain_plains_scapaflow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_scapaflow_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_scapaflow_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Wewelsburg"
+		textureFile = "gfx/interface/terrains/terrain_plains_Wewelsburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Wewelsburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Wewelsburg_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_forest_Nagykanizsa"
+		textureFile = "gfx/interface/terrains/terrain_forest_Nagykanizsa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Nagykanizsa_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Nagykanizsa_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_zossen"
+		textureFile = "gfx/interface/terrains/terrain_forest_zossen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_zossen_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_zossen_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_marsh_neworleans"
+		textureFile = "gfx/interface/terrains/terrain_marsh_neworleans.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_marsh_neworleans_winter"
+		textureFile = "gfx/interface/terrains/terrain_marsh_neworleans_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_baghdad"
+		textureFile = "gfx/interface/terrains/terrain_urban_baghdad.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_alexadria_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_alexadria_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_birmingham"
+		textureFile = "gfx/interface/terrains/terrain_urban_birmingham.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_birmingham_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_birmingham_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Brest"
+		textureFile = "gfx/interface/terrains/terrain_urban_Brest.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Brest_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Brest_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Cherbourg"
+		textureFile = "gfx/interface/terrains/terrain_urban_Cherbourg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Cherbourg_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Cherbourg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Edinburgh"
+		textureFile = "gfx/interface/terrains/terrain_urban_Edinburgh.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Edinburgh_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Edinburgh_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_philadelphia"
+		textureFile = "gfx/interface/terrains/terrain_urban_philadelphia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_philadelphia_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_philadelphia_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kaunas"
+		textureFile = "gfx/interface/terrains/terrain_urban_kaunas.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_kaunas_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_kaunas_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_manchester"
+		textureFile = "gfx/interface/terrains/terrain_urban_manchester.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_manchester_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_manchester_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_naples"
+		textureFile = "gfx/interface/terrains/terrain_urban_naples.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_naples_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_naples_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Palermo"
+		textureFile = "gfx/interface/terrains/terrain_urban_Palermo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Palermo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Palermo_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_vilnius"
+		textureFile = "gfx/interface/terrains/terrain_urban_vilnius.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_vilnius_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_vilnius_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_forest_Adlerhorst"
+		textureFile = "gfx/interface/terrains/terrain_forest_Adlerhorst.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Adlerhorst_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Adlerhorst_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Koblenz"
+		textureFile = "gfx/interface/terrains/terrain_forest_Koblenz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Koblenz_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Koblenz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Ordensburg_Vogelsang_Eifel"
+		textureFile = "gfx/interface/terrains/terrain_forest_Ordensburg_Vogelsang_Eifel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Ordensburg_Vogelsang_Eifel_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Ordensburg_Vogelsang_Eifel_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Schloss_Cecilienhof_Potsdam"
+		textureFile = "gfx/interface/terrains/terrain_forest_Schloss_Cecilienhof_Potsdam.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Schloss_Cecilienhof_Potsdam_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Schloss_Cecilienhof_Potsdam_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Schweinfurt"
+		textureFile = "gfx/interface/terrains/terrain_forest_Schweinfurt.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Schweinfurt_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Schweinfurt_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Walhalla"
+		textureFile = "gfx/interface/terrains/terrain_forest_Walhalla.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Walhalla_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Walhalla_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_hills_Braunau"
+		textureFile = "gfx/interface/terrains/terrain_hills_Braunau.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Braunau_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Braunau_winter.dds"
+	}
+
+
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Garmisch"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Garmisch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Garmisch_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Garmisch_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Prora"
+		textureFile = "gfx/interface/terrains/terrain_plains_Prora.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Prora_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Prora_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Remagen"
+		textureFile = "gfx/interface/terrains/terrain_plains_Remagen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Remagen_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Remagen_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_rostock"
+		textureFile = "gfx/interface/terrains/terrain_plains_rostock.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_rostock_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_rostock_winter.dds"
+	}
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Aachen"
+		textureFile = "gfx/interface/terrains/terrain_plains_Aachen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Aachen_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Aachen_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Arkhangelsk"
+		textureFile = "gfx/interface/terrains/terrain_plains_Arkhangelsk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Arkhangelsk_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Arkhangelsk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Atlanta"
+		textureFile = "gfx/interface/terrains/terrain_plains_Atlanta.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Atlanta_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Atlanta_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Baltimore"
+		textureFile = "gfx/interface/terrains/terrain_plains_Baltimore.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Baltimore_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Baltimore_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Dallas"
+		textureFile = "gfx/interface/terrains/terrain_plains_Dallas.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Dallas_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Dallas_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Dankerque"
+		textureFile = "gfx/interface/terrains/terrain_plains_Dankerque.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Dankerque_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Dankerque_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Indianapolis"
+		textureFile = "gfx/interface/terrains/terrain_plains_Indianapolis.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Indianapolis_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Indianapolis_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Lubeck"
+		textureFile = "gfx/interface/terrains/terrain_plains_Lubeck.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Lubeck_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Lubeck_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_memel"
+		textureFile = "gfx/interface/terrains/terrain_plains_memel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_memel_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_memel_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Munster"
+		textureFile = "gfx/interface/terrains/terrain_plains_Munster.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Munster_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Munster_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Norfolk"
+		textureFile = "gfx/interface/terrains/terrain_plains_Norfolk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Norfolk_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Norfolk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Oranienburg"
+		textureFile = "gfx/interface/terrains/terrain_plains_Oranienburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Oranienburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Oranienburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Toyohara"
+		textureFile = "gfx/interface/terrains/terrain_plains_Toyohara.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Toyohara_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Toyohara_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Braunschweig"
+		textureFile = "gfx/interface/terrains/terrain_plains_Braunschweig.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Braunschweig_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Braunschweig_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Kolberg"
+		textureFile = "gfx/interface/terrains/terrain_plains_Kolberg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Kolberg_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Kolberg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Mainz"
+		textureFile = "gfx/interface/terrains/terrain_plains_Mainz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Mainz_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Mainz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Orleans"
+		textureFile = "gfx/interface/terrains/terrain_plains_Orleans.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Orleans_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Orleans_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Wake"
+		textureFile = "gfx/interface/terrains/terrain_plains_Wake.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Wake_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Wake_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Wurzburg"
+		textureFile = "gfx/interface/terrains/terrain_plains_Wurzburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Wurzburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Wurzburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Zara"
+		textureFile = "gfx/interface/terrains/terrain_plains_Zara.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Zara_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Zara_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_caen"
+		textureFile = "gfx/interface/terrains/terrain_plains_caen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_caen_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_caen_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Arnhem"
+		textureFile = "gfx/interface/terrains/terrain_plains_Arnhem.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Arnhem_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Arnhem_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Coventry"
+		textureFile = "gfx/interface/terrains/terrain_plains_Coventry.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Coventry_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Coventry_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Attu"
+		textureFile = "gfx/interface/terrains/terrain_plains_Attu.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Attu_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Attu_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Panama_Canal"
+		textureFile = "gfx/interface/terrains/terrain_plains_Panama_Canal.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Panama_Canal_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Panama_Canal_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_PortSaid"
+		textureFile = "gfx/interface/terrains/terrain_plains_PortSaid.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_PortSaid_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_PortSaid_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Saipan"
+		textureFile = "gfx/interface/terrains/terrain_plains_Saipan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Saipan_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Saipan_winter.dds"
+	}
+
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Chengde"
+		textureFile = "gfx/interface/terrains/terrain_plains_Chengde.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Chengde_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Chengde_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Peleliu"
+		textureFile = "gfx/interface/terrains/terrain_plains_Peleliu.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Peleliu_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Peleliu_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Qiqihar"
+		textureFile = "gfx/interface/terrains/terrain_plains_Qiqihar.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Qiqihar_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Qiqihar_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Rota"
+		textureFile = "gfx/interface/terrains/terrain_plains_Rota.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Rota_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Rota_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Shanhaiguan"
+		textureFile = "gfx/interface/terrains/terrain_plains_Shanhaiguan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Shanhaiguan_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Shanhaiguan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Tinian"
+		textureFile = "gfx/interface/terrains/terrain_plains_Tinian.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Tinian_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Tinian_winter.dds"
+	}
+
+###
+
+	spriteType = {
+		name = "GFX_terrain_plains_Basra"
+		textureFile = "gfx/interface/terrains/terrain_plains_Basra.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Basra_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Basra_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Christchurch"
+		textureFile = "gfx/interface/terrains/terrain_plains_Christchurch.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Christchurch_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Christchurch_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Dutch_Harbor"
+		textureFile = "gfx/interface/terrains/terrain_plains_Dutch_Harbor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Dutch_Harbor_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Dutch_Harbor_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Nijmegen"
+		textureFile = "gfx/interface/terrains/terrain_plains_Nijmegen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Nijmegen_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Nijmegen_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Odense"
+		textureFile = "gfx/interface/terrains/terrain_plains_Odense.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Odense_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Odense_winter.dds"
+	}
+###
+
+	spriteType = {
+		name = "GFX_terrain_plains_Addu"
+		textureFile = "gfx/interface/terrains/terrain_plains_Addu.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Addu_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Addu_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_CapGris"
+		textureFile = "gfx/interface/terrains/terrain_plains_CapGris.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_CapGris_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_CapGris_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Dieppe"
+		textureFile = "gfx/interface/terrains/terrain_plains_Dieppe.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Dieppe_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Dieppe_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Montevideo"
+		textureFile = "gfx/interface/terrains/terrain_plains_Montevideo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Montevideo_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Montevideo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Trincomalee"
+		textureFile = "gfx/interface/terrains/terrain_plains_Trincomalee.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Trincomalee_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Trincomalee_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Gulangyu"
+		textureFile = "gfx/interface/terrains/terrain_plains_Gulangyu.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Gulangyu_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Gulangyu_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Regensburg"
+		textureFile = "gfx/interface/terrains/terrain_plains_Regensburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Regensburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Regensburg_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_plains_Bataan"
+		textureFile = "gfx/interface/terrains/terrain_plains_Bataan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Bataan_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Bataan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Guam"
+		textureFile = "gfx/interface/terrains/terrain_plains_Guam.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Guam_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Guam_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Pretria"
+		textureFile = "gfx/interface/terrains/terrain_plains_Pretria.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Pretria_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Pretria_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Welwel"
+		textureFile = "gfx/interface/terrains/terrain_plains_Welwel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_plains_Welwel_winter"
+		textureFile = "gfx/interface/terrains/terrain_plains_Welwel_winter.dds"
+	}
+
+
+
+	spriteType = {
+		name = "GFX_terrain_desert_AbuSimbel"
+		textureFile = "gfx/interface/terrains/terrain_desert_AbuSimbel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_AbuSimbel_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_AbuSimbel_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_Konya"
+		textureFile = "gfx/interface/terrains/terrain_desert_Konya.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_Konya_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_Konya_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_Luxor"
+		textureFile = "gfx/interface/terrains/terrain_desert_Luxor.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_Luxor_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_Luxor_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_Leyte"
+		textureFile = "gfx/interface/terrains/terrain_desert_Leyte.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_desert_Leyte_winter"
+		textureFile = "gfx/interface/terrains/terrain_desert_Leyte_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_hills_Heraklion"
+		textureFile = "gfx/interface/terrains/terrain_hills_Heraklion.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Heraklion_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Heraklion_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_SanDiego"
+		textureFile = "gfx/interface/terrains/terrain_hills_SanDiego.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_SanDiego_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_SanDiego_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_hills_pescara"
+		textureFile = "gfx/interface/terrains/terrain_hills_pescara.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_pescara_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_pescara_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Ulm"
+		textureFile = "gfx/interface/terrains/terrain_hills_Ulm.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Ulm_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Ulm_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Benghazi"
+		textureFile = "gfx/interface/terrains/terrain_hills_Benghazi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Benghazi_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Benghazi_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Predappio"
+		textureFile = "gfx/interface/terrains/terrain_hills_Predappio.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Predappio_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Predappio_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Shijiazhuang"
+		textureFile = "gfx/interface/terrains/terrain_hills_Shijiazhuang.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Shijiazhuang_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Shijiazhuang_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Zunyi"
+		textureFile = "gfx/interface/terrains/terrain_hills_Zunyi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Zunyi_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Zunyi_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Guihua"
+		textureFile = "gfx/interface/terrains/terrain_hills_Guihua.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Guihua_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Guihua_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Manzhouli"
+		textureFile = "gfx/interface/terrains/terrain_hills_Manzhouli.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Manzhouli_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Manzhouli_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Bergen"
+		textureFile = "gfx/interface/terrains/terrain_hills_Bergen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Bergen_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Bergen_winter.dds"
+	}
+###
+
+	spriteType = {
+		name = "GFX_terrain_hills_Anzio"
+		textureFile = "gfx/interface/terrains/terrain_hills_Anzio.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Anzio_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Anzio_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Columbo"
+		textureFile = "gfx/interface/terrains/terrain_hills_Columbo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Columbo_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Columbo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Kunming"
+		textureFile = "gfx/interface/terrains/terrain_hills_Kunming.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Kunming_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Kunming_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Niangziguan"
+		textureFile = "gfx/interface/terrains/terrain_hills_Niangziguan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Niangziguan_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Niangziguan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Trondheim"
+		textureFile = "gfx/interface/terrains/terrain_hills_Trondheim.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Trondheim_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Trondheim_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Penang"
+		textureFile = "gfx/interface/terrains/terrain_hills_Penang.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_hills_Penang_winter"
+		textureFile = "gfx/interface/terrains/terrain_hills_Penang_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_jungle_KualaLumpur"
+		textureFile = "gfx/interface/terrains/terrain_jungle_KualaLumpur.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_KualaLumpur_winter"
+		textureFile = "gfx/interface/terrains/terrain_jungle_KualaLumpur_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_jungle_palembang"
+		textureFile = "gfx/interface/terrains/terrain_jungle_palembang.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_palembang_winter"
+		textureFile = "gfx/interface/terrains/terrain_jungle_palembang_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_Port_Moresby"
+		textureFile = "gfx/interface/terrains/terrain_jungle_Port_Moresby.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_Port_Moresby_winter"
+		textureFile = "gfx/interface/terrains/terrain_jungle_Port_Moresby_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_DiegoSuarez"
+		textureFile = "gfx/interface/terrains/terrain_jungle_DiegoSuarez.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_DiegoSuarez_winter"
+		textureFile = "gfx/interface/terrains/terrain_jungle_DiegoSuarez_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_Medan"
+		textureFile = "gfx/interface/terrains/terrain_jungle_Medan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_jungle_Medan_winter"
+		textureFile = "gfx/interface/terrains/terrain_jungle_Medan_winter.dds"
+	}
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_forest_Kustrin"
+		textureFile = "gfx/interface/terrains/terrain_forest_Kustrin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Kustrin_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Kustrin_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_VelikieLuki"
+		textureFile = "gfx/interface/terrains/terrain_forest_VelikieLuki.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_VelikieLuki_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_VelikieLuki_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_forest_brest"
+		textureFile = "gfx/interface/terrains/terrain_forest_brest.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_brest_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_brest_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Eindhoven"
+		textureFile = "gfx/interface/terrains/terrain_forest_Eindhoven.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Eindhoven_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Eindhoven_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Kassel"
+		textureFile = "gfx/interface/terrains/terrain_forest_Kassel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Kassel_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Kassel_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Salzburg"
+		textureFile = "gfx/interface/terrains/terrain_forest_Salzburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Salzburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Salzburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Viipuri"
+		textureFile = "gfx/interface/terrains/terrain_forest_Viipuri.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Viipuri_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Viipuri_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Heihe"
+		textureFile = "gfx/interface/terrains/terrain_forest_Heihe.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Heihe_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Heihe_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Bastogne"
+		textureFile = "gfx/interface/terrains/terrain_forest_Bastogne.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Bastogne_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Bastogne_winter.dds"
+	}
+###
+
+	spriteType = {
+		name = "GFX_terrain_forest_Kiruna"
+		textureFile = "gfx/interface/terrains/terrain_forest_Kiruna.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Kiruna_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Kiruna_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Liepaja"
+		textureFile = "gfx/interface/terrains/terrain_forest_Liepaja.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Liepaja_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Liepaja_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Saarbrucken"
+		textureFile = "gfx/interface/terrains/terrain_forest_Saarbrucken.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Saarbrucken_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Saarbrucken_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Macau"
+		textureFile = "gfx/interface/terrains/terrain_forest_Macau.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Macau_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Macau_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Mandalay"
+		textureFile = "gfx/interface/terrains/terrain_forest_Mandalay.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Mandalay_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Mandalay_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Linz"
+		textureFile = "gfx/interface/terrains/terrain_forest_Linz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Linz_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Linz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Luxemburg"
+		textureFile = "gfx/interface/terrains/terrain_forest_Luxemburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_forest_Luxemburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_forest_Luxemburg_winter.dds"
+	}
+
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_mountain_MexcoCity"
+		textureFile = "gfx/interface/terrains/terrain_mountain_MexcoCity.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_MexcoCity_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_MexcoCity_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Yenan"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Yenan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Yenan_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Yenan_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Freiburg"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Freiburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Freiburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Freiburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Anman"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Anman.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Anman_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Anman_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Tobruk"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Tobruk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Tobruk_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Tobruk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Mount_Elbrus"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Mount_Elbrus.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Mount_Elbrus_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Mount_Elbrus_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_salween_river_bridge"
+		textureFile = "gfx/interface/terrains/terrain_mountain_salween_river_bridge.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_salween_river_bridge_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_salween_river_bridge_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Taiyuan"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Taiyuan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Taiyuan_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Taiyuan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Messina"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Messina.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Messina_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Messina_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Salo"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Salo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Salo_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Salo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Addis_Ababa"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Addis_Ababa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Addis_Ababa_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Addis_Ababa_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Asmara"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Asmara.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Asmara_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Asmara_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Kabul"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Kabul.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_mountain_Kabul_winter"
+		textureFile = "gfx/interface/terrains/terrain_mountain_Kabul_winter.dds"
+	}
+
+
+
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_marsh_Miami"
+		textureFile = "gfx/interface/terrains/terrain_marsh_Miami.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_marsh_Miami_winter"
+		textureFile = "gfx/interface/terrains/terrain_marsh_Miami_winter.dds"
+	}
+
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Barcelona"
+		textureFile = "gfx/interface/terrains/terrain_urban_Barcelona.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Barcelona_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Barcelona_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Beograd"
+		textureFile = "gfx/interface/terrains/terrain_urban_Beograd.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Beograd_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Beograd_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Casablanca"
+		textureFile = "gfx/interface/terrains/terrain_urban_Casablanca.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Casablanca_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Casablanca_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Cleveland"
+		textureFile = "gfx/interface/terrains/terrain_urban_Cleveland.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Cleveland_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Cleveland_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Detroit"
+		textureFile = "gfx/interface/terrains/terrain_urban_Detroit.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Detroit_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Detroit_winter.dds"
+	}
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lisboa"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lisboa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lisboa_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lisboa_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Newark"
+		textureFile = "gfx/interface/terrains/terrain_urban_Newark.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Newark_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Newark_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ottawa"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ottawa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ottawa_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ottawa_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_saigon"
+		textureFile = "gfx/interface/terrains/terrain_urban_saigon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_saigon_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_saigon_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Seattle"
+		textureFile = "gfx/interface/terrains/terrain_urban_Seattle.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Seattle_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Seattle_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_StLouis"
+		textureFile = "gfx/interface/terrains/terrain_urban_StLouis.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_StLouis_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_StLouis_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Stockholm"
+		textureFile = "gfx/interface/terrains/terrain_urban_Stockholm.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Stockholm_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Stockholm_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tehran"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tehran.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tehran_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tehran_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Vladivostok"
+		textureFile = "gfx/interface/terrains/terrain_urban_Vladivostok.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Vladivostok_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Vladivostok_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_zagreb"
+		textureFile = "gfx/interface/terrains/terrain_urban_zagreb.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_zagreb_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_zagreb_winter.dds"
+	}
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ankara"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ankara.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ankara_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ankara_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bremen"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bremen.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bremen_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bremen_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Chongqing"
+		textureFile = "gfx/interface/terrains/terrain_urban_Chongqing.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Chongqing_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Chongqing_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Wuhan"
+		textureFile = "gfx/interface/terrains/terrain_urban_Wuhan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Wuhan_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Wuhan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lwow"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lwow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lwow_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lwow_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Stuttgart"
+		textureFile = "gfx/interface/terrains/terrain_urban_Stuttgart.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Stuttgart_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Stuttgart_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Torino"
+		textureFile = "gfx/interface/terrains/terrain_urban_Torino.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Torino_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Torino_winter.dds"
+	}
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Aleppo"
+		textureFile = "gfx/interface/terrains/terrain_urban_Aleppo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Aleppo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Aleppo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Damascus"
+		textureFile = "gfx/interface/terrains/terrain_urban_Damascus.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Damascus_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Damascus_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Dublin"
+		textureFile = "gfx/interface/terrains/terrain_urban_Dublin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Dublin_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Dublin_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Keijo"
+		textureFile = "gfx/interface/terrains/terrain_urban_Keijo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Keijo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Keijo_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kursk"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kursk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kursk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kursk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Sendai"
+		textureFile = "gfx/interface/terrains/terrain_urban_Sendai.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Sendai_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Sendai_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Sofia"
+		textureFile = "gfx/interface/terrains/terrain_urban_Sofia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Sofia_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Sofia_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Algiers"
+		textureFile = "gfx/interface/terrains/terrain_urban_Algiers.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Algiers_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Algiers_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bilbao"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bilbao.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bilbao_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bilbao_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hull"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hull.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hull_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hull_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Belfast"
+		textureFile = "gfx/interface/terrains/terrain_urban_Belfast.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Belfast_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Belfast_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kalinin"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kalinin.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kalinin_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kalinin_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Izmir"
+		textureFile = "gfx/interface/terrains/terrain_urban_Izmir.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Izmir_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Izmir_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Firenze"
+		textureFile = "gfx/interface/terrains/terrain_urban_Firenze.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Firenze_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Firenze_winter.dds"
+	}
+
+
+
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Batavia"
+		textureFile = "gfx/interface/terrains/terrain_urban_Batavia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Batavia_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Batavia_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Changde"
+		textureFile = "gfx/interface/terrains/terrain_urban_Changde.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Changde_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Changde_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Changsha"
+		textureFile = "gfx/interface/terrains/terrain_urban_Changsha.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Changsha_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Changsha_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Chengdu"
+		textureFile = "gfx/interface/terrains/terrain_urban_Chengdu.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Chengdu_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Chengdu_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Fuzhou"
+		textureFile = "gfx/interface/terrains/terrain_urban_Fuzhou.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Fuzhou_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Fuzhou_winter.dds"
+	}
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hangzhou"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hangzhou.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hangzhou_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hangzhou_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Nanchang"
+		textureFile = "gfx/interface/terrains/terrain_urban_Nanchang.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Nanchang_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Nanchang_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Nanzningz"
+		textureFile = "gfx/interface/terrains/terrain_urban_Nanzningz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Nanzningz_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Nanzningz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Surabaya"
+		textureFile = "gfx/interface/terrains/terrain_urban_Surabaya.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Surabaya_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Surabaya_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Suzhou"
+		textureFile = "gfx/interface/terrains/terrain_urban_Suzhou.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Suzhou_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Suzhou_winter.dds"
+	}
+
+###
+
+	spriteType = {
+		name = "GFX_terrain_urban_Akmolinsk"
+		textureFile = "gfx/interface/terrains/terrain_urban_Akmolinsk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Akmolinsk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Akmolinsk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Almaty"
+		textureFile = "gfx/interface/terrains/terrain_urban_Almaty.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Almaty_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Almaty_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Astrakhan"
+		textureFile = "gfx/interface/terrains/terrain_urban_Astrakhan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Astrakhan_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Astrakhan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Brunn"
+		textureFile = "gfx/interface/terrains/terrain_urban_Brunn.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Brunn_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Brunn_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bryansk"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bryansk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bryansk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bryansk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Chelyabinsk"
+		textureFile = "gfx/interface/terrains/terrain_urban_Chelyabinsk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Chelyabinsk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Chelyabinsk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Chrzanow"
+		textureFile = "gfx/interface/terrains/terrain_urban_Chrzanow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Chrzanow_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Chrzanow_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Dnipropetrovsk"
+		textureFile = "gfx/interface/terrains/terrain_urban_Dnipropetrovsk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Dnipropetrovsk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Dnipropetrovsk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ekaterinburg"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ekaterinburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ekaterinburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ekaterinburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Gomel"
+		textureFile = "gfx/interface/terrains/terrain_urban_Gomel.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Gomel_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Gomel_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Gorky"
+		textureFile = "gfx/interface/terrains/terrain_urban_Gorky.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Gorky_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Gorky_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kattowitz"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kattowitz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kattowitz_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kattowitz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kazan"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kazan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kazan_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kazan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Khabarovsk"
+		textureFile = "gfx/interface/terrains/terrain_urban_Khabarovsk.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Khabarovsk_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Khabarovsk_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Krasnodar"
+		textureFile = "gfx/interface/terrains/terrain_urban_Krasnodar.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Krasnodar_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Krasnodar_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_KryvyiRih"
+		textureFile = "gfx/interface/terrains/terrain_urban_KryvyiRih.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_KryvyiRih_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_KryvyiRih_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kuybyshev"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kuybyshev.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Kuybyshev_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Kuybyshev_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lodz"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lodz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lodz_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lodz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Odessa"
+		textureFile = "gfx/interface/terrains/terrain_urban_Odessa.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Odessa_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Odessa_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Perm"
+		textureFile = "gfx/interface/terrains/terrain_urban_Perm.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Perm_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Perm_winter.dds"
+	}
+	spriteType = {
+		name = "GFX_terrain_urban_Poznan"
+		textureFile = "gfx/interface/terrains/terrain_urban_Poznan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Poznan_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Poznan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Rzhev"
+		textureFile = "gfx/interface/terrains/terrain_urban_Rzhev.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Rzhev_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Rzhev_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Saratov"
+		textureFile = "gfx/interface/terrains/terrain_urban_Saratov.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Saratov_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Saratov_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Stalino"
+		textureFile = "gfx/interface/terrains/terrain_urban_Stalino.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Stalino_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Stalino_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tbilisi"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tbilisi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tbilisi_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tbilisi_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Toshkent"
+		textureFile = "gfx/interface/terrains/terrain_urban_Toshkent.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Toshkent_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Toshkent_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tula"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tula.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tula_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tula_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Voronezh"
+		textureFile = "gfx/interface/terrains/terrain_urban_Voronezh.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Voronezh_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Voronezh_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Voroshilovgrad"
+		textureFile = "gfx/interface/terrains/terrain_urban_Voroshilovgrad.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Voroshilovgrad_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Voroshilovgrad_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Yaroslavl"
+		textureFile = "gfx/interface/terrains/terrain_urban_Yaroslavl.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Yaroslavl_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Yaroslavl_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Yerevan"
+		textureFile = "gfx/interface/terrains/terrain_urban_Yerevan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Yerevan_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Yerevan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Zaporizhzhia"
+		textureFile = "gfx/interface/terrains/terrain_urban_Zaporizhzhia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Zaporizhzhia_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Zaporizhzhia_winter.dds"
+	}
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bristol"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bristol.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bristol_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bristol_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Cardiff"
+		textureFile = "gfx/interface/terrains/terrain_urban_Cardiff.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Cardiff_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Cardiff_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ceuta"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ceuta.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ceuta_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ceuta_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_glasgow"
+		textureFile = "gfx/interface/terrains/terrain_urban_glasgow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_glasgow_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_glasgow_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Leeds"
+		textureFile = "gfx/interface/terrains/terrain_urban_Leeds.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Leeds_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Leeds_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_LeHavre"
+		textureFile = "gfx/interface/terrains/terrain_urban_LeHavre.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_LeHavre_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_LeHavre_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lille"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lille.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lille_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lille_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_London_"
+		textureFile = "gfx/interface/terrains/terrain_urban_London_.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_London__winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_London__winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Malaga"
+		textureFile = "gfx/interface/terrains/terrain_urban_Malaga.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Malaga_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Malaga_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Nantes"
+		textureFile = "gfx/interface/terrains/terrain_urban_Nantes.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Nantes_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Nantes_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Newcastle"
+		textureFile = "gfx/interface/terrains/terrain_urban_Newcastle.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Newcastle_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Newcastle_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Paris_"
+		textureFile = "gfx/interface/terrains/terrain_urban_Paris_.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Paris__winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Paris__winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Porto"
+		textureFile = "gfx/interface/terrains/terrain_urban_Porto.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Porto_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Porto_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Sheffield"
+		textureFile = "gfx/interface/terrains/terrain_urban_Sheffield.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Sheffield_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Sheffield_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Sevilla"
+		textureFile = "gfx/interface/terrains/terrain_urban_Sevilla.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Sevilla_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Sevilla_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Toulouse"
+		textureFile = "gfx/interface/terrains/terrain_urban_Toulouse.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Toulouse_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Toulouse_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Valencia"
+		textureFile = "gfx/interface/terrains/terrain_urban_Valencia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Valencia_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Valencia_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Zaragoza"
+		textureFile = "gfx/interface/terrains/terrain_urban_Zaragoza.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Zaragoza_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Zaragoza_winter.dds"
+	}
+
+
+
+
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Auckland"
+		textureFile = "gfx/interface/terrains/terrain_urban_Auckland.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Auckland_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Auckland_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bern"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bern.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bern_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bern_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Breda"
+		textureFile = "gfx/interface/terrains/terrain_urban_Breda.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Breda_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Breda_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Dacca"
+		textureFile = "gfx/interface/terrains/terrain_urban_Dacca.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Dacca_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Dacca_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_DenHaag"
+		textureFile = "gfx/interface/terrains/terrain_urban_DenHaag.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_DenHaag_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_DenHaag_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Galati"
+		textureFile = "gfx/interface/terrains/terrain_urban_Galati.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Galati_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Galati_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Gleiwitz"
+		textureFile = "gfx/interface/terrains/terrain_urban_Gleiwitz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Gleiwitz_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Gleiwitz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Gothenburg"
+		textureFile = "gfx/interface/terrains/terrain_urban_Gothenburg.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Gothenburg_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Gothenburg_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Graz"
+		textureFile = "gfx/interface/terrains/terrain_urban_Graz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Graz_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Graz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hannover"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hannover.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hannover_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hannover_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Houston"
+		textureFile = "gfx/interface/terrains/terrain_urban_Houston.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Houston_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Houston_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Montreal"
+		textureFile = "gfx/interface/terrains/terrain_urban_Montreal.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Montreal_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Montreal_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Patna"
+		textureFile = "gfx/interface/terrains/terrain_urban_Patna.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Patna_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Patna_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Pittsburgh"
+		textureFile = "gfx/interface/terrains/terrain_urban_Pittsburgh.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Pittsburgh_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Pittsburgh_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_SaoPaulo"
+		textureFile = "gfx/interface/terrains/terrain_urban_SaoPaulo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_SaoPaulo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_SaoPaulo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Thessaloniki"
+		textureFile = "gfx/interface/terrains/terrain_urban_Thessaloniki.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Thessaloniki_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Thessaloniki_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_toronto"
+		textureFile = "gfx/interface/terrains/terrain_urban_toronto.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_toronto_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_toronto_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Zurich"
+		textureFile = "gfx/interface/terrains/terrain_urban_Zurich.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Zurich_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Zurich_winter.dds"
+	}
+
+
+###
+
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Adelaide"
+		textureFile = "gfx/interface/terrains/terrain_urban_Adelaide.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Adelaide_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Adelaide_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bangalore"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bangalore.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bangalore_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bangalore_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bologna"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bologna.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Bologna_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Bologna_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Brisbane"
+		textureFile = "gfx/interface/terrains/terrain_urban_Brisbane.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Brisbane_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Brisbane_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Cagliari"
+		textureFile = "gfx/interface/terrains/terrain_urban_Cagliari.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Cagliari_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Cagliari_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Genova"
+		textureFile = "gfx/interface/terrains/terrain_urban_Genova.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Genova_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Genova_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hanoi"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hanoi.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hanoi_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hanoi_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hyderabad"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hyderabad.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Hyderabad_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Hyderabad_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lucknow"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lucknow.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Lucknow_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Lucknow_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Madras"
+		textureFile = "gfx/interface/terrains/terrain_urban_Madras.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Madras_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Madras_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Perth"
+		textureFile = "gfx/interface/terrains/terrain_urban_Perth.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Perth_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Perth_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Trieste"
+		textureFile = "gfx/interface/terrains/terrain_urban_Trieste.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Trieste_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Trieste_winter.dds"
+	}
+
+###
+
+
+	spriteType = {
+		name = "GFX_terrain_urban_Yokohama"
+		textureFile = "gfx/interface/terrains/terrain_urban_Yokohama.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Yokohama_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Yokohama_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Fukuoka"
+		textureFile = "gfx/interface/terrains/terrain_urban_Fukuoka.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Fukuoka_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Fukuoka_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Fuzan"
+		textureFile = "gfx/interface/terrains/terrain_urban_Fuzan.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Fuzan_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Fuzan_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Heijo"
+		textureFile = "gfx/interface/terrains/terrain_urban_Heijo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Heijo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Heijo_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_TelAviv"
+		textureFile = "gfx/interface/terrains/terrain_urban_TelAviv.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_TelAviv_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_TelAviv_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tabriz"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tabriz.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Tabriz_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Tabriz_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ahmedabad"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ahmedabad.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Ahmedabad_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Ahmedabad_winter.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Buffalo"
+		textureFile = "gfx/interface/terrains/terrain_urban_Buffalo.dds"
+	}
+
+	spriteType = {
+		name = "GFX_terrain_urban_Buffalo_winter"
+		textureFile = "gfx/interface/terrains/terrain_urban_Buffalo_winter.dds"
+	}
+
+
+##################################################################################
+}

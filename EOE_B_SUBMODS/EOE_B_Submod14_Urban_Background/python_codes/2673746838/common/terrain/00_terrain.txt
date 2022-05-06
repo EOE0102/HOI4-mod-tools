@@ -1,0 +1,7663 @@
+
+##################################################################
+### Terrain Categories
+###
+###
+
+categories =  {
+	unknown = {
+		color = { 255 0 0 }
+	}
+
+	ocean = {
+		color = { 40 83 176 }
+		movement_cost = 1.0
+		is_water = yes
+		sound_type = sea
+	}
+	
+	lakes = {
+		color = { 58 91 255 }
+		movement_cost = 1.0
+		is_water = yes
+		sound_type = sea
+	}
+	
+	forest = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+
+	hills = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+	
+	mountain = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	plains = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	urban = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	jungle = {
+		color = { 127 191 0 }
+		movement_cost = 1.5
+		attrition = 0.2
+		# combat_width = -0.25
+		combat_width = 84
+		combat_support_width = 42
+
+		ai_terrain_importance_factor = 6.0
+		match_value = 6
+		sound_type = forest
+
+		units = {
+			attack = -0.3
+			#movement = -0.3
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.25
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 3.0
+	}	
+	
+	marsh = {
+		color = { 76 96 35 }
+		movement_cost = 2.0
+		attrition = 0.35
+		# combat_width = -0.25
+		combat_width = 78
+		combat_support_width = 26
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = forest
+
+		units = {
+			attack = -0.4
+			#movement = -0.4
+		}
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 4.0
+	}
+	
+	desert = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+	
+	water_fjords = {
+		naval_terrain = yes
+		color = { 75 162 198 }
+		movement_cost = 1.0
+		is_water = yes
+		sound_type = sea
+		
+		battle_cruiser = {
+			units = {
+				attack = -0.2
+				movement = -0.2
+				defence = -0.2
+			}
+			navy_fuel_consumption_factor = 0.2
+		}
+		battleship = {
+			units = {
+				attack = -0.2
+				movement = -0.2
+				defence = -0.2
+			}
+			navy_fuel_consumption_factor = 0.2
+		}
+		heavy_cruiser = {
+			units = {
+				attack = -0.2
+				movement = -0.2
+				defence = -0.2
+			}
+			navy_fuel_consumption_factor = 0.2
+		}
+		carrier = {
+			units = {
+				attack = -0.2
+				movement = -0.2
+				defence = -0.2
+			}
+			navy_fuel_consumption_factor = 0.2
+		}
+		navy_visibility = -0.2
+		positioning = -0.15
+	}
+	
+	water_shallow_sea = {
+		naval_terrain = yes
+		color = { 56 118 217 } 
+		movement_cost = 1.0
+		is_water = yes
+		sound_type = sea
+		
+		submarine = {
+			navy_visibility = 1.0
+		}
+		positioning = -0.05
+	}
+	
+	water_deep_ocean = {
+		naval_terrain = yes
+		color = { 2 38 150 }
+		movement_cost = 1.0
+		is_water = yes
+		sound_type = sea
+		
+		destroyer = {
+			units = {
+				attack = -0.2
+				movement = -0.2
+				defence = -0.2
+			}
+		}
+		light_cruiser = {
+			units = {
+				attack = -0.1
+				movement = -0.1
+				defence = -0.1
+			}
+		}
+		submarine = {
+			navy_visibility = -0.15
+			units = {
+				movement = -0.25
+			}
+		}
+
+		naval_mine_hit_chance = -0.5
+	}
+
+	
+
+
+########################  mod   ################################################
+
+########################   urban   ########################################
+
+	urban_baghdad = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_birmingham = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+			
+	urban_Brest = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Cherbourg = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Edinburgh = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+		
+	urban_philadelphia = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_kaunas = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_manchester = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+		
+	urban_naples = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Palermo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_vilnius = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+
+
+
+	
+	urban_berlin = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_moscow = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_leningrad = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_stalingrad = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+								
+	urban_breslau = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_cairo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_leipzig = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_mumbai = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+		
+	urban_munich = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_nagoya = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_nurnberg = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_stettin = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_baku = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_sevastopol = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_paris = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_london = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_rome = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_new_york = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_washington = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_chicago = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_boston = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_los_angeles = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_dresden = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_tokyo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_osaka = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_shanghai = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_beiping = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_manila = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_sydney = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_vienna = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_praha = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_danzig = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_athens = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_bangkok = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_dairen = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_hiroshima = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_hongkong = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_kyoto = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_nanjing = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_singapore = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_dortmund = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_essen = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_frankfurt = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_hamburg = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_kiel = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_koln = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_milano = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_taranto = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_tripoli = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_tunis = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+	
+	urban_amsterdam = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_brussels = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_bukarest = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_guangdong = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_helsinki = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+	
+	urban_Istanbul = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_kharkov = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_kiev = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_konigsberg = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_krakow = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+	
+	urban_liverpool = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_minsk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_mukden = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_riga = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Rostov = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+
+	
+	urban_rotterdam = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_san_francisco = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_smolensk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_tallinn = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Tianjin = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+	
+	urban_Tsingtao = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Vitebsk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Warszawa = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_orel = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+	
+	urban_bordeaux = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_budapest = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_buenos_aires = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_harbin = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_jinan = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+
+	
+	urban_lyon = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_madrid = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_magdeburg = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_marseille = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_nice = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+	
+	urban_oslo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_rio_dejaneiro = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_strasburg = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_copenhagen = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_alexadria = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_kolkata = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_melbourne = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_newdelhi = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Rangoon = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_yawata = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+	
+	urban_Barcelona = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Beograd = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Casablanca = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Cleveland = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Detroit = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_Lisboa = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Newark = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Ottawa = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_saigon = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Seattle = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_StLouis = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Stockholm = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Tehran = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Vladivostok = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_zagreb = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+	
+	urban_Ankara = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Bremen = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_Chongqing = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Wuhan = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Lwow = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Stuttgart = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Torino = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_Aleppo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Damascus = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_Dublin = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Keijo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Kursk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Sendai = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Sofia = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Algiers = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Bilbao = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_Hull = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Belfast = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Kalinin = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Izmir = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Firenze = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+
+
+
+
+
+
+
+
+	
+	urban_Batavia = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Changde = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Changsha = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Chengdu = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Fuzhou = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_Hangzhou = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Nanchang = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Nanzningz = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Surabaya = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Suzhou = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+###
+
+
+
+	
+	urban_Akmolinsk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Almaty = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Astrakhan = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Brunn = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Bryansk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_Chelyabinsk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Chrzanow = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Dnipropetrovsk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Ekaterinburg = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Gomel = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+	
+	urban_Gorky = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Kattowitz = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Kazan = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Khabarovsk = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Krasnodar = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_KryvyiRih = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Kuybyshev = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Lodz = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Odessa = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Perm = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+	
+	urban_Poznan = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Rzhev = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Saratov = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Stalino = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Tbilisi = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	
+	urban_Toshkent = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Tula = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Voronezh = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Voroshilovgrad = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Yaroslavl = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Yerevan = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Zaporizhzhia = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+
+
+	urban_Bristol = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Cardiff = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Ceuta = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_glasgow = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Leeds = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	urban_LeHavre = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Lille = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_London_ = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Malaga = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Nantes = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	urban_Newcastle = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Paris_ = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Porto = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Sevilla = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Sheffield = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Toulouse = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Valencia = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Zaragoza = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+###
+
+
+
+
+	urban_Auckland = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Bern = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Breda = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Dacca = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_DenHaag = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	urban_Galati = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Gleiwitz = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Gothenburg = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Graz = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Hannover = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	urban_Houston = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Montreal = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Patna = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Pittsburgh = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_SaoPaulo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Thessaloniki = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_toronto = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Zurich = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+###
+
+	
+	urban_Adelaide = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Bangalore = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Bologna = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Brisbane = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+	urban_Cagliari = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Genova = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Hanoi = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Hyderabad = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Lucknow = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Madras = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Perth = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Trieste = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+###
+
+
+	
+	urban_Yokohama = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Fukuoka = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Fuzan = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Heijo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_TelAviv = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Tabriz = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Ahmedabad = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+	
+	urban_Buffalo = {
+		color = { 120 120 120 }
+		movement_cost = 1.2
+		ai_terrain_importance_factor = 4.0
+		combat_width = 96
+		combat_support_width = 32
+		match_value = 4
+		sound_type = plains
+
+		units = {
+			attack = -0.3
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.50
+				
+		supply_flow_penalty_factor = -0.2
+	}
+
+
+#####################   hills   #############################################	
+
+	hills_Braunau = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_sarajevo = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_gibraltar = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+
+	hills_mont_st_michel = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_sapporo = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+
+	hills_Heraklion = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_SanDiego = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+
+
+	hills_pescara = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Ulm = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Benghazi = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Predappio = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+
+						
+	hills_Shijiazhuang = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Zunyi = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+
+						
+	hills_Guihua = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Manzhouli = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Bergen = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+###
+
+						
+	hills_Anzio = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Columbo = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+
+						
+	hills_Kunming = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Niangziguan = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Trondheim = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+						
+	hills_Penang = {
+		color = { 248 255 153 }
+		movement_cost = 1.5
+		#combat_width = -0.33
+		combat_width = 80
+		combat_support_width = 40
+		ai_terrain_importance_factor = 3.0
+		match_value = 2
+		sound_type = desert
+
+		units = {
+			attack = -0.25
+			#movement = -0.2
+		}
+		enemy_army_bonus_air_superiority_factor = -0.05
+		
+		supply_flow_penalty_factor = 0.1
+		
+		truck_attrition_factor = 0.2
+	}
+#############################  mountain    ###########################################
+																																																		
+	mountain_berchtesgaden = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_monte_cassino = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+
+
+																																	
+	mountain_capetown = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_narvik = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_gran_sasso = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Garmisch = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_MexcoCity = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Yenan = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+
+	
+	mountain_Freiburg = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Anman = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Tobruk = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+
+	
+	mountain_Mount_Elbrus = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_salween_river_bridge = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Taiyuan = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Messina = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Salo = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+
+	
+	mountain_Addis_Ababa = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Asmara = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+	
+	mountain_Kabul = {
+		color = { 157 192 208 }
+		movement_cost = 2.0
+		attrition = 0.3
+		#combat_width = -0.66
+		combat_width = 75
+		combat_support_width = 25
+		ai_terrain_importance_factor = 10.0
+		match_value = 10
+		sound_type = desert
+
+		units = {
+			attack = -0.5
+			#movement = -0.4
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.10
+		
+		supply_flow_penalty_factor = 0.12
+		
+		truck_attrition_factor = 1.0
+	}
+
+
+#####################  plains  ###########################################
+
+		
+	plains_chuuk = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_malta = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+		
+	plains_giza = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_dover = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_iwo_jima = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_naha = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_pearl_harbor = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_midway = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_venice = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+		
+
+	plains_antwerpen = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_murmansk = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+
+	plains_amiens = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_ploiesti = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+		
+
+	plains_rouen = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_taipei = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_nagasaki = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_quebec = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_bratislava = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Columbus = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_scapaflow = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Wewelsburg = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Remagen = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Prora = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_rostock = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+
+	plains_Aachen = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Arkhangelsk = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+		
+
+	plains_Atlanta = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Baltimore = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Dallas = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Dankerque = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Indianapolis = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Lubeck = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_memel = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Munster = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Norfolk = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Oranienburg = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Toyohara = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+
+
+	plains_Braunschweig = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Kolberg = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Mainz = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Orleans = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Wake = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Wurzburg = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Zara = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+	
+	plains_Arnhem = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_caen = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Coventry = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+
+
+	
+	plains_Attu = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+	
+	plains_Panama_Canal = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_PortSaid = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Saipan = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+###
+
+	plains_Chengde = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Peleliu = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+
+	plains_Qiqihar = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+	
+	plains_Rota = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Shanhaiguan = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Tinian = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}							
+###
+
+	
+	plains_Basra = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+
+	plains_Christchurch = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+	
+	plains_Dutch_Harbor = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Nijmegen = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Odense = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}						
+###
+	
+	plains_Addu = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+
+	plains_CapGris = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}								
+	
+	plains_Dieppe = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+
+	plains_Montevideo = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Trincomalee = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}						
+
+	plains_Gulangyu = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Regensburg = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}						
+
+
+	plains_Bataan = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Guam = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}						
+
+	plains_Pretria = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}
+	
+	plains_Welwel = {
+		color = { 255 129 66 }
+		movement_cost = 1.0
+		ai_terrain_importance_factor = 0.1
+		combat_width = 90
+		combat_support_width = 45
+		match_value = 0.5
+		sound_type = plains
+	}						
+
+#######################   desert   #########################################
+
+			
+	desert_baotou = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+					
+	desert_Jerusalem = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+		
+	desert_arco_dei_fileni = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+		
+	desert_potala_palace = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+					
+	desert_AbuSimbel = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+		
+	desert_Konya = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+		
+	desert_Luxor = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+		
+	desert_Leyte = {
+		color = { 255 127 0 }
+		movement_cost = 1.05
+		attrition = 0.15
+		combat_width = 90
+		combat_support_width = 45
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = desert
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.14
+		
+		truck_attrition_factor = 0.5
+	}
+
+
+
+####################  forest   ################################################
+
+				
+	forest_darwin = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+	
+	forest_Nagykanizsa = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_zossen = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+	
+	forest_narva = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_hsinking = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_rastenburg = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+	
+	forest_schorfheide = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+	
+	forest_Adlerhorst = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Koblenz = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Ordensburg_Vogelsang_Eifel = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+	
+	forest_Schloss_Cecilienhof_Potsdam = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Schweinfurt = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Walhalla = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Kustrin = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_VelikieLuki = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+
+		
+	forest_brest = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Eindhoven = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Kassel = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Salzburg = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Viipuri = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Heihe = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Bastogne = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Kiruna = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Liepaja = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Saarbrucken = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Macau = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Mandalay = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Linz = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+		
+	forest_Luxemburg = {
+		color = { 89 199 85 }
+		movement_cost = 1.5
+		#combat_width = -0.20
+		combat_width = 84
+		combat_support_width = 42
+		ai_terrain_importance_factor = 5.0
+		match_value = 5
+		sound_type = forest
+
+		units = {
+			attack = -0.15
+			#movement = -0.2
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.1
+		
+		supply_flow_penalty_factor = 0.08
+		
+		truck_attrition_factor = 0.2
+	}
+
+
+
+####################  jungle  ########################################################
+						
+	jungle_guadalcanal = {
+		color = { 127 191 0 }
+		movement_cost = 1.5
+		attrition = 0.2
+		# combat_width = -0.25
+		combat_width = 84
+		combat_support_width = 42
+
+		ai_terrain_importance_factor = 6.0
+		match_value = 6
+		sound_type = forest
+
+		units = {
+			attack = -0.3
+			#movement = -0.3
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.25
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 3.0
+	}	
+	
+	jungle_rabaul = {
+		color = { 127 191 0 }
+		movement_cost = 1.5
+		attrition = 0.2
+		# combat_width = -0.25
+		combat_width = 84
+		combat_support_width = 42
+
+		ai_terrain_importance_factor = 6.0
+		match_value = 6
+		sound_type = forest
+
+		units = {
+			attack = -0.3
+			#movement = -0.3
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.25
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 3.0
+	}	
+	
+	jungle_KualaLumpur = {
+		color = { 127 191 0 }
+		movement_cost = 1.5
+		attrition = 0.2
+		# combat_width = -0.25
+		combat_width = 84
+		combat_support_width = 42
+
+		ai_terrain_importance_factor = 6.0
+		match_value = 6
+		sound_type = forest
+
+		units = {
+			attack = -0.3
+			#movement = -0.3
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.25
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 3.0
+	}	
+
+	
+	jungle_palembang = {
+		color = { 127 191 0 }
+		movement_cost = 1.5
+		attrition = 0.2
+		# combat_width = -0.25
+		combat_width = 84
+		combat_support_width = 42
+
+		ai_terrain_importance_factor = 6.0
+		match_value = 6
+		sound_type = forest
+
+		units = {
+			attack = -0.3
+			#movement = -0.3
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.25
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 3.0
+	}	
+	
+	jungle_Port_Moresby = {
+		color = { 127 191 0 }
+		movement_cost = 1.5
+		attrition = 0.2
+		# combat_width = -0.25
+		combat_width = 84
+		combat_support_width = 42
+
+		ai_terrain_importance_factor = 6.0
+		match_value = 6
+		sound_type = forest
+
+		units = {
+			attack = -0.3
+			#movement = -0.3
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.25
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 3.0
+	}	
+	
+	jungle_DiegoSuarez = {
+		color = { 127 191 0 }
+		movement_cost = 1.5
+		attrition = 0.2
+		# combat_width = -0.25
+		combat_width = 84
+		combat_support_width = 42
+
+		ai_terrain_importance_factor = 6.0
+		match_value = 6
+		sound_type = forest
+
+		units = {
+			attack = -0.3
+			#movement = -0.3
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.25
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 3.0
+	}	
+
+	
+	jungle_Medan = {
+		color = { 127 191 0 }
+		movement_cost = 1.5
+		attrition = 0.2
+		# combat_width = -0.25
+		combat_width = 84
+		combat_support_width = 42
+
+		ai_terrain_importance_factor = 6.0
+		match_value = 6
+		sound_type = forest
+
+		units = {
+			attack = -0.3
+			#movement = -0.3
+		}
+
+		enemy_army_bonus_air_superiority_factor = -0.25
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 3.0
+	}	
+
+
+
+
+
+
+
+###########################   marsh    #########################################
+
+		
+	marsh_wilhelmshaven = {
+		color = { 76 96 35 }
+		movement_cost = 2.0
+		attrition = 0.35
+		# combat_width = -0.25
+		combat_width = 78
+		combat_support_width = 26
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = forest
+
+		units = {
+			attack = -0.4
+			#movement = -0.4
+		}
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 4.0
+	}
+			
+	marsh_neworleans = {
+		color = { 76 96 35 }
+		movement_cost = 2.0
+		attrition = 0.35
+		# combat_width = -0.25
+		combat_width = 78
+		combat_support_width = 26
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = forest
+
+		units = {
+			attack = -0.4
+			#movement = -0.4
+		}
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 4.0
+	}
+			
+	marsh_Miami = {
+		color = { 76 96 35 }
+		movement_cost = 2.0
+		attrition = 0.35
+		# combat_width = -0.25
+		combat_width = 78
+		combat_support_width = 26
+		ai_terrain_importance_factor = 8.0
+		match_value = 8
+		sound_type = forest
+
+		units = {
+			attack = -0.4
+			#movement = -0.4
+		}
+		
+		sickness_chance = 1.0
+		
+		supply_flow_penalty_factor = 0.16
+		
+		truck_attrition_factor = 4.0
+	}
+						
+																							
+
+
+
+
+######################   mod     #######################################################
+
+
+}
+
+
+
+
+
+##################################################################
+### Graphical terrain
+###		type	=	refers to the terrain defined above, "terrain category"'s 
+### 	color 	= 	index in bitmap color table (see terrain.bmp)
+###
+
+terrain = {
+	terrain_0					= { type = plains			color = { 	0	 } texture = 1 }
+	terrain_1					= { type = forest			color = { 	1	 } texture = 4 } 
+	desert_mountain				= { type = hills			color = { 	2	 } texture = 3 }
+	desert						= { type = desert			color = { 	3	 } texture = 9 }
+		
+	terrain_4					= { type = forest			color = { 	4	 } texture = 5 }
+	terrain_5					= { type = plains	 		color = { 	5	 } texture = 0 }
+	terrain_6					= { type = mountain			color = { 	6	 } texture = 11 }
+	terrain_7					= { type = desert			color = { 	7	 } texture = 12 }
+	desert_hills				= { type = desert			color = { 	8	 } texture = 14 }
+	terrain_9					= { type = marsh			color = { 	9	 } texture = 6 }
+	terrain_10					= { type = mountain   		color = { 	10	 } texture = 13 }
+			
+	desert						= { type = mountain			color = { 	11	 } texture = 11 }
+	desert						= { type = desert			color = { 	12	 } texture = 8 }
+		
+	forest_13					= { type = urban			color = { 	13	 } texture = 10 spawn_city = yes }
+	forest_14					= { type = lakes			color = { 	14	 } texture = 255 }
+	ocean_15					= { type = ocean			color = { 	15	 } texture = 9 } 
+		
+	snow_16						= { type = mountain			color = { 	16	 } texture = 11  perm_snow = yes }
+	plains_17					= { type = plains			color = { 	19	 } texture = 0  perm_snow = yes }
+	
+	hills_blend					= { type = hills			color = { 	17	 } texture = 2 }
+	mountain_variation_sand	 	= { type = mountain			color = { 	18	 } texture = 7 }
+	mountain_variation_grass 	= { type = mountain			color = { 	20	 } texture = 7 }
+	jungle_18					= { type = jungle			color = { 	21	 } texture = 4 }
+	jungle_blend_18				= { type = jungle			color = { 	22	 } texture = 5 }
+	
+	jungle_blend_18				= { type = mountain			color = { 	27	 } texture = 7 }
+	desert_mountain_tops		= { type = mountain			color = { 	31	 } texture = 15 }
+	
+}
